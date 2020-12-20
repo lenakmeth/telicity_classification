@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Ignore log files, slurm output etc...
+*.log
+cache_dir/
+output_dir/
+runs/
+*.out
+*.sh
+*.png
