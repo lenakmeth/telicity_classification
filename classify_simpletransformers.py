@@ -15,31 +15,14 @@ import torch
 import pandas as pd
 import sklearn
 from simpletransformers.classification import ClassificationModel, ClassificationArgs
+from utils import read_friedrich_sents, tokenize_and_pad
+from configure import parse_args
+
+args = parse_args()
 
 # read friedrich sentences
-
-sents_dir = 'annotated_friedrich'
-sents = [] 
-sents_files = [os.path.join(sents_dir, x) for x in os.listdir(sents_dir) if x.endswith('.json')]
-
-for file in sents_files:
-    with io.open(file, 'r') as f:
-        d = json.load(f)       
-        
-        # labels: telic = 0, atelic = 1, stative = 1
-        for sentID, sent in d.items():
-            for verb in sent['verbs']:
-                try:
-                    if sent['verbs'][verb]['telicity'] == 'telic':
-                        sents.append([sent['sent'], 0])
-                    elif sent['verbs'][verb]['telicity'] == 'atelic':
-                        sents.append([sent['sent'], 1])
-                except KeyError: # there is no telicity annotation
-                    try:
-                        if sent['verbs'][verb]['duration'] == 'stative':
-                            sents.append([sent['sent'], 1])
-                    except KeyError:
-                        pass
+sentences, _ = read_friedrich_sents(sents_dir='annotated_friedrich')
+sents = [s[0] for s in sentences]
             
 # make train and validation sets
 shuffle(sents)
@@ -51,9 +34,9 @@ val_df = pd.DataFrame(val_sents, columns=['text', 'labels'])
 
 # model
 
-num_train_epochs = 10
-model_type = 'bert'
-model_name = 'bert-large-uncased'
+num_train_epochs = args.num_epochs
+model_type = args.model_type
+model_name = args.transfrormer_model
 
 model_args = ClassificationArgs(num_train_epochs, 
                                 overwrite_output_dir = True,

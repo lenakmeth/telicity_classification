@@ -1,12 +1,5 @@
-import tensorflow as tf
-import io
-import json
-import os
 import torch
-import pandas as pd
-import transformers
-from transformers import BertTokenizer, BertForSequenceClassification, AdamW, BertConfig, get_linear_schedule_with_warmup
-from keras.preprocessing.sequence import pad_sequences
+from transformers import BertForSequenceClassification, AdamW, get_linear_schedule_with_warmup
 from sklearn.model_selection import train_test_split
 from torch.utils.data import TensorDataset, DataLoader, RandomSampler, SequentialSampler
 import time
@@ -15,6 +8,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random
 import seaborn as sns
+from utils import read_friedrich_sents, tokenize_and_pad
+from configure import parse_args
+
+args = parse_args()
 
 if torch.cuda.is_available():      
     device = torch.device("cuda")
@@ -22,83 +19,22 @@ else:
     device = torch.device("cpu")
 
 # PARAMETERS
-transformer_model = 'bert-base-uncased'
-epochs = 4 # Number of training epochs (authors recommend between 2 and 4)
+transformer_model = args.transformer_model
+epochs = args.num_epochs
 
-# read friedrich sentences
-sents_dir = 'annotated_friedrich'
-sentences = [] 
-labels = []
-sents_files = [os.path.join(sents_dir, x) for x in os.listdir(sents_dir) if x.endswith('.json')]
+# read friedrich sentences, make input ids, attention masks, segment ids
+sentences, labels = read_friedrich_sents(sents_dir='annotated_friedrich')
+input_ids, attention_masks, segment_ids = tokenize_and_pad(sentences)
 
-for file in sents_files:
-    with io.open(file, 'r') as f:
-        d = json.load(f)       
-        
-        # labels: telic = 0, atelic = 1, stative = 1
-        for sentID, sent in d.items():
-            for verb in sent['verbs']:
-                try:
-                    if sent['verbs'][verb]['telicity'] == 'telic':
-                        sentences.append(sent['sent'])
-                        labels.append(0)
-                    elif sent['verbs'][verb]['telicity'] == 'atelic':
-                        sentences.append(sent['sent'])
-                        labels.append(1)
-                except KeyError: # there is no telicity annotation
-                    try:
-                        if sent['verbs'][verb]['duration'] == 'stative':
-                            sentences.append(sent['sent'])
-                            labels.append(1)
-                    except KeyError:
-                        pass
-print('Sentences loaded!')
+print('\nLoaded sentences and converted.')
 
-with open('aa.txt', 'w') as f:
-    f.write('aaaaa')
-
-# Load the BERT tokenizer.
-print('Loading BERT tokenizer...')
-tokenizer = BertTokenizer.from_pretrained(transformer_model, do_lower_case=True)
-
-# Tokenize all of the sentences and map the tokens to thier word IDs.
-input_ids = []
-for sent in sentences:
-    encoded_sent = tokenizer.encode(sent, add_special_tokens = True)
-    
-    # Add the encoded sentence to the list.
-    input_ids.append(encoded_sent)
-
-# Set the maximum sequence length.
-MAX_LEN = 128
-print('\nPadding/truncating all sentences to %d values...' % MAX_LEN)
-print('\nPadding token: "{:}", ID: {:}'.format(tokenizer.pad_token, tokenizer.pad_token_id))
-
-# Pad our input tokens with value 0.
-# "post" indicates that we want to pad and truncate at the end of the sequence, as opposed to the beginning.
-input_ids = pad_sequences(input_ids, maxlen=MAX_LEN, dtype="long", 
-                          value=0, truncating="post", padding="post")
-
-print('\nDone.')
-
-# Create attention masks
-attention_masks = []
-
-# For each sentence...
-for sent in input_ids:
-    
-    # Create the attention mask.
-    #   - If a token ID is 0, then it's padding, set the mask to 0.
-    #   - If a token ID is > 0, then it's a real token, set the mask to 1.
-    att_mask = [int(token_id > 0) for token_id in sent]
-    
-    # Store the attention mask for this sentence.
-    attention_masks.append(att_mask)
 
 # Use 90% for training and 10% for validation.
 train_inputs, validation_inputs, train_labels, validation_labels = train_test_split(input_ids, labels, 
                                                             random_state=2018, test_size=0.1)
-# Do the same for the masks.
+train_segments, validation_segments, _, _ = train_test_split(segment_ids, labels,
+                                             random_state=2018, test_size=0.1)
+
 train_masks, validation_masks, _, _ = train_test_split(attention_masks, labels,
                                              random_state=2018, test_size=0.1)
 
@@ -109,21 +45,24 @@ validation_inputs = torch.tensor(validation_inputs)
 train_labels = torch.tensor(train_labels)
 validation_labels = torch.tensor(validation_labels)
 
+train_segments = torch.tensor(train_segments)
+validation_segments = torch.tensor(validation_segments)
+
 train_masks = torch.tensor(train_masks)
 validation_masks = torch.tensor(validation_masks)
 
 # The DataLoader needs to know our batch size for training, so we specify it here.
 # For fine-tuning BERT on a specific task, the authors recommend a batch size of 16 or 32.
 
-batch_size = 32
+batch_size = args.batch_size
 
 # Create the DataLoader for our training set.
-train_data = TensorDataset(train_inputs, train_masks, train_labels)
+train_data = TensorDataset(train_inputs, train_masks, train_labels, train_segments)
 train_sampler = RandomSampler(train_data)
 train_dataloader = DataLoader(train_data, sampler=train_sampler, batch_size=batch_size)
 
 # Create the DataLoader for our validation set.
-validation_data = TensorDataset(validation_inputs, validation_masks, validation_labels)
+validation_data = TensorDataset(validation_inputs, validation_masks, validation_labels, validation_segments)
 validation_sampler = SequentialSampler(validation_data)
 validation_dataloader = DataLoader(validation_data, sampler=validation_sampler, batch_size=batch_size)
 
@@ -260,6 +199,7 @@ for epoch_i in range(0, epochs):
         b_input_ids = batch[0].to(device)
         b_input_mask = batch[1].to(device)
         b_labels = batch[2].to(device)
+        b_segments = batch[3].to(device)
 
         # Always clear any previously calculated gradients before performing a
         # backward pass. PyTorch doesn't do this automatically because 
@@ -273,7 +213,7 @@ for epoch_i in range(0, epochs):
         # The documentation for this `model` function is here: 
         # https://huggingface.co/transformers/v2.2.0/model_doc/bert.html#transformers.BertForSequenceClassification
         outputs = model(b_input_ids, 
-                    token_type_ids=None, 
+                    token_type_ids=b_segments, 
                     attention_mask=b_input_mask, 
                     labels=b_labels)
         
@@ -379,21 +319,19 @@ for epoch_i in range(0, epochs):
 print("")
 print("Training complete!")
 
+# # Use plot styling from seaborn.
+# sns.set(style='darkgrid')
 
+# # Increase the plot size and font size.
+# sns.set(font_scale=1.5)
+# plt.rcParams["figure.figsize"] = (12,6)
 
-# Use plot styling from seaborn.
-sns.set(style='darkgrid')
+# # Plot the learning curve.
+# plt.plot(loss_values, 'b-o')
 
-# Increase the plot size and font size.
-sns.set(font_scale=1.5)
-plt.rcParams["figure.figsize"] = (12,6)
+# # Label the plot.
+# plt.title("Training loss")
+# plt.xlabel("Epoch")
+# plt.ylabel("Loss")
 
-# Plot the learning curve.
-plt.plot(loss_values, 'b-o')
-
-# Label the plot.
-plt.title("Training loss")
-plt.xlabel("Epoch")
-plt.ylabel("Loss")
-
-plt.savefig("training_loss.png", dpi=300)
+# plt.savefig("training_loss.png", dpi=300)
