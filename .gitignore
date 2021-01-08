@@ -133,6 +133,8 @@ dmypy.json
 cache_dir/
 output_dir/
 runs/
+logs/
+classify_tensorflow_output_dir/
 *.out
 *.sh
 *.png

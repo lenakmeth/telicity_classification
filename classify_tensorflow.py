@@ -1,39 +1,58 @@
 import torch
-from transformers import BertForSequenceClassification, AdamW, get_linear_schedule_with_warmup
+from transformers import BertForSequenceClassification, RobertaForSequenceClassification, DistilBertForSequenceClassification, XLNetForSequenceClassification, AdamW, get_linear_schedule_with_warmup
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
 from torch.utils.data import TensorDataset, DataLoader, RandomSampler, SequentialSampler
-import time
-import datetime
-import numpy as np
 import matplotlib.pyplot as plt
 import random
 import seaborn as sns
-from utils import read_friedrich_sents, tokenize_and_pad
+from utils import *
 from configure import parse_args
 
 args = parse_args()
 
-if torch.cuda.is_available():      
-    device = torch.device("cuda")
+# argparse doesn't deal in absolutes, so we pass a str flag & convert
+if args.verb_segment_ids == 'yes':
+    use_segment_ids = True
 else:
-    device = torch.device("cpu")
+    use_segment_ids = False
+    
+print(use_segment_ids)
+
+print('\nModel: ', args.transformer_model)
+print('Model type: ', args.model_type)
+
+#if torch.cuda.is_available():      
+ #   device = torch.device("cuda")
+#else:
+device = torch.device("cpu")
 
 # PARAMETERS
 transformer_model = args.transformer_model
 epochs = args.num_epochs
 
-# read friedrich sentences, make input ids, attention masks, segment ids
-sentences, labels = read_friedrich_sents(sents_dir='annotated_friedrich')
-input_ids, attention_masks, segment_ids = tokenize_and_pad(sentences)
+# read friedrich sentences, choose labels of telicity/duration
+sentences, labels = read_friedrich_sents('annotated_friedrich', args.label_marker)
+
+# make input ids, attention masks, segment ids, depending on the model we will use
+if args.model_type == 'bert':
+    input_ids, attention_masks, segment_ids = tokenize_and_pad(sentences)
+elif args.model_type == 'roberta':
+    input_ids, attention_masks, _ = tokenize_and_pad(sentences)
+elif args.model_type == 'distilbert':
+    input_ids, attention_masks, _ = tokenize_and_pad(sentences)
+elif args.model_type == 'xlnet':
+    input_ids, attention_masks, segment_ids = tokenize_and_pad(sentences)
 
 print('\nLoaded sentences and converted.')
 
 
 # Use 90% for training and 10% for validation.
-train_inputs, validation_inputs, train_labels, validation_labels = train_test_split(input_ids, labels, 
-                                                            random_state=2018, test_size=0.1)
-train_segments, validation_segments, _, _ = train_test_split(segment_ids, labels,
-                                             random_state=2018, test_size=0.1)
+train_inputs, validation_inputs, train_labels, validation_labels = train_test_split(input_ids, labels, random_state=2018, test_size=0.1)
+
+if use_segment_ids:
+    train_segments, validation_segments, _, _ = train_test_split(segment_ids, labels,
+                                                 random_state=2018, test_size=0.1)
 
 train_masks, validation_masks, _, _ = train_test_split(attention_masks, labels,
                                              random_state=2018, test_size=0.1)
@@ -45,8 +64,9 @@ validation_inputs = torch.tensor(validation_inputs)
 train_labels = torch.tensor(train_labels)
 validation_labels = torch.tensor(validation_labels)
 
-train_segments = torch.tensor(train_segments)
-validation_segments = torch.tensor(validation_segments)
+if use_segment_ids:
+    train_segments = torch.tensor(train_segments)
+    validation_segments = torch.tensor(validation_segments)
 
 train_masks = torch.tensor(train_masks)
 validation_masks = torch.tensor(validation_masks)
@@ -57,32 +77,62 @@ validation_masks = torch.tensor(validation_masks)
 batch_size = args.batch_size
 
 # Create the DataLoader for our training set.
-train_data = TensorDataset(train_inputs, train_masks, train_labels, train_segments)
+if use_segment_ids:
+    train_data = TensorDataset(train_inputs, train_masks, train_labels, train_segments)
+else:
+    train_data = TensorDataset(train_inputs, train_masks, train_labels)
 train_sampler = RandomSampler(train_data)
 train_dataloader = DataLoader(train_data, sampler=train_sampler, batch_size=batch_size)
 
 # Create the DataLoader for our validation set.
-validation_data = TensorDataset(validation_inputs, validation_masks, validation_labels, validation_segments)
+if use_segment_ids:
+    validation_data = TensorDataset(validation_inputs, validation_masks, validation_labels, validation_segments)
+else:
+    validation_data = TensorDataset(validation_inputs, validation_masks, validation_labels)
 validation_sampler = SequentialSampler(validation_data)
 validation_dataloader = DataLoader(validation_data, sampler=validation_sampler, batch_size=batch_size)
 
 # Load BertForSequenceClassification, the pretrained BERT model with a single 
 # linear classification layer on top. 
-model = BertForSequenceClassification.from_pretrained(
-    transformer_model, # Use the 12-layer BERT model, with an uncased vocab.
-    num_labels = 2, # The number of output labels--2 for binary classification.
-                    # You can increase this for multi-class tasks.   
-    output_attentions = False, # Whether the model returns attentions weights.
-    output_hidden_states = False, # Whether the model returns all hidden-states.
-)
 
-if torch.cuda.is_available():  
-    model.cuda()
+if args.model_type == 'bert':
+    model = BertForSequenceClassification.from_pretrained(
+        transformer_model,
+        num_labels = 2, # The number of output labels--2 for binary classification. 
+        output_attentions = False, # Whether the model returns attentions weights.
+        output_hidden_states = False, # Whether the model returns all hidden-states.
+    )
+elif args.model_type == 'roberta':
+    model = RobertaForSequenceClassification.from_pretrained(
+        transformer_model, 
+        num_labels = 2,   
+        output_attentions = False, # Whether the model returns attentions weights.
+        output_hidden_states = False, # Whether the model returns all hidden-states.
+    )
+elif args.model_type == 'distilbert':
+    model = RobertaForSequenceClassification.from_pretrained(
+        transformer_model, 
+        num_labels = 2,   
+        output_attentions = False, # Whether the model returns attentions weights.
+        output_hidden_states = False, # Whether the model returns all hidden-states.
+    )
+elif args.model_type == 'xlnet':
+    model = RobertaForSequenceClassification.from_pretrained(
+        transformer_model, 
+        num_labels = 2,   
+        output_attentions = False, # Whether the model returns attentions weights.
+        output_hidden_states = False, # Whether the model returns all hidden-states.
+    )
+    
+    
+
+#if torch.cuda.is_available():  
+#    model.cuda()
 
 # Get all of the model's parameters as a list of tuples.
 params = list(model.named_parameters())
 
-print('The BERT model has {:} different named parameters.\n'.format(len(params)))
+print('The model has {:} different named parameters.\n'.format(len(params)))
 
 print('==== Embedding Layer ====\n')
 
@@ -107,38 +157,16 @@ optimizer = AdamW(model.parameters(),
                   eps = 1e-8 # args.adam_epsilon  - default is 1e-8.
                 )
 
-
-
-
 # Total number of training steps is number of batches * number of epochs.
 total_steps = len(train_dataloader) * epochs
 
 # Create the learning rate scheduler.
 scheduler = get_linear_schedule_with_warmup(optimizer, 
-                                            num_warmup_steps = 0, # Default value in run_glue.py
+                                            num_warmup_steps = 0,
                                             num_training_steps = total_steps)
-
-# Function to calculate the accuracy of our predictions vs labels
-def flat_accuracy(preds, labels):
-    pred_flat = np.argmax(preds, axis=1).flatten()
-    labels_flat = labels.flatten()
-    return np.sum(pred_flat == labels_flat) / len(labels_flat)
-
-def format_time(elapsed):
-    '''
-    Takes a time in seconds and returns a string hh:mm:ss
-    '''
-    # Round to the nearest second.
-    elapsed_rounded = int(round((elapsed)))
-    
-    # Format as hh:mm:ss
-    return str(datetime.timedelta(seconds=elapsed_rounded))
-
-
 
 # This training code is based on the `run_glue.py` script here:
 #https://github.com/huggingface/transformers/blob/5bfcd0485ece086ebcbed2d008813037968a9e58/examples/run_glue.py#L128
-
 
 # Set the seed value all over the place to make this reproducible.
 seed_val = 42
@@ -170,7 +198,7 @@ for epoch_i in range(0, epochs):
     # Reset the total loss for this epoch.
     total_loss = 0
 
-    # Put the model into training mode. Don't be mislead--the call to 
+    # Put the model into training mode. Don't be misled--the call to 
     # `train` just changes the *mode*, it doesn't *perform* the training.
     # `dropout` and `batchnorm` layers behave differently during training
     # vs. test (source: https://stackoverflow.com/questions/51433378/what-does-model-train-do-in-pytorch)
@@ -199,7 +227,9 @@ for epoch_i in range(0, epochs):
         b_input_ids = batch[0].to(device)
         b_input_mask = batch[1].to(device)
         b_labels = batch[2].to(device)
-        b_segments = batch[3].to(device)
+        
+        if use_segment_ids:
+            b_segments = batch[3].to(device)
 
         # Always clear any previously calculated gradients before performing a
         # backward pass. PyTorch doesn't do this automatically because 
@@ -212,10 +242,16 @@ for epoch_i in range(0, epochs):
         # have provided the `labels`.
         # The documentation for this `model` function is here: 
         # https://huggingface.co/transformers/v2.2.0/model_doc/bert.html#transformers.BertForSequenceClassification
-        outputs = model(b_input_ids, 
-                    token_type_ids=b_segments, 
-                    attention_mask=b_input_mask, 
-                    labels=b_labels)
+        if use_segment_ids:
+            outputs = model(b_input_ids, 
+                        token_type_ids=b_segments, 
+                        attention_mask=b_input_mask, 
+                        labels=b_labels)
+        else:
+            outputs = model(b_input_ids, 
+                        token_type_ids=None, 
+                        attention_mask=b_input_mask, 
+                        labels=b_labels)
         
         # The call to `model` always returns a tuple, so we need to pull the 
         # loss value out of the tuple.
@@ -272,13 +308,19 @@ for epoch_i in range(0, epochs):
     nb_eval_steps, nb_eval_examples = 0, 0
 
     # Evaluate data for one epoch
+    all_labels = []
+    all_preds = []
+    
     for batch in validation_dataloader:
         
         # Add batch to GPU
         batch = tuple(t.to(device) for t in batch)
         
         # Unpack the inputs from our dataloader
-        b_input_ids, b_input_mask, b_labels, b_segments = batch
+        if use_segment_ids:
+            b_input_ids, b_input_mask, b_labels, b_segments = batch
+        else:
+            b_input_ids, b_input_mask, b_labels = batch
         
         # Telling the model not to compute or store gradients, saving memory and
         # speeding up validation
@@ -291,8 +333,13 @@ for epoch_i in range(0, epochs):
             # differentiates sentence 1 and 2 in 2-sentence tasks.
             # The documentation for this `model` function is here: 
             # https://huggingface.co/transformers/v2.2.0/model_doc/bert.html#transformers.BertForSequenceClassification
-            outputs = model(b_input_ids, 
+            if use_segment_ids:
+                outputs = model(b_input_ids, 
                             token_type_ids=b_segments, 
+                            attention_mask=b_input_mask)
+            else:
+                outputs = model(b_input_ids, 
+                            token_type_ids=None, 
                             attention_mask=b_input_mask)
         
         # Get the "logits" output by the model. The "logits" are the output
@@ -304,17 +351,34 @@ for epoch_i in range(0, epochs):
         label_ids = b_labels.to('cpu').numpy()
         
         # Calculate the accuracy for this batch of test sentences.
-        tmp_eval_accuracy = flat_accuracy(logits, label_ids)
+        tmp_eval_accuracy = flat_accuracy(label_ids, logits)
         
         # Accumulate the total accuracy.
         eval_accuracy += tmp_eval_accuracy
 
         # Track the number of batches
         nb_eval_steps += 1
+        
+        # add the labels and the predictions for the classification
+        print(type(label_ids))
+        #print(label_ids.shape())
+        print(type(logits))
+        #print(logits.shape())
+        
+        all_labels += label_ids.tolist()
+        print(all_labels)
+        all_preds += np.argmax(logits, axis=1).flatten().tolist()
+        #all_preds += logits.tolist()
+        assert len(all_labels) == len(all_preds)
+        print(all_preds)
 
     # Report the final accuracy for this validation run.
     print("  Accuracy: {0:.2f}".format(eval_accuracy/nb_eval_steps))
     print("  Validation took: {:}".format(format_time(time.time() - t0)))
+    
+    print('  Confusion matrix: ')
+    print(classification_report(all_labels, all_preds))
+    print(type(print(classification_report(all_labels, all_preds))))
 
 print("")
 print("Training complete!")
