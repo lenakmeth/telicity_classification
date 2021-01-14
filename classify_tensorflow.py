@@ -1,5 +1,5 @@
 import torch
-from transformers import BertForSequenceClassification, RobertaForSequenceClassification, DistilBertForSequenceClassification, XLNetForSequenceClassification, AdamW, get_linear_schedule_with_warmup
+from transformers import BertForSequenceClassification, RobertaForSequenceClassification, AlbertForSequenceClassification, XLNetForSequenceClassification, XLMRobertaForSequenceClassification, AdamW, get_linear_schedule_with_warmup
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from torch.utils.data import TensorDataset, DataLoader, RandomSampler, SequentialSampler
@@ -17,15 +17,14 @@ if args.verb_segment_ids == 'yes':
 else:
     use_segment_ids = False
     
-print(use_segment_ids)
+print('Uses verb segment ids: ' + args.verb_segment_ids)
+print('Model: ' + args.transformer_model)
+print('Model type: ' + (args.transformer_model).split("-")[0])
 
-print('\nModel: ', args.transformer_model)
-print('Model type: ', args.model_type)
-
-#if torch.cuda.is_available():      
- #   device = torch.device("cuda")
-#else:
-device = torch.device("cpu")
+if torch.cuda.is_available():      
+    device = torch.device("cuda")
+else:
+    device = torch.device("cpu")
 
 # PARAMETERS
 transformer_model = args.transformer_model
@@ -35,13 +34,13 @@ epochs = args.num_epochs
 sentences, labels = read_friedrich_sents('annotated_friedrich', args.label_marker)
 
 # make input ids, attention masks, segment ids, depending on the model we will use
-if args.model_type == 'bert':
+if (args.transformer_model).split("-")[0] == 'bert':
     input_ids, attention_masks, segment_ids = tokenize_and_pad(sentences)
-elif args.model_type == 'roberta':
+elif (args.transformer_model).split("-")[0] == 'roberta':
     input_ids, attention_masks, _ = tokenize_and_pad(sentences)
-elif args.model_type == 'distilbert':
-    input_ids, attention_masks, _ = tokenize_and_pad(sentences)
-elif args.model_type == 'xlnet':
+elif (args.transformer_model).split("-")[0] == 'albert':
+    input_ids, attention_masks, segment_ids = tokenize_and_pad(sentences)
+elif (args.transformer_model).split("-")[0] == 'xlnet':
     input_ids, attention_masks, segment_ids = tokenize_and_pad(sentences)
 
 print('\nLoaded sentences and converted.')
@@ -95,39 +94,37 @@ validation_dataloader = DataLoader(validation_data, sampler=validation_sampler, 
 # Load BertForSequenceClassification, the pretrained BERT model with a single 
 # linear classification layer on top. 
 
-if args.model_type == 'bert':
+if (args.transformer_model).split("-")[0] == 'bert':
     model = BertForSequenceClassification.from_pretrained(
         transformer_model,
         num_labels = 2, # The number of output labels--2 for binary classification. 
         output_attentions = False, # Whether the model returns attentions weights.
         output_hidden_states = False, # Whether the model returns all hidden-states.
     )
-elif args.model_type == 'roberta':
+elif (args.transformer_model).split("-")[0] == 'roberta':
     model = RobertaForSequenceClassification.from_pretrained(
         transformer_model, 
         num_labels = 2,   
         output_attentions = False, # Whether the model returns attentions weights.
         output_hidden_states = False, # Whether the model returns all hidden-states.
     )
-elif args.model_type == 'distilbert':
-    model = RobertaForSequenceClassification.from_pretrained(
+elif (args.transformer_model).split("-")[0] == 'albert':
+    model = AlbertForSequenceClassification.from_pretrained(
         transformer_model, 
         num_labels = 2,   
         output_attentions = False, # Whether the model returns attentions weights.
         output_hidden_states = False, # Whether the model returns all hidden-states.
     )
-elif args.model_type == 'xlnet':
-    model = RobertaForSequenceClassification.from_pretrained(
+elif (args.transformer_model).split("-")[0] == 'xlnet':
+    model = XLNetForSequenceClassification.from_pretrained(
         transformer_model, 
         num_labels = 2,   
         output_attentions = False, # Whether the model returns attentions weights.
         output_hidden_states = False, # Whether the model returns all hidden-states.
     )
-    
-    
 
-#if torch.cuda.is_available():  
-#    model.cuda()
+if torch.cuda.is_available():  
+    model.cuda()
 
 # Get all of the model's parameters as a list of tuples.
 params = list(model.named_parameters())
@@ -360,17 +357,9 @@ for epoch_i in range(0, epochs):
         nb_eval_steps += 1
         
         # add the labels and the predictions for the classification
-        print(type(label_ids))
-        #print(label_ids.shape())
-        print(type(logits))
-        #print(logits.shape())
-        
         all_labels += label_ids.tolist()
-        print(all_labels)
         all_preds += np.argmax(logits, axis=1).flatten().tolist()
-        #all_preds += logits.tolist()
         assert len(all_labels) == len(all_preds)
-        print(all_preds)
 
     # Report the final accuracy for this validation run.
     print("  Accuracy: {0:.2f}".format(eval_accuracy/nb_eval_steps))
@@ -378,7 +367,6 @@ for epoch_i in range(0, epochs):
     
     print('  Confusion matrix: ')
     print(classification_report(all_labels, all_preds))
-    print(type(print(classification_report(all_labels, all_preds))))
 
 print("")
 print("Training complete!")

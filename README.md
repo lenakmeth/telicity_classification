@@ -38,15 +38,20 @@ Code based on [aniruddhachoudhury](https://github.com/aniruddhachoudhury/BERT-Tu
 * sklearn
 * seaborn (not yet)
 
+### Supported transformer models (14/01)
+* bert
+* roberta
+* xlnet
+* albert
+
 ### Run 
 
-`python classify_tensorflow.py --label_marker [telicity/duration] --model_type --[bert/roberta/xlnet/distilbert] --transformer_model [...] --num_epochs [2-4] --batch_size [...] --verg_segment_ids [yes/no]`
+`python classify_tensorflow.py --label_marker [telicity/duration] --transformer_model [...] --num_epochs [2-4] --batch_size [...] --verg_segment_ids [yes/no]`
 
 #### Arguments
 
 * `label_marker`: Binary classification of telicity (telic/atelic) or duration (stative/dynamic). Default: _telicity_
-* `model_type`: Supported model types (bert/roberta yes, xlnet/distilbert TBA). Default: _bert_
 * `transformer_model`: The exact model. Default: _bert-base-uncased_
 * `num_epochs`: Recommended 2-4. Default: _4_
 * `batch_size`: Default: _32_
-* `verb_segment_ids`: Whether we use token_type_ids or not to mark the verb position. Default: _no_. ATTN: RoBERTa and DistilBert do NOT support token_type_ids, always pass _no_. Also, the flag is NOT a boolean True/False, it's yes/no.
+* `verb_segment_ids`: Whether we use token_type_ids or not to mark the verb position. Default: _no_. ATTN: RoBERTa models do NOT support token_type_ids, always pass _no_. Also, the flag is NOT a boolean True/False, it's yes/no.

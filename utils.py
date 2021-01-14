@@ -1,7 +1,7 @@
 import io
 import json
 import os
-from transformers import BertTokenizer, RobertaTokenizer, DistilBertTokenizer, XLNetTokenizer
+from transformers import BertTokenizer, RobertaTokenizer, AlbertTokenizer, XLNetTokenizer, XLMRobertaTokenizer
 from configure import parse_args
 import time
 import datetime
@@ -70,7 +70,7 @@ def tokenize_and_pad(sentences):
     attention_masks = []
     
     
-    if args.model_type == 'bert':
+    if (args.transformer_model).split("-")[0] == 'bert':
         # Tokenize all of the sentences and map the tokens to their word IDs.
         tok = BertTokenizer.from_pretrained(args.transformer_model, do_lower_case=True)
         
@@ -100,7 +100,7 @@ def tokenize_and_pad(sentences):
             attention_masks.append(encoded_dict['attention_mask'])
     
     # ======== RoBERTa ========
-    elif args.model_type == 'roberta':
+    elif (args.transformer_model).split("-")[0] == 'roberta':
         tok = RobertaTokenizer.from_pretrained(args.transformer_model, do_lower_case=True)
         
         for sent in sentences:
@@ -124,9 +124,9 @@ def tokenize_and_pad(sentences):
         # RoBERTa doesn't use segment ids!  
         segment_ids = None
     
-    # ======== DistilBert ========
-    elif args.model_type == 'distilbert':
-        tok = DistilBertTokenizer.from_pretrained(args.transformer_model, do_lower_case=True)
+    # ======== AlBERT ========
+    elif (args.transformer_model).split("-")[0] == 'albert':
+        tok = AlbertTokenizer.from_pretrained(args.transformer_model, do_lower_case=True)
         
         for sent in sentences:
             # encode_plus is a prebuilt function that will make input_ids, 
@@ -143,14 +143,16 @@ def tokenize_and_pad(sentences):
             # Add the encoded sentence to the list.
             input_ids.append(encoded_dict['input_ids'])
             
+            # Add segment ids, add 1 for verb idx
+            segment_id = encoded_dict['token_type_ids']
+            segment_id[sent[1]] = 1
+            segment_ids.append(segment_id)
+
             # This attention mask simply differentiates padding from non-padding.
             attention_masks.append(encoded_dict['attention_mask'])
-            
-        # DistilBert doesn't use segment ids!  
-        segment_ids = None
-        
+
     # ======== XLNET ======== 
-    if args.model_type == 'xlnet':
+    elif (args.transformer_model).split("-")[0] == 'xlnet':
         # Tokenize all of the sentences and map the tokens to their word IDs.
         tok = XLNetTokenizer.from_pretrained(args.transformer_model, do_lower_case=True)
         
@@ -172,7 +174,7 @@ def tokenize_and_pad(sentences):
             input_ids.append(encoded_dict['input_ids'])
 
             # Add segment ids, add 1 for verb idx
-            segment_id = encoded_dict['token_type_ids']
+            segment_id = [0] * 128
             segment_id[sent[1]] = 1
             segment_ids.append(segment_id)
 
