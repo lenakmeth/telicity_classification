@@ -1,6 +1,5 @@
 import torch
-from transformers import BertForSequenceClassification, RobertaForSequenceClassification, AlbertForSequenceClassification, XLNetForSequenceClassification, XLMRobertaForSequenceClassification, AdamW, get_linear_schedule_with_warmup
-from sklearn.model_selection import train_test_split
+from transformers import BertForSequenceClassification, RobertaForSequenceClassification, AlbertForSequenceClassification, XLNetForSequenceClassification, BertTokenizer, RobertaTokenizer, AlbertTokenizer, XLNetTokenizer, AdamW, get_linear_schedule_with_warmup
 from sklearn.metrics import classification_report
 from torch.utils.data import TensorDataset, DataLoader, RandomSampler, SequentialSampler
 import matplotlib.pyplot as plt
@@ -30,45 +29,64 @@ else:
 transformer_model = args.transformer_model
 epochs = args.num_epochs
 
+
 # read friedrich sentences, choose labels of telicity/duration
 sentences, labels = read_friedrich_sents('annotated_friedrich', args.label_marker)
 
 # make input ids, attention masks, segment ids, depending on the model we will use
+# load the tokenizer too, because we need it for the testing
 if (args.transformer_model).split("-")[0] == 'bert':
-    input_ids, attention_masks, segment_ids = tokenize_and_pad(sentences)
+    if 'uncased' in args.transformer_model.split("-"):
+        do_lower = True
+    else:
+        do_lower = False
+    input_ids, attention_masks, segment_ids = tokenize_and_pad(sentences, lowercase = do_lower)
+    tokenizer = BertTokenizer.from_pretrained(args.transformer_model)
+    
 elif (args.transformer_model).split("-")[0] == 'roberta':
     input_ids, attention_masks, _ = tokenize_and_pad(sentences)
+    tokenizer = RobertaTokenizer.from_pretrained(args.transformer_model)
+    
 elif (args.transformer_model).split("-")[0] == 'albert':
     input_ids, attention_masks, segment_ids = tokenize_and_pad(sentences)
+    tokenizer = AlbertTokenizer.from_pretrained(args.transformer_model)
+    
 elif (args.transformer_model).split("-")[0] == 'xlnet':
     input_ids, attention_masks, segment_ids = tokenize_and_pad(sentences)
+    tokenizer = XLNetTokenizer.from_pretrained(args.transformer_model)
 
 print('\nLoaded sentences and converted.')
 
 
 # Use 90% for training and 10% for validation.
-train_inputs, validation_inputs, train_labels, validation_labels = train_test_split(input_ids, labels, random_state=2018, test_size=0.1)
+train_inputs, train_labels, validation_inputs, validation_labels, test_inputs, test_labels = split_train_val_test(input_ids, labels)
+
+print(len(train_inputs))
+print(len(validation_inputs))
+print(len(test_inputs))
 
 if use_segment_ids:
-    train_segments, validation_segments, _, _ = train_test_split(segment_ids, labels,
-                                                 random_state=2018, test_size=0.1)
+    train_segments, _, validation_segments, _, test_segments, _ = split_train_val_test(segment_ids, labels)
 
-train_masks, validation_masks, _, _ = train_test_split(attention_masks, labels,
-                                             random_state=2018, test_size=0.1)
+train_masks, _, validation_masks, _, test_masks, _ = split_train_val_test(attention_masks, labels)
 
 # Convert all inputs and labels into torch tensors, the required datatype for our model.
 train_inputs = torch.tensor(train_inputs)
 validation_inputs = torch.tensor(validation_inputs)
+test_inputs = torch.tensor(test_inputs)
 
 train_labels = torch.tensor(train_labels)
 validation_labels = torch.tensor(validation_labels)
+test_labels = torch.tensor(test_labels)
 
 if use_segment_ids:
     train_segments = torch.tensor(train_segments)
     validation_segments = torch.tensor(validation_segments)
+    test_segments = torch.tensor(test_segments)
 
 train_masks = torch.tensor(train_masks)
 validation_masks = torch.tensor(validation_masks)
+test_masks = torch.tensor(test_masks)
 
 # The DataLoader needs to know our batch size for training, so we specify it here.
 # For fine-tuning BERT on a specific task, the authors recommend a batch size of 16 or 32.
@@ -90,6 +108,14 @@ else:
     validation_data = TensorDataset(validation_inputs, validation_masks, validation_labels)
 validation_sampler = SequentialSampler(validation_data)
 validation_dataloader = DataLoader(validation_data, sampler=validation_sampler, batch_size=batch_size)
+
+# Create the DataLoader for our test set.
+if use_segment_ids:
+    test_data = TensorDataset(test_inputs, test_masks, test_labels, test_segments)
+else:
+    test_data = TensorDataset(test_inputs, test_masks, test_labels)
+test_sampler = SequentialSampler(test_data)
+test_dataloader = DataLoader(test_data, sampler=test_sampler, batch_size=batch_size)
 
 # Load BertForSequenceClassification, the pretrained BERT model with a single 
 # linear classification layer on top. 
@@ -139,7 +165,7 @@ for p in params[0:5]:
 print('\n==== First Transformer ====\n')
 
 for p in params[5:21]:
-    print("{:<55} {:>12}".format(p[0], str(tuple(p[1].size()))))
+    print('{:<55} {:>12}'.format(p[0], str(tuple(p[1].size()))))
 
 print('\n==== Output Layer ====\n')
 
@@ -171,7 +197,7 @@ seed_val = 42
 random.seed(seed_val)
 np.random.seed(seed_val)
 torch.manual_seed(seed_val)
-#torch.cuda.manual_seed_all(seed_val)
+torch.cuda.manual_seed_all(seed_val)
 
 # Store the average loss after each epoch so we can plot them.
 loss_values = []
@@ -185,8 +211,7 @@ for epoch_i in range(0, epochs):
     
     # Perform one full pass over the training set.
 
-    print("")
-    print('======== Epoch {:} / {:} ========'.format(epoch_i + 1, epochs))
+    print('\t======== Epoch {:} / {:} ========'.format(epoch_i + 1, epochs))
     print('Training...')
 
     # Measure how long the training epoch takes.
@@ -210,7 +235,7 @@ for epoch_i in range(0, epochs):
             elapsed = format_time(time.time() - t0)
             
             # Report progress.
-            print('  Batch {:>5,}  of  {:>5,}.    Elapsed: {:}.'.format(step, len(train_dataloader), elapsed))
+            print('\tBatch {:>5,}\tof\t{:>5,}.\t\tElapsed: {:}.'.format(step, len(train_dataloader), elapsed))
 
         # Unpack this training batch from our dataloader. 
         #
@@ -280,10 +305,9 @@ for epoch_i in range(0, epochs):
     
     # Store the loss value for plotting the learning curve.
     loss_values.append(avg_train_loss)
-
-    print("")
-    print("  Average training loss: {0:.2f}".format(avg_train_loss))
-    print("  Training epoch took: {:}".format(format_time(time.time() - t0)))
+    
+    print('\tAverage training loss: {0:.2f}'.format(avg_train_loss))
+    print('\tTraining epoch took: {:}'.format(format_time(time.time() - t0)))
         
     # ========================================
     #               Validation
@@ -291,8 +315,7 @@ for epoch_i in range(0, epochs):
     # After the completion of each training epoch, measure our performance on
     # our validation set.
 
-    print("")
-    print("Running Validation...")
+    print('\tRunning Validation...')
 
     t0 = time.time()
 
@@ -362,28 +385,77 @@ for epoch_i in range(0, epochs):
         assert len(all_labels) == len(all_preds)
 
     # Report the final accuracy for this validation run.
-    print("  Accuracy: {0:.2f}".format(eval_accuracy/nb_eval_steps))
-    print("  Validation took: {:}".format(format_time(time.time() - t0)))
+    print('\tAccuracy: {0:.2f}'.format(eval_accuracy/nb_eval_steps))
+    print('\tValidation took: {:}'.format(format_time(time.time() - t0)))
     
-    print('  Confusion matrix: ')
+    print('\tConfusion matrix:\n')
     print(classification_report(all_labels, all_preds))
+    
+    #save_name = 'checkpoints/' + args.label_marker + '/' + args.transformer_model + '_' + str(epoch_i + 1) + '_' + args.verb_segment_ids
+    #model.save_pretrained(save_name)
+    #torch.save(save_name)
+        
+# ========================================
+#               TESTING
+# ========================================
+# Load the model of the last epoch
 
-print("")
-print("Training complete!")
+#output_model = 'checkpoints/' + args.label_marker + '/' + args.transformer_model + '_' + '4'  + '_' + args.verb_segment_ids
+#checkpoint = torch.load(output_model, map_location='cpu')
 
-# # Use plot styling from seaborn.
-# sns.set(style='darkgrid')
+print('Loaded model succesful. Running testing...')
 
-# # Increase the plot size and font size.
-# sns.set(font_scale=1.5)
-# plt.rcParams["figure.figsize"] = (12,6)
+t0 = time.time()
+model.eval()
+test_loss, test_accuracy = 0, 0
+nb_test_steps, nb_test_examples = 0, 0
 
-# # Plot the learning curve.
-# plt.plot(loss_values, 'b-o')
+all_inputs = []
+all_labels = []
+all_preds = []
+    
+for batch in test_dataloader:
+    batch = tuple(t.to(device) for t in batch)
+    if use_segment_ids:
+        b_input_ids, b_input_mask, b_labels, b_segments = batch
+    else:
+        b_input_ids, b_input_mask, b_labels = batch
+        
+    with torch.no_grad():        
+        if use_segment_ids:
+            outputs = model(b_input_ids, 
+                            token_type_ids=b_segments, 
+                            attention_mask=b_input_mask)
+        else:
+            outputs = model(b_input_ids, 
+                            token_type_ids=None, 
+                            attention_mask=b_input_mask)
 
-# # Label the plot.
-# plt.title("Training loss")
-# plt.xlabel("Epoch")
-# plt.ylabel("Loss")
+    logits = outputs[0]
+    logits = logits.detach().cpu().numpy()
+    label_ids = b_labels.to('cpu').numpy()
+    
+    tmp_test_accuracy = flat_accuracy(label_ids, logits)
+    test_accuracy += tmp_test_accuracy
+    nb_test_steps += 1
+    
+    all_inputs += b_input_ids.to('cpu').numpy().tolist()
+    all_labels += label_ids.tolist()
+    all_preds += np.argmax(logits, axis=1).flatten().tolist()
+    assert len(all_inputs) == len(all_labels) == len(all_preds)
+    
 
-# plt.savefig("training_loss.png", dpi=300)
+# Report the accuracy, the sentences
+print('Accuracy: {0:.2f}'.format(test_accuracy/nb_test_steps))
+print('Confusion matrix:\n')
+print(classification_report(all_labels, all_preds))
+
+print('\nWrong predictions:')
+counter = 0
+for n, sent in enumerate(all_inputs):
+    if all_labels[n] != all_preds[n]:
+        counter += 1
+        sentence = ' '.join(tokenizer.convert_ids_to_tokens(sent)).replace('[PAD]', '').replace('[CLS]', '').replace('<pad>', '').strip()
+        print(sentence)
+print(str(counter) + ' out of ' + str(len(all_inputs)))
+
