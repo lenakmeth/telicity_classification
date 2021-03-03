@@ -7,8 +7,13 @@ from utils import read_sents, tokenize_and_pad, format_time, flat_accuracy, deco
 from configure import parse_args
 import numpy as np
 import time
+from datetime import date
+import os
 
 args = parse_args()
+today = date.today()
+
+logger = open('logs/' + args.label_marker + '_' + args.transformer_model + '_' + args.verb_segment_ids + '_' + str(today), 'w')
 
 # argparse doesn't deal in absolutes, so we pass a str flag & convert
 if args.verb_segment_ids == 'yes':
@@ -16,9 +21,9 @@ if args.verb_segment_ids == 'yes':
 else:
     use_segment_ids = False
     
-print('Uses verb segment ids: ' + args.verb_segment_ids)
-print('Model: ' + args.transformer_model)
-print('Model type: ' + (args.transformer_model).split("-")[0])
+logger.write('\nUses verb segment ids: ' + args.verb_segment_ids)
+logger.write('\nModel: ' + args.transformer_model)
+logger.write('\nModel type: ' + (args.transformer_model).split("-")[0])
 
 if torch.cuda.is_available():      
     device = torch.device("cuda")
@@ -59,11 +64,11 @@ elif (args.transformer_model).split("-")[0] == 'xlnet':
     val_inputs, val_masks, val_segments = tokenize_and_pad(val_sentences)
     test_inputs, test_masks, test_segments = tokenize_and_pad(test_sentences)
 
-print('\nLoaded sentences and converted.')
+logger.write('\n\nLoaded sentences and converted.')
 
-print('Train set: ' + str(len(train_inputs)))
-print('Validation set: ' + str(len(val_inputs)))
-print('Test set: ' + str(len(test_inputs)))
+logger.write('\nTrain set: ' + str(len(train_inputs)))
+logger.write('\nValidation set: ' + str(len(val_inputs)))
+logger.write('\nTest set: ' + str(len(test_inputs)))
 
 
 # Convert all inputs and labels into torch tensors, the required datatype for our model.
@@ -151,22 +156,22 @@ if torch.cuda.is_available():
 # Get all of the model's parameters as a list of tuples.
 params = list(model.named_parameters())
 
-print('The model has {:} different named parameters.\n'.format(len(params)))
+logger.write('\nThe model has {:} different named parameters.\n'.format(len(params)))
 
-print('==== Embedding Layer ====\n')
+logger.write('\n==== Embedding Layer ====\n')
 
 for p in params[0:5]:
-    print("{:<55} {:>12}".format(p[0], str(tuple(p[1].size()))))
+    logger.write("{:<55} {:>12}".format(p[0], str(tuple(p[1].size()))))
 
-print('\n==== First Transformer ====\n')
+logger.write('\n\n==== First Transformer ====\n')
 
 for p in params[5:21]:
-    print('{:<55} {:>12}'.format(p[0], str(tuple(p[1].size()))))
+    logger.write('\n{:<55} {:>12}'.format(p[0], str(tuple(p[1].size()))))
 
-print('\n==== Output Layer ====\n')
+logger.write('\n\n==== Output Layer ====\n')
 
 for p in params[-4:]:
-    print("{:<55} {:>12}".format(p[0], str(tuple(p[1].size()))))
+    logger.write("{:<55} {:>12}".format(p[0], str(tuple(p[1].size()))))
 
 
 # Note: AdamW is a class from the huggingface library (as opposed to pytorch) 
@@ -207,8 +212,8 @@ for epoch_i in range(0, epochs):
     
     # Perform one full pass over the training set.
 
-    print('\t======== Epoch {:} / {:} ========'.format(epoch_i + 1, epochs))
-    print('Training...')
+    logger.write('\n\t======== Epoch {:} / {:} ========'.format(epoch_i + 1, epochs))
+    logger.write('\nTraining...')
 
     # Measure how long the training epoch takes.
     t0 = time.time()
@@ -231,7 +236,7 @@ for epoch_i in range(0, epochs):
             elapsed = format_time(time.time() - t0)
             
             # Report progress.
-            print('\tBatch {:>5,}\tof\t{:>5,}.\t\tElapsed: {:}.'.format(step, len(train_dataloader), elapsed))
+            logger.write('\n\tBatch {:>5,}\tof\t{:>5,}.\t\tElapsed: {:}.'.format(step, len(train_dataloader), elapsed))
 
         # Unpack this training batch from our dataloader. 
         #
@@ -302,8 +307,8 @@ for epoch_i in range(0, epochs):
     # Store the loss value for plotting the learning curve.
     loss_values.append(avg_train_loss)
     
-    print('\tAverage training loss: {0:.2f}'.format(avg_train_loss))
-    print('\tTraining epoch took: {:}'.format(format_time(time.time() - t0)))
+    logger.write('\n\tAverage training loss: {0:.2f}'.format(avg_train_loss))
+    logger.write('\n\tTraining epoch took: {:}'.format(format_time(time.time() - t0)))
         
     # ========================================
     #               Validation
@@ -311,7 +316,7 @@ for epoch_i in range(0, epochs):
     # After the completion of each training epoch, measure our performance on
     # our validation set.
 
-    print('\tRunning Validation...')
+    logger.write('\n\tRunning Validation...')
 
     t0 = time.time()
 
@@ -381,11 +386,11 @@ for epoch_i in range(0, epochs):
         assert len(all_labels) == len(all_preds)
 
     # Report the final accuracy for this validation run.
-    print('\tAccuracy: {0:.2f}'.format(eval_accuracy/nb_eval_steps))
-    print('\tValidation took: {:}'.format(format_time(time.time() - t0)))
+    logger.write('\n\tAccuracy: {0:.2f}'.format(eval_accuracy/nb_eval_steps))
+    logger.write('\n\tValidation took: {:}'.format(format_time(time.time() - t0)))
     
-    print('\tConfusion matrix:\n')
-    print(classification_report(all_labels, all_preds))
+    logger.write('\n\tConfusion matrix:\n')
+    logger.write(str(classification_report(all_labels, all_preds)))
     
     #save_name = 'checkpoints/' + args.label_marker + '/' + args.transformer_model + '_' + str(epoch_i + 1) + '_' + args.verb_segment_ids
     #model.save_pretrained(save_name)
@@ -399,7 +404,7 @@ for epoch_i in range(0, epochs):
 #output_model = 'checkpoints/' + args.label_marker + '/' + args.transformer_model + '_' + '4'  + '_' + args.verb_segment_ids
 #checkpoint = torch.load(output_model, map_location='cpu')
 
-print('Loaded model succesful. Running testing...')
+logger.write('\nLoaded model succesful. Running testing...')
 
 t0 = time.time()
 model.eval()
@@ -442,16 +447,17 @@ for batch in test_dataloader:
     
 
 # Report the accuracy, the sentences
-print('Accuracy: {0:.2f}'.format(test_accuracy/nb_test_steps))
-print('Confusion matrix:\n')
-print(classification_report(all_labels, all_preds))
+logger.write('\nAccuracy: {0:.2f}'.format(test_accuracy/nb_test_steps))
+logger.write('\nConfusion matrix:\n')
+logger.write(classification_report(all_labels, all_preds))
 
-print('\nWrong predictions:')
+logger.write('\n\nWrong predictions:\n')
 counter = 0
 for n, sent in enumerate(all_inputs):
     if all_labels[n] != all_preds[n]:
         counter += 1
         sentence = decode_result(sent)
-        print(sentence)
-print(str(counter) + ' out of ' + str(len(all_inputs)))
+        logger.write(sentence)
+        logger.write('\n')
+logger.write(str(counter) + ' out of ' + str(len(all_inputs)))
 
