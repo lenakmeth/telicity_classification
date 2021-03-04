@@ -127,7 +127,7 @@ def tokenize_and_pad(sentences, lowercase=False):
             
             # Add segment ids, add 1 for verb idx
             segment_id = encoded_dict['token_type_ids']
-            segment_id[sent[1]] = 1
+            segment_id[sent[2]] = 1
             segment_ids.append(segment_id)
 
             # This attention mask simply differentiates padding from non-padding.
@@ -157,12 +157,11 @@ def tokenize_and_pad(sentences, lowercase=False):
 
             # Add segment ids, add 1 for verb idx
             segment_id = [0] * 128
-            segment_id[sent[1]] = 1
+            segment_id[sent[2]] = 1
             segment_ids.append(segment_id)
 
             # This attention mask simply differentiates padding from non-padding.
             attention_masks.append(encoded_dict['attention_mask'])
-            print(encoded_dict['attention_mask'])
 
     return input_ids, attention_masks, segment_ids
 
@@ -209,9 +208,9 @@ def decode_result(encoded_sequence):
     
     # decode + remove special tokens
     decoded_sequence = [w for w in list(tok.convert_ids_to_tokens(encoded_sequence))
-                        if not '[' in w]
+                        if not '[' in w if not '<' in w]
     
     # ' '.join(tok.convert_ids_to_tokens(encoded_sequence))\
     #     .replace('[PAD]', '').replace('[CLS]', '').replace('<pad>', '').strip()
     
-    return decoded_sequence
+    return ' '.join(decoded_sequence)
