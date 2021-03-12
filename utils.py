@@ -45,10 +45,10 @@ def tokenize_and_pad(sentences, lowercase=False):
     
     if (args.transformer_model).split("-")[0] == 'bert':
         # Tokenize all of the sentences and map the tokens to their word IDs.
-        if 'uncased' in args.transformer_model.split("-"):
-            tok = BertTokenizer.from_pretrained(args.transformer_model, do_lower_case=True)
-        else:
-            tok = BertTokenizer.from_pretrained(args.transformer_model, do_lower_case=False)
+        #if 'uncased' in args.transformer_model.split("-"):
+         #   tok = BertTokenizer.from_pretrained(args.transformer_model, do_lower_case=True)
+        #else:
+        tok = BertTokenizer.from_pretrained(args.transformer_model, do_lower_case=False)
         
         
         for sent in sentences:
@@ -195,10 +195,10 @@ def decode_result(encoded_sequence):
     
     # load tokenizer
     if (args.transformer_model).split("-")[0] == 'bert':
-        if 'uncased' in args.transformer_model.split("-"):
-            tok = BertTokenizer.from_pretrained(args.transformer_model, do_lower_case=True)
-        else:
-            tok = BertTokenizer.from_pretrained(args.transformer_model, do_lower_case=False)
+        #if 'uncased' in args.transformer_model.split("-"):
+        #    tok = BertTokenizer.from_pretrained(args.transformer_model, do_lower_case=True)
+        #else:
+        tok = BertTokenizer.from_pretrained(args.transformer_model, do_lower_case=False)
     elif (args.transformer_model).split("-")[0] == 'roberta':
         tok = RobertaTokenizer.from_pretrained(args.transformer_model, do_lower_case=False)
     elif (args.transformer_model).split("-")[0] == 'albert':
