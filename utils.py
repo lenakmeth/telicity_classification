@@ -28,7 +28,7 @@ def read_sents(marker):
         
     train_sentences, train_labels = open_file('data/' + marker + '_train.tsv')
     val_sentences, val_labels = open_file('data/' + marker + '_val.tsv')
-    test_sentences, test_labels = open_file('data/' + marker + '_test.tsv')
+    test_sentences, test_labels = open_file('data/' + marker + '_test_ukwac.tsv')
 
     return train_sentences, train_labels, val_sentences, val_labels, test_sentences, test_labels
 
