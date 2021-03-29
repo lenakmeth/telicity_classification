@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split
 
 args = parse_args()
 
-def read_sents(marker):
+def read_sents(path, marker):
     """ Read the .tsv files with the annotated sentences. 
         File format: sent_id, sentence, verb, verb_idx, label"""
 
@@ -26,9 +26,9 @@ def read_sents(marker):
                 
             return sentences,labels
         
-    train_sentences, train_labels = open_file('data/' + marker + '_train.tsv')
-    val_sentences, val_labels = open_file('data/' + marker + '_val.tsv')
-    test_sentences, test_labels = open_file('data/' + marker + '_test_ukwac.tsv')
+    train_sentences, train_labels = open_file(path + marker + '_train.tsv')
+    val_sentences, val_labels = open_file(path + marker + '_val.tsv')
+    test_sentences, test_labels = open_file(path + marker + '_test.tsv')
 
     return train_sentences, train_labels, val_sentences, val_labels, test_sentences, test_labels
 
@@ -207,8 +207,8 @@ def decode_result(encoded_sequence):
         tok = XLNetTokenizer.from_pretrained(args.transformer_model, do_lower_case=False)
     
     # decode + remove special tokens
-    decoded_sequence = [w for w in list(tok.convert_ids_to_tokens(encoded_sequence))
-                        if not '[' in w if not '<' in w]
+    decoded_sequence = [w for w in list(tok.convert_ids_to_tokens(encoded_sequence))]
+                        #if not '[' in w if not '<' in w]
     
     # ' '.join(tok.convert_ids_to_tokens(encoded_sequence))\
     #     .replace('[PAD]', '').replace('[CLS]', '').replace('<pad>', '').strip()
