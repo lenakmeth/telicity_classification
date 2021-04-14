@@ -26,9 +26,9 @@ def read_sents(path, marker):
                 
             return sentences,labels
         
-    train_sentences, train_labels = open_file(path + marker + '_train.tsv')
-    val_sentences, val_labels = open_file(path + marker + '_val.tsv')
-    test_sentences, test_labels = open_file(path + marker + '_test.tsv')
+    train_sentences, train_labels = open_file(path + marker + '_captions_train.tsv')    
+    val_sentences, val_labels = open_file(path + marker + '_captions_val.tsv')
+    test_sentences, test_labels = open_file(path + marker + '_captions_val.tsv')
 
     return train_sentences, train_labels, val_sentences, val_labels, test_sentences, test_labels
 
@@ -214,3 +214,26 @@ def decode_result(encoded_sequence):
     #     .replace('[PAD]', '').replace('[CLS]', '').replace('<pad>', '').strip()
     
     return ' '.join(decoded_sequence)
+
+def split_train_val_test(X, y, 
+                         frac_train=0.8, frac_val=0.1, frac_test=0.1,
+                         random_state=2018):
+
+    # Split original dataframe into train and temp dataframes.
+    X_train, X_temp, y_train, y_temp = train_test_split(X,
+                                                        y,
+                                                        stratify=y,
+                                                        test_size=(1.0 - frac_train),
+                                                        random_state=random_state)
+
+    # Split the temp dataframe into val and test dataframes.
+    relative_frac_test = frac_test / (frac_val + frac_test)
+    X_val, X_test, y_val, y_test = train_test_split(X_temp,
+                                                    y_temp,
+                                                    stratify=y_temp,
+                                                    test_size=relative_frac_test,
+                                                    random_state=random_state)
+
+    assert len(X) == len(X_train) + len(X_val) + len(X_test)
+
+    return X_train, y_train, X_val, y_val, X_test, y_test
