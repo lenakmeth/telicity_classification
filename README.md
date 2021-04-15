@@ -1,31 +1,6 @@
 # telicity_classification
 
-## Experiment one: classification w/ `simpletransformers`
-
-### Prerequisites
-
-* [simpletransformers](https://pypi.org/project/simpletransformers/): `pip install simpletransformers`
-* torch
-* pandas
-
-### Run 
-
-`python classify_simpletransformers.py [optional:directory of sentences]`
-
-Edit model arguments on line 53.
-
-### Results 
-
-* 5 epochs, bert-base-uncased
-    - eval_loss = 2.0004521620731732
-    - fn = 203
-    - fp = 240
-    - mcc = 0.30941834056538914
-    - tn = 415
-    - tp = 423
-
-
-## Experiment two: classification with tensorflow
+## Experiment: classification with tensorflow
 
 Code based on [aniruddhachoudhury](https://github.com/aniruddhachoudhury/BERT-Tutorials/tree/master/Blog%202). 
 
@@ -36,9 +11,8 @@ Code based on [aniruddhachoudhury](https://github.com/aniruddhachoudhury/BERT-Tu
 * torch >= 2.2.0
 * keras
 * sklearn
-* seaborn (not yet)
 
-### Supported transformer models (14/01)
+### Supported transformer models
 * bert
 * roberta
 * xlnet
@@ -46,11 +20,18 @@ Code based on [aniruddhachoudhury](https://github.com/aniruddhachoudhury/BERT-Tu
 
 ### Run 
 
-`python classify_tensorflow.py --label_marker [telicity/duration] --transformer_model [...] --num_epochs [2-4] --batch_size [...] --verg_segment_ids [yes/no]`
+`python classify_tensorflow.py \
+    --label_marker ['telicity' ,'duration'] \
+    --path_data ['data/acl_data', 'data/clean_data', 'data/friedrich_captions_data']
+    --transformer_model [...] \
+    --num_epochs [2-4] \
+    --batch_size [...] \
+    --verb_segment_ids ['yes', 'no']`
 
 #### Arguments
 
 * `label_marker`: Binary classification of telicity (telic/atelic) or duration (stative/dynamic). Default: _telicity_
+* `path_data`: Which datasets will be used. 'acl' are the old Friedrich data, 'clean' are the cleaned but broken Friedrich data, 'friedrich_captions' (default) are the two datasets combined.
 * `transformer_model`: The exact model. Default: _bert-base-uncased_
 * `num_epochs`: Recommended 2-4. Default: _4_
 * `batch_size`: Default: _32_
