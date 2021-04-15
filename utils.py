@@ -26,14 +26,14 @@ def read_sents(path, marker):
                 
             return sentences,labels
         
-    train_sentences, train_labels = open_file(path + marker + '_captions_train.tsv')    
-    val_sentences, val_labels = open_file(path + marker + '_captions_val.tsv')
-    test_sentences, test_labels = open_file(path + marker + '_captions_val.tsv')
+    train_sentences, train_labels = open_file(path + '/' + marker + '_train.tsv')    
+    val_sentences, val_labels = open_file(path +  '/' + marker + '_val.tsv')
+    test_sentences, test_labels = open_file(path +  '/' + marker + '_val.tsv')
 
     return train_sentences, train_labels, val_sentences, val_labels, test_sentences, test_labels
 
 
-def tokenize_and_pad(sentences, lowercase=False):
+def tokenize_and_pad(sentences):
     """ We are using .encode_plus. This does not make specialized attn masks 
         like in our selectional preferences experiment. Revert to .encode if
         necessary."""
@@ -44,20 +44,10 @@ def tokenize_and_pad(sentences, lowercase=False):
     
     
     if (args.transformer_model).split("-")[0] == 'bert':
-        # Tokenize all of the sentences and map the tokens to their word IDs.
-        #if 'uncased' in args.transformer_model.split("-"):
-         #   tok = BertTokenizer.from_pretrained(args.transformer_model, do_lower_case=True)
-        #else:
-        tok = BertTokenizer.from_pretrained(args.transformer_model, do_lower_case=False)
-        
+        tok = BertTokenizer.from_pretrained(args.transformer_model)
         
         for sent in sentences:
-            
-            # lowercase if needed by the model
-            if lowercase:
-                sentence = [w.lower() for w in sent[0]]
-            else:
-                sentence = sent[0]
+            sentence = sent[0]
 
             # encode_plus is a prebuilt function that will make input_ids, 
             # add padding/truncate, add special tokens, + make attention masks 
@@ -83,7 +73,7 @@ def tokenize_and_pad(sentences, lowercase=False):
     
     # ======== RoBERTa ========
     elif (args.transformer_model).split("-")[0] == 'roberta':
-        tok = RobertaTokenizer.from_pretrained(args.transformer_model, do_lower_case=False)
+        tok = RobertaTokenizer.from_pretrained(args.transformer_model)
         
         for sent in sentences:
             # encode_plus is a prebuilt function that will make input_ids, 
@@ -108,7 +98,7 @@ def tokenize_and_pad(sentences, lowercase=False):
     
     # ======== AlBERT ========
     elif (args.transformer_model).split("-")[0] == 'albert':
-        tok = AlbertTokenizer.from_pretrained(args.transformer_model, do_lower_case=False)
+        tok = AlbertTokenizer.from_pretrained(args.transformer_model )
         
         for sent in sentences:
             # encode_plus is a prebuilt function that will make input_ids, 
@@ -136,7 +126,7 @@ def tokenize_and_pad(sentences, lowercase=False):
     # ======== XLNET ======== 
     elif (args.transformer_model).split("-")[0] == 'xlnet':
         # Tokenize all of the sentences and map the tokens to their word IDs.
-        tok = XLNetTokenizer.from_pretrained(args.transformer_model, do_lower_case=False)
+        tok = XLNetTokenizer.from_pretrained(args.transformer_model )
         
         for sent in sentences:
 
@@ -195,23 +185,18 @@ def decode_result(encoded_sequence):
     
     # load tokenizer
     if (args.transformer_model).split("-")[0] == 'bert':
-        #if 'uncased' in args.transformer_model.split("-"):
-        #    tok = BertTokenizer.from_pretrained(args.transformer_model, do_lower_case=True)
-        #else:
-        tok = BertTokenizer.from_pretrained(args.transformer_model, do_lower_case=False)
+        tok = BertTokenizer.from_pretrained(args.transformer_model )
     elif (args.transformer_model).split("-")[0] == 'roberta':
-        tok = RobertaTokenizer.from_pretrained(args.transformer_model, do_lower_case=False)
+        tok = RobertaTokenizer.from_pretrained(args.transformer_model )
     elif (args.transformer_model).split("-")[0] == 'albert':
-        tok = AlbertTokenizer.from_pretrained(args.transformer_model, do_lower_case=False)
+        tok = AlbertTokenizer.from_pretrained(args.transformer_model )
     elif (args.transformer_model).split("-")[0] == 'xlnet':
-        tok = XLNetTokenizer.from_pretrained(args.transformer_model, do_lower_case=False)
+        tok = XLNetTokenizer.from_pretrained(args.transformer_model )
     
     # decode + remove special tokens
-    decoded_sequence = [w for w in list(tok.convert_ids_to_tokens(encoded_sequence))]
-                        #if not '[' in w if not '<' in w]
-    
-    # ' '.join(tok.convert_ids_to_tokens(encoded_sequence))\
-    #     .replace('[PAD]', '').replace('[CLS]', '').replace('<pad>', '').strip()
+    decoded_sequence = [w.replace('Ġ', '') 
+                        for w in list(tok.convert_ids_to_tokens(encoded_sequence))
+                        if not '[PAD]' in w if not '<pad>' in w]
     
     return ' '.join(decoded_sequence)
 

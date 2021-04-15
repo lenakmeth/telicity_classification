@@ -31,7 +31,7 @@ epochs = args.num_epochs
 
 # read friedrich sentences, choose labels of telicity/duration
 train_sentences, train_labels, val_sentences, val_labels, \
-    test_sentences, test_labels = read_sents(args.label_marker)
+    test_sentences, test_labels = read_sents(args.data_path, args.label_marker)
 
 # make input ids, attention masks, segment ids, depending on the model we will use
 
@@ -40,9 +40,9 @@ if (args.transformer_model).split("-")[0] == 'bert':
         do_lower = True
     else:
         do_lower = False
-    train_inputs, train_masks, train_segments = tokenize_and_pad(train_sentences, lowercase = do_lower)
-    val_inputs, val_masks, val_segments = tokenize_and_pad(val_sentences, lowercase = do_lower)
-    test_inputs, test_masks, test_segments = tokenize_and_pad(test_sentences, lowercase = do_lower)
+    train_inputs, train_masks, train_segments = tokenize_and_pad(train_sentences )
+    val_inputs, val_masks, val_segments = tokenize_and_pad(val_sentences )
+    test_inputs, test_masks, test_segments = tokenize_and_pad(test_sentences )
     
 elif (args.transformer_model).split("-")[0] == 'roberta':
     train_inputs, train_masks, train_segments = tokenize_and_pad(train_sentences)
@@ -446,12 +446,15 @@ print('Accuracy: {0:.2f}'.format(test_accuracy/nb_test_steps))
 print('Confusion matrix:\n')
 print(classification_report(all_labels, all_preds))
 
+# Uncomment the following to see the decoded sentences
+# change != to == to see the right predictions
 print('\nWrong predictions:')
 counter = 0
 for n, sent in enumerate(all_inputs):
     if all_labels[n] != all_preds[n]:
         counter += 1
-        sentence = decode_result(sent)
-        print(sentence)
+        #sentence = decode_result(sent)
+        #print(sentence)
 print(str(counter) + ' out of ' + str(len(all_inputs)))
-
+print('\nRight predictions:')
+print(str(len(all_inputs) - counter) + ' out of ' + str(len(all_inputs)))

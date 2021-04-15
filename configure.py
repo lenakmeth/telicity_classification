@@ -13,7 +13,10 @@ def parse_args():
                         help="Do we train?")
     
     parser.add_argument("--label_marker", default="telicity", type=str, 
-                        help="Whether the labels will be of telicity or duration (stative/dynamic).")
+                        help="Whether the labels will be of telicity or duration.")
+    
+    parser.add_argument("--data_path", default="data/friedrich_captions_data", type=str, 
+                        help="The datasets that will be used (acl_data = old / friedrich_captions_data = new / clean_data = cleaned friedrich but broken)")
 
     # transformer model
     parser.add_argument("--transformer_model", default="bert-base-uncased", type=str, 
