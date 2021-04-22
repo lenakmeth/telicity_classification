@@ -1,5 +1,7 @@
 import torch
-from transformers import BertForSequenceClassification, RobertaForSequenceClassification, AlbertForSequenceClassification, XLNetForSequenceClassification, AdamW, get_linear_schedule_with_warmup
+from transformers import BertForSequenceClassification, RobertaForSequenceClassification, \
+AlbertForSequenceClassification, XLNetForSequenceClassification, CamembertForSequenceClassification, \
+FlaubertForSequenceClassification, AdamW, get_linear_schedule_with_warmup
 from sklearn.metrics import classification_report
 from torch.utils.data import TensorDataset, DataLoader, RandomSampler, SequentialSampler
 import torch.nn.functional as F
@@ -38,11 +40,7 @@ train_sentences, train_labels, val_sentences, val_labels, \
 # make input ids, attention masks, segment ids, depending on the model we will use
 
 if (args.transformer_model).split("-")[0] == 'bert':
-    if 'uncased' in args.transformer_model.split("-"):
-        do_lower = True
-    else:
-        do_lower = False
-    train_inputs, train_masks, train_segments = tokenize_and_pad(train_sentences )
+    train_inputs, train_masks, train_segments = tokenize_and_pad(train_sentences)
     val_inputs, val_masks, val_segments = tokenize_and_pad(val_sentences )
     test_inputs, test_masks, test_segments = tokenize_and_pad(test_sentences )
     
@@ -141,6 +139,20 @@ elif (args.transformer_model).split("-")[0] == 'albert':
     )
 elif (args.transformer_model).split("-")[0] == 'xlnet':
     model = XLNetForSequenceClassification.from_pretrained(
+        transformer_model, 
+        num_labels = 2,   
+        output_attentions = False, # Whether the model returns attentions weights.
+        output_hidden_states = False, # Whether the model returns all hidden-states.
+    )
+elif (args.transformer_model).split("-")[0] == 'flaubert':
+    model = FlaubertForSequenceClassification.from_pretrained(
+        transformer_model, 
+        num_labels = 2,   
+        output_attentions = False, # Whether the model returns attentions weights.
+        output_hidden_states = False, # Whether the model returns all hidden-states.
+    )
+elif (args.transformer_model).split("-")[0] == 'camembert':
+    model = CamembertForSequenceClassification.from_pretrained(
         transformer_model, 
         num_labels = 2,   
         output_attentions = False, # Whether the model returns attentions weights.

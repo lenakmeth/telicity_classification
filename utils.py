@@ -1,7 +1,7 @@
 import io
 import json
 import os
-from transformers import BertTokenizer, RobertaTokenizer, AlbertTokenizer, XLNetTokenizer
+from transformers import BertTokenizer, RobertaTokenizer, AlbertTokenizer, XLNetTokenizer, CamembertTokenizer, FlaubertTokenizer
 from configure import parse_args
 import time
 import datetime
@@ -153,6 +153,55 @@ def tokenize_and_pad(sentences):
             # This attention mask simply differentiates padding from non-padding.
             attention_masks.append(encoded_dict['attention_mask'])
 
+        # ======== FlauBERT ======== 
+    elif (args.transformer_model).split("-")[0] == 'flaubert':
+        # Tokenize all of the sentences and map the tokens to their word IDs.
+        tok = FlaubertTokenizer.from_pretrained(args.transformer_model )
+        
+        for sent in sentences:
+
+            # encode_plus is a prebuilt function that will make input_ids, 
+            # add padding/truncate, add special tokens, + make attention masks 
+            encoded_dict = tok.encode_plus(
+                            sent[0],                      
+                            add_special_tokens = True, # Add '[CLS]' and '[SEP]'
+                            max_length = 128,      # Pad & truncate all sentences.
+                            padding = 'max_length',
+                            truncation = True,
+                            return_attention_mask = True, # Construct attn. masks.
+                            # return_tensors = 'pt',     # Return pytorch tensors.
+                       )
+
+            # Add the encoded sentence to the list.
+            input_ids.append(encoded_dict['input_ids'])
+
+            # Add segment ids, add 1 for verb idx
+            segment_id = [0] * 128
+            segment_id[sent[2]] = 1
+            segment_ids.append(segment_id)
+
+            # This attention mask simply differentiates padding from non-padding.
+            attention_masks.append(encoded_dict['attention_mask'])
+
+        # ======== CamemBERT ======== 
+    elif (args.transformer_model).split("-")[0] == 'camembert':
+        tok = CamembertTokenizer.from_pretrained(args.transformer_model)
+        
+        for sent in sentences:
+            encoded_dict = tok.encode_plus(
+                            sent[0],                      
+                            add_special_tokens = True, # Add '[CLS]' and '[SEP]'
+                            max_length = 128,      # Pad & truncate all sentences.
+                            padding = 'max_length',
+                            truncation = True,
+                            return_attention_mask = True, # Construct attn. masks.
+                            # return_tensors = 'pt',     # Return pytorch tensors.
+                       )
+            input_ids.append(encoded_dict['input_ids'])
+            attention_masks.append(encoded_dict['attention_mask'])
+            
+        # RoBERTa doesn't use segment ids!  
+        segment_ids = None
     return input_ids, attention_masks, segment_ids
 
 
@@ -192,9 +241,13 @@ def decode_result(encoded_sequence):
         tok = AlbertTokenizer.from_pretrained(args.transformer_model )
     elif (args.transformer_model).split("-")[0] == 'xlnet':
         tok = XLNetTokenizer.from_pretrained(args.transformer_model )
+    elif (args.transformer_model).split("-")[0] == 'camembert':
+        tok = CamembertTokenizer.from_pretrained(args.transformer_model )
+    elif (args.transformer_model).split("-")[0] == 'flaubert':
+        tok = FlaubertTokenizer.from_pretrained(args.transformer_model )
     
     # decode + remove special tokens
-    decoded_sequence = [w.replace('Ġ', '') 
+    decoded_sequence = [w.replace('Ġ', '').replace('▁', '')
                         for w in list(tok.convert_ids_to_tokens(encoded_sequence))
                         if not '[PAD]' in w if not '<pad>' in w]
     

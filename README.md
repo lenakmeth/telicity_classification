@@ -13,10 +13,16 @@ Code based on [aniruddhachoudhury](https://github.com/aniruddhachoudhury/BERT-Tu
 * sklearn
 
 ### Supported transformer models
+
+#### English:
 * bert
 * roberta
 * xlnet
 * albert
+
+#### French:
+* FlauBERT
+* CamemBERT
 
 ### Run 
 
