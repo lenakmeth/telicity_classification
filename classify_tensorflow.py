@@ -2,6 +2,8 @@ import torch
 from transformers import BertForSequenceClassification, RobertaForSequenceClassification, AlbertForSequenceClassification, XLNetForSequenceClassification, AdamW, get_linear_schedule_with_warmup
 from sklearn.metrics import classification_report
 from torch.utils.data import TensorDataset, DataLoader, RandomSampler, SequentialSampler
+import torch.nn.functional as F
+from torch.autograd import Variable
 import random
 from utils import read_sents, tokenize_and_pad, format_time, flat_accuracy, decode_result
 from configure import parse_args
@@ -409,6 +411,7 @@ nb_test_steps, nb_test_examples = 0, 0
 all_inputs = []
 all_labels = []
 all_preds = []
+all_probs = []
     
 for batch in test_dataloader:
     batch = tuple(t.to(device) for t in batch)
@@ -430,6 +433,7 @@ for batch in test_dataloader:
     logits = outputs[0]
     logits = logits.detach().cpu().numpy()
     label_ids = b_labels.to('cpu').numpy()
+    log_probs = F.softmax(Variable(torch.from_numpy(logits)), dim=-1)
     
     tmp_test_accuracy = flat_accuracy(label_ids, logits)
     test_accuracy += tmp_test_accuracy
@@ -438,8 +442,9 @@ for batch in test_dataloader:
     all_inputs += b_input_ids.to('cpu').numpy().tolist()
     all_labels += label_ids.tolist()
     all_preds += np.argmax(logits, axis=1).flatten().tolist()
-    assert len(all_inputs) == len(all_labels) == len(all_preds)
-    
+    all_probs += log_probs.tolist()
+
+    #assert len(all_inputs) == len(all_labels) == len(all_preds) 
 
 # Report the accuracy, the sentences
 print('Accuracy: {0:.2f}'.format(test_accuracy/nb_test_steps))
@@ -447,14 +452,22 @@ print('Confusion matrix:\n')
 print(classification_report(all_labels, all_preds))
 
 # Uncomment the following to see the decoded sentences
-# change != to == to see the right predictions
 print('\nWrong predictions:')
 counter = 0
 for n, sent in enumerate(all_inputs):
     if all_labels[n] != all_preds[n]:
         counter += 1
-        #sentence = decode_result(sent)
-        #print(sentence)
+        sentence = decode_result(sent)
+        probs = all_probs[n]
+        print('Predicted: ', all_preds[n], '\tProbs: ', str(probs), '\tSent: ', sentence)
+
 print(str(counter) + ' out of ' + str(len(all_inputs)))
+
+# Uncomment to see the right predictions
 print('\nRight predictions:')
+#for n, sent in enumerate(all_inputs):
+#    if all_labels[n] == all_preds[n]:
+#        counter += 1
+#        sentence = decode_result(sent)
+#        print('Predicted: ', '\tProbs: ', '\tSent: ', sentence)
 print(str(len(all_inputs) - counter) + ' out of ' + str(len(all_inputs)))
