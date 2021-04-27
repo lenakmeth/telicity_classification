@@ -37,27 +37,12 @@ epochs = args.num_epochs
 train_sentences, train_labels, val_sentences, val_labels, \
     test_sentences, test_labels = read_sents(args.data_path, args.label_marker)
 
-# make input ids, attention masks, segment ids, depending on the model we will use
+# make input ids, attention masks, segment ids
 
-if (args.transformer_model).split("-")[0] == 'bert':
-    train_inputs, train_masks, train_segments = tokenize_and_pad(train_sentences)
-    val_inputs, val_masks, val_segments = tokenize_and_pad(val_sentences )
-    test_inputs, test_masks, test_segments = tokenize_and_pad(test_sentences )
-    
-elif (args.transformer_model).split("-")[0] == 'roberta':
-    train_inputs, train_masks, train_segments = tokenize_and_pad(train_sentences)
-    val_inputs, val_masks, val_segments = tokenize_and_pad(val_sentences)
-    test_inputs, test_masks, test_segments = tokenize_and_pad(test_sentences)
-    
-elif (args.transformer_model).split("-")[0] == 'albert':
-    train_inputs, train_masks, train_segments = tokenize_and_pad(train_sentences)
-    val_inputs, val_masks, val_segments = tokenize_and_pad(val_sentences)
-    test_inputs, test_masks, test_segments = tokenize_and_pad(test_sentences)
-    
-elif (args.transformer_model).split("-")[0] == 'xlnet':
-    train_inputs, train_masks, train_segments = tokenize_and_pad(train_sentences)
-    val_inputs, val_masks, val_segments = tokenize_and_pad(val_sentences)
-    test_inputs, test_masks, test_segments = tokenize_and_pad(test_sentences)
+train_inputs, train_masks, train_segments = tokenize_and_pad(train_sentences)
+val_inputs, val_masks, val_segments = tokenize_and_pad(val_sentences)
+test_inputs, test_masks, test_segments = tokenize_and_pad(test_sentences
+
 
 print('\nLoaded sentences and converted.')
 
@@ -144,14 +129,14 @@ elif (args.transformer_model).split("-")[0] == 'xlnet':
         output_attentions = False, # Whether the model returns attentions weights.
         output_hidden_states = False, # Whether the model returns all hidden-states.
     )
-elif (args.transformer_model).split("-")[0] == 'flaubert':
+elif 'flaubert' in args.transformer_model:
     model = FlaubertForSequenceClassification.from_pretrained(
         transformer_model, 
         num_labels = 2,   
         output_attentions = False, # Whether the model returns attentions weights.
         output_hidden_states = False, # Whether the model returns all hidden-states.
     )
-elif (args.transformer_model).split("-")[0] == 'camembert':
+elif 'camembert' in args.transformer_model:
     model = CamembertForSequenceClassification.from_pretrained(
         transformer_model, 
         num_labels = 2,   

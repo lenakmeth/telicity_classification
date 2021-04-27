@@ -185,7 +185,7 @@ def tokenize_and_pad(sentences):
 
         # ======== CamemBERT ======== 
     elif 'camembert' in args.transformer_model:
-        tok = CamembertTokenizer.from_pretrained('camembert-base')
+        tok = CamembertTokenizer.from_pretrained(args.transformer_model)
         
         for sent in sentences:
             encoded_dict = tok.encode_plus(
@@ -243,7 +243,7 @@ def decode_result(encoded_sequence):
         tok = XLNetTokenizer.from_pretrained(args.transformer_model )
     elif 'camembert' in args.transformer_model:
         tok = CamembertTokenizer.from_pretrained(args.transformer_model )
-    elif (args.transformer_model).split("_")[0] == 'flaubert':
+    elif 'flaubert' in args.transformer_model:
         tok = FlaubertTokenizer.from_pretrained(args.transformer_model )
     
     # decode + remove special tokens
