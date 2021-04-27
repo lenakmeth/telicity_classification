@@ -184,8 +184,8 @@ def tokenize_and_pad(sentences):
             attention_masks.append(encoded_dict['attention_mask'])
 
         # ======== CamemBERT ======== 
-    elif (args.transformer_model).split("-")[0] == 'camembert':
-        tok = CamembertTokenizer.from_pretrained(args.transformer_model)
+    elif 'camembert' in args.transformer_model:
+        tok = CamembertTokenizer.from_pretrained('camembert-base')
         
         for sent in sentences:
             encoded_dict = tok.encode_plus(
@@ -200,8 +200,10 @@ def tokenize_and_pad(sentences):
             input_ids.append(encoded_dict['input_ids'])
             attention_masks.append(encoded_dict['attention_mask'])
             
-        # RoBERTa doesn't use segment ids!  
         segment_ids = None
+        
+    print(len(input_ids))
+    print(len(attention_masks))
     return input_ids, attention_masks, segment_ids
 
 
