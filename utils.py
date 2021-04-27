@@ -154,7 +154,7 @@ def tokenize_and_pad(sentences):
             attention_masks.append(encoded_dict['attention_mask'])
 
         # ======== FlauBERT ======== 
-    elif (args.transformer_model).split("-")[0] == 'flaubert':
+    elif 'flaubert' in args.transformer_model:
         # Tokenize all of the sentences and map the tokens to their word IDs.
         tok = FlaubertTokenizer.from_pretrained(args.transformer_model )
         
@@ -201,9 +201,7 @@ def tokenize_and_pad(sentences):
             attention_masks.append(encoded_dict['attention_mask'])
             
         segment_ids = None
-        
-    print(len(input_ids))
-    print(len(attention_masks))
+
     return input_ids, attention_masks, segment_ids
 
 
@@ -225,12 +223,12 @@ def format_time(elapsed):
     # Format as hh:mm:ss
     return str(datetime.timedelta(seconds=elapsed_rounded))
 
-# def save_torch_model(model, optimizer):
-#     # save
-#     torch.save({
-#         'model_state_dict': model.state_dict(),
-#         'optimizer_state_dict': optimizer.state_dict()
-#     }, output_model)
+def save_torch_model(model, optimizer):
+    # save
+    torch.save({
+        'model_state_dict': model.state_dict(),
+        'optimizer_state_dict': optimizer.state_dict()
+    }, output_model)
     
 def decode_result(encoded_sequence):
     
@@ -243,15 +241,16 @@ def decode_result(encoded_sequence):
         tok = AlbertTokenizer.from_pretrained(args.transformer_model )
     elif (args.transformer_model).split("-")[0] == 'xlnet':
         tok = XLNetTokenizer.from_pretrained(args.transformer_model )
-    elif (args.transformer_model).split("-")[0] == 'camembert':
+    elif 'camembert' in args.transformer_model:
         tok = CamembertTokenizer.from_pretrained(args.transformer_model )
-    elif (args.transformer_model).split("-")[0] == 'flaubert':
+    elif (args.transformer_model).split("_")[0] == 'flaubert':
         tok = FlaubertTokenizer.from_pretrained(args.transformer_model )
     
     # decode + remove special tokens
+    tokens_to_remove = ['[PAD]', '[SEP]', '<pad>', '<sep>']
     decoded_sequence = [w.replace('Ġ', '').replace('▁', '')
                         for w in list(tok.convert_ids_to_tokens(encoded_sequence))
-                        if not '[PAD]' in w if not '<pad>' in w]
+                        if w in tokens_to_remove]
     
     return ' '.join(decoded_sequence)
 
