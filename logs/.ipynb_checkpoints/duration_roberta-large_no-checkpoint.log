@@ -1,0 +1,931 @@
+
+Uses verb segment ids: no
+Model: roberta-large
+Model type: roberta
+Train set: 3267
+Validation set: 408
+Test set: 408
+roberta.encoder.layer.0.attention.self.query.weight     (1024, 1024)
+roberta.encoder.layer.0.attention.self.query.bias            (1024,)
+roberta.encoder.layer.0.attention.self.key.weight       (1024, 1024)
+roberta.encoder.layer.0.attention.self.key.bias              (1024,)
+roberta.encoder.layer.0.attention.self.value.weight     (1024, 1024)
+roberta.encoder.layer.0.attention.self.value.bias            (1024,)
+roberta.encoder.layer.0.attention.output.dense.weight   (1024, 1024)
+roberta.encoder.layer.0.attention.output.dense.bias          (1024,)
+roberta.encoder.layer.0.attention.output.LayerNorm.weight      (1024,)
+roberta.encoder.layer.0.attention.output.LayerNorm.bias      (1024,)
+roberta.encoder.layer.0.intermediate.dense.weight       (4096, 1024)
+roberta.encoder.layer.0.intermediate.dense.bias              (4096,)
+roberta.encoder.layer.0.output.dense.weight             (1024, 4096)
+roberta.encoder.layer.0.output.dense.bias                    (1024,)
+roberta.encoder.layer.0.output.LayerNorm.weight              (1024,)
+roberta.encoder.layer.0.output.LayerNorm.bias                (1024,)
+	======== Epoch 1 / 4 ========
+Training...
+	Batch    40	of	  103.		Elapsed: 0:20:43.
+	Batch    80	of	  103.		Elapsed: 0:41:11.
+	Average training loss: 0.30
+	Training epoch took: 0:52:20
+	Running Validation...
+	Accuracy: 0.93
+	Validation took: 0:01:53
+	Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.90      0.96      0.93       186
+           1       0.97      0.91      0.94       222
+
+    accuracy                           0.93       408
+   macro avg       0.93      0.94      0.93       408
+weighted avg       0.94      0.93      0.93       408
+
+	======== Epoch 2 / 4 ========
+Training...
+	Batch    40	of	  103.		Elapsed: 0:20:08.
+	Batch    80	of	  103.		Elapsed: 0:40:20.
+	Average training loss: 0.15
+	Training epoch took: 0:51:28
+	Running Validation...
+	Accuracy: 0.94
+	Validation took: 0:01:54
+	Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.95      0.92      0.93       186
+           1       0.93      0.96      0.95       222
+
+    accuracy                           0.94       408
+   macro avg       0.94      0.94      0.94       408
+weighted avg       0.94      0.94      0.94       408
+
+	======== Epoch 3 / 4 ========
+Training...
+	Batch    40	of	  103.		Elapsed: 0:20:13.
+	Batch    80	of	  103.		Elapsed: 0:40:23.
+	Average training loss: 0.07
+	Training epoch took: 0:51:33
+	Running Validation...
+	Accuracy: 0.95
+	Validation took: 0:01:54
+	Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.94      0.96      0.95       186
+           1       0.96      0.95      0.96       222
+
+    accuracy                           0.95       408
+   macro avg       0.95      0.95      0.95       408
+weighted avg       0.95      0.95      0.95       408
+
+	======== Epoch 4 / 4 ========
+Training...
+	Batch    40	of	  103.		Elapsed: 0:20:12.
+	Batch    80	of	  103.		Elapsed: 0:40:22.
+	Average training loss: 0.05
+	Training epoch took: 0:51:33
+	Running Validation...
+	Accuracy: 0.95
+	Validation took: 0:01:55
+	Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.93      0.97      0.95       186
+           1       0.98      0.94      0.96       222
+
+    accuracy                           0.95       408
+   macro avg       0.95      0.96      0.95       408
+weighted avg       0.95      0.95      0.95       408
+
+Loaded model succesful. Running testing...
+Accuracy: 0.95
+Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.93      0.97      0.95       186
+           1       0.98      0.94      0.96       222
+
+    accuracy                           0.95       408
+   macro avg       0.95      0.96      0.95       408
+weighted avg       0.95      0.95      0.95       408
+
+
+Wrong predictions:
+
+wrong label: 0	prob: [0.8357552289962769, 0.16424481570720673]	<s> I ' m not strong . </s>
+
+wrong label: 0	prob: [0.9944842457771301, 0.0055157202295959]	<s> We call it legitimate further ing of mutual interests here . </s>
+
+wrong label: 1	prob: [0.0005396910128183663, 0.9994602799415588]	<s> The tantal izing aroma of mes quite - sm oked meat lured them into barbecue joints . </s>
+
+wrong label: 1	prob: [9.07617068151012e-05, 0.9999092817306519]	<s> " If you feel regret , it destroys the merit . " </s>
+
+wrong label: 0	prob: [0.990041971206665, 0.009957972913980484]	<s> What is true is that Bowling for Columb ine is a diamond in the small world of big screen documentaries , one that shines brightly and ill umin ates an often misunderstood aspect of American culture . </s>
+
+wrong label: 1	prob: [0.0011053249472752213, 0.9988947510719299]	<s> He sat still and ignored the thought furiously . </s>
+
+wrong label: 0	prob: [0.9926592707633972, 0.007340793963521719]	<s> I resolved to break the pattern . </s>
+
+wrong label: 0	prob: [0.9900702834129333, 0.009929769672453403]	<s> You just said that nobody suspected . </s>
+
+wrong label: 0	prob: [0.9922221302986145, 0.007777898106724024]	<s> But what if he had voiced his suspicions to Viol a ? </s>
+
+wrong label: 0	prob: [0.988520622253418, 0.011479293927550316]	<s> I knew then you ' d done for him all right . </s>
+
+wrong label: 0	prob: [0.9735956192016602, 0.026404408738017082]	<s> With visible reluctance he handed it to H ilda Mach in . </s>
+
+wrong label: 0	prob: [0.9708458185195923, 0.029154149815440178]	<s> She thinks I ' m a wicked woman . </s>
+
+wrong label: 0	prob: [0.992202877998352, 0.007797074504196644]	<s> It is brilliantly , if un eth ically , done . " </s>
+
+wrong label: 0	prob: [0.6075403094291687, 0.3924597203731537]	<s> Psych omet r ically the problem is to develop appropriate descriptive tax onom ies so that a person ' s actual or potential contribution to an organisation is succinct ly express ible . </s>
+
+wrong label: 0	prob: [0.9717003107070923, 0.028299659490585327]	<s> Sl ipped out from under your sweaty embrace . </s>
+
+wrong label: 0	prob: [0.9886647462844849, 0.011335205286741257]	<s> But four hours later the fish was still swimming steadily out to sea , to wing the sk iff , and the old man was still br aced solidly with the line across his back . </s>
+
+wrong label: 0	prob: [0.9911920428276062, 0.008807910606265068]	<s> When she didnt move , I kn elt down and put a hand to her brow . </s>
+
+wrong label: 1	prob: [0.013846369460225105, 0.9861536026000977]	<s> " T arr in says the planet ' s a freaking gem stone ! </s>
+
+wrong label: 1	prob: [0.11951138079166412, 0.8804886341094971]	<s> It was a Friday night . </s>19 out of 408
+
+Right predictions:
+
+right label: 1	prob: [8.75173500389792e-05, 0.9999125003814697]	<s> A person is sitting with many surf boards . </s>
+
+right label: 1	prob: [8.018000517040491e-05, 0.9999197721481323]	<s> This man is eating a don ut at an outdoor event . </s>
+
+right label: 1	prob: [7.537611236330122e-05, 0.9999246597290039]	<s> A young boy with track on his shirt is smiling at a young boy with a bat man logo on his shirt . </s>
+
+right label: 1	prob: [8.885796705726534e-05, 0.9999111890792847]	<s> A girl is playing with water near a playground . </s>
+
+right label: 1	prob: [0.00010583994298940524, 0.9998941421508789]	<s> " That does n 't prove anything , said Rose . " </s>
+
+right label: 0	prob: [0.9937478303909302, 0.006252223625779152]	<s> N ep th ys nodded : Its okay , you can trust him . </s>
+
+right label: 0	prob: [0.9935717582702637, 0.006428227294236422]	<s> This sounds like it ' s the one . " </s>
+
+right label: 1	prob: [7.547321729362011e-05, 0.9999245405197144]	<s> feel like going on a shopping spree ? check out shopping center ! </s>
+
+right label: 0	prob: [0.9903541803359985, 0.009645765647292137]	<s> They were now falling together , which was all very sweet and romantic , but did n 't solve the basic problem , which was that they were falling , and the ground was n 't waiting around to see if he had any more clever tricks up his sleeve , but was coming up to meet them like an express train . </s>
+
+right label: 1	prob: [7.771584205329418e-05, 0.9999222755432129]	<s> love the reflection and viewpoint for this photo . </s>
+
+right label: 0	prob: [0.991094172000885, 0.00890589039772749]	<s> Warren s Sh aft , part of a Canaan ite water system discovered by 19 th - century archaeologists and open to visitors , might be the very tunnel infiltrated by Dav ids army . </s>
+
+right label: 0	prob: [0.9928022027015686, 0.007197787053883076]	<s> I ' ve got a replacement lined up . âĢ Ŀ I ran . </s>
+
+right label: 1	prob: [8.124955638777465e-05, 0.9999186992645264]	<s> A large black cat is sitting inside of a suitcase . </s>
+
+right label: 1	prob: [9.68307867879048e-05, 0.9999032020568848]	<s> starting your day off with breakfast is always a healthy move . </s>
+
+right label: 1	prob: [8.141165017150342e-05, 0.9999185800552368]	<s> " Once you have poured all of your drinks into the glasses , top with the foam topping you made . Serve the drinks and your done ! : D * Please let me know what you think and if there is anything i could improve on , or that you feel would make it taste better . " </s>
+
+right label: 1	prob: [7.652259228052571e-05, 0.9999234676361084]	<s> dec or ating ideas for a man s house , e , error ,, n oun phrase or adjective phrase syntax , </s>
+
+right label: 0	prob: [0.9906719923019409, 0.009328075684607029]	<s> When the buckets fell , she was at first only aware of a loud , metallic cl ang cutting through the music , and then she was del ug ed in warmth and wet ness . </s>
+
+right label: 0	prob: [0.9922343492507935, 0.007765626534819603]	<s> They are all that remains of the greatest experiment ever conducted - to find the Ultimate Question and the Ultimate Answer of Life , the Universe , and Everything . </s>
+
+right label: 1	prob: [9.06049317563884e-05, 0.9999094009399414]	<s> A bird is standing on the small branch outside . </s>
+
+right label: 1	prob: [9.821228741202503e-05, 0.9999017715454102]	<s> " Oh yes , I ' ve   Have you enjoyed yourself at school ? , " </s>
+
+right label: 0	prob: [0.9924371838569641, 0.007562825921922922]	<s> No longer grounded . âĢ Ŀ Ray , he said , If we last forever , if our eyes are the last eyes watching as the stars blink out , it wo n 't mean a thing to us . </s>
+
+right label: 1	prob: [0.4209444522857666, 0.5790555477142334]	<s> Care ful ; that ' s live . </s>
+
+right label: 0	prob: [0.9943339824676514, 0.005666081793606281]	<s> I got a strange feeling that we were nt supposed to be driving here . </s>
+
+right label: 1	prob: [7.814761193003505e-05, 0.9999217987060547]	<s> a fire tore through a - square - foot warehouse . </s>
+
+right label: 0	prob: [0.9909561276435852, 0.009043860249221325]	<s> Inside , the entrance room was hung with bright sil ks and scattered with velvet cush ions . </s>
+
+right label: 1	prob: [8.714426076039672e-05, 0.9999128580093384]	<s> polit ician arrives in an aircraft </s>
+
+right label: 0	prob: [0.9918786287307739, 0.008121334947645664]	<s> On the floor was D vor ov s head , separated from his body by several feet and a growing p uddle of dark blood . </s>
+
+right label: 0	prob: [0.9900187253952026, 0.009981266222894192]	<s> But even the ray ah of all three faiths , scattered over the steep outskirts or crowded together in their separate district , were filled with the same feeling , each in their own way and in accordance with their own condition . </s>
+
+right label: 0	prob: [0.9916349649429321, 0.008365021087229252]	<s> Even after the fighting stopped more than a decade later , the country was not stable . </s>
+
+right label: 1	prob: [9.032490197569132e-05, 0.9999096393585205]	<s> The man is posing for a picture with his snow board outside . </s>
+
+right label: 1	prob: [8.367011469090357e-05, 0.9999163150787354]	<s> play around with different period times to get the look that you want and fits your wedding theme . </s>
+
+right label: 1	prob: [0.00011298490426270291, 0.9998869895935059]	<s> I also got to spend time with the cat . </s>
+
+right label: 1	prob: [0.00011825904221041128, 0.9998817443847656]	<s> The real tor was really nice he gave us a tour at night . </s>
+
+right label: 1	prob: [0.0001235085364896804, 0.9998764991760254]	<s> But Dave was having the most fun when he saw that De id re had styled up her hair so they could hang out as Af ro twins . </s>
+
+right label: 0	prob: [0.9913539290428162, 0.008646024391055107]	<s> The Dome of the Rock remains Jer usal ems most striking monument ; it is counted among the most beautiful buildings ever created . </s>
+
+right label: 1	prob: [8.563060691813007e-05, 0.9999144077301025]	<s> pop artist performs on stage . </s>
+
+right label: 1	prob: [0.00016245919687207788, 0.9998375177383423]	<s> Many people come out for the event and it reminds us of the importance of our armed forces and veterans . </s>
+
+right label: 0	prob: [0.990227460861206, 0.00977256428450346]	<s> Jer usalem grew , surrounded with a formidable wall and defended by towers beside the J aff a Gate . </s>
+
+right label: 0	prob: [0.9926793575286865, 0.007320661097764969]	<s> I do n 't want to be here forever . âĢ Ŀ But we ' re not here forever , âĢ Ŀ objected Sarah . </s>
+
+right label: 1	prob: [8.283028728328645e-05, 0.9999171495437622]	<s> Two people wearing red are sitting on a brick wall drinking coffee . </s>
+
+right label: 0	prob: [0.9912678599357605, 0.008732170797884464]	<s> I wanted to prove to Ad rien ne that I wanted solve the ship ' s mystery just as much as she did . </s>
+
+right label: 0	prob: [0.9914190769195557, 0.008580949157476425]	<s> I welcomed this mysterious decision with blunt self - interest , since her Worker was now supplemented by China Recon struct s , a here tical magazine posted direct from the distant continent . </s>
+
+right label: 1	prob: [0.0006051922682672739, 0.9993947744369507]	<s> In the early years there is extensive leisure devoted to play in which the basic manipulative and social skills are developed . </s>
+
+right label: 0	prob: [0.9931835532188416, 0.006816422566771507]	<s> Or again it might just have been one of the strange prompt ings that occasionally surfaced from that dark area of his mind that he had inexpl icably locked off prior to becoming President of the Galaxy . </s>
+
+right label: 0	prob: [0.9946445226669312, 0.005355530884116888]	<s> It was a black baseball cap that read Dead Can Dance âĢ Ŀ in gold across the front . </s>
+
+right label: 1	prob: [0.0010475028539076447, 0.9989525079727173]	<s> Yes ; we will miss you ! </s>
+
+right label: 1	prob: [9.905236220220104e-05, 0.9999009370803833]	<s> Fire men emerge from a subway station . </s>
+
+right label: 0	prob: [0.9907146692276001, 0.009285341948270798]	<s> Perhaps he coveted his mother ' s affect ions solely for himself -- Ther houses comprised a whole small quarter surrounded by fields , plum - or ch ards and shr ub ber ies . ' </s>
+
+right label: 1	prob: [8.093421638477594e-05, 0.999919056892395]	<s> A man is playing with a baby on a deck . </s>
+
+right label: 0	prob: [0.9912459254264832, 0.00875408947467804]	<s> He took us to the door of a building like a short pag oda that had a sign hanging over it showing a face with hands upl ifted , like a saint under G d s light , and handcuffed . </s>
+
+right label: 1	prob: [0.00011895709758391604, 0.9998810291290283]	<s> I imagine I ' ll be spending hours here . </s>
+
+right label: 1	prob: [8.014882041607052e-05, 0.9999198913574219]	<s> kids jump off the waterfall . </s>
+
+right label: 0	prob: [0.9911735653877258, 0.00882647279649973]	<s> There was the surrounding hum of the tremendous generators hidden in the central well of the plant , the faint sharp ness of ozone in the air , the grim and silent threat of the red lines that marked the limits beyond which no one could pass without protective clothing . </s>
+
+right label: 1	prob: [0.001240210491232574, 0.9987597465515137]	<s> The quirky decorations ; such as this flaming o - feat hered Christmas tree ; were an illustration of an area with a unique flavor . </s>
+
+right label: 0	prob: [0.9909229874610901, 0.009077031165361404]	<s> At the same time , the massive growth in air and road transport saw shipping decline in importance . </s>
+
+right label: 1	prob: [8.556847751606256e-05, 0.9999144077301025]	<s> A double deck er bus is riding along a busy street . </s>
+
+right label: 0	prob: [0.9920603036880493, 0.007939672097563744]	<s> I assumed he was indisp osed . âĢ Ŀ K ish ori nodded in agreement . </s>
+
+right label: 1	prob: [8.496613736497238e-05, 0.9999150037765503]	<s> " Do your worst , Doc , he ' d say : Put an end to it . " </s>
+
+right label: 1	prob: [8.858968067215756e-05, 0.9999114274978638]	<s> A hand is holding a sandwich on a long bun . </s>
+
+right label: 1	prob: [8.927140152081847e-05, 0.9999107122421265]	<s> A woman is looking at sheep off in a field </s>
+
+right label: 0	prob: [0.9889427423477173, 0.011057252995669842]	<s> But this does n 't mean that there is n 't merit to such studies , nor that nothing of use can be learned in that way . </s>
+
+right label: 1	prob: [8.016930223675445e-05, 0.9999197721481323]	<s> " Cut the bananas into 1 inch slices and freeze them . Freeze them on a tray , and when frozen take out put into plastic bags . " </s>
+
+right label: 0	prob: [0.9909829497337341, 0.00901707448065281]	<s> And he added bitterly that they would lull his suspicions and then ' grab ' him when he was least expecting it . </s>
+
+right label: 0	prob: [0.9910209774971008, 0.008978993631899357]	<s> Fact : If , before all the air is sucked out of the ship , a person is so lucky to have stuffed him or herself into a space suit , that person has less than twenty - four hours to live . </s>
+
+right label: 0	prob: [0.993839681148529, 0.006160359364002943]	<s> The old me cared . </s>
+
+right label: 1	prob: [0.00011194904072908685, 0.9998880624771118]	<s> The street sign is clearly visible for all to see . </s>
+
+right label: 1	prob: [9.124837379204109e-05, 0.9999086856842041]	<s> I never look forward to cleaning the snow off of the car . </s>
+
+right label: 1	prob: [0.00011219044245081022, 0.9998878240585327]	<s> does anyone know who the name of the actress that plays the girl in this scene ? </s>
+
+right label: 1	prob: [8.11278514447622e-05, 0.9999188184738159]	<s> A black cat eats from a white bowl on the t iled kitchen floor in front of the stainless steel oven . </s>
+
+right label: 0	prob: [0.9922685027122498, 0.0077314614318311214]	<s> The Ven et ians fortified their main towns âĢ Ĥ âĢĶ âĢ Ĥ N ax os Town and Ant ip ar os Town are wonderful examples of this âĢ Ĥ âĢĶ âĢ Ĥ creat ing labyrinth s of narrow al leys and cul - de - s acs that were designed to confuse and to demoral ize invaders . </s>
+
+right label: 0	prob: [0.9914074540138245, 0.00859256274998188]	<s> A lf red lay catching his breath and repent ing his def iling of the baby . </s>
+
+right label: 0	prob: [0.9900621175765991, 0.009937901981174946]	<s> Know ledge and intuition worked together in him , complement ing each other in a magical way . </s>
+
+right label: 1	prob: [8.221756434068084e-05, 0.99991774559021]	<s> " You do n 't think it might have been better to let her have her say out suggested Desmond , and get it off her chest ? " </s>
+
+right label: 1	prob: [7.272807124536484e-05, 0.999927282333374]	<s> s iding going up on the garage . , e , error ,, n oun phrase or adjective phrase syntax , </s>
+
+right label: 1	prob: [7.72177882026881e-05, 0.9999227523803711]	<s> head coach as football player during the 25 th match played , e , error ,, n oun phrase or adjective phrase syntax , </s>
+
+right label: 0	prob: [0.9917969703674316, 0.00820302963256836]	<s> T ara would not let g iddy hopes drag them onto a rock that would spell the end for the project , and the Ar r all in species . </s>
+
+right label: 0	prob: [0.9904712438583374, 0.009528766386210918]	<s> When I was done mentally exclaim ing over my impossible rescue , I looked around . </s>
+
+right label: 1	prob: [8.644942863611504e-05, 0.9999135732650757]	<s> A group of senior citizens are watching a performance . </s>
+
+right label: 0	prob: [0.9892693161964417, 0.01073070801794529]	<s> O pin ions may vary on how tast eless it was for H eston to hold a pro gun rally on the location of the nation ' s youngest school shooting months after the fact , but this sequence of " Bowling " is without doubt the most unfair to H eston . </s>
+
+right label: 1	prob: [7.838360033929348e-05, 0.9999215602874756]	<s> The man with the tie is playing his guitar . </s>
+
+right label: 0	prob: [0.9892926216125488, 0.010707361623644829]	<s> The speech which this violent man delivered to the not ables astonished them even more than his appearance : " Not if you exclude the French , " said Doyle , trying to check his hunger from prompting him to pick up his bowl and drink . </s>
+
+right label: 1	prob: [9.449639765080065e-05, 0.9999054670333862]	<s> Add your meat to your avocado . </s>
+
+right label: 0	prob: [0.9914306998252869, 0.008569355122745037]	<s> It is probably correct that their primary reason for not doing so was to save money , not to piss off the victims of Col ub mine . </s>
+
+right label: 1	prob: [0.0001792430120985955, 0.9998207688331604]	<s> There were many employees monitoring the show . </s>
+
+right label: 1	prob: [0.00021632159769069403, 0.9997836947441101]	<s> That means it ' s back to work tomorrow . </s>
+
+right label: 1	prob: [0.00015433011867571622, 0.9998456239700317]	<s> Some lovely desserts are available for sale . </s>
+
+right label: 1	prob: [8.475485810777172e-05, 0.9999152421951294]	<s> A boy is eating pizza and salad with other children . </s>
+
+right label: 0	prob: [0.9903225302696228, 0.009677526541054249]	<s> This time , however , we have a matter of doctrine on which to quiz P . They screamed and b aw led and hol le red till Zap hod thought his ears would shatter . </s>
+
+right label: 0	prob: [0.9907029867172241, 0.009297030977904797]	<s> It is true that Moore ' s film is sometimes unintentionally deceptive , but to call it fraudulent is hyper bole to the extreme . </s>
+
+right label: 0	prob: [0.9930270314216614, 0.006972938776016235]	<s> âĢ Ŀ Half pairs of socks recl ined in half - dr unk cups of coffee . </s>
+
+right label: 1	prob: [8.937481470638886e-05, 0.9999105930328369]	<s> The boys are enjoying their self in the pool . </s>
+
+right label: 0	prob: [0.9914679527282715, 0.008532059378921986]	<s> Par os and And ros contributed to the Persian arm ory , while others supported Athens . </s>
+
+right label: 1	prob: [8.57754930621013e-05, 0.9999141693115234]	<s> People stood outside with signs . </s>
+
+right label: 0	prob: [0.991171658039093, 0.008828295394778252]	<s> It was all so fast . âĢ Ŀ She took a sip of her drink , plain water because , she had explained earlier , she had never liked the taste of alcohol , then fixed her gaze on me . </s>
+
+right label: 0	prob: [0.9928836822509766, 0.007116322871297598]	<s> The ship I was on , I guess that ' s what happened , too . </s>
+
+right label: 0	prob: [0.9898129105567932, 0.010187115520238876]	<s> Rachel , her clothes torn and her face drawn , looked like she might cry when she saw me . </s>
+
+right label: 1	prob: [8.776623872108757e-05, 0.9999122619628906]	<s> a team of scientists will also be on hand every wed nesday and sund ay until the exhibition closes to speak to visitors </s>
+
+right label: 0	prob: [0.9920278191566467, 0.007972212508320808]	<s> Even the city feels alive when spring comes . âĢ Ŀ Tax i ! âĢ Ŀ She waved down a car and pulled me in . </s>
+
+right label: 0	prob: [0.9908062815666199, 0.00919368490576744]	<s> The wines rich scent had a touch of something chemical that I recognized from the bar , but it filled my mouth and sank into my veins with reassuring warmth . </s>
+
+right label: 1	prob: [8.841514500090852e-05, 0.9999115467071533]	<s> a fan of the national team shows his team spirit in the stands </s>
+
+right label: 0	prob: [0.9908101558685303, 0.009189837612211704]	<s> Yet not in vain will it prove , maybe , that you came to this land seeking aid , as Gand alf himself plainly pur posed . </s>
+
+right label: 0	prob: [0.9903851747512817, 0.009614786133170128]	<s> You claim that there was " no way to change location , since you have to give advance notice of that to the members , and there were upwards of 4 , 000 , 000 members . " </s>
+
+right label: 1	prob: [7.704061863478273e-05, 0.9999229907989502]	<s> how to draw a barrel in style of graffiti with a pencil step by step , q </s>
+
+right label: 1	prob: [8.818486094241962e-05, 0.9999117851257324]	<s> A young boy in a swim suit throws a rock into the water . </s>
+
+right label: 1	prob: [8.509441249771044e-05, 0.9999148845672607]	<s> A group of men in suits are walking down a park sidewalk . </s>
+
+right label: 0	prob: [0.9914398193359375, 0.008560147136449814]	<s> All the lux uries money can buy . âĢ Ŀ Tiffany took a drink , thinking . </s>
+
+right label: 1	prob: [6.690900045214221e-05, 0.999933123588562]	<s> w or ried : farmers were concerned the high rise in temperatures this year would mean a shorter season for biological genus but the recent rain might help it to keep growing until the end of j uly , x d , state </s>
+
+right label: 0	prob: [0.9915027618408203, 0.00849721860140562]	<s> Our cuisine sal utes our love of Southern traditions at the table , but like the good people of Asheville , marches to its own drum . </s>
+
+right label: 0	prob: [0.9946257472038269, 0.005374211352318525]	<s> He had seemed to understand that and had honored her wishes . </s>
+
+right label: 0	prob: [0.9894702434539795, 0.01052977703511715]	<s> In effect , it raised the hopes of workers without having any real chance at saving anything . </s>
+
+right label: 1	prob: [8.290416735690087e-05, 0.9999170303344727]	<s> Use the screw driver to bend the hinge . </s>
+
+right label: 0	prob: [0.9920309782028198, 0.007969037629663944]	<s> The pre em inent islands of this era were Del os , a sacred island and center of religion ruled by Athens ; Sam os , ruled by the tyrant Poly cr ates ; and N ax os , whose ruler Ly g dam is undertook some major building projects . </s>
+
+right label: 1	prob: [7.202539563877508e-05, 0.9999279975891113]	<s> " if you ' re going to a wedding or going out , try a black suit accent uated with metallic gold ." , i </s>
+
+right label: 0	prob: [0.9911786913871765, 0.008821351453661919]	<s> And if it is n 't a hoax , then I am directly involved and so are they , which entit les me to speak with them . " </s>
+
+right label: 1	prob: [0.00026071607135236263, 0.9997392296791077]	<s> I work at a coffee shop . </s>
+
+right label: 1	prob: [8.955431985668838e-05, 0.9999104738235474]	<s> Two doctors in blue coats are performing surgery . </s>
+
+right label: 1	prob: [0.0001521754456916824, 0.9998477697372437]	<s> much of the vine yard ' s success has to do with the oceans ide climate . </s>
+
+right label: 0	prob: [0.9938310384750366, 0.006168924272060394]	<s> Have you seen anyone like that in your club ? âĢ Ŀ Not that I can remember , man . </s>
+
+right label: 0	prob: [0.9917330741882324, 0.008266917429864407]	<s> You would n 't believe half of the shit I ' ve seen , even when I was straight . </s>
+
+right label: 0	prob: [0.9915056824684143, 0.00849431473761797]	<s> When your life , the reason you lived , the people and faces and places , the emotions you felt , who and what you loved , when all that is gone , faded , what will you have left ? âĢ Ŀ I wondered how long Ray had been on this ship . </s>
+
+right label: 1	prob: [9.232792945113033e-05, 0.9999076128005981]	<s> Everyone was really happy to celebrate my birthday with me . </s>
+
+right label: 1	prob: [7.880556222517043e-05, 0.9999212026596069]	<s> Spread the meat out on the dehyd rator racks without touching each other and dehyd rate at 155 </s>
+
+right label: 1	prob: [7.616470247739926e-05, 0.999923825263977]	<s> Place the tea bags into the water filled jar . </s>
+
+right label: 1	prob: [9.19515296118334e-05, 0.9999080896377563]	<s> Both of them enjoyed playing with the ordinary robot . </s>
+
+right label: 1	prob: [0.00014051682956051081, 0.9998594522476196]	<s> Could n 't get up this morning . </s>
+
+right label: 0	prob: [0.9907034635543823, 0.009296533651649952]	<s> For all his accomplishments , Herod was nevertheless hated by his subjects ; he taxed , he tortured , and he ordered the massacre of male Jewish infants in an attempt to do away with the herald ed Messiah . </s>
+
+right label: 0	prob: [0.9948252439498901, 0.005174766294658184]	<s> None of this is true . </s>
+
+right label: 0	prob: [0.9912598729133606, 0.008740114979445934]	<s> It looked like a normal river stone , a gray oval with a white stripe through it . </s>
+
+right label: 0	prob: [0.9958361387252808, 0.004163833335042]	<s> Maybe that was enough . </s>
+
+right label: 1	prob: [8.221858297474682e-05, 0.99991774559021]	<s> A man is standing with a skate board in his hand . </s>
+
+right label: 0	prob: [0.9901579022407532, 0.009842051193118095]	<s> I wo n 't penal ize you this time , because perhaps you did n 't understand the directions . </s>
+
+right label: 1	prob: [0.0001595243375049904, 0.999840497970581]	<s> I will be keeping the program in remembrance of the graduation . </s>
+
+right label: 1	prob: [0.00010018077591666952, 0.9998998641967773]	<s> the new mini comes with a display . </s>
+
+right label: 0	prob: [0.9911770820617676, 0.008822931908071041]	<s> WE F EAR WHAT WE DO NOT UNDER ST AND , Ar ing ar osa thought , wondering if these critics had any idea how many lives Op us De i had enriched . </s>
+
+right label: 1	prob: [7.95610249042511e-05, 0.9999204874038696]	<s> A female in black leather jacket pets a small dog with a muzzle holding on to her leg . </s>
+
+right label: 1	prob: [8.747629908611998e-05, 0.9999125003814697]	<s> " person , chief of staff , addresses soldiers and civilians assigned " </s>
+
+right label: 1	prob: [7.520659710280597e-05, 0.9999247789382935]	<s> rec urring competition maybe this body shape will be back in style , x d , state </s>
+
+right label: 0	prob: [0.9912047982215881, 0.008795219473540783]	<s> Did it truly matter what the ship ' s origin was and why Jefferson had saved me , if now , I was content ? </s>
+
+right label: 1	prob: [8.693975541973487e-05, 0.9999130964279175]	<s> " Av ocado half Some taco meat - chicken or beef Sh red ded Cheese Tom ato S alsa Optional : hot sauce , sour cream , other topp ings " </s>
+
+right label: 0	prob: [0.9922054409980774, 0.00779452221468091]	<s> Bel ieve me , I empath ize with your personal incentive to catch this man . </s>
+
+right label: 1	prob: [7.981444650795311e-05, 0.999920129776001]	<s> country artist performs a surprise set during festival </s>
+
+right label: 1	prob: [7.239945989567786e-05, 0.9999276399612427]	<s> find the bears : look closely and you ' ll see brown bears walking near the water . , i </s>
+
+right label: 1	prob: [9.609031985746697e-05, 0.9999039173126221]	<s> A person is pushing a st roller across the street with a dog . </s>
+
+right label: 0	prob: [0.9900243282318115, 0.009975636377930641]	<s> You use standard filmmaking technique as a basis to construct bizarre conspir acies which sound plausible to the gull ible reader , without ever providing any evidence for the implicit or explicit claims of fraud and distortion . </s>
+
+right label: 0	prob: [0.9917142987251282, 0.008285687305033207]	<s> An at omical analysis of the Vog on reveals that its brain was originally a badly de formed , misplaced and dys pe ptic liver . </s>
+
+right label: 1	prob: [9.088781371247023e-05, 0.9999091625213623]	<s> " In serious cases the aim is to shut down the system safely . , , " </s>
+
+right label: 0	prob: [0.9902368187904358, 0.009763229638338089]	<s> In a moment he said , without quite succeeding in keeping the pl ang ency out of his voice : For the moment society seems keen to bind itself against such tempt ations , to place a moratorium on cloning or germ line gene therapy and strict limits on embryonic research , to fore go the medical possibilities in exchange for not risking the horrors of the unknown . </s>
+
+right label: 1	prob: [9.575846343068406e-05, 0.9999042749404907]	<s> a helicopter prepares to drop special warfare </s>
+
+right label: 0	prob: [0.9922103881835938, 0.00778964115306735]	<s> One of these walls , the Western Wall , is today a major reminder of Jer usal ems greatness under Herod . </s>
+
+right label: 1	prob: [8.65093752508983e-05, 0.9999134540557861]	<s> A man in a red shirt works on a white sculpture . </s>
+
+right label: 1	prob: [8.532778156222776e-05, 0.9999146461486816]	<s> A little toddler with an umbrella is on the street . </s>
+
+right label: 0	prob: [0.9910740256309509, 0.008926034905016422]	<s> Although for other cities this would simply be a minor economic setback , for the people of Young stown and the surrounding area , it meant disaster . </s>
+
+right label: 1	prob: [7.78140893089585e-05, 0.9999221563339233]	<s> " R ins ing is n 't necessary for all types of rice , but it helps improve the texture and flavor of most common varieties . So ak the rice for upt to 30 minutes if you ' ve got the time - then drain it . " </s>
+
+right label: 1	prob: [8.589417848270386e-05, 0.9999140501022339]	<s> the blurry bride and groom kiss on as the ring bearer holds up some nice flowers . </s>
+
+right label: 0	prob: [0.992377519607544, 0.007622486911714077]	<s> Their blast furnace , Hop ew ell , âĢ Ŀ was the very first blast furnace in the area . </s>
+
+right label: 1	prob: [8.131839422276244e-05, 0.9999186992645264]	<s> Open the can of beans using the can opener set your stove top to a 6 or 7 . Then put your beans into the pot then onto the stove . </s>
+
+right label: 1	prob: [8.802078082226217e-05, 0.9999120235443115]	<s> A family is standing outside a large duck model on a field . </s>
+
+right label: 1	prob: [7.603203994221985e-05, 0.9999239444732666]	<s> " aerial , little c aucas ian girl swimming in the outdoor swimming pool ", e , error ,, n oun phrase or adjective phrase syntax , </s>
+
+right label: 1	prob: [9.412174404133111e-05, 0.9999058246612549]	<s> Lots of relatives came from far away . </s>
+
+right label: 1	prob: [9.062471508514136e-05, 0.9999094009399414]	<s> A man carrying a white sweats hirt waits to cross the street . </s>
+
+right label: 0	prob: [0.9922903180122375, 0.007709730416536331]	<s> He means , we ' re going to change the future . </s>
+
+right label: 0	prob: [0.9902644157409668, 0.009735636413097382]	<s> Next day I found the colonel rather more conc ili atory , and as his wife remarked that there were some places of interest in the neighbourhood , it gave me an opening to ask whether my presence for one more night would inc omm ode them . </s>
+
+right label: 1	prob: [0.00011479996464913711, 0.9998852014541626]	<s> author and actor pose at the after party for the premiere . </s>
+
+right label: 0	prob: [0.9917818307876587, 0.008218138478696346]	<s> I imagine that people do not come here for un important reasons . âĢ Ŀ It his sed thought fully . </s>
+
+right label: 1	prob: [0.00014712323900312185, 0.9998528957366943]	<s> I love the ze br as because they look a lot like a striped horse . </s>
+
+right label: 0	prob: [0.9911155700683594, 0.008884458802640438]	<s> The light screen provided had informed me when and where official meals were taking place , but I had n 't bothered to acknowledge the invitations . </s>
+
+right label: 1	prob: [8.043363777687773e-05, 0.9999195337295532]	<s> " As at all his power stations , Scott faced the building in a fine Wor ces ters hire brick that has we athered to a lovely pink y - brown " </s>
+
+right label: 0	prob: [0.9916303753852844, 0.008369562216103077]	<s> I was born here , and I was lucky enough not to get attached to any particular river . </s>
+
+right label: 1	prob: [8.078616519924253e-05, 0.9999191761016846]	<s> " make a vertical slit in one of the J umbo ol ives , this will be the body , which you will stuff with cream cheese . ( You ; ll use 1 / 3 of the block to stuff pengu ins . Save the rest for icing the ig loo . ) " </s>
+
+right label: 0	prob: [0.9938535690307617, 0.006146455183625221]	<s> We wo n 't care that we ' re last and we wo n 't care that there are no more stars . </s>
+
+right label: 0	prob: [0.9914668798446655, 0.008533161133527756]	<s> The church was completely different now : sunlight fell through the stained glass , catching dust that still hung in the air and sending a dry , healthy warmth into the edges of the room , through the stone and the powder y concrete that had been covered last night by flesh and flashing lights . </s>
+
+right label: 0	prob: [0.9930994510650635, 0.006900576408952475]	<s> We are nt quite what you d expect from reading the Grim ms . âĢ Ŀ What do you mean ? âĢ Ŀ Okay , take elves . âĢ Ŀ He caught the bart enders eye for another shot . </s>
+
+right label: 0	prob: [0.9906222224235535, 0.009377778507769108]	<s> The ship had all the usual acc out re ments ( artificial gravity , tast efully painted walls , sound damp eners to keep the noise of the engines from driving the crew bats hit insane , recycled air systems ) , and a few less - usual : lush carpet ing , lighting that was decorative as well as functional , spacious corridors . </s>
+
+right label: 0	prob: [0.9926348328590393, 0.00736513826996088]	<s> Come on , I have something to show you . âĢ Ŀ With that , he made a sharp turn onto a side street that I had nt noticed before . </s>
+
+right label: 1	prob: [7.75553344283253e-05, 0.9999223947525024]	<s> A smiling baby is laying in a suitcase . </s>
+
+right label: 1	prob: [8.655046985950321e-05, 0.9999134540557861]	<s> Del icious food was being prepared </s>
+
+right label: 0	prob: [0.9903828501701355, 0.009617206640541553]	<s> Your accusations of inappropriate cutting are once again entirely unsupported -- in fact , it is quite clear from watching that particular scene that there is not a single cut from the point at which Moore asks H eston a second time for the cause of the higher violence in the States , and the point when he mentions the Kay la Roll and incident . </s>
+
+right label: 1	prob: [9.037031850311905e-05, 0.9999096393585205]	<s> person adds a we athered - steel and concrete extension to a house </s>
+
+right label: 0	prob: [0.9933562874794006, 0.006643683183938265]	<s> What ' s our destination ? âĢ Ŀ Tiffany , she stopped walking . </s>
+
+right label: 0	prob: [0.9910988211631775, 0.008901138789951801]	<s> On the steps in front of the altar , I saw pale forms and realized that they were Rachel and two other women . </s>
+
+right label: 0	prob: [0.9909310340881348, 0.009068958461284637]	<s> I called Mitch and our other friends , hoping that shed crashed at one of their houses , but I had no luck . </s>
+
+right label: 1	prob: [8.58446437632665e-05, 0.9999141693115234]	<s> A man sits on a bench with his arm around a lady . </s>
+
+right label: 1	prob: [8.13035003375262e-05, 0.9999186992645264]	<s> " She raised her chin a little , and a hard look came into her eyes . , " </s>
+
+right label: 1	prob: [9.324937855126336e-05, 0.9999067783355713]	<s> A man poses for the cameras while other pedestrians roam and m ingle . </s>
+
+right label: 1	prob: [0.0022099330089986324, 0.9977900981903076]	<s> Do it how it sounds . </s>
+
+right label: 1	prob: [0.00010319782450096682, 0.999896764755249]	<s> S erve with a warm tort illa   and top with a little cheese . </s>
+
+right label: 0	prob: [0.9917038679122925, 0.008296124637126923]	<s> But . . . well , no one important ever disappears , so it does n 't really matter , does it . âĢ Ŀ I could tell she was trying to remember whom she had known who had left , and failing . </s>
+
+right label: 1	prob: [0.000106394050817471, 0.9998935461044312]	<s> P our in some milk . </s>
+
+right label: 1	prob: [7.686016760999337e-05, 0.9999231100082397]	<s> mix different flavors of juice in a glass </s>
+
+right label: 1	prob: [8.619745494797826e-05, 0.9999138116836548]	<s> " person , person arrived in grand fashion with the team of the film . " </s>
+
+right label: 0	prob: [0.9900348782539368, 0.009965179488062859]	<s> Some of that is surely due to good marketing , but the real reason for its popularity is this : That sandwich was so good , I found myself eating slower and slower with each bite to sav or it more completely . </s>
+
+right label: 1	prob: [0.00020051700994372368, 0.9997995495796204]	<s> there are free hotel rooms going this summer - but there is a small catch . </s>
+
+right label: 0	prob: [0.9894816875457764, 0.010518280789256096]	<s> And each group considers that its well - being is conditioned by the disadvantage of each of the other three faiths , ar id that they can make progress only at their cost . </s>
+
+right label: 1	prob: [7.946556434035301e-05, 0.9999204874038696]	<s> " here he comes : emerging on set between takes he was and he was dressed in character and sporting a thick gre ying beard and spect acles for his leading role as person , a partner ", xd </s>
+
+right label: 0	prob: [0.985759437084198, 0.014240527525544167]	<s> It looked like we were in the back of a nightclub . </s>
+
+right label: 1	prob: [7.162061956478283e-05, 0.99992835521698]	<s> pictured : politician wins the day with the best t - shirt ever for a politician attending a 80 s - themed event . </s>
+
+right label: 1	prob: [7.730988727416843e-05, 0.9999226331710815]	<s> " One girls is holding a fr is bee , another girl is trying to get it . " </s>
+
+right label: 0	prob: [0.9924437403678894, 0.007556221913546324]	<s> Good , round breasts , too , even though they re small , they suit her . âĢ Ŀ Amy didnt blush , and I hoped that she didnt understand what Isis was saying . </s>
+
+right label: 0	prob: [0.9910569190979004, 0.008943089284002781]	<s> S uff ice it to say that not a trace of modesty did I perceive in this beautiful hardly formed young girl whom modern co - education , juvenile more s , the camp fire racket and so forth had utterly and hopeless ly dep raved . </s>
+
+right label: 1	prob: [8.573944069212303e-05, 0.999914288520813]	<s> First heat the popcorn bags until the popcorn is fully popped . </s>
+
+right label: 1	prob: [8.973682270152494e-05, 0.9999102354049683]	<s> A boy and a young woman in a head scar f make peace signs . </s>
+
+right label: 0	prob: [0.9906022548675537, 0.009397778660058975]	<s> Under the wise reign of Solomon , the city flourished as the capital of an empire that stretched from Damascus to the Red Sea and controlled the trade routes from Egypt to Ph oen icia . </s>
+
+right label: 0	prob: [0.9719411134719849, 0.028058839961886406]	<s> The H eston interview is at the very end of the movie . </s>
+
+right label: 1	prob: [8.297725435113534e-05, 0.9999170303344727]	<s> " Viol a Mach in , seated in her bay window , watched from under hood ed l ids the approach of her daughter - in - law through the wall gate and up the garden path . " </s>
+
+right label: 1	prob: [9.042840247275308e-05, 0.999909520149231]	<s> Now in possession of the ball ; the red team plans to make a point . </s>
+
+right label: 1	prob: [9.130607941187918e-05, 0.9999086856842041]	<s> " The two human factors which can be unamb ig uously measured are age and sex . , , " </s>
+
+right label: 1	prob: [9.299611701862887e-05, 0.9999070167541504]	<s> Mix the ingredients together with a blender . </s>
+
+right label: 1	prob: [8.366652764379978e-05, 0.9999163150787354]	<s> A young boy wearing brown is holding a tree in a park . </s>
+
+right label: 1	prob: [8.228966180467978e-05, 0.99991774559021]	<s> " news gathering car remained , parked outside house . " </s>
+
+right label: 0	prob: [0.9915472865104675, 0.008452750742435455]	<s> Actually , one main reason for the behavior of the US WA was that union leaders really had no idea what to do . </s>
+
+right label: 1	prob: [9.151038830168545e-05, 0.999908447265625]	<s> I enjoyed finally being able to relax and play a video game . </s>
+
+right label: 0	prob: [0.9905688762664795, 0.009431133978068829]	<s> but it was plain enough , this beauty , this exquisite beauty , and tears filled his eyes as he looked at the smoke words langu ishing and melting in the sky and best owing upon him , in their inex haust ible charity and laughing goodness , one shape after another of unimaginable beauty and signalling their intention to provide him , for nothing , for ever , for looking merely , with beauty , more beauty ! </s>
+
+right label: 1	prob: [8.698734745848924e-05, 0.9999129772186279]	<s> " At this level the practitioner is often the conscious monitor of the practice and facility in self - monitoring is a useful indicator of skill . , , " </s>
+
+right label: 1	prob: [9.33134215301834e-05, 0.9999066591262817]	<s> a sad little girl sits by the window with person watching the rain drops fall </s>
+
+right label: 0	prob: [0.9896233677864075, 0.010376648977398872]	<s> I realized that Rachel had disappeared without leaving a clue and I had no way to do anything but wait for her to show up âĢĵ which , if she were in a situation where I should be doing something , would probably be never . </s>
+
+right label: 0	prob: [0.9944078922271729, 0.0055921017192304134]	<s> The people of the once - g lor ious city were forced into an exile known as the Babylon ian Capt ivity . </s>
+
+right label: 0	prob: [0.9908577799797058, 0.009142226539552212]	<s> The Hitch H iker s Guide to the Galaxy sk ips lightly over this t angle of academic abstraction , pa using only to note that the term Future Perfect âĢ Ŀ has been abandoned since it was discovered not to be . </s>
+
+right label: 0	prob: [0.993062436580658, 0.0069375671446323395]	<s> I mean , we might have a lot of work ahead of us . âĢ Ŀ Are you kidding ? </s>
+
+right label: 0	prob: [0.9920578598976135, 0.007942148484289646]	<s> He was slim , almost drawn , but he had a kind of âĢ¦ l uster to him , I guess . </s>
+
+right label: 1	prob: [7.785084017086774e-05, 0.9999221563339233]	<s> " In a bowl put the lettuce , cr out ons , bacon and sliced ? ? chicken . " </s>
+
+right label: 1	prob: [8.32587102195248e-05, 0.9999167919158936]	<s> act ors attend the world premiere of science fiction film </s>
+
+right label: 0	prob: [0.9909233450889587, 0.009076644666492939]	<s> As noted above , the " from my cold dead hands " part is simply Moore ' s way to introduce H eston . </s>
+
+right label: 0	prob: [0.9915322661399841, 0.00846770592033863]	<s> In the center was a da is covered with white f urs and a young woman , surrounded by more pale men . </s>
+
+right label: 1	prob: [0.2616278827190399, 0.7383721470832825]	<s> Is this mine ? </s>
+
+right label: 1	prob: [7.904294034233317e-05, 0.9999209642410278]	<s> rain bow with small boat in the foreground , e , error ,, n oun phrase or adjective phrase syntax , </s>
+
+right label: 0	prob: [0.991108775138855, 0.008891157805919647]	<s> However , it soon became clear that although the local union leaders were prepared to fight , the international branch was not . </s>
+
+right label: 0	prob: [0.9908407926559448, 0.009159148670732975]	<s> The Bank had been implicated in shady financial deals with the Masonic Lodge . . . After half an hour , when the twilight had co ag ulated into dark , the silent negro who was driving the buggy hailed an opaque body somewhere ahead of them in the gl oo . </s>
+
+right label: 0	prob: [0.9931031465530396, 0.00689685856923461]	<s> If she s in trouble , I want to find her , wherever she is . âĢ Ŀ My driver took a deep breath . </s>
+
+right label: 1	prob: [7.707396434852853e-05, 0.9999228715896606]	<s> " Add your fl ours , and fl ax into a bowl . Gr ate your Butter into the Bowl . Gr ating it on the largest setting on your Gr ater is a wonderful was to get the perfect size of Butter pieces without trying to mix it into pe a sizes pieces . " </s>
+
+right label: 0	prob: [0.9911215305328369, 0.008878469467163086]	<s> It is notable that the Wall Street Journal ' s reaction to this segment of the film was even more dismissive than yours : It called Moore ' s claim " prep oster ous " . </s>
+
+right label: 0	prob: [0.9917505383491516, 0.008249402046203613]	<s> She found that the city s most beautiful Roman temple , dedicated to the goddess Aph rod ite , stood on the site of the crucifix ion . </s>
+
+right label: 1	prob: [9.220686479238793e-05, 0.9999077320098877]	<s> P our apple mix over cake and spread evenly throughout . Ref riger ate for 3 - 4 hours or overnight . </s>
+
+right label: 0	prob: [0.993486762046814, 0.0065132733434438705]	<s> Is is âĢ¦ you know some way to locate the undead , dont you ? âĢ Ŀ I do . </s>
+
+right label: 0	prob: [0.9893968105316162, 0.010603114031255245]	<s> All that he knew , and most sincerely desired to keep the orders and regulations , but none the less he acted contrary to them . </s>
+
+right label: 1	prob: [7.94376028352417e-05, 0.9999206066131592]	<s> The local kids are having a foot race . </s>
+
+right label: 0	prob: [0.9904458522796631, 0.009554191492497921]	<s> If it were a thing that gave advantage in battle , I can well believe that Bor om ir , the proud and fearless , often rash , ever anxious for the victory of Min as Tir ith ( and his own glory therein ) , might desire such a thing and be all ured by it . " </s>
+
+right label: 0	prob: [0.9902102947235107, 0.009789726696908474]	<s> It is not explained what " normally " is supposed to mean , but that claim flat ly contradicts the statement of the bank official in the film . </s>
+
+right label: 0	prob: [0.9905971884727478, 0.009402786381542683]	<s> Cur iously , however , the questions on the piece of paper more or less exactly matched the questions that were going through the massive battle - scar red industrial quality circuits of the robot ' s mind . </s>
+
+right label: 1	prob: [8.860362140694633e-05, 0.9999114274978638]	<s> actor arrives at the premiere </s>
+
+right label: 1	prob: [0.00011358692427165806, 0.9998863935470581]	<s> the ice begins to weaken and great raft s break free and float downstream on the increasing current </s>
+
+right label: 1	prob: [8.005654672160745e-05, 0.9999198913574219]	<s> rs - coming in the summer . , e , error ,, n oun phrase or adjective phrase syntax , </s>
+
+right label: 1	prob: [0.00011460068344604224, 0.9998854398727417]	<s> Measure down 2 . 5 cm from the new top edge .   Mark an horizontal line at this point on three sides .   Cut along line through three sides .   Leave band attached to one side of cart on body . </s>
+
+right label: 0	prob: [0.9908934831619263, 0.009106509387493134]	<s> Now , months later in the Villa San G iro lam o , in the hill town north of Florence , in the ar bour room that is his bedroom , he rep oses like the sculpture of the dead knight in Raven na . </s>
+
+right label: 1	prob: [8.652068208903074e-05, 0.9999134540557861]	<s> This person looks to be snow boarding on a very small pile of snow on a sunny cold day . </s>
+
+right label: 1	prob: [0.0001441420172341168, 0.9998558759689331]	<s> The scenery was pretty . </s>
+
+right label: 1	prob: [9.181187488138676e-05, 0.9999082088470459]	<s> Cook for another minute of two and remove from the skillet . Cut sam m ich in half on a plate . </s>
+
+right label: 1	prob: [8.4807732491754e-05, 0.9999152421951294]	<s> A man in formal wear plays the guitar and sings . </s>
+
+right label: 0	prob: [0.9905704259872437, 0.009429620578885078]	<s> At the top was one door . </s>
+
+right label: 0	prob: [0.9867859482765198, 0.013214083388447762]	<s> Im mediately after the workers left the building , US steel representatives told the local union leaders that they had changed their minds and were no longer interested in allowing the workers to purchase them ill . </s>
+
+right label: 0	prob: [0.9920052886009216, 0.00799474585801363]	<s> We ve had gen ies , indent ured sorce rers , even go lems and the occasional elf . </s>
+
+right label: 0	prob: [0.9905973076820374, 0.009402617812156677]	<s> G ree ce was handed a strip of land along the western coast of Asia Minor , which for over 2 , 000 years had had a substantial Greek population . </s>
+
+right label: 1	prob: [9.280157246394083e-05, 0.9999071359634399]	<s> the train leaves railway station </s>
+
+right label: 1	prob: [0.00013341696467250586, 0.9998666048049927]	<s> person was featured prominently as part of the campaign in early march . </s>
+
+right label: 1	prob: [8.209363295463845e-05, 0.9999178647994995]	<s> " There is a need for formal erg onom ics in any design where the designer himself is not an experienced user . , , " </s>
+
+right label: 0	prob: [0.9924356341362, 0.007564314641058445]	<s> After the first who osh of the air being sucked away , there was lightning , but no thunder . </s>
+
+right label: 0	prob: [0.9903866052627563, 0.009613470174372196]	<s> Board man , Poland Township , Str ut hers , Lowell ville , Warren , Lord stown , Can field , N iles , and many other towns and districts are crowded around Young stown ( see Figure 3 ) . </s>
+
+right label: 0	prob: [0.9930815100669861, 0.00691854627802968]	<s> It is paradox ical notions like this one which Moore ' s film seeks to address . </s>
+
+right label: 1	prob: [8.23348673293367e-05, 0.9999176263809204]	<s> " After the yeast has been activated , you mix the remaining flour with what you have left rest . Then , you kn ead the mix you have made . " </s>
+
+right label: 1	prob: [9.875744581222534e-05, 0.9999011754989624]	<s> A rock clim ber pauses to look out over the ocean . </s>
+
+right label: 1	prob: [7.461106724804267e-05, 0.9999253749847412]	<s> " it may say w edd ing because of the ring , but i ' m pin ning it for the nail polish . " </s>
+
+right label: 0	prob: [0.9927854537963867, 0.007214585319161415]	<s> In his mind the Universe still divided into two parts - the Earth , and everything else . </s>
+
+right label: 1	prob: [9.325435530627146e-05, 0.9999067783355713]	<s> Roll into bite size - balls ( the size you roll them depends on how many you want to make ) . </s>
+
+right label: 1	prob: [7.945403922349215e-05, 0.9999204874038696]	<s> A tennis player at a match is getting ready to hit the ball . </s>
+
+right label: 1	prob: [0.0001274964160984382, 0.9998724460601807]	<s> Along the trail ; there were steep cavern s </s>
+
+right label: 1	prob: [9.437212429475039e-05, 0.9999055862426758]	<s> A person wearing a yellow jacket is riding a white motorcycle by a crowd of onlook ers . </s>
+
+right label: 1	prob: [7.529457070631906e-05, 0.9999246597290039]	<s> " Before anything wash your hands . First Pre heat the oven to 275 degrees , then line your cookie tray with foil , unw rap your candy , and arrange them in stacks of three . ( Your options of colors ) Note : When you are arranging the candy make sure they are separated in a good amount of space . So when the candy melts , they do n 't come together . " </s>
+
+right label: 0	prob: [0.9916028380393982, 0.008397135883569717]	<s> Americans were gl o ating over this dement ed corpse show : " They squ eal ed like little p igg ies too , so you ' ll have to make do with ' o ink , o ink , squee eeee eal ll l ' for their last words . </s>
+
+right label: 1	prob: [7.74789004935883e-05, 0.999922513961792]	<s> " keep cutting and connecting them , until you have a long chain " </s>
+
+right label: 1	prob: [7.673837535548955e-05, 0.9999232292175293]	<s> A blond man in a dress shirt and tie is standing next to a fence and smiling . </s>
+
+right label: 1	prob: [8.284521754831076e-05, 0.9999171495437622]	<s> a fan shows her disappointment as person were upset on s aturday night . </s>
+
+right label: 1	prob: [8.701721526449546e-05, 0.9999129772186279]	<s> Three kids are playing musical instruments in a music concert . </s>
+
+right label: 1	prob: [9.089837840292603e-05, 0.9999090433120728]	<s> " A man is sitting on a b ann ister on a pier holding a bunch of colorful balloons , while more balloons tied to the b ann ister behind him blow in the wind . " </s>
+
+right label: 1	prob: [8.025306306080893e-05, 0.9999197721481323]	<s> A few of them are sharing a dance . </s>
+
+right label: 1	prob: [9.221670916303992e-05, 0.9999077320098877]	<s> A laptop is sitting on a table with equipment </s>
+
+right label: 0	prob: [0.9867904782295227, 0.013209526427090168]	<s> It must have been larger than my finger . </s>
+
+right label: 0	prob: [0.9918980598449707, 0.00810192245990038]	<s> I think that our world is a reflection of yours , or yours is a more boring reflection of ours . </s>
+
+right label: 1	prob: [8.232324762502685e-05, 0.9999176263809204]	<s> " First of all you want it straight , then you want it curly ! " </s>
+
+right label: 0	prob: [0.9910007119178772, 0.008999237790703773]	<s> The air around me seemed to still sound , and light came in around the corners of my eyes . </s>
+
+right label: 1	prob: [8.833500760374591e-05, 0.9999116659164429]	<s> demon str ators walk near a damaged bus </s>
+
+right label: 1	prob: [9.816293459152803e-05, 0.9999017715454102]	<s> Ma ice y thought it would be a good idea to take the left side of the trail . </s>
+
+right label: 1	prob: [0.0012013899395242333, 0.9987986087799072]	<s> A giant orange paw print marks the stadium from another side . </s>
+
+right label: 1	prob: [8.515449007973075e-05, 0.9999148845672607]	<s> A young woman is pole vault ing . </s>
+
+right label: 0	prob: [0.9910597205162048, 0.008940269239246845]	<s> He took us to a squat , long building whose roof bul ged up like the ribs of a gut ted animal . </s>
+
+right label: 0	prob: [0.9905045628547668, 0.009495431557297707]	<s> âĢ Ŀ The people wondered and felt insulted for a time and then began to grow accustomed to them , as they had grown accustomed to so many other innovations , even though they did not approve them . </s>
+
+right label: 0	prob: [0.9925528168678284, 0.007447110489010811]	<s> My wife ' s name , once . </s>
+
+right label: 1	prob: [8.301548223244026e-05, 0.9999170303344727]	<s> " Take the sandwich and a garn ish if you wish . I would suggest cutting in half to get a full bite of the best flavor . I hope you liked the instruct able and more importantly , I hope you enjoy the sandwich : ) Enjoy ! ! " </s>
+
+right label: 0	prob: [0.9909734129905701, 0.009026546962559223]	<s> P il gr ims came from all over the Roman ( and , later , Byzantine ) Empire during the following centuries , but the prosperity they brought lasted only until 6 14 , when Persian armies overt ook Jude a and reduced Jerusalem to rubble again . </s>
+
+right label: 0	prob: [0.9901124835014343, 0.009887512773275375]	<s> The shr ill ( and remarkably unsuccessful ) Internet campaign to " revoke " his award seems to be motivated more by jealousy than by real concerns about the film ' s accuracy . </s>
+
+right label: 0	prob: [0.9903664588928223, 0.009633561596274376]	<s> The Gen o ese took control of the eastern Ae ge an Islands , which were considered the most valuable for agriculture and trade . </s>
+
+right label: 0	prob: [0.9928026795387268, 0.007197310216724873]	<s> The island communities were undecided about which side to back for a time . </s>
+
+right label: 1	prob: [0.00010375621786806732, 0.9998962879180908]	<s> The reception was held next to the mar ina . </s>
+
+right label: 0	prob: [0.9924161434173584, 0.007583798374980688]	<s> It is the second intuition which gun rights groups like the NRA seek to obscure using fraudulent data by the likes of John " Mary " L ott . </s>
+
+right label: 0	prob: [0.9888119697570801, 0.011188006959855556]	<s> There is What We Know ( or think we know ) To Be The Case , there is What We Believe To Be The Case ( on the assurance of others whom we trust ) , and then there is How We Beh ave . </s>
+
+right label: 1	prob: [8.135639654938132e-05, 0.9999185800552368]	<s> A dog runs to catch a Fr is bee on Astro Tur f . </s>
+
+right label: 0	prob: [0.9937011003494263, 0.0062989601865410805]	<s> Until thirty seconds ago , I didnt believe in magic or any of that kind of âĢ¦ we ird ness . âĢ Ŀ N athan , I told you : my family owes yours a debt . </s>
+
+right label: 0	prob: [0.9912146329879761, 0.00878528505563736]	<s> For there was in Sir William , whose father had been a trades man , a natural respect for breeding and clothing , which sh abb iness net t led ; He was , therefore , safely shrouded in a blanket of dark obscurity . </s>
+
+right label: 1	prob: [7.811185787431896e-05, 0.9999219179153442]	<s> A dancer wearing white shirt and shorts is photographed by a man ( who is ) also wearing white . </s>
+
+right label: 1	prob: [8.367306872969493e-05, 0.9999163150787354]	<s> A man in a black hat walks down the street . </s>
+
+right label: 0	prob: [0.9939423203468323, 0.006057619582861662]	<s> We each had our own theory . </s>
+
+right label: 1	prob: [8.721334597794339e-05, 0.9999127388000488]	<s> When she goes out she always has a great time . </s>
+
+right label: 1	prob: [8.229805825976655e-05, 0.99991774559021]	<s> here is a hand a city constructed bag . </s>
+
+right label: 1	prob: [0.00010833574924618006, 0.9998916387557983]	<s> " planning to spend above rs lakh on marriage ? person seeks cap on guests , menu -- here are the details ", x q </s>
+
+right label: 0	prob: [0.9948134422302246, 0.005186607129871845]	<s> How do you know my name ? âĢ Ŀ I know your family . </s>
+
+right label: 1	prob: [0.00015251115837600082, 0.999847412109375]	<s> It ' s not a party until the F rit os and T ost it os show up ! </s>
+
+right label: 1	prob: [8.480700489599258e-05, 0.9999152421951294]	<s> A blond child is playing with a metal yard ornament . </s>
+
+right label: 1	prob: [9.026352199725807e-05, 0.9999097585678101]	<s> A baseball player is getting ready to hit the ball as the catcher and u mpire watch . </s>
+
+right label: 1	prob: [8.212824468500912e-05, 0.9999178647994995]	<s> A boy in a costume is sitting on a bike . </s>
+
+right label: 1	prob: [0.00011467785952845588, 0.9998853206634521]	<s> " This car was inspired by the movie ; " " Al addin . " " " </s>
+
+right label: 0	prob: [0.990036129951477, 0.009963879361748695]	<s> This is a common technique , but because conservative readers are not familiar with the basics of filmmaking , they believe critics who claim that he is " dist orting " the interview . </s>
+
+right label: 1	prob: [7.357112917816266e-05, 0.9999264478683472]	<s> a natural way to recycle food waste - give it to the chickens , i </s>
+
+right label: 1	prob: [9.102710464503616e-05, 0.9999089241027832]	<s> st ages of a relationship are similar to the many levels of infrastructure within a freeway </s>
+
+right label: 1	prob: [7.613274647155777e-05, 0.999923825263977]	<s> now put it inside the freezer to make it frozen </s>
+
+right label: 0	prob: [0.9889904260635376, 0.011009609326720238]	<s> And when in fact the man went away , they were only too pleased to be able to return to their usual habits , and to go on sitting peacefully on the k ap ia without conversations which made life disagree able and the future terrifying , and to leave it to time to soften and ease the weight of the events which had taken place over there behind the mountains . </s>
+
+right label: 0	prob: [0.9900042414665222, 0.009995803236961365]	<s> Property owned by Arab refugees , who either fled war zones or were forced from their homes by the Israeli army ( another long - standing controversy ) , was also taken over by individual Jews or confiscated by the government . </s>
+
+right label: 1	prob: [8.66946138557978e-05, 0.9999133348464966]	<s> After a while all the water starts to become cloudy with the salt . This pic is how I had to have things set up ( and try and cook at the same time ! ) </s>
+
+right label: 0	prob: [0.9948505759239197, 0.005149370059370995]	<s> N ep th ys stood over him with a blue sword in his hand . </s>
+
+right label: 1	prob: [7.468324474757537e-05, 0.9999252557754517]	<s> patrick threw the ball ; they are f umbling for it . </s>
+
+right label: 1	prob: [9.155255975201726e-05, 0.999908447265625]	<s> Two street work men are working on the sidewalk . </s>
+
+right label: 1	prob: [8.17338441265747e-05, 0.9999182224273682]	<s> a small dog is sleeping on a sheet </s>
+
+right label: 1	prob: [0.0001224974839715287, 0.9998774528503418]	<s> Add the Wor ces ters hire sauce & Sr ir acha sauce to the meat and mix well . Ref riger ate overnight . </s>
+
+right label: 0	prob: [0.993855893611908, 0.006144072860479355]	<s> Y ours sincerely , Erik M Ã¶ ller This text is in the public domain . </s>
+
+right label: 0	prob: [0.9919420480728149, 0.00805799663066864]	<s> Are you hurt ? âĢ Ŀ She shook her head , rubbing her face into the white fur and murm uring something . </s>
+
+right label: 1	prob: [0.0001005607409751974, 0.9998993873596191]	<s> " Then he went back to contemplation of one of his local   scenes , his broad shoulders hun ched in the vivid purple shirt , his head pressed forward . " </s>
+
+right label: 1	prob: [9.251583833247423e-05, 0.9999074935913086]	<s> A dish of broccoli sits on a a printed paper on a white plate . </s>
+
+right label: 0	prob: [0.9867693185806274, 0.01323061902076006]	<s> I am glad to be out of the favor - tr ading scene for half a minute . </s>
+
+right label: 1	prob: [9.18146688491106e-05, 0.9999082088470459]	<s> A sur fer is walking toward the water with board in tow with the horizon in the background . </s>
+
+right label: 1	prob: [8.732644346309826e-05, 0.9999126195907593]	<s> Add your filling to the pie crust . Place second pie crust on top and crim p edges together . Dec orate as desired . Be sure to poke a couple of holes in the top crust for vent ing . You can either do this with a knife or a fork . </s>
+
+right label: 0	prob: [0.9908849596977234, 0.009115018881857395]	<s> G ree ce attempted to stay out of World War II , but Muss olini saw Greece as an ideal addition to his Italian empire . </s>
+
+right label: 0	prob: [0.9886745810508728, 0.011325441300868988]	<s> There are no finer to spice a meal , nor pure r to mix a potion . </s>
+
+right label: 0	prob: [0.9911752939224243, 0.00882467906922102]	<s> I could have started asking questions , but I wanted to get my bearings first . </s>
+
+right label: 0	prob: [0.991519033908844, 0.008481020107865334]	<s> Regardless , when Ad rien ne asked what the ship ' s purpose was , we all gave it a measure of thought . </s>
+
+right label: 1	prob: [8.217853610403836e-05, 0.9999178647994995]	<s> A little boy is playing with a blue wheel on a swing set . </s>
+
+right label: 1	prob: [0.00010588012082735077, 0.9998941421508789]	<s> She relax es hoping that the rest will heal her body . </s>
+
+right label: 0	prob: [0.9905313849449158, 0.009468690492212772]	<s> The other kids at school nicknamed him I x , which in the language of Bet el ge use Five translates as " boy who is [ ] not able satisf actor ily to explain what a H r ung is , nor why it should choose to collapse on Bet el ge use Seven " . ] </s>
+
+right label: 1	prob: [9.762757690623403e-05, 0.9999023675918579]	<s> Jul ie brought her baby Franklin he loved the new house . </s>
+
+right label: 0	prob: [0.9905721545219421, 0.009427879005670547]	<s> He told Nep th ys the name of a woman who lived on a certain street , and we set off . </s>
+
+right label: 0	prob: [0.9946052432060242, 0.005394774489104748]	<s> I had an urge to cover Am ys eyes . </s>
+
+right label: 0	prob: [0.9931356906890869, 0.006864333990961313]	<s> Yeah , the captain was there , with the rest of us . </s>
+
+right label: 1	prob: [9.31597751332447e-05, 0.9999067783355713]	<s> One more friend has gotten in on the act and is singing along with her friends ' guitar playing . </s>
+
+right label: 1	prob: [8.379539212910458e-05, 0.9999161958694458]	<s> An Asian looking man smiles as he is getting ready to hit a bill iard ball . </s>
+
+right label: 1	prob: [7.676963286940008e-05, 0.9999232292175293]	<s> " a white with animal is standing in dirt , its front right paw is up . " </s>
+
+right label: 1	prob: [8.134941890602931e-05, 0.9999186992645264]	<s> soc cer player raises a smile during the match . </s>
+
+right label: 1	prob: [8.536319364793599e-05, 0.9999146461486816]	<s> " He was just med itating whether he could risk running straight in through the kitchen door when he saw two of the fire men in masks , doing just that . " </s>
+
+right label: 0	prob: [0.9896711707115173, 0.010328914038836956]	<s> The second time this happened , the Lieutenant - Col onel summoned the interpreter and told him that if it happened once more , even in the mild est form , he could expect the immediate application of the paragraph of the Regulations relating to such repeated cases of serious ins ub ord ination . </s>
+
+right label: 0	prob: [0.9897604584693909, 0.010239532217383385]	<s> Whether it was because he was drunk , ill or su ic id ally insane would not have been apparent to a casual observer , and indeed there were no casual observers in the Old Pink Dog Bar on the lower South Side of Han D old City because it was n 't the sort of place you could afford to do things casually in if you wanted to stay alive . </s>
+
+right label: 0	prob: [0.9913190007209778, 0.008680932223796844]	<s> He lay for a while in the silent dusty rubble to which most of the room had been reduced . </s>
+
+right label: 0	prob: [0.9920297861099243, 0.007970216684043407]	<s> The Second Temple was finished in 5 15 b . c . </s>
+
+right label: 0	prob: [0.993096649646759, 0.006903370376676321]	<s> I bet his hide - out is nearby , too . </s>
+
+right label: 0	prob: [0.9912047982215881, 0.008795219473540783]	<s> Did it truly matter what the ship ' s origin was and why Jefferson had saved me , if now , I was content ? </s>
+
+right label: 0	prob: [0.9916307330131531, 0.00836928654462099]	<s> The kid was a little bastard , and the parents were involved in drugs -- case closed . </s>
+
+right label: 1	prob: [0.00010802524775499478, 0.999891996383667]	<s> Even the towns make for amazing pictures . </s>
+
+right label: 0	prob: [0.9912380576133728, 0.00876188836991787]	<s> Then I looked down and saw what had let us in . </s>
+
+right label: 1	prob: [8.53826422826387e-05, 0.9999146461486816]	<s> " A young baseball player wearing a yellow shirt and a blue helmet with " " T " " on it slides into home plate and the catcher , while teammates watch . " </s>
+
+right label: 0	prob: [0.9925425052642822, 0.007457480300217867]	<s> I kept track for a while âĢĶ th irty - eight days âĢĶ but after that . . . I guess I did n 't see the point . âĢ Ŀ Fact : Some places are timeless . </s>
+
+right label: 1	prob: [7.788604125380516e-05, 0.9999221563339233]	<s> The cat is sitting patiently on the piano bench . </s>
+
+right label: 1	prob: [0.00013183048577047884, 0.9998681545257568]	<s> 1 cup pizza sauce 1 packaged pizza crust ( any type of crust ) 1 / 4 cup pepper oni slices 1 1 / 2 cups shredded mo zz arella ,, ate lic </s>
+
+right label: 1	prob: [0.00010439892503200099, 0.9998955726623535]	<s> Now you have a delicious tuna sandwich . Eat up ! </s>
+
+right label: 1	prob: [8.957140380516648e-05, 0.9999104738235474]	<s> Place the roasted egg plant and caul iflower into the food processor with the onion and garlic .   Pulse until reasonably smooth ( some small chunks are desirable ) </s>
+
+right label: 0	prob: [0.9902753829956055, 0.009724613279104233]	<s> The girl was as soft and ro sy as the stones glow , and she was dressed in a white shift tied at the waist with a belt like a Celtic knot . </s>
+
+right label: 1	prob: [8.453216287307441e-05, 0.9999154806137085]	<s> " In a pre he ated 400 degree oven , cook your zombie for 15 - 18 minutes . Serve with your favorite mar in ara or bol gan ese ! Eat him before he eats you ! " </s>
+
+right label: 1	prob: [7.655230001546443e-05, 0.9999234676361084]	<s> setting up for a wedding , e , error ,, n oun phrase or adjective phrase syntax , </s>
+
+right label: 1	prob: [0.0002536707906983793, 0.9997463822364807]	<s> Well I sh a n 't get it in there . </s>
+
+right label: 1	prob: [0.00010361957538407296, 0.9998964071273804]	<s> Spread the bread with chocolate . </s>
+
+right label: 1	prob: [9.76791707216762e-05, 0.9999023675918579]	<s> Cl aire and Amanda had not seen each other in ten years and were over joy ed to spend time together again . </s>
+
+right label: 1	prob: [8.175621769623831e-05, 0.9999182224273682]	<s> how - to - make - ch unky - ch ocolate - cook ies _ 2 _ 0 . jpg </s>
+
+right label: 0	prob: [0.97353595495224, 0.0264640673995018]	<s> Initially many assumed that their union would take a lead role in fighting for the recovery of their jobs . </s>
+
+right label: 0	prob: [0.9866735935211182, 0.013326413929462433]	<s> Would n 't we know it if we were part of a rebellion ? </s>
+
+right label: 0	prob: [0.9926483035087585, 0.007351687643676996]	<s> I guess we all figured , he knew what he was doing . </s>
+
+right label: 0	prob: [0.990931510925293, 0.009068451821804047]	<s> All we ' re doing is eating and drinking and sh itting , breathing and fucking and nothing important , ever . </s>
+
+right label: 1	prob: [8.613886893726885e-05, 0.9999138116836548]	<s> A large bird is standing in an open window . </s>
+
+right label: 0	prob: [0.9916881918907166, 0.008311815559864044]	<s> As An i Kung a explained , " Pr ayers , wishes , hopes , aspirations -- someone , many people , may share those with you . </s>
+
+right label: 0	prob: [0.9906484484672546, 0.009351546876132488]	<s> But , looking through their cigarette smoke into the distance , beyond the inscription and the plac ard , they seemed to see somewhere in the world another and different life , a life of great asc ents and sudden falls , in which greatness ming led with tragedy and which in some manner maintained a balance with this peaceful and mon oton ous existence of theirs on the k ap ia . </s>
+
+right label: 1	prob: [7.487107359338552e-05, 0.9999251365661621]	<s> drop ceiling much less noticeable when painted the same colour as the walls , e , error ,, n oun phrase or adjective phrase syntax , </s>
+
+right label: 0	prob: [0.9942753911018372, 0.005724631249904633]	<s> To invoke Gaia without this in mind is no more than a counsel to perfection . </s>
+
+right label: 0	prob: [0.9907118678092957, 0.009288082830607891]	<s> The " New Palestinian Jew , " they said , needed to be physically tougher than the brain y shop keepers who had been tram pled in Europe . </s>
+
+right label: 1	prob: [8.341477951034904e-05, 0.9999165534973145]	<s> " Er no , but one of them   collected these ones . , " </s>
+
+right label: 1	prob: [0.00013627756561618298, 0.9998637437820435]	<s> I usually beat him . </s>
+
+right label: 0	prob: [0.9913210272789001, 0.008678976446390152]	<s> Chip ' s memories of 1990 were of Tud or dramas , inter min able futile rights with Tor i Tim mel man , a secret unhealthy involvement with certain texts of Tor i ' s that illustrated the dehuman izing object ifications of pornography , and little else . " </s>
+
+right label: 0	prob: [0.8254583477973938, 0.17454172670841217]	<s> By contrast with the still unknown but evidently multi - dimensional organisation and functioning of the system in the human brain the data must be organised for communication in linear fashion . </s>
+
+right label: 0	prob: [0.9913104772567749, 0.008689546957612038]	<s> This is the seat of His Hol iness the Sak ya Tri zin in the United States , a Tibetan Buddhist monastery established nine years ago . </s>
+
+right label: 0	prob: [0.9899091720581055, 0.01009085401892662]	<s> The Palestinian Authority ' s decision to make the sale of land to Jews a capital crime reflects Palestinian frustration with Israeli land use , specifically the creation of a new Jewish neighborhood now under construction in East Jerusalem . </s>
+
+right label: 0	prob: [0.9913845062255859, 0.008615531958639622]	<s> I would have sworn to you that he was dead . </s>
+
+right label: 0	prob: [0.9929064512252808, 0.007093529216945171]	<s> The Ap athy of US WA United Steel Workers of America was the union representing the Young stown steel workers when the clos ings hit . </s>
+
+right label: 0	prob: [0.9917470216751099, 0.008252971805632114]	<s> Now spring was back , under the concrete , and I could smell it even here . </s>
+
+right label: 0	prob: [0.9927167892456055, 0.007283189799636602]	<s> The Has mone ans ruled until Pompe ys Roman legions arrived in 63 b . c . </s>
+
+right label: 0	prob: [0.9919846653938293, 0.008015336468815804]	<s> I do n 't know how Jefferson knew to find me there . âĢ Ŀ She nodded . </s>
+
+right label: 1	prob: [8.062847336987033e-05, 0.9999194145202637]	<s> " In a large bowl , dice up 4 cups of apples of your choice " </s>
+
+right label: 1	prob: [0.0002866547729354352, 0.9997133612632751]	<s> Rose laughed and looked more happy . </s>
+
+right label: 0	prob: [0.9944750666618347, 0.0055249533616006374]	<s> I want to see what a magic stone looks like . </s>389 out of 408

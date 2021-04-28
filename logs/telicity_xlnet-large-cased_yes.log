@@ -1,0 +1,1355 @@
+
+Uses verb segment ids: yes
+Model: xlnet-large-cased
+Model type: xlnet
+Train set: 4940
+Validation set: 618
+Test set: 618
+transformer.layer.0.rel_attn.o                          (1024, 16, 64)
+transformer.layer.0.rel_attn.r                          (1024, 16, 64)
+transformer.layer.0.rel_attn.r_r_bias                       (16, 64)
+transformer.layer.0.rel_attn.r_s_bias                       (16, 64)
+transformer.layer.0.rel_attn.r_w_bias                       (16, 64)
+transformer.layer.0.rel_attn.seg_embed                   (2, 16, 64)
+transformer.layer.0.rel_attn.layer_norm.weight               (1024,)
+transformer.layer.0.rel_attn.layer_norm.bias                 (1024,)
+transformer.layer.0.ff.layer_norm.weight                     (1024,)
+transformer.layer.0.ff.layer_norm.bias                       (1024,)
+transformer.layer.0.ff.layer_1.weight                   (4096, 1024)
+transformer.layer.0.ff.layer_1.bias                          (4096,)
+transformer.layer.0.ff.layer_2.weight                   (1024, 4096)
+transformer.layer.0.ff.layer_2.bias                          (1024,)
+transformer.layer.1.rel_attn.q                          (1024, 16, 64)
+transformer.layer.1.rel_attn.k                          (1024, 16, 64)
+	======== Epoch 1 / 4 ========
+Training...
+	Batch    40	of	  155.		Elapsed: 0:30:07.
+	Batch    80	of	  155.		Elapsed: 0:59:45.
+	Batch   120	of	  155.		Elapsed: 1:29:22.
+	Average training loss: 0.55
+	Training epoch took: 1:54:51
+	Running Validation...
+	Accuracy: 0.81
+	Validation took: 0:04:20
+	Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.75      0.97      0.85       322
+           1       0.95      0.65      0.77       296
+
+   micro avg       0.82      0.82      0.82       618
+   macro avg       0.85      0.81      0.81       618
+weighted avg       0.84      0.82      0.81       618
+
+	======== Epoch 2 / 4 ========
+Training...
+	Batch    40	of	  155.		Elapsed: 0:29:39.
+	Batch    80	of	  155.		Elapsed: 0:59:12.
+	Batch   120	of	  155.		Elapsed: 1:28:58.
+	Average training loss: 0.42
+	Training epoch took: 1:54:39
+	Running Validation...
+	Accuracy: 0.81
+	Validation took: 0:04:13
+	Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.79      0.87      0.83       322
+           1       0.84      0.74      0.79       296
+
+   micro avg       0.81      0.81      0.81       618
+   macro avg       0.81      0.81      0.81       618
+weighted avg       0.81      0.81      0.81       618
+
+	======== Epoch 3 / 4 ========
+Training...
+	Batch    40	of	  155.		Elapsed: 0:29:36.
+	Batch    80	of	  155.		Elapsed: 0:59:11.
+	Batch   120	of	  155.		Elapsed: 1:28:53.
+	Average training loss: 0.33
+	Training epoch took: 1:54:26
+	Running Validation...
+	Accuracy: 0.81
+	Validation took: 0:04:22
+	Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.78      0.90      0.83       322
+           1       0.87      0.72      0.79       296
+
+   micro avg       0.81      0.81      0.81       618
+   macro avg       0.82      0.81      0.81       618
+weighted avg       0.82      0.81      0.81       618
+
+	======== Epoch 4 / 4 ========
+Training...
+	Batch    40	of	  155.		Elapsed: 0:29:27.
+	Batch    80	of	  155.		Elapsed: 0:59:03.
+	Batch   120	of	  155.		Elapsed: 1:28:34.
+	Average training loss: 0.26
+	Training epoch took: 1:54:00
+	Running Validation...
+	Accuracy: 0.82
+	Validation took: 0:04:11
+	Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.81      0.86      0.83       322
+           1       0.83      0.78      0.80       296
+
+   micro avg       0.82      0.82      0.82       618
+   macro avg       0.82      0.82      0.82       618
+weighted avg       0.82      0.82      0.82       618
+
+Loaded model succesful. Running testing...
+Accuracy: 0.82
+Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.81      0.86      0.83       322
+           1       0.83      0.78      0.80       296
+
+   micro avg       0.82      0.82      0.82       618
+   macro avg       0.82      0.82      0.82       618
+weighted avg       0.82      0.82      0.82       618
+
+
+Wrong predictions:
+
+wrong label: 0	prob: [0.9421830177307129, 0.057816989719867706]	I would wake late  , checking the clock on my room  ' s light screen to make sure I had  n ' t slept through  bru nch  . <sep> <cls>
+
+wrong label: 1	prob: [0.10982118546962738, 0.8901787996292114]	The girl who sat for it  ' s certainly an amateur of a sort  , and she acts as a model  , at least while she  ' s being painted  , so there you are  . <sep> <cls>
+
+wrong label: 1	prob: [0.16583485901355743, 0.834165096282959]	The crusade rs swept through the  l  ; and of By zan t ium slaughter ing Christians as well as Muslims  , civilians as well as soldiers  . <sep> <cls>
+
+wrong label: 0	prob: [0.9808229804039001, 0.019177071750164032]	They began the process of building their strong  cit ad els  , and reinforcing the Christian faith on the islands  . <sep> <cls>
+
+wrong label: 1	prob: [0.4908747673034668, 0.5091251730918884]	In any other country they  ' d  s ic a bulldoz er on it  .  .  . I saw entire orchard s of as ht ray s  , all of em the same  , inscribed with the name  MIT RO PA  .  .  . at one end of the market sat a few cars  , some c lunk y old Po bed as  , a Tra ban t  , and a Czech model I call the Com a  .  .  . we  tru d ged through the sand and the dust  , per using the people and what they were selling  , at a stand with <sep> <cls>
+
+wrong label: 1	prob: [0.4789866805076599, 0.5210133790969849]	Soul s nourish It  .  .  . L ying in bed with his at las  , he mapped a trail through the Southwest  . <sep> <cls>
+
+wrong label: 0	prob: [0.9530578851699829, 0.04694207385182381]	You ll be used to the sensation in a moment  . ” That just un ner ved me more  . <sep> <cls>
+
+wrong label: 0	prob: [0.8761110901832581, 0.12388885021209717]	It won t refill your blood supply  , but while that s in your system  , you won t even need blood  . ” He grinned at me  . <sep> <cls>
+
+wrong label: 1	prob: [0.3888402581214905, 0.6111597418785095]	The Has mon ean s ruled until Pomp ey s Roman legion s arrived in 63  b  . c  . <sep> <cls>
+
+wrong label: 0	prob: [0.6192690134048462, 0.3807310163974762]	But we see new faces  . ” You  ' re sure it  ' s not just some people being in dis posed  ? <sep> <cls>
+
+wrong label: 0	prob: [0.7698444128036499, 0.2301555573940277]	I did not ask questions  . <sep> <cls>
+
+wrong label: 1	prob: [0.19475717842578888, 0.8052428960800171]	He sniff ed the air and thought for an instant that maybe he smelled something  . <sep> <cls>
+
+wrong label: 0	prob: [0.6273256540298462, 0.3726743459701538]	Times like that  , running on less sleep than I should  , alone because everyone else had had the sense to retire for the night  , I had a tendency to get all  med itative about the universe and my place in it  . <sep> <cls>
+
+wrong label: 1	prob: [0.2017059028148651, 0.7982941269874573]	They ran to it and hurried along it  . <sep> <cls>
+
+wrong label: 1	prob: [0.3117005228996277, 0.6882994174957275]	An  equi vocal glitter  , for it reproduce s in the depths of the earth that other glitter that sings at the far end of the night  : it resides there like an inverted promise of happiness  , and  , because metal resembles the stars  , the knowledge of all these perilous treasure s is at the same time knowledge of the world  . <sep> <cls>
+
+wrong label: 1	prob: [0.3213224411010742, 0.6786775588989258]	The silly criticism s of the scene obscure the real ob s cen ity of the situation  : a bank handing out guns to its customers  ,  hi g light ing the  utter la x ness of how Americans deal with deadly weapons and a love of firearms that borders on the religious  . <sep> <cls>
+
+wrong label: 0	prob: [0.6488054394721985, 0.3511945605278015]	This was the first thing we saw as we entered the botanical gardens  . <sep> <cls>
+
+wrong label: 0	prob: [0.9672440886497498, 0.032755959779024124]	For there was in Sir William  , whose father had been a trades man  , a natural respect for breeding and clothing  , which  sha bb iness  nett led  ; He was  , therefore  , safely  shrouded in a blanket of dark obscurity  . <sep> <cls>
+
+wrong label: 0	prob: [0.5599144697189331, 0.4400855004787445]	His voice was wh e ed ling  , as though he might be able to wear me down through insistence alone  . <sep> <cls>
+
+wrong label: 1	prob: [0.4104571044445038, 0.5895428657531738]	The gun control movement  , on the other hand  , distract s from the real causes of violence  - - poverty  , paranoia  , the  " war on drugs  " and anti sexual ity  . <sep> <cls>
+
+wrong label: 1	prob: [0.2925518751144409, 0.7074480652809143]	 , the Pho en ician s set out from what is now Iran to explore their surroundings  . <sep> <cls>
+
+wrong label: 1	prob: [0.3919852674007416, 0.6080147624015808]	I wondered how many people it treated  . <sep> <cls>
+
+wrong label: 0	prob: [0.9414212107658386, 0.05857875570654869]	the water is pumped and filtered  . <sep> <cls>
+
+wrong label: 0	prob: [0.9367207884788513, 0.06327921897172928]	I p poli t Mat vey evich shook himself free of the nausea ting  tu ft s that until so recently had been distinguished grey hair  , washed himself and  , feeling a strong  ting ling sensation all over his head  , looked at himself in the mirror for the hundred th time that day  . <sep> <cls>
+
+wrong label: 1	prob: [0.2321169525384903, 0.7678830623626709]	His long  , frequently washed and dried fingers  rum mag ed the whole day through numerous small objects  ,  grat ing  , pounding  , past ing  , tying  , making notes  , and  cra mm ing things into his boxes and shelves  . <sep> <cls>
+
+wrong label: 0	prob: [0.8840506672859192, 0.11594932526350021]	It was a packed house and Don was ready to give us a crash course on how data entry worked  . <sep> <cls>
+
+wrong label: 1	prob: [0.08260107040405273, 0.9173989295959473]	Although it has not been documented  , recruitment of other bears by intentional marking to excess food supplies would also be of very low cost to individual bears  . <sep> <cls>
+
+wrong label: 0	prob: [0.6743679642677307, 0.3256320357322693]	While I waited for the food  , I checked out the back of the store where Tu pel o Ho ney Cafe  hawk s their home style war es  : preserve s  , pick les  , salsa  , honey  ,  t - shirts  , apron s and all sorts of mini - advert ise ments for the restaurant  . <sep> <cls>
+
+wrong label: 0	prob: [0.6245639324188232, 0.37543612718582153]	It became more and more evident that the good profits and easier life which they had brought had their counterpart and were only pieces in some great and mysterious game of which no one knew all the rules and none could foresee the outcome  . <sep> <cls>
+
+wrong label: 0	prob: [0.853827714920044, 0.14617227017879486]	Someone told me  ,  " said Fen church  ,  " that they once overheard two old ladies on this beach  , doing what we  ' re doing  , looking at the Pacific Ocean for the first time in their lives  .  ' <sep> <cls>
+
+wrong label: 1	prob: [0.17716556787490845, 0.8228344321250916]	But the only thing the candle light really enhanced and made look good was Ren nie  . <sep> <cls>
+
+wrong label: 0	prob: [0.9715936183929443, 0.028406379744410515]	Kohl er was sick ened by the  o pul ence of the Hall way of the Bel ved ere  . <sep> <cls>
+
+wrong label: 0	prob: [0.6872297525405884, 0.3127703070640564]	If she placed Ron d eau as someone who hung out and part ied with the high school crowd  , then  bla bb ed about it  , Ron d eau might think he was the one who  ' d finger ed him  . <sep> <cls>
+
+wrong label: 0	prob: [0.9651345610618591, 0.034865397959947586]	Finally  , following the shutdown of US Steel s plant in 1980  , local union leaders con gre gated outside the US Steel He ad quarter s in Young s town  . <sep> <cls>
+
+wrong label: 0	prob: [0.9429973363876343, 0.05700263753533363]	Days passed  , weeks passed  , but I could  n ' t tell if it had been months or years since I was rescued  . <sep> <cls>
+
+wrong label: 0	prob: [0.8869264721870422, 0.11307351291179657]	Miss Ben net was the only creature who could suppose there might be any ex ten u ating circumstances in the case  , unknown to the society of Her t ford shire  ; her mild and steady can d our always pleaded for allowance s  , and urged the possibility of mistakes  - but by every body else Mr Darcy was condemned as the worst of men  . <sep> <cls>
+
+wrong label: 1	prob: [0.22585244476795197, 0.7741475701332092]	I  ' ve heard there are a number of stages of grief and shock  ; I guess I was working my way through them  . <sep> <cls>
+
+wrong label: 0	prob: [0.5575330853462219, 0.4424669146537781]	En me shed in her wild words  ( swell chance  .  .  . It  paw ed rather con des c ending ly at the piece of fish the man was holding out  , and then got distracted by a piece of dust on the floor  . <sep> <cls>
+
+wrong label: 0	prob: [0.9323302507400513, 0.06766970455646515]	According to the same  WS J interview  ,  " Typically  , you  ' re looking at a week to 10 days waiting period  .  " <sep> <cls>
+
+wrong label: 1	prob: [0.20632527768611908, 0.7936747074127197]	In 17 70  , Russia came to aid the Greek s  ( defined by their Orthodox religion rather than by historical geographical boundaries  )  , declaring war on the Ottoman Empire and occupying several Aegean islands until 17 74  . <sep> <cls>
+
+wrong label: 0	prob: [0.9855363965034485, 0.014463641680777073]	Mrs Ben net invited him to  dine with them  ; but  , with many expressions of concern  , he confessed himself engaged elsewhere  . <sep> <cls>
+
+wrong label: 0	prob: [0.9483064413070679, 0.05169358849525452]	Heavy rain drop s battered the windows  . <sep> <cls>
+
+wrong label: 1	prob: [0.09637473523616791, 0.9036252498626709]	Then in order to have some kind of rest  , to calm and comfort himself  , he would think  , when he was in bed  : Where could he hide  ? <sep> <cls>
+
+wrong label: 0	prob: [0.9884617328643799, 0.011538304388523102]	They in turn were surrounded by a cord on of police  , though whether they were there to protect the public from the army or the army from the public  , or to guarantee the giant ship  ' s diplomatic immunity and prevent it getting parking tickets was entirely unclear and the subject of much debate  . <sep> <cls>
+
+wrong label: 1	prob: [0.022999946027994156, 0.9769999980926514]	She watched the  psi bob her head  , unaware of the rest of the bridge  , shaking blonde curl s as she chatter ed away with the approaching  psi relay on Mason  ' s ship  . <sep> <cls>
+
+wrong label: 1	prob: [0.20643724501132965, 0.7935628294944763]	The Consul s struggled for influence with the Vi zier and his chief assistant s  , and bribe d the a yan s in the border towns  , inciting them to plunder and raid their opponent  ' s territory  . <sep> <cls>
+
+wrong label: 1	prob: [0.46942463517189026, 0.5305753946304321]	All the  lux uri es money can buy  . ” Tiffany took a drink  , thinking  . <sep> <cls>
+
+wrong label: 1	prob: [0.05292254313826561, 0.9470774531364441]	Orange - gold light filters into the grass y meadow  , touching a row of canvas tents and the temple house beyond  . <sep> <cls>
+
+wrong label: 1	prob: [0.4457637369632721, 0.5542362332344055]	He familiar izes himself with the demon  ' s routine  - - sleeping waking  , crying  , eating  ,  s hitting  - - all it seems capable of doing  , what a dim mystery the source of its magnet ism remains  . <sep> <cls>
+
+wrong label: 0	prob: [0.9135698080062866, 0.08643023669719696]	I heard the pulse already  . <sep> <cls>
+
+wrong label: 0	prob: [0.6306021809577942, 0.3693978190422058]	A bird of prey  , returning  hunter  , is circling and wheel ing  , rising and falling over the last surrendered warmth our home breathe s up  , cutting edges through that quiet grey smoke and  sur facing beyond and banking back  .  " <sep> <cls>
+
+wrong label: 0	prob: [0.8361776471138, 0.16382232308387756]	I noticed that the wrinkles on his neck expanded as he breathed and realized that they were  gill s  . <sep> <cls>
+
+wrong label: 0	prob: [0.9128057360649109, 0.08719423413276672]	No one can disregard the fact that circumstances drove me into situations where I had to make difficult decisions between a desire to be truth ful on the one hand and my natural dignity on the other  . <sep> <cls>
+
+wrong label: 1	prob: [0.07163088023662567, 0.9283691644668579]	Yes  , I know women are all dead keen on marrying men they do  n ' t much like  . <sep> <cls>
+
+wrong label: 0	prob: [0.9455203413963318, 0.05447973310947418]	It is typical for his critics to jump on what is at most a slightly misleading implication  , but in doing so  , they themselves have  , unlike Moore  , made many incorrect claims  . <sep> <cls>
+
+wrong label: 0	prob: [0.7708067297935486, 0.22919324040412903]	She could not yet recover from the surprise of what had happened  ; it was impossible to think of any thing else and totally in dis posed for employment  , she resolved soon after breakfast to indulge herself in air and exercise  . <sep> <cls>
+
+wrong label: 0	prob: [0.6849992275238037, 0.3150008022785187]	I am not even attempting to go up that off ramp  . <sep> <cls>
+
+wrong label: 0	prob: [0.6390221118927002, 0.3609779179096222]	Never mind that they did so not out of some humanitarian motivation  , but because of the Taliban  ' s violent enforcement of the ban on opium pop pies  . <sep> <cls>
+
+wrong label: 0	prob: [0.6113294959068298, 0.38867053389549255]	And if the crowd does express its disapproval  , it merely go ad s him on to bigger and better things  , much in the way Tomas was spurred on by the difficulty of a diagnosis  . <sep> <cls>
+
+wrong label: 0	prob: [0.5196427702903748, 0.48035725951194763]	Slowly he circled the trim en sion ah image by means of the transmitter controls  , rotating it  , bringing the ground about the corpse to view in successive quad rant s  . <sep> <cls>
+
+wrong label: 0	prob: [0.7428302764892578, 0.2571696937084198]	Pop sat down at the table and drum med on it with the handles of his knife and for k  , wh ist ling Come to the cook - house door  , boys through his teeth  . <sep> <cls>
+
+wrong label: 0	prob: [0.9537647366523743, 0.04623529687523842]	You said you were going to distribute copies to the Honours people  , if you remember  .  ' <sep> <cls>
+
+wrong label: 1	prob: [0.10031752288341522, 0.8996824622154236]	Never mind that in a regime that is controlled by warlord s  , it does not matter who is authorized to distribute the aid  - - the ruling regional warlord s will seize control of it and use it to their own advantage  . <sep> <cls>
+
+wrong label: 1	prob: [0.44064536690711975, 0.5593545436859131]	A cold thing with countless  , writ h ing tent acle s fell against me  ,  th rash ing as if in the  thro es of a drug overdose  ,  tripping me and clutching at my limbs  . <sep> <cls>
+
+wrong label: 0	prob: [0.8810940980911255, 0.11890584975481033]	He was  mort ified that they had been rude to Fiona  . <sep> <cls>
+
+wrong label: 0	prob: [0.9299384355545044, 0.07006160914897919]	However  , the representatives were  shun ted to the side and ignored in Washington  , since Young s town s political influence had died with its industry  . <sep> <cls>
+
+wrong label: 1	prob: [0.20632527768611908, 0.7936747074127197]	In 17 70  , Russia came to aid the Greek s  ( defined by their Orthodox religion rather than by historical geographical boundaries  )  , declaring war on the Ottoman Empire and occupying several Aegean islands until 17 74  . <sep> <cls>
+
+wrong label: 0	prob: [0.6515529751777649, 0.3484470248222351]	He steered with an extra arm he  ' d recently fitted just beneath his right one to help improve his ski - box ing  . <sep> <cls>
+
+wrong label: 0	prob: [0.7947863936424255, 0.20521360635757446]	Get a spoon and crush it up and eat  . <sep> <cls>
+
+wrong label: 1	prob: [0.4085162580013275, 0.5914837121963501]	In 15 66  , they wrest ed Chi os from the Gen o ese  , bolster ing their hold on the eastern Aegean Islands  , but the Cy clad es remained in Venetian hands for another generation or more  — Tin os was the last to fall in 17 15  . <sep> <cls>
+
+wrong label: 1	prob: [0.23937587440013885, 0.7606240510940552]	I walked across what had been the dance floor  . <sep> <cls>
+
+wrong label: 0	prob: [0.8882173299789429, 0.11178268492221832]	His spine prick led  . <sep> <cls>
+
+wrong label: 1	prob: [0.15079376101493835, 0.849206268787384]	Much of the Aegean came under the rule of the P to le mies  , along with Egypt  . <sep> <cls>
+
+wrong label: 0	prob: [0.8924916982650757, 0.10750827938318253]	In the late eighteenth century  , a new configuration was to appear that would definitive ly blur the old space of natural history for modem eyes  . <sep> <cls>
+
+wrong label: 1	prob: [0.18715694546699524, 0.8128430843353271]	I was outraged  , but he was right  ; The  od our of the food diffuse s up into the nasal cavity  , where the  ol factor y membrane is located  . <sep> <cls>
+
+wrong label: 0	prob: [0.899712324142456, 0.10028768330812454]	For three whole centuries it had endured and experienced everything and  , un changing  , had truly served its purpose  , but human needs had altered and world conditions changed  ; now its task had betrayed it  .  ' <sep> <cls>
+
+wrong label: 1	prob: [0.20017766952514648, 0.7998222708702087]	The greatest minds never realise their ideal s in any matter  ; From a nearby hillside Ford Pre fect and Arthur Den t watched the horror of which they could not feel a part  . <sep> <cls>
+
+wrong label: 0	prob: [0.7464490532875061, 0.2535509467124939]	Good afternoon ladies and gentlemen  ,  ” she said sweet ly  , Thank you for bearing with us during this slight delay  . <sep> <cls>
+
+wrong label: 1	prob: [0.1372261941432953, 0.8627737760543823]	So do we ever watch the shores  n igh Os gil ia th  , which our enemies now partly hold  , and issue from it to harr y our lands  . <sep> <cls>
+
+wrong label: 0	prob: [0.9558359980583191, 0.0441640168428421]	You  ' ll have to assist me again  ,  " he continued  ,  " by reminding me what I was talking about  .  " <sep> <cls>
+
+wrong label: 0	prob: [0.9462246298789978, 0.05377531051635742]	Now calm down while I talk to this gentleman  . <sep> <cls>
+
+wrong label: 0	prob: [0.9920759201049805, 0.007924143224954605]	Had you consent ed when I suggested a month ago that we should finish the matter at once  , then perhaps we might already be far away from here  . <sep> <cls>
+
+wrong label: 1	prob: [0.27065929770469666, 0.729340672492981]	Pilgrim s came from all over the Roman  ( and  , later  , Byzantine  ) Empire during the following centuries  , but the prosperity they brought lasted only until 6 14  , when Persian armies over t ook Jude a and reduced Jerusalem to rubble again  . <sep> <cls>
+
+wrong label: 0	prob: [0.9220678210258484, 0.077932208776474]	But these are all things which we recall only in passing and which poets and scientists of coming ages will investigate  , interpret and resurrect by methods and manner s which we do not suspect and with a serenity  , freedom and bold ness of spirit which will be far above our s  . <sep> <cls>
+
+wrong label: 1	prob: [0.4895869195461273, 0.5104130506515503]	The castle  , surrounded  , assaulted  , invaded  , used and pierced  , holds us all  ; She  ' d felt  hap pies t with him when she was publicly  vin dic ating his faith in her  : when she got straight A  ' s  ; when her restaurants succeeded  ; when reviewer s loved her  .  " <sep> <cls>
+
+wrong label: 1	prob: [0.17638494074344635, 0.8236150145530701]	The Ottoman s brought new influences to the islands that they controlled  , forming a large empire that stretched around the eastern Mediterranean  . <sep> <cls>
+
+wrong label: 1	prob: [0.057456765323877335, 0.9425432085990906]	Their curiosity pushed them to build vessels that were strong enough to for d the open sea s and reach these islands  , marking the start of the long legacy of Mediterranean sea far ing  . <sep> <cls>
+
+wrong label: 0	prob: [0.7453153729438782, 0.2546846568584442]	He was so fascinated by himself that  , one morning  , he fell into the lake and drowned  . <sep> <cls>
+
+wrong label: 0	prob: [0.7896701693534851, 0.2103298306465149]	Oh that  ' s alright  . <sep> <cls>
+
+wrong label: 0	prob: [0.8385844826698303, 0.16141553223133087]	I thought back to one time when I d been thinking about raising a family and remembered that I d always liked the name  – A my  . ” N ep thy s looked at me incredulous ly  . <sep> <cls>
+
+wrong label: 1	prob: [0.16188707947731018, 0.8381129503250122]	The last thing I remember  , I was tearing down the corridor s  . <sep> <cls>
+
+wrong label: 1	prob: [0.17924760282039642, 0.8207523822784424]	At dinner Brian pro d ded his shy pro gen y to answer Denise  ' s questions  . <sep> <cls>
+
+wrong label: 0	prob: [0.546298086643219, 0.45370185375213623]	in his speech military person assured countries of enduring commitment to the region  ' s security and prosperity  . <sep> <cls>
+
+wrong label: 1	prob: [0.4362204670906067, 0.5637794733047485]	The people around us  – families  , mostly  , little groups of  kin  – seem to shrink in on themselves  . <sep> <cls>
+
+wrong label: 0	prob: [0.530311644077301, 0.469688355922699]	 ” Scholar s speculate that Sha lim might have been an ancient  Semitic deity of peace  , for the name resembles the modern Hebrew and Arabic words for peace ”  :  sha lom and  s ala am  , respectively  . <sep> <cls>
+
+wrong label: 1	prob: [0.26476234197616577, 0.7352376580238342]	My finger feels weak upon the trigger  , incapable of exert ing any pressure  . <sep> <cls>
+
+wrong label: 0	prob: [0.6582675576210022, 0.3417324721813202]	It prick ed him through his shirt  , but he could live with that as long as he could close his eyes  . <sep> <cls>
+
+wrong label: 1	prob: [0.013089737854897976, 0.9869102835655212]	He walked slowly down the aisle as in a dream  . <sep> <cls>
+
+wrong label: 0	prob: [0.7839992046356201, 0.21600084006786346]	Then there was light  , a kind of  ros y glow  , and I felt the stone slip out of my hand to float in the air  . <sep> <cls>
+
+wrong label: 0	prob: [0.5229699611663818, 0.4770299792289734]	Then she raised herself  , tense but still trembling  , and began a series of high - pit ched  , in ward scream s which alternate d with the deep moan s  . <sep> <cls>
+
+wrong label: 0	prob: [0.728951632976532, 0.271048367023468]	The Vo gon per used them  . <sep> <cls>
+
+wrong label: 0	prob: [0.5969063639640808, 0.4030936658382416]	I will not par ley  , as I have said  , with armed men at my gate  . <sep> <cls>
+
+wrong label: 0	prob: [0.9835900664329529, 0.01640988141298294]	I  ' ve evade d your Principal so many times recently that I felt I had to come to this  .  ' <sep> <cls>
+
+wrong label: 1	prob: [0.22406063973903656, 0.7759393453598022]	Over that long Thanksgiving weekend  , the happy couple  din ed only once more with Hannah and Eddie  , their two unhappy friends  . <sep> <cls>
+
+wrong label: 1	prob: [0.08023586124181747, 0.9197641611099243]	D vor ov was somewhere behind me  , too  , negotiating delicate ly through his patrons  . <sep> <cls>
+
+wrong label: 0	prob: [0.8738352656364441, 0.12616468966007233]	He looked a lot like something a farmer would use to scare birds with  , and there was no doubt but that to go into the pub in his present condition would excit e comments of a raucous kind  , and worse still  , there would doubt less be several people in there at the moment whom he knew  , all of whom would be bound to bomb ard him with questions which  , at the moment  , he felt ill - equipped to deal with  . <sep> <cls>
+
+wrong label: 0	prob: [0.7669568061828613, 0.23304317891597748]	And the poor girl  ' s  contra ri ness encouraged Eleanor to attack other possible sources that might be disturbing her daughter  - for Eleanor Holt never fault ed herself  , not for anything  . <sep> <cls>
+
+wrong label: 1	prob: [0.08597364276647568, 0.9140263795852661]	Most guys appreciate that  , you compliment ing their place  . <sep> <cls>
+
+wrong label: 1	prob: [0.43690046668052673, 0.5630995631217957]	The next thing that comes out of your mouth is probably what shell respond to until we figure out how to put her back  . ” I was at a loss  . <sep> <cls>
+
+wrong label: 0	prob: [0.7512480020523071, 0.24875201284885406]	Ne p thy s walked straight past him and I tried to keep up  , taking Amy s small hand so that she wouldn t  lag behind  . <sep> <cls>
+
+wrong label: 0	prob: [0.6147168278694153, 0.38528311252593994]	And what a  glo ating ly fe line look victorious Chloe gave me over her shoulder  , her face unpleasant ly pinch ed and an eye - tooth glint ing  . <sep> <cls>
+
+wrong label: 0	prob: [0.8597195148468018, 0.14028051495552063]	He remembered some Greek or Latin tag about not even God being able to abolish historical fact  , and was glad to think that this must apply equally to the historical fact of his drinking out of Christine  ' s coffee - cup  . <sep> <cls>112 out of 618
+
+Right predictions:
+
+right label: 1	prob: [0.012461659498512745, 0.9875383377075195]	Sound travels as a mechanical wave through a medium  , and in space  , there is no medium  . <sep> <cls>
+
+right label: 0	prob: [0.9888378381729126, 0.01116216741502285]	And what if the Swiss Guards H AVE been infiltrate d  ? <sep> <cls>
+
+right label: 0	prob: [0.8625544905662537, 0.13744546473026276]	He winked at Tri ll ian who raised her eyebrows and widened her eyes at him  . <sep> <cls>
+
+right label: 1	prob: [0.12459439039230347, 0.8754055500030518]	Our food is fresh  , made from scratch  ,  s ass y and scrum pt ious  . <sep> <cls>
+
+right label: 0	prob: [0.8567609190940857, 0.14323903620243073]	The sight of their party still  , or again  , just where they  ' d been before made him want very much to pitch forward on to the floor and go to sleep  . <sep> <cls>
+
+right label: 0	prob: [0.9578118324279785, 0.042188216000795364]	When I  ' d posted on Facebook that I was coming to town  , no fewer than three people told me I just had to visit the Tu pel o Ho ney Cafe  . <sep> <cls>
+
+right label: 1	prob: [0.014709030278027058, 0.9852910041809082]	At the same time  , city - state s began to grow in influence on the southern Greek mainland  . <sep> <cls>
+
+right label: 0	prob: [0.9715301394462585, 0.028469890356063843]	Marvin was forced to say something which came very hard to him  . <sep> <cls>
+
+right label: 0	prob: [0.679334282875061, 0.32066571712493896]	But through this prop in qui ty  , the soul receives the movements of the body and assimilate s itself to that body  , while  ' the body is altered and corrupt ed by the passion s of the soul  '  . <sep> <cls>
+
+right label: 1	prob: [0.0002232873230241239, 0.9997767806053162]	A man holds a surf board on the beach  . <sep> <cls>
+
+right label: 0	prob: [0.9424505233764648, 0.05754949152469635]	Black Monday and the  Crash of the Steel Industry The announcement of the closing of the mills in 1977 was the beginning of a downward spiral  , which would send the enti re valley into chaos and ruin  . <sep> <cls>
+
+right label: 0	prob: [0.8176761269569397, 0.18232382833957672]	Finally  , Greece was ousted from its new territory in Asia Minor  , which became part of the new Turkish state  . <sep> <cls>
+
+right label: 0	prob: [0.6863467693328857, 0.31365323066711426]	Somewhere toward the center of the dance floor  , I heard a how l that sent bitter winds under my clothing  – for a second  , I was back with my family in Russia  , hiding from the cold  . <sep> <cls>
+
+right label: 0	prob: [0.9869279265403748, 0.013072039000689983]	In fact  , Moore mentions several counter - ex amp les  , and more such counter - ex amp les can indeed be cited  . <sep> <cls>
+
+right label: 0	prob: [0.9985523819923401, 0.0014475734205916524]	You were convicted and fined  .  " <sep> <cls>
+
+right label: 1	prob: [0.0001498832571087405, 0.9998500347137451]	A white mug is sitting on a counter <sep> <cls>
+
+right label: 0	prob: [0.9412869215011597, 0.058713093400001526]	He picked up his glass  , swirl ed the liquid around  , took a sip  , then set the glass back down  . <sep> <cls>
+
+right label: 1	prob: [0.08006340265274048, 0.9199365377426147]	members sit stationed outside a home on the block  tu es day with reports of a man barricade d inside  . <sep> <cls>
+
+right label: 1	prob: [0.003002455458045006, 0.996997594833374]	I love to watch them interact  . <sep> <cls>
+
+right label: 1	prob: [0.0007857565069571137, 0.9992141723632812]	A man is carefully chisel ing ice  . <sep> <cls>
+
+right label: 1	prob: [0.00034296567901037633, 0.9996570348739624]	Everyone learning about health care  ! <sep> <cls>
+
+right label: 0	prob: [0.9846529364585876, 0.015347043052315712]	According to biblical tradition  , although David bought the land for the Temple and carefully assembled its building materials  , he was deemed un worthy of constructing the Temple because he was a man of war with blood on his hands  . <sep> <cls>
+
+right label: 0	prob: [0.6014792919158936, 0.39852070808410645]	But he also brought with him a feeling of strict attention to everything that was the V ez ir  ' s will or order  , but like a calm  , normal and honest man who had nothing to be afraid of and nothing to conceal  , so that he had no need to frighten or per sec ute anyone  . <sep> <cls>
+
+right label: 0	prob: [0.9840976595878601, 0.015902340412139893]	Had  ,  " Hay ley amend s  . <sep> <cls>
+
+right label: 0	prob: [0.981590747833252, 0.01840917579829693]	The Sirius Cyber ne tics [  ] Corp or ation Ship board Computer which controlled and permeate d every particle of the ship switched into communication mode  . <sep> <cls>
+
+right label: 0	prob: [0.6868467926979065, 0.3131532073020935]	The sculpture  , as anyone who had seen it could at test  , was anything but scientific  - P OR NO GRA PH IC maybe  , but certainly not scientific  . <sep> <cls>
+
+right label: 1	prob: [0.05375616252422333, 0.9462438821792603]	We are  n ' t giving anyone purpose  . <sep> <cls>
+
+right label: 1	prob: [0.0005504463333636522, 0.9994495511054993]	A long corridor of trees  .  , n  / a  , <sep> <cls>
+
+right label: 0	prob: [0.9721560478210449, 0.02784397266805172]	May I invite you to have a cup of tea  ?” No  , thank you  ,” said Ne p thy s  , we regret that we cannot take up your kind offer  . <sep> <cls>
+
+right label: 0	prob: [0.9975783228874207, 0.002421688986942172]	AND  TON IGHT  HE WA S FOR C ED TO US E IT AS A M AKE SH I FT CO DE  . <sep> <cls>
+
+right label: 1	prob: [0.29437077045440674, 0.7056292295455933]	Never mind that this very argument has been used by  hawk s in opposition to sending humanitarian aid to Iraq  ' s Saddam Hussein  . <sep> <cls>
+
+right label: 1	prob: [0.00016542199591640383, 0.9998345375061035]	Man and woman are in front of Sub way restaurant  . <sep> <cls>
+
+right label: 1	prob: [0.06727069616317749, 0.9327293038368225]	She is entering the building  . <sep> <cls>
+
+right label: 1	prob: [0.000171160907484591, 0.9998288154602051]	A man stands in front of a building wearing a hat and suit  . <sep> <cls>
+
+right label: 0	prob: [0.9470676183700562, 0.05293235182762146]	From the moment the Lieutenant - Col on el  ar rri ved in Tra v nik  , she had been surprised and charm ed by his genuine interest in everything to do with the house and house keeping and his unusual familiarity with domestic affairs and requirements  . <sep> <cls>
+
+right label: 0	prob: [0.5300433039665222, 0.46995675563812256]	The light screen provided had informed me when and where official meals were taking place  , but I had  n ' t bothered to acknowledge the invitation s  . <sep> <cls>
+
+right label: 0	prob: [0.8129880428314209, 0.1870119720697403]	After they lost Jerusalem  , a Mong ol invasion swept through  , and in 12 44 the Ma mel uk e dynasty of Egypt took control  , ruling Jerusalem for the next 250 years  . <sep> <cls>
+
+right label: 0	prob: [0.9182060956954956, 0.081793874502182]	I ca  n ' t either  ,  " said Arthur  , who felt it was time he began to assert himself  . <sep> <cls>
+
+right label: 0	prob: [0.7472580075263977, 0.2527419626712799]	c  ) Both the  " soccer mom  " interview and the sequences showing the N RA rally make no effort to distort the fact that this rally happened months after the fact  . <sep> <cls>
+
+right label: 1	prob: [0.00040320874541066587, 0.9995967745780945]	The girl is sitting on the couch with her laptop  . <sep> <cls>
+
+right label: 1	prob: [0.0001554098998894915, 0.9998445510864258]	 mag ella nic penguin s scuttle along the beach during a tour <sep> <cls>
+
+right label: 0	prob: [0.976134181022644, 0.023865818977355957]	He ston  mag ani m ously holds up a hand to read the mayor  ' s letter  ( only to explain in detail why he chose to ignore the request  - - not mentioning at all the reasons you have given  !  )  . <sep> <cls>
+
+right label: 1	prob: [0.005012693349272013, 0.9949873685836792]	They display this history during the afternoon  . <sep> <cls>
+
+right label: 1	prob: [0.00016409529780503362, 0.9998358488082886]	Two men wearing black top hats and fake orange nose s are pointing and smiling  . <sep> <cls>
+
+right label: 0	prob: [0.9277151226997375, 0.07228491455316544]	In return  , the Turks violently put down every insurrection  , including the massacre on Chi os  , when 22  , 000 people were slaughtered  . <sep> <cls>
+
+right label: 1	prob: [0.00023730132670607418, 0.9997627139091492]	 " Men are stroll ing a brick  - paved  , brightly lit  , business district  .  " <sep> <cls>
+
+right label: 1	prob: [0.005277241580188274, 0.9947227239608765]	Sprinkle with the crushed candy can es  . <sep> <cls>
+
+right label: 1	prob: [0.037416841834783554, 0.9625831246376038]	Without hearing the car horns  , I could almost taste the air of late March through the street fumes  . <sep> <cls>
+
+right label: 1	prob: [0.0005940670962445438, 0.9994059801101685]	People prefer to be around nice people  . <sep> <cls>
+
+right label: 0	prob: [0.9069737195968628, 0.09302628040313721]	He himself graduated in law from Le ice ster University  , and now he was going to the L SE to write a  doctoral thesis on law and poverty in the third world  . <sep> <cls>
+
+right label: 0	prob: [0.994532585144043, 0.0054674227721989155]	I discontinued the bath s for quite another reason  . <sep> <cls>
+
+right label: 1	prob: [0.00012329073797445744, 0.9998767375946045]	A man wearing black and grey is standing in the snow  . <sep> <cls>
+
+right label: 0	prob: [0.9952398538589478, 0.004760135896503925]	He also brought the Ark of the Covenant  , the portable tab ern acle containing the Table t s of the Law received on Mount Sinai  , to the Spring of Gi hon  , just outside the walls of Jerusalem  . <sep> <cls>
+
+right label: 0	prob: [0.9017189145088196, 0.09828110784292221]	After the Flint rally comes a brief TV interview with He ston  , where he is asked about Kay la Roll and  ( again  , clear evidence that the local media in Flint raised questions about the N RA  ' s presence  )  , then an in te view with country prosecutor Arthur Bus ch  , entirely ignored by critics of the film  , who also mentions He ston  ' s presence as notable  , and refers to the immediate reactions of  " people from all over America  "  , gun owners / group s who  , according to him  , reacted aggressively to warnings of having guns accessible to children <sep> <cls>
+
+right label: 0	prob: [0.6186097264289856, 0.381390243768692]	However  , the Great Green Ark les e iz ure Theory is not widely accepted outside Vil t vo dle VI and so  , the Universe being the puzzling place it is  , other explanations are constantly being sought  . <sep> <cls>
+
+right label: 1	prob: [0.0019477235618978739, 0.9980522394180298]	see more photos for this motorcycle listing  ,  i  , state <sep> <cls>
+
+right label: 1	prob: [0.0004394305287860334, 0.999560534954071]	A Zoo handle r engage s in an activity with a white tiger  . <sep> <cls>
+
+right label: 0	prob: [0.9647127985954285, 0.035287197679281235]	Langdon fired back  , smiling as he projected a slide of a spiral sea shell  . <sep> <cls>
+
+right label: 0	prob: [0.9804824590682983, 0.019517583772540092]	I dropped the splinter s and the broken second stake and raised my hammer  , ready to drive the  ash spike into his heart  . <sep> <cls>
+
+right label: 1	prob: [0.1612236648797989, 0.8387763500213623]	This is the first package to arrive at my new office  . <sep> <cls>
+
+right label: 0	prob: [0.9964715242385864, 0.0035285199992358685]	Jefferson shook his head and stood up  . <sep> <cls>
+
+right label: 1	prob: [0.0018266401020810008, 0.9981733560562134]	 - En joy these  t ik ki s with  ke tch up  . <sep> <cls>
+
+right label: 0	prob: [0.982604444026947, 0.017395591363310814]	The scout ship  re - emer ged from the hole  - a brilliant  s peck emerging from a sphere of velvet y black ness  . <sep> <cls>
+
+right label: 0	prob: [0.962675154209137, 0.03732485696673393]	It is not explained what  " normally  " is supposed to mean  , but that claim flat ly contradict s the statement of the bank official in the film  . <sep> <cls>
+
+right label: 1	prob: [0.0022412424441426992, 0.9977587461471558]	 " All the members of a family are enjoying wine  , talking  , playing some game and having a relaxed and wonderful time  .  " <sep> <cls>
+
+right label: 1	prob: [8.796413749223575e-05, 0.9999120235443115]	A woman is walking on the sidewalk  . <sep> <cls>
+
+right label: 1	prob: [0.00016505787789355963, 0.9998348951339722]	cars drive along a main road <sep> <cls>
+
+right label: 0	prob: [0.9814502000808716, 0.01854979805648327]	The dis em bodied hand renewed its pressure on his right shoulder  . <sep> <cls>
+
+right label: 0	prob: [0.9767199158668518, 0.02328009344637394]	The  sur pri ze of the rest of the family  , on hearing who their visitor had been  , was very great  ; but they ob lig ingly satisfied it  , with the same kind of  s up position which had appease d Mrs Ben net  ' s curiosity  ; and Elizabeth was spared from much teasing on the subject  .  " <sep> <cls>
+
+right label: 1	prob: [0.006201497744768858, 0.9937984347343445]	They enjoyed the time after the graduation  ; go of ing around as usual  ! <sep> <cls>
+
+right label: 0	prob: [0.8092438578605652, 0.190756157040596]	Behind you  !” I whir led and dropped in time to see the vampire shoot over my head  , leap ing like a pan ther  . <sep> <cls>
+
+right label: 1	prob: [0.437153160572052, 0.5628467798233032]	Tara stood stock - still  , waiting for the first tiny gleam from the scout craft to appear in the darkness of the worm hole  . <sep> <cls>
+
+right label: 0	prob: [0.9912046790122986, 0.008795340545475483]	Now leave  , before I call the rats on you  . ” We left  . <sep> <cls>
+
+right label: 0	prob: [0.9841065406799316, 0.015893476083874702]	While the others set the food ready  , A rag orn bath ed the hurt s with water in which a the las was steep ed  . <sep> <cls>
+
+right label: 0	prob: [0.9601106643676758, 0.03988933935761452]	He felt em bol den ed and took a step toward her  . <sep> <cls>
+
+right label: 0	prob: [0.9903113842010498, 0.00968862697482109]	I believe we  ' ll see the end of the universe  ,” said Tiffany  . <sep> <cls>
+
+right label: 1	prob: [0.00018562852346803993, 0.9998144507408142]	Many people are in a line of traffic and all are in jeep s  . <sep> <cls>
+
+right label: 0	prob: [0.9828282594680786, 0.017171744257211685]	Look what I found  ,” A dri enne said  . <sep> <cls>
+
+right label: 0	prob: [0.9602511525154114, 0.0397489070892334]	Behind me  , Amy was knee ling beside Ne p thy s  , whose arm and  ri b cage were knitting back together like a wooden to y that falls apart when its string is released but draws itself together at a slight tug  . <sep> <cls>
+
+right label: 0	prob: [0.9928764700889587, 0.007123526185750961]	If he  ' d had good news to impart  , he would have impart ed it before now  . <sep> <cls>
+
+right label: 0	prob: [0.9925342798233032, 0.007465733215212822]	He had PRO V ED Genesis was physically possible  , and that intense sources of energy  - what Ve tra called G OD  - could duplicate the moment of Creation  . <sep> <cls>
+
+right label: 0	prob: [0.8932881355285645, 0.10671183466911316]	Then one set of footsteps began walking toward the altar  . <sep> <cls>
+
+right label: 1	prob: [0.0005057695670984685, 0.999494194984436]	Several uniform ed men carrying flags and guns are leading a parade contingent along a small town street  . <sep> <cls>
+
+right label: 0	prob: [0.9740162491798401, 0.025983761996030807]	I ca  n ' t guarantee it  ' ll work  , but I personally will do it again and probably back it up with a stellar review  , just like the one I  ' ve given the Tu pel o Ho ney Cafe  . <sep> <cls>
+
+right label: 1	prob: [0.07075007259845734, 0.9292499423027039]	I knew  , I noticed  .  .  . sometimes she  ' d  hum along and  harmon ize  . <sep> <cls>
+
+right label: 1	prob: [0.00018521567108109593, 0.9998148083686829]	A young man is sleeping in bed with a dog and remote control  . <sep> <cls>
+
+right label: 0	prob: [0.9640737175941467, 0.035926301032304764]	He shot back up  , hardly touching the ground  , and I kicked him back  . <sep> <cls>
+
+right label: 0	prob: [0.8900350332260132, 0.10996493697166443]	The medium engaged the brother until he was constrained to turn away like a shame d dog  . <sep> <cls>
+
+right label: 1	prob: [0.0004503812233451754, 0.9995495676994324]	A elephant is wearing a yellow and red seat on top of it  . <sep> <cls>
+
+right label: 1	prob: [0.00023971909831743687, 0.9997603297233582]	 " Outside a building  , a uniform ed security guard looks at the camera from behind a fence  .  " <sep> <cls>
+
+right label: 0	prob: [0.904495894908905, 0.0955040380358696]	The ladies were somewhat more fortunate  , for they had the advantage of ascertain ing  , from an upper window  , that he wore a blue coat and rode a black horse  . <sep> <cls>
+
+right label: 1	prob: [0.00026494747726246715, 0.9997350573539734]	film character makes his way down main street with the assistance on  fri day night  . <sep> <cls>
+
+right label: 0	prob: [0.950922429561615, 0.04907757416367531]	He wanted to terminate this interview before it got too difficult  , and thought he had found a good compromise  . <sep> <cls>
+
+right label: 0	prob: [0.9596598148345947, 0.04034019634127617]	If we institute an entrance exam to keep out the ones who ca  n ' t read or write  , the entry goes down by half  , and half of us lose our jobs  . <sep> <cls>
+
+right label: 0	prob: [0.996209979057312, 0.003790006274357438]	With the living Al absent  , she  ' d al chemical ly trans mut ed her base resentment s into the gold of long ing and remorse  . <sep> <cls>
+
+right label: 1	prob: [0.04872743785381317, 0.9512726068496704]	But perhaps the campaign against Moore is really motivated by another reason  . <sep> <cls>
+
+right label: 0	prob: [0.9950289130210876, 0.004971079993993044]	Dixon seized her wrist s and shouted  : He found strings that he  ' d  s pli ced back together after ex cis ing faulty segments  . <sep> <cls>
+
+right label: 1	prob: [0.032979704439640045, 0.9670202732086182]	Three generations  ; we are blessed  . <sep> <cls>
+
+right label: 0	prob: [0.9410630464553833, 0.05893696844577789]	It means  ,  ” said Marvin  , that the ship is going to dive into the sun  . <sep> <cls>
+
+right label: 1	prob: [0.4450013339519501, 0.5549986362457275]	The Cy clad ic culture was influenced by societies in the east  , importing the pottery wheel from Mesopotamia  . <sep> <cls>
+
+right label: 1	prob: [0.0074372137896716595, 0.9925628304481506]	Many Palestinians  , however  , stayed put  , retained their land  , and became Israeli citizens  . <sep> <cls>
+
+right label: 1	prob: [0.3406931161880493, 0.6593068838119507]	The Persian Wars As Athens rose in influence and power in the West  , it was matched in the East by the rise of the Persian Empire  . <sep> <cls>
+
+right label: 0	prob: [0.9808216094970703, 0.019178448244929314]	The Persian s were defeated  , and Athens du ly punished the islands that had turned against it  . <sep> <cls>
+
+right label: 1	prob: [0.17889924347400665, 0.8211007118225098]	Some  s hard s of rock follow  , then she tug s and haul s  , grunt ing  , at a more reluctant piece  .  ' <sep> <cls>
+
+right label: 0	prob: [0.73770672082901, 0.2622931897640228]	A couple of them remembered seeing her leave  , but none of them had seen the thin man with her  . <sep> <cls>
+
+right label: 1	prob: [0.006331531796604395, 0.9936684966087341]	person is simple thing  : making next  - level quality tea accessible  . <sep> <cls>
+
+right label: 0	prob: [0.9980418682098389, 0.00195813225582242]	I immediately endorsed this Brief Life  . <sep> <cls>
+
+right label: 0	prob: [0.9802071452140808, 0.019792892038822174]	They carried him into my house  ,  ' app ended Jordan  ,  ' because we lived just two doors from the church  . <sep> <cls>
+
+right label: 0	prob: [0.9970441460609436, 0.0029558390378952026]	The complaint could be substantiate d  , all right  . <sep> <cls>
+
+right label: 0	prob: [0.9647154808044434, 0.035284508019685745]	It never even crossed his mind that that sofa with its white stone seats and care free crowd could have any connection with that terrible place  , somewhere at the ends of the earth  , where he had one night played his last game  ,  s taking on a de ce iv ing card all that he possessed  , even his own life in this world and the next  . <sep> <cls>
+
+right label: 1	prob: [8.626331691630185e-05, 0.9999136924743652]	a hand is holding some food and a drink is on the table <sep> <cls>
+
+right label: 1	prob: [0.0005886735743843019, 0.9994113445281982]	A cat is laying on its back in a chair  . <sep> <cls>
+
+right label: 1	prob: [0.23914916813373566, 0.7608508467674255]	Day after day I see you in gest ing toxic potassium  . <sep> <cls>
+
+right label: 0	prob: [0.9401078820228577, 0.059892162680625916]	The claims of deliberate distortion do  n ' t hold up when viewing the whole scene  , though  - - as  " Han lon  ' s Raz or  " states  , one should never attribute to  mal ice what can be attributed to incompetence  . <sep> <cls>
+
+right label: 1	prob: [0.4634079933166504, 0.5365920066833496]	 ”  ' But he  ' s exposed you to culture before now  , surely  .  ' <sep> <cls>
+
+right label: 0	prob: [0.6848427057266235, 0.31515735387802124]	I could  n ' t tell what the thoughtful look on her face meant  . <sep> <cls>
+
+right label: 1	prob: [0.00036981943412683904, 0.9996302127838135]	driving the lane  ol ym pic athlete dribble s past award winner in the second half on we d nes day night  . , x d <sep> <cls>
+
+right label: 1	prob: [0.0005390258156694472, 0.9994609951972961]	Two young men are performing a modern dance routine  . <sep> <cls>
+
+right label: 0	prob: [0.918873131275177, 0.0811268761754036]	she suppressed the surge of annoyance that ran through her as she contemplated the  psi  ' s gift of getting all the hot news first  . <sep> <cls>
+
+right label: 0	prob: [0.9412869215011597, 0.058713093400001526]	He picked up his glass  , swirl ed the liquid around  , took a sip  , then set the glass back down  . <sep> <cls>
+
+right label: 0	prob: [0.9900800585746765, 0.009919877164065838]	They invited local people and politicians to witness the scene  , then charged the He ad quarter s and took it over  . <sep> <cls>
+
+right label: 0	prob: [0.7666207551956177, 0.23337922990322113]	In an attempt to counter a threat from the Sara cen Muslims  , a new potent religious force from the East  , the Byzantine army forcefully enlisted the men of the islands  . <sep> <cls>
+
+right label: 0	prob: [0.9964053630828857, 0.003594712819904089]	The sentence was repeal ed and Bu kha rin informed M  . by sending him a  telegram in Y al ta  , where he had come to join me after he had done everything he could in Moscow  . <sep> <cls>
+
+right label: 0	prob: [0.9174343943595886, 0.08256558328866959]	Only one of the women made a gesture that could have been construed as either beckon ing or  s cold ing  . <sep> <cls>
+
+right label: 1	prob: [9.422977745998651e-05, 0.9999057054519653]	 " aerial  , little  cau cas ian girl swimming in the outdoor swimming pool " , e  , error , , no un phrase or adjective phrase syntax  , <sep> <cls>
+
+right label: 0	prob: [0.9974026083946228, 0.002597405109554529]	You could force the captain to set down somewhere  . <sep> <cls>
+
+right label: 0	prob: [0.933197021484375, 0.06680295616388321]	He ran down a hallway and slipped behind one of the doors  , but Ne p thy s was close behind him and left it open for me  . <sep> <cls>
+
+right label: 1	prob: [0.07626321911811829, 0.9237368106842041]	Sunshine melted la zi ly through the tree branches above  , a breeze an im ating the branches  ' shadows so they danced between our cushion s  . <sep> <cls>
+
+right label: 1	prob: [0.0021540126763284206, 0.9978460073471069]	Our children are growing up fast  . <sep> <cls>
+
+right label: 0	prob: [0.991267740726471, 0.008732332848012447]	This man had already been arrested  , said the Vi zier  , and he would be executed on Friday  , because during the time he had been de put ising for the Vi zier he had run things in such a la x and disorder ly manner that he had deserved to die twice over  . <sep> <cls>
+
+right label: 1	prob: [0.352851927280426, 0.647148072719574]	 Clearly the questions must be such that the relevant population can be expected to understand them and to make informed responses  . <sep> <cls>
+
+right label: 1	prob: [0.0004720469587482512, 0.9995279312133789]	A football player in a gold helmet is running with a football  . <sep> <cls>
+
+right label: 1	prob: [0.003946433775126934, 0.9960535764694214]	A lady in a  tan jacket has her back turned to what the rest of the crowd is clap ping for  . <sep> <cls>
+
+right label: 1	prob: [0.0063845207914710045, 0.9936155080795288]	We have a lot of big equipment that makes the coffee  . <sep> <cls>
+
+right label: 0	prob: [0.8385844826698303, 0.16141553223133087]	I thought back to one time when I d been thinking about raising a family and remembered that I d always liked the name  – A my  . ” N ep thy s looked at me incredulous ly  . <sep> <cls>
+
+right label: 0	prob: [0.9791618585586548, 0.020838122814893723]	Sorry  , I thought you were proposing a toast  ,  " he said  . <sep> <cls>
+
+right label: 1	prob: [0.00021615663717966527, 0.9997838139533997]	Two men are looking through the solar telescope s  . <sep> <cls>
+
+right label: 0	prob: [0.9549914002418518, 0.045008569955825806]	I called Mitch and our other friends  , hoping that shed crashed at one of their houses  , but I had no luck  . <sep> <cls>
+
+right label: 0	prob: [0.6773873567581177, 0.32261261343955994]	Langdon had been inside her m etic vault s many times  , but it was always an unsettling experience  .  .  . something about entering an air tight container where the oxygen was regulated by a reference librarian  . <sep> <cls>
+
+right label: 0	prob: [0.9488332271575928, 0.051166750490665436]	So when my shuttle malfunction ed and the air lock s did  n ' t keep the air in  , I heard nothing  . <sep> <cls>
+
+right label: 1	prob: [6.748984014848247e-05, 0.9999325275421143]	A young man is taking pictures of two friends next to the ocean  . <sep> <cls>
+
+right label: 1	prob: [0.0017556245438754559, 0.9982444047927856]	Time passes in a weird way here  . <sep> <cls>
+
+right label: 0	prob: [0.8970267176628113, 0.10297330468893051]	If he got your girl  , she s probably dead  !” I shook him off and squeezed between two dancing  ny mph s  , getting almost to the edge of the dance floor  . <sep> <cls>
+
+right label: 0	prob: [0.6964773535728455, 0.30352261662483215]	One wrong word and you find yourself cursed with infinite ear wa x or something  . <sep> <cls>
+
+right label: 0	prob: [0.9374097585678101, 0.06259030848741531]	My mind began to dissipate  , but then I felt the pain withdraw and a life less voice said  , This ones blood isn t worth drinking  . ” Hand s closed on my neck and I felt my spine crack  . <sep> <cls>
+
+right label: 1	prob: [0.00021316600032150745, 0.9997867941856384]	A man in formal wear plays the guitar and sings  . <sep> <cls>
+
+right label: 0	prob: [0.8312172293663025, 0.16878271102905273]	As she rose  , her robe s fell open and I realized that  , except for what looked like a red silk  k imon o  , she was naked  – naked and stunning  . <sep> <cls>
+
+right label: 0	prob: [0.8717260956764221, 0.12827393412590027]	A slight cough alerted him to the fact that the ship  s first officer was still standing nearby  . <sep> <cls>
+
+right label: 1	prob: [0.17350216209888458, 0.8264978528022766]	The dialogue goes as follows  : Moore  :  " So you do  n ' t think our kids say to themselves  ,  gee  , dad goes off to the factory every day  - he builds missiles  . <sep> <cls>
+
+right label: 1	prob: [0.4808579683303833, 0.5191420316696167]	Psycho metric ally the problem is to develop appropriate descriptive tax ono mies so that a person  ' s actual or potential contribution to an organisation is succ inc t ly express ible  . <sep> <cls>
+
+right label: 0	prob: [0.8125311136245728, 0.18746888637542725]	they simplified the contents of this simple ideology in order to disseminate it to other circles  , whose members  , simplify ing further and further this  sim pl ification of the simple  , kept passing it on and on  , so that when Marx ism became known and powerful on the whole planet all that was left of it was a collection of six or seven slogans  , so poorly linked that it can hardly be called an ideology  . <sep> <cls>
+
+right label: 0	prob: [0.7148756384849548, 0.28512436151504517]	 ” It was a stupid dog  , could not even read an auto cu e  , which way why some people had protested about its name  , but it should at least have been able to recognize Arthur instead of standing there  , hack les raised  , as if Arthur was the most fearful app ar ition ever to in tru de upon its feeble - witt ed life  . <sep> <cls>
+
+right label: 1	prob: [0.14643877744674683, 0.853561282157898]	Love - ins  , rave s  , gathering s where society is put on hold and humans open themselves to emotion  : that is where entities from this world tend to go when they cross over  , and that is where Rachel met someone from this world  . <sep> <cls>
+
+right label: 0	prob: [0.9686536192893982, 0.03134642913937569]	After a final pause  , Marvin gathered his strength for the last stretch  . <sep> <cls>
+
+right label: 0	prob: [0.7499416470527649, 0.2500583231449127]	With eerie predict ability she choked and cough ed  , swallowed some  , cough ed again  , swallowed some more  . <sep> <cls>
+
+right label: 0	prob: [0.9579129219055176, 0.042087092995643616]	Vit toria Ve tra stumbled forward  , almost falling into the retina scan  . <sep> <cls>
+
+right label: 0	prob: [0.9337498545646667, 0.06625012308359146]	You would never  ,  ” he said with an even more brick able smile  , have survived the Total Per spect ive Vor tex in the real one  . <sep> <cls>
+
+right label: 0	prob: [0.9957507848739624, 0.004249172285199165]	In 1904  , he was in turn elected Mayor of Chi try  . <sep> <cls>
+
+right label: 0	prob: [0.8983019590377808, 0.10169798880815506]	What scenario seems more likely to you  - that a four - hundred - year - old sat an ic cult has  re surface d with an advanced weapon of mass destruction  , or that some prank ster at C ERN is trying to disrupt a sacred Vatican event with a well - exec uted fraud  ? <sep> <cls>
+
+right label: 0	prob: [0.9910945296287537, 0.008905489929020405]	So did you get anything out of the guy I sent you to  ?” D vor ov asked us  . <sep> <cls>
+
+right label: 0	prob: [0.769086480140686, 0.23091350495815277]	Sarah shrugged and  s ipped at her drink  . <sep> <cls>
+
+right label: 0	prob: [0.9717777371406555, 0.028222227469086647]	 Relax  ,” he told me  , sliding a needle into my arm  . <sep> <cls>
+
+right label: 0	prob: [0.7815675139427185, 0.21843251585960388]	Do  n ' t you remember  , there  ' s not exactly one big  galact ic government from which to steal information  . ” I still like my idea  ,” said Tiffany  . <sep> <cls>
+
+right label: 1	prob: [0.00020940475224051625, 0.999790608882904]	A girl is riding a skateboard on a wooden deck  . <sep> <cls>
+
+right label: 0	prob: [0.9500187039375305, 0.04998130723834038]	This immediately p ique d Peter  ' s curiosity  . <sep> <cls>
+
+right label: 1	prob: [0.0002031645126407966, 0.9997968077659607]	 " A woman and a younger girl  , both wearing blue jackets and  k nit caps  , slide down a hill on a snow  s led  , a dog running at their side  .  " <sep> <cls>
+
+right label: 0	prob: [0.9798429608345032, 0.020157059654593468]	He  ' s not even bringing them back through for a face to face briefing  . <sep> <cls>
+
+right label: 1	prob: [0.09912575781345367, 0.9008742570877075]	this heart was waiting for us as we climbed the stairs <sep> <cls>
+
+right label: 1	prob: [0.008400226011872292, 0.9915997982025146]	Some of them were in rough shape  ; but they were still going strong  . <sep> <cls>
+
+right label: 1	prob: [0.00034327199682593346, 0.9996566772460938]	Three chef s in uniform are working in an assembly line to prepare past ries  . <sep> <cls>
+
+right label: 0	prob: [0.8676337003707886, 0.13236629962921143]	Night comes quickly here  ,” said Ne p thy s quietly as he came out behind me  . <sep> <cls>
+
+right label: 1	prob: [0.00019656031508930027, 0.9998034834861755]	 rs  - coming in the summer  . , e  , error , , no un phrase or adjective phrase syntax  , <sep> <cls>
+
+right label: 0	prob: [0.6720649003982544, 0.3279350697994232]	Many Greek island ers chose to leave rather than live in poverty and terror  , and many made new homes in the United States and Australia  . <sep> <cls>
+
+right label: 0	prob: [0.6711517572402954, 0.3288481533527374]	In 6 29  , Jerusalem was recapture d by the Byzantine s  . <sep> <cls>
+
+right label: 1	prob: [0.0005077815148979425, 0.9994921684265137]	The multi colored cat is sitting in the sink being watched by a woman  . <sep> <cls>
+
+right label: 1	prob: [0.0031918745953589678, 0.9968081116676331]	The stands were absolutely packed at this year  ' s Virginia Tech graduation ceremony  . <sep> <cls>
+
+right label: 1	prob: [0.0014806701801717281, 0.9985193610191345]	teaching young people about history can be a complex and highly sensitive task <sep> <cls>
+
+right label: 0	prob: [0.9928406476974487, 0.007159289438277483]	Ford let it pass  . <sep> <cls>
+
+right label: 0	prob: [0.9950776696205139, 0.004922319203615189]	I just dropped it over the side  . <sep> <cls>
+
+right label: 1	prob: [0.00043620189535431564, 0.9995637536048889]	There is beautiful landscaping around the stadium  . <sep> <cls>
+
+right label: 1	prob: [0.00030022801365703344, 0.9996998310089111]	A man in a black shirt looks at the camera <sep> <cls>
+
+right label: 1	prob: [0.381590873003006, 0.6184090971946716]	She checked me for food and played with me for a while  , then went back to  rak ing leaves  . <sep> <cls>
+
+right label: 0	prob: [0.8327934741973877, 0.16720648109912872]	A woman who carried with her a secret so powerful that  , if revealed  , it threatened to de va state the very foundation of Christianity  !  " <sep> <cls>
+
+right label: 0	prob: [0.955708920955658, 0.04429105669260025]	The Dec line of the World Market The efforts to save the mills failed partly because the international market for steel had largely dried up  . <sep> <cls>
+
+right label: 1	prob: [0.0001548879808979109, 0.9998451471328735]	Dog has its mouth open in field  . <sep> <cls>
+
+right label: 0	prob: [0.9947625994682312, 0.005237410310655832]	I  ' ll leave you to your speculation  ,” he said  . <sep> <cls>
+
+right label: 0	prob: [0.8199372887611389, 0.18006272614002228]	The Coalition had no proper funds to buy the mills  , so they could do nothing but sit back and watch as the mills closed  . <sep> <cls>
+
+right label: 0	prob: [0.9722921252250671, 0.027707884088158607]	You do this a lot  ?” A woman  , introduced as Tiffany and neither tall nor beautiful  , shrugged  . <sep> <cls>
+
+right label: 1	prob: [0.012030689045786858, 0.9879692792892456]	The distinctive  , sculpted marble figures of the era are now being reproduced in vast quantities as souvenir s  . <sep> <cls>
+
+right label: 0	prob: [0.9371190667152405, 0.06288093328475952]	use it to sail a mini raft down the slow heavy river Mo th  ; wet it for use in hand - to hand - com bat  ; wrap it round your head to  ward off no x ious fumes or to avoid the gaze of the Raven ous Bug blatt er Beast of Tra al  ( a mind bo gging ly stupid animal  , it assumes that if you ca  n ' t see it  , it ca  n ' t see you  - da ft as a bush  , but very  raven ous  )  ; P lea sure s which up till then had been stolen and concealed  , could <sep> <cls>
+
+right label: 1	prob: [0.00043499688035808504, 0.9995649456977844]	A dog is sleeping in a bed with Simpson s sheets  . <sep> <cls>
+
+right label: 0	prob: [0.8211211562156677, 0.17887887358665466]	Elizabeth looked at Darcy to see how cordial ly he as sen ted to his cousin  ' s praise  ; but neither at that moment nor at any other could she discern any symptom of love  ; and from the whole of his behaviour to Miss de Bour gh she derived this comfort for Miss B ing ley  , that he might have been just as likely to marry her  , had she been his relation  . <sep> <cls>
+
+right label: 1	prob: [0.0005270740948617458, 0.9994729161262512]	 " The healthy  , well  - adapted individual keeps them in balance in a dynamic equilibrium  .  ,  " <sep> <cls>
+
+right label: 1	prob: [0.004207241348922253, 0.9957927465438843]	Betty had a fully furnished doll house with a whole family in residence  . <sep> <cls>
+
+right label: 1	prob: [0.0027034985832870007, 0.9972965121269226]	what diamonds look like before they are cut  . <sep> <cls>
+
+right label: 0	prob: [0.8843437433242798, 0.1156562864780426]	To trash He ston  , it even uses the audio / video editor to assemble a He ston speech that He ston did not give  , and sequences images and carefully highlighted text to spin the viewer  ' s mind to a wrong conclusion  .  " <sep> <cls>
+
+right label: 1	prob: [0.00010240019037155434, 0.9998975992202759]	the beautiful white umbrella made of bamboo and fabric  ,  e  , error , , no un phrase or adjective phrase syntax  , <sep> <cls>
+
+right label: 1	prob: [9.754299389896914e-05, 0.9999024868011475]	Lots of people are walking they participate in a parade <sep> <cls>
+
+right label: 0	prob: [0.9893621802330017, 0.010637857019901276]	How long have you been here  ?” The question  , previously posed to me  , was presented to the rest of our group  ( excluding Ray  ; A dri enne had been  t act ful enough to wait until he had gone for a refill  , recalling the last time the subject was  bro ach ed  )  . <sep> <cls>
+
+right label: 1	prob: [0.01922711730003357, 0.980772852897644]	a cloud  - seed ing plane flies over mug hal structure  . <sep> <cls>
+
+right label: 1	prob: [9.569793473929167e-05, 0.9999042749404907]	little girl on train  - with reflection in window as she watches the countryside go by  ,  e  , error , , no un phrase or adjective phrase syntax  , <sep> <cls>
+
+right label: 1	prob: [0.0002591506054159254, 0.9997408986091614]	A woman is holding a stuffed bear and smiling  . <sep> <cls>
+
+right label: 1	prob: [0.00019093748414888978, 0.9998090863227844]	A guy with a gray shirt and jeans is on stage singing with a microphone  . <sep> <cls>
+
+right label: 0	prob: [0.7472580075263977, 0.2527419626712799]	c  ) Both the  " soccer mom  " interview and the sequences showing the N RA rally make no effort to distort the fact that this rally happened months after the fact  . <sep> <cls>
+
+right label: 0	prob: [0.8534227609634399, 0.14657728374004364]	You claim that there was  " no way to change location  , since you have to give advance notice of that to the members  , and there were upwards of 4  , 000  , 000 members  .  " <sep> <cls>
+
+right label: 0	prob: [0.9623595476150513, 0.03764048218727112]	Well  , we lost that one  ,  " she remarked  .  " <sep> <cls>
+
+right label: 0	prob: [0.9893620610237122, 0.010637881234288216]	How long have you been here  ?” The question  , previously posed to me  , was presented to the rest of our group  ( excluding Ray  ; A dri enne had been  t act ful enough to wait until he had gone for a refill  , recalling the last time the subject was  bro ach ed  )  . <sep> <cls>
+
+right label: 0	prob: [0.8751063942909241, 0.12489363551139832]	If you feel you must threaten someone  , go and threaten her  .  ' <sep> <cls>
+
+right label: 0	prob: [0.983430027961731, 0.016569958999753]	Sometimes we  ' d get word that people were gathering under one of the bridges  , and we  ' d rush down to hit it before the cops broke it up  . <sep> <cls>
+
+right label: 0	prob: [0.8276528716087341, 0.1723470836877823]	But as soon as chance  , his work or sickness remove and isolate him  , these facts begin to fade  , to with er and disintegrate un be liev ably fast  , like a life less mask of paper and  lac quer he had once used  . <sep> <cls>
+
+right label: 0	prob: [0.6938924789428711, 0.3061075210571289]	E ber le  ' s reverse - tom ographic methods have now been further refined to make this stage of the Core ck tall process as simple and pain less as a visit to your hair s ty list  .  " <sep> <cls>
+
+right label: 1	prob: [0.000340449798386544, 0.999659538269043]	A man walks by a building covered with graffiti  . <sep> <cls>
+
+right label: 0	prob: [0.8579282760620117, 0.1420716941356659]	She gives her husband an opportunity to over hear her ‘ lover  s conversation with Tar tu ffe in which she intimate s to Tar tu ffe that she  re ci pro cate s his feelings  , and Tar tu ffe in a quite merc en ary way requests proof  .  " <sep> <cls>
+
+right label: 0	prob: [0.9839357137680054, 0.016064291819930077]	Because Constantine upgraded Jesus  ' status almost four centuries  AF TER Jesus  ' death  , thousands of documents already existed chronic ling His life as a M OR TAL man  . <sep> <cls>
+
+right label: 0	prob: [0.8465905785560608, 0.15340937674045563]	He walked thought fully out of the  lav atory without bother ing to close its door  , which was fitted with a compressed - air delaying device  . <sep> <cls>
+
+right label: 0	prob: [0.9767736196517944, 0.02322637289762497]	Later when I stopped eating and lifted my napkin from my lap  , it took approximately three seconds for someone to take my food away to be box ed up  . <sep> <cls>
+
+right label: 1	prob: [0.03999869525432587, 0.9600012302398682]	This prohibited strikes and lockout  , anger ing workers and driving productivity and labor er morale down  . <sep> <cls>
+
+right label: 0	prob: [0.8870862722396851, 0.11291375756263733]	‘ Some of them are  , she conceded  . <sep> <cls>
+
+right label: 1	prob: [0.23187248408794403, 0.7681275606155396]	I kept track for a while — thirty - eight days — but after that  .  .  . I guess I did  n ' t see the point  . ” Fact  : Some places are time less  . <sep> <cls>
+
+right label: 0	prob: [0.9824732542037964, 0.017526809126138687]	He said something about a wreck going well  . <sep> <cls>
+
+right label: 1	prob: [0.0003977906599175185, 0.9996022582054138]	A woman in a green skirt and blue shirt shake s the dust from an object  . <sep> <cls>
+
+right label: 1	prob: [0.00011265055218245834, 0.9998873472213745]	Other guests are enjoying the performance  . <sep> <cls>
+
+right label: 1	prob: [0.47726866602897644, 0.522731363773346]	After several fruit less attempts to bite  , he starts to take the situation seriously and blows himself up  ; Without greeting and without a smile  , he would mood ily ferry across goods and passengers in his own good time  , but honestly and safely  , so that tales were told of his reliability and his honesty as often as of his slow ness and ob stin acy  . <sep> <cls>
+
+right label: 1	prob: [0.00017421544180251658, 0.9998257756233215]	A crowd gather s at a local bar  . <sep> <cls>
+
+right label: 1	prob: [0.007606168277561665, 0.9923938512802124]	The walk home was  n ' t as much fun  . <sep> <cls>
+
+right label: 1	prob: [0.00037294329376891255, 0.9996269941329956]	the flag animated background features a flag with glossy fabric and cotton texture blowing in the wind  . <sep> <cls>
+
+right label: 0	prob: [0.9269605278968811, 0.07303948700428009]	She  se wed it for me with her own hands  ,  ' he added mysterious ly  . <sep> <cls>
+
+right label: 0	prob: [0.9942479133605957, 0.005752120167016983]	I had willingly placed myself in its hands  , allowed myself to be conscious ly mold ed by its  bearer into his own image  .  " <sep> <cls>
+
+right label: 0	prob: [0.8679336905479431, 0.1320662498474121]	Could you live anywhere else now  ?” I spoke up  . <sep> <cls>
+
+right label: 0	prob: [0.8735930323600769, 0.12640699744224548]	And it all ends in tragedy  : the man who thought he was in charge is suddenly reduced to lying prone and motion less in a wooden box and his fellow men  , real ising that there is no more sense to be had of him  , in cine rate him  . <sep> <cls>
+
+right label: 1	prob: [0.00029170719790272415, 0.9997082352638245]	A man and a woman are spray painting a wall  . <sep> <cls>
+
+right label: 0	prob: [0.9956164360046387, 0.004383530933409929]	It is interesting to note that a later and  wi lier editor sent the book backwards in time through a temporal war p  , and then successfully sued the breakfast cereal company for infringement of the same laws  . <sep> <cls>
+
+right label: 1	prob: [0.0006937832222320139, 0.9993062019348145]	This lady is laying in bed and reading a book  . <sep> <cls>
+
+right label: 1	prob: [0.00018992104742210358, 0.9998101592063904]	Two women and a man are all wearing black jackets and smiling  . <sep> <cls>
+
+right label: 1	prob: [0.0008441499667242169, 0.9991558790206909]	Everyone is dressed in my wedding colors  . <sep> <cls>
+
+right label: 1	prob: [0.0001290374930249527, 0.9998708963394165]	young woman with a suitcase walking down an empty road  ,  e  , error , , no un phrase or adjective phrase syntax  , <sep> <cls>
+
+right label: 1	prob: [0.20284946262836456, 0.7971505522727966]	She was holding a large book on her lap  , but she kept raising her eyes from it and her gaze roam ed over the  ver anda and through the windows  . <sep> <cls>
+
+right label: 0	prob: [0.9766387343406677, 0.0233612060546875]	It turned toward Sarah  ' s wave and acknowledged her with a nod  , moments later setting a flute d glass of sparkling liquid in front of her  . <sep> <cls>
+
+right label: 0	prob: [0.9295502305030823, 0.07044980674982071]	Tell me  ,” I said  , after we sat  , what you have found  . ” It was  n ' t a question  . <sep> <cls>
+
+right label: 0	prob: [0.9004917144775391, 0.09950823336839676]	He gave me a half - hearted wave that made me wonder what exactly we were chasing  , and whether I should be wearing body armor  . <sep> <cls>
+
+right label: 0	prob: [0.8655832409858704, 0.13441674411296844]	Immediately  , I felt it grow warm and knew that I had done something very stupid  . <sep> <cls>
+
+right label: 1	prob: [0.0010159361409023404, 0.9989840388298035]	 " if you  ' re going to a wedding or going out  , try a black suit accent u ated with metallic gold  . " , i <sep> <cls>
+
+right label: 1	prob: [0.0009881730657070875, 0.999011754989624]	A woman is sitting up asleep with her head resting on her hand  . <sep> <cls>
+
+right label: 0	prob: [0.9863811135292053, 0.013618926517665386]	In 1973  , the Experimental Neg oti ating Agreement was signed  . <sep> <cls>
+
+right label: 0	prob: [0.8956324458122253, 0.10436760634183884]	With renewed hatred  , the Ka pid ji B ashi spoke of the wars he once fought against the Russians and of his feat s somewhere near O cha kov  , where he had been wounded  . <sep> <cls>
+
+right label: 1	prob: [0.015262125059962273, 0.9847379326820374]	He was happy to be done  ; but he was going to miss being in college  . <sep> <cls>
+
+right label: 1	prob: [0.00023897903156466782, 0.9997610449790955]	A baseball player is getting ready to hit a ball  . <sep> <cls>
+
+right label: 1	prob: [0.25226661562919617, 0.7477334141731262]	They all stared straight in front of them and listened to the school master who was well known to prefer recount ing long and detailed stories of the past to giving his own opinion shortly and clearly on what was taking place in the present  . <sep> <cls>
+
+right label: 1	prob: [0.025225862860679626, 0.9747741222381592]	Line a baking sheet with parchment paper and sprinkle the corn me al  . Place the braid ed dough on top and cover loosely with plastic wrap  . Let sit 20  - 30 minutes  . <sep> <cls>
+
+right label: 0	prob: [0.9629943370819092, 0.037005722522735596]	Con cer ning the Georgetown Hoy a interview where He ston was asked about Roll and  , you write  :  " There is no indication that [ He ston ] recognized Kay la Roll and  ' s case  .  " <sep> <cls>
+
+right label: 1	prob: [0.00020169840718153864, 0.9997983574867249]	looking thru the glass in the elevator  ,  e  , error , , no un phrase or adjective phrase syntax  , <sep> <cls>
+
+right label: 0	prob: [0.9058090448379517, 0.09419096261262894]	Try to keep in time with me  . ” We spun around three times  , and then something flashed across Ne p thy s hand and he shook a spray of blood onto the dust  . <sep> <cls>
+
+right label: 0	prob: [0.9445301294326782, 0.055469878017902374]	Regardless  , when A dri enne asked what the ship  ' s purpose was  , we all gave it a measure of thought  . <sep> <cls>
+
+right label: 0	prob: [0.5944706201553345, 0.4055294394493103]	Maybe we  ' re already traveling at the speed of light  . ” Tiffany  , she nodded eagerly  . <sep> <cls>
+
+right label: 0	prob: [0.9476945996284485, 0.05230540409684181]	I hopped out  , ran after him  , and reached him just as he was knocking on the door  . <sep> <cls>
+
+right label: 0	prob: [0.8129880428314209, 0.1870119720697403]	After they lost Jerusalem  , a Mong ol invasion swept through  , and in 12 44 the Ma mel uk e dynasty of Egypt took control  , ruling Jerusalem for the next 250 years  . <sep> <cls>
+
+right label: 0	prob: [0.8560728430747986, 0.14392723143100739]	Following this debacle  , the Ottoman s then allied themselves to Germany in the World War I  , losing more territory with the defeat of the Germans in that war  . <sep> <cls>
+
+right label: 1	prob: [0.0035402453504502773, 0.9964597821235657]	I did a lot of staring and not moving  . <sep> <cls>
+
+right label: 1	prob: [9.225013491231948e-05, 0.9999077320098877]	person in action during the mini camp held  ,  e  , error , , no un phrase or adjective phrase syntax  , <sep> <cls>
+
+right label: 1	prob: [0.008035335689783096, 0.9919646978378296]	It was the wedding day that the couple had been dreaming of for years  . <sep> <cls>
+
+right label: 1	prob: [0.023061811923980713, 0.9769382476806641]	Thirty - five thin fingers waved la zi ly like sea weed  . <sep> <cls>
+
+right label: 0	prob: [0.9789510369300842, 0.021048901602625847]	I had to haul in new water and  re heat it  . <sep> <cls>
+
+right label: 0	prob: [0.8163862824440002, 0.18361371755599976]	In 1922 the League of Nations granted the British a mandate to administer Palestine  . <sep> <cls>
+
+right label: 1	prob: [0.0007944699609652162, 0.9992055296897888]	The two of them continued to take pictures together in front of other historical sites  . <sep> <cls>
+
+right label: 1	prob: [0.008335987105965614, 0.9916640520095825]	visiting the horses brings out softer side and he gets to talk about a different interest  . <sep> <cls>
+
+right label: 0	prob: [0.9675481915473938, 0.03245179355144501]	No where does Moore say or imply that these words were uttered at the rally in Denver  , and in fact  , their rep t ition later in the movie at another occasion  ( oddly claimed by critics to be again  " mis at trib uted  "  ) is simply a reminder of this  . <sep> <cls>
+
+right label: 1	prob: [0.006659903097897768, 0.9933400750160217]	there  ' s a new to y in town  . <sep> <cls>
+
+right label: 1	prob: [0.001657812506891787, 0.9983421564102173]	Un us ual rock formation s were abundant  . <sep> <cls>
+
+right label: 0	prob: [0.9939063191413879, 0.0060936883091926575]	Surely  , they would  n ' t have forgotten to supply him with fingerprint s  . <sep> <cls>
+
+right label: 0	prob: [0.5904869437217712, 0.40951305627822876]	The letter he put down next to it was an I  . For two further days they scrambled and climbed over the rocks and glacier s  , a we - st ruck with beauty  . <sep> <cls>
+
+right label: 0	prob: [0.9882426857948303, 0.011757276020944118]	Pai d for how  ?”  S m ugg ling  ,” responded K ish ori  . <sep> <cls>
+
+right label: 1	prob: [0.33415284752845764, 0.6658471822738647]	 ” They struggled and writ h ed as the steward es s patient ly moved up the aisle placing a small cup of coffee and a packet of  biscuit s in front of each one of them  . <sep> <cls>
+
+right label: 1	prob: [0.15850070118904114, 0.8414993286132812]	In the past  , death threats have done little to deter sales of land  . <sep> <cls>
+
+right label: 1	prob: [0.00337429903447628, 0.9966256618499756]	Here is Grand pa as t ride a motorbike in 1912  , with Grandma perched on the back  ;  " Who are you that go pro w ling about at this hour of the night  ?  " <sep> <cls>
+
+right label: 1	prob: [0.0547814816236496, 0.9452185034751892]	the train leaves railway station <sep> <cls>
+
+right label: 0	prob: [0.6373623013496399, 0.3626377284526825]	His love for Te re za was beautiful  , but it was also  tir ing  : he had constantly had to hide things from her  ,  sham  , dis se mble  , make amend s  , buck her up  , calm her down  , give her evidence of his feelings  , play the defendant to her jealousy  , her suffering  , and her dreams  , feel guilty  , make excuse s and apologies  .  ' <sep> <cls>
+
+right label: 0	prob: [0.9887800216674805, 0.011219977401196957]	I car us sing ed his wings  . <sep> <cls>
+
+right label: 0	prob: [0.9585928916931152, 0.04140710458159447]	We suspected that we had not made this error  , but our judgment con ce iv ably might be biased by the biological advantages of complementary DNA molecules  . <sep> <cls>
+
+right label: 1	prob: [0.05580391734838486, 0.9441960453987122]	Do you think this  ' ll hold  ? <sep> <cls>
+
+right label: 0	prob: [0.987865149974823, 0.012134828604757786]	He invited Tri ll ian to sit in the chair  . <sep> <cls>
+
+right label: 0	prob: [0.8487429618835449, 0.15125706791877747]	 Believe in your Gi us tini ana  , who has never de based herself to the point of hiding the truth from you  . <sep> <cls>
+
+right label: 0	prob: [0.9871547222137451, 0.012845293618738651]	Jews were evacuated from the Old City s Jewish Quarter  , and thousands of Arab families fled their homes in West Jerusalem  . <sep> <cls>
+
+right label: 0	prob: [0.9102818965911865, 0.08971806615591049]	Then I realized  , someone must have noticed I had  n ' t left  , and was nice enough to send food my way  . <sep> <cls>
+
+right label: 0	prob: [0.9761081337928772, 0.023891808465123177]	When we talked about the giving  , and how one should try to give what one could to other sent ient being s  ( in the form of material items  , kind words  , protection  , and so on  )  , Kh en po Kal s ang shared a story of the Buddha  , and how the Buddha had given his flesh so that a family of hungry tiger s could eat  . <sep> <cls>
+
+right label: 1	prob: [0.00015487676137126982, 0.9998451471328735]	A woman is sitting on a couch with two dogs  . <sep> <cls>
+
+right label: 0	prob: [0.9844664335250854, 0.015533508732914925]	Its a long way to anywhere worth going  ,” he said  . <sep> <cls>
+
+right label: 1	prob: [0.011031744070351124, 0.9889683127403259]	Private investment has even made an increasingly modern ferry fleet possible  . <sep> <cls>
+
+right label: 1	prob: [0.00115103495772928, 0.9988489151000977]	slash keeps it ugly and class y with a bad top hat <sep> <cls>
+
+right label: 1	prob: [0.0022127556148916483, 0.9977872371673584]	She is chatting with friends she has  n ' t seen in a while  . <sep> <cls>
+
+right label: 1	prob: [0.0001359740854240954, 0.9998639822006226]	A man is outside playing a guitar  . <sep> <cls>
+
+right label: 0	prob: [0.965837299823761, 0.0341627411544323]	All you have to do is deposit one penny in a savings account in your own era  , and when you arrive at the End of Time the operation of compound interest means that the fabulous cost of your meal has been paid for  . <sep> <cls>
+
+right label: 1	prob: [0.000542190158739686, 0.9994577765464783]	 " the guitarist  , singer and progressive rock artist performs a live concert at national register of historic places location  .  " <sep> <cls>
+
+right label: 0	prob: [0.8513730764389038, 0.14862686395645142]	 ' Use all the wit s and knowledge you have of your own  , Sam  ,  ' said Fro do  ,  ' and then use the gift to help your work and better it  . <sep> <cls>
+
+right label: 0	prob: [0.9928277134895325, 0.007172320503741503]	Ford had already introduced this box as a Sub - E tha Sen s - O - Ma tic  , but Arthur had merely nodded absent ly and not pursued the matter  . <sep> <cls>
+
+right label: 1	prob: [0.00019286145106889307, 0.9998071789741516]	One man has another man trapped in a straight arm bar hold on a gym floor  . <sep> <cls>
+
+right label: 0	prob: [0.9721293449401855, 0.02787061594426632]	So what do you need to know  ?” You know I wouldn t come to you if I could get this information another way  ,” said Ne p thy s apologetic ally  . <sep> <cls>
+
+right label: 1	prob: [0.00023935710487421602, 0.9997606873512268]	The elephant with  tus ks is walking through the dirt trail  . <sep> <cls>
+
+right label: 0	prob: [0.9703293442726135, 0.02967059053480625]	However  , the claim of deliberate distortion is  lu dic rous for several reasons  : a  ) Moore clearly states that  " before he came to Flint  "  , He ston gave an interview  . <sep> <cls>
+
+right label: 1	prob: [0.002775436034426093, 0.9972245693206787]	The decor was brilliant  . <sep> <cls>
+
+right label: 0	prob: [0.9959934949874878, 0.004006485920399427]	Mission accomplished  : Our routine in s ou ci ance had been disrupted  . <sep> <cls>
+
+right label: 1	prob: [0.04380777105689049, 0.9561921954154968]	Americans cheer the killing of children  , yet wonder why their own children grow up to be more violent than those in other nations  . <sep> <cls>
+
+right label: 1	prob: [0.0007952800369821489, 0.999204695224762]	Along the trail  ; there were steep cavern s <sep> <cls>
+
+right label: 0	prob: [0.8386381268501282, 0.16136187314987183]	Maybe I already know who you are  .  .  . I  ' ve got a hunch  .  .  . an could  ja nudge that as ht ray over  , yeah  .  .  . good  . <sep> <cls>
+
+right label: 0	prob: [0.9679698944091797, 0.0320301428437233]	At dawn  , when the sun broke through the fog of the winter morning like the flame of a distant fire  , one drunken Che k ist salute d the birth of the new day with a  sal vo from the anti aircraft gun  . <sep> <cls>
+
+right label: 1	prob: [0.00016257649986073375, 0.9998373985290527]	lunar planting by the moon screen printed to te bag  ,  e  , error , , no un phrase or adjective phrase syntax  , <sep> <cls>
+
+right label: 1	prob: [0.0002349596907151863, 0.9997650980949402]	A man wearing a wet suit is  surfing using a surf paddle  . <sep> <cls>
+
+right label: 1	prob: [0.0001331785024376586, 0.9998668432235718]	A small cat is sitting on top of a suite case  . <sep> <cls>
+
+right label: 0	prob: [0.867957592010498, 0.13204237818717957]	Have you seen him  ?” Here  , man  ? <sep> <cls>
+
+right label: 1	prob: [0.32570531964302063, 0.6742945909500122]	The tank examined him with a probe  . <sep> <cls>
+
+right label: 1	prob: [0.00013483980728778988, 0.9998651742935181]	A man is standing and looking away from his refrigerator  . <sep> <cls>
+
+right label: 1	prob: [0.07758690416812897, 0.9224130511283875]	Jerusalem continued under Islamic rule for the next four and a half centuries  . <sep> <cls>
+
+right label: 1	prob: [0.3839755952358246, 0.616024374961853]	As he crawled  , the  dan k air and dust choked his lungs  , his eyes smart ed and the terrifying distance down made his heads spin  . <sep> <cls>
+
+right label: 0	prob: [0.9945933222770691, 0.005406707990914583]	Jesus was put on trial quickly and condemned to  cruci fix ion  , a Roman form of execution for political and religious dissidents as well as for common criminals  . <sep> <cls>
+
+right label: 0	prob: [0.9110628962516785, 0.08893711864948273]	At the last station he was gaining horses all of a sudden  , and now out of the clean - and - clear sky he is even having chief field chaplain s birth ed in the arrest ee car  . <sep> <cls>
+
+right label: 1	prob: [0.07026175409555435, 0.9297382235527039]	If I stay still long enough  , if I  ' ve achieved a relatively constant level of happiness and satisfaction  , I forget that I can and should continue to seek out new ideas and approaches  , and incorporate beneficial ones into my life  . <sep> <cls>
+
+right label: 1	prob: [0.0001320219598710537, 0.9998679161071777]	There were many people watching  . <sep> <cls>
+
+right label: 0	prob: [0.9075486063957214, 0.09245132654905319]	There was a pause  , during which  Bertrand twice seemed on the point of  utter ing a long in articulate bay  . <sep> <cls>
+
+right label: 1	prob: [0.007988923229277134, 0.9920110106468201]	This little doll was feeling like she ca  nt go on anymore  . <sep> <cls>
+
+right label: 0	prob: [0.9537433981895447, 0.046256568282842636]	It may disturb you  .  " <sep> <cls>
+
+right label: 1	prob: [0.020127523690462112, 0.979872465133667]	In the shed just above the water  , the witch  ' was playing her music  , his s ing all night long under the roof  , sending smoke up through the opening  . <sep> <cls>
+
+right label: 0	prob: [0.9954635500907898, 0.004536437336355448]	Then the rector handed his daughter a little account with himself  : her debt to him  , interest there on  , the amount deduct ed from her small allowance  . <sep> <cls>
+
+right label: 1	prob: [0.00038467347621917725, 0.9996153116226196]	actor gives actor a lift on a mobility scooter  ! <sep> <cls>
+
+right label: 0	prob: [0.9888697862625122, 0.011130191385746002]	Had  ,  ” corrected Za pho d  . <sep> <cls>
+
+right label: 0	prob: [0.8499457240104675, 0.15005427598953247]	Until thirty seconds ago  , I didn t believe in magic or any of that kind of  . . . wei rd ness  . ” Na than  , I told you  : my family owe s your s a debt  . <sep> <cls>
+
+right label: 0	prob: [0.9906919598579407, 0.009308002889156342]	He calmly scoop ed the  s corp ion onto a sheet of paper  , then formed a  cone and funnel ed it back into the via l  . <sep> <cls>
+
+right label: 0	prob: [0.9099745750427246, 0.0900253877043724]	the Assyrian armies of Sen na cher ib destroyed Israel and moved southward to be sie ge Jerusalem  . <sep> <cls>
+
+right label: 0	prob: [0.7727531790733337, 0.22724686563014984]	You accuse Moore so often of changing the chronology  , yet you have no problems changing it yourself  . <sep> <cls>
+
+right label: 0	prob: [0.988520622253418, 0.011479305103421211]	I  ' d put on a space suit  , I  ' d get out of this ship  , I  ' d find civilization again  . <sep> <cls>
+
+right label: 1	prob: [0.00012887397315353155, 0.9998711347579956]	A woman is holding a white umbrella on a dark night  . <sep> <cls>
+
+right label: 0	prob: [0.9963440299034119, 0.0036559798754751682]	The temple was demolished and a vast  , Classical - style church was built around Gol go tha  ( the hill where Jesus s  cruci fix ion was believed to have taken place  )  . <sep> <cls>
+
+right label: 1	prob: [0.1950111836194992, 0.8049888014793396]	In a dry and spacious stable a fire was burning  , or more exactly had been burning  , for now only a few  ember s glowing in the half - lit space remained  . <sep> <cls>
+
+right label: 1	prob: [0.0016350323567166924, 0.9983649849891663]	Continuing with the party was a great shadow dance by the model  . <sep> <cls>
+
+right label: 1	prob: [0.3966238796710968, 0.6033761501312256]	But then  , Li je and I do have permission to eat in our apartment three times a week if we want to - Li je is quite successful at the Bureau and we have very nice status - and I thought that just for this occasion  , if you wanted to join us  , we would have a little private feast of our own  , though I do think that people who over do their privacy privileges are just a bit anti - social  , you know  .  " <sep> <cls>
+
+right label: 0	prob: [0.8489412069320679, 0.15105876326560974]	So  . . . back to our garlic ky friend  ?” I suppose so  ,” said Ne p thy s  , and you d better pray to whatever god you think will listen that he won t care we woke her up  . ” We walked back to the herb stand  . <sep> <cls>
+
+right label: 0	prob: [0.9869192242622375, 0.013080740347504616]	A moment later  , he opened them again and stepped aside to let us in  . <sep> <cls>
+
+right label: 0	prob: [0.8126452565193176, 0.18735471367835999]	He jumped at my arm while I was still off - balance  , and I felt the surge of adrenaline that comes right when your body realize s that its too late to save itself  . <sep> <cls>
+
+right label: 0	prob: [0.8981918692588806, 0.10180817544460297]	The wines rich scent had a touch of something chemical that I recognized from the bar  , but it filled my mouth and sank into my veins with reassuring warmth  . <sep> <cls>
+
+right label: 0	prob: [0.6538457274436951, 0.34615421295166016]	But the children who  , torn between belief and un bel ie f  , remained on vigil by the windows overlooking Rad is av  ' s tomb have never managed to see this heavenly fire  , for they were all overcome by sleep before midnight came  . <sep> <cls>
+
+right label: 1	prob: [0.07062363624572754, 0.9293763637542725]	But we  ' re worried a bit about her state of mind  . <sep> <cls>
+
+right label: 0	prob: [0.9871630072593689, 0.012837029993534088]	This is a slave shop  ,” he explained quietly  . <sep> <cls>
+
+right label: 0	prob: [0.7493694424629211, 0.25063052773475647]	Max blinked in amazement  . <sep> <cls>
+
+right label: 1	prob: [0.004590767901390791, 0.9954091906547546]	here  ' s a brief overview of each island to help you to decide which is the right destination for your next family holiday  . <sep> <cls>
+
+right label: 1	prob: [0.46942463517189026, 0.5305753946304321]	All the  lux uri es money can buy  . ” Tiffany took a drink  , thinking  . <sep> <cls>
+
+right label: 1	prob: [0.00016681573470123112, 0.9998331069946289]	 >  > A  surfer rides a wave on his surf board  . <sep> <cls>
+
+right label: 0	prob: [0.90118008852005, 0.09881988167762756]	When I asked her if she  ' d ever seen them  – before I was old enough to stop believing  , I mean  – she would always look sad and tell me  ,  " No  , not since the family came to America has anything happened to us  . <sep> <cls>
+
+right label: 0	prob: [0.9295680522918701, 0.0704319104552269]	He wanted to bet himself it would be bad so that he might stand a chance of its being good  . <sep> <cls>
+
+right label: 1	prob: [0.000645925581920892, 0.9993540644645691]	Mount ed and foot riot police are running  . sounds a little odd <sep> <cls>
+
+right label: 1	prob: [8.995863754535094e-05, 0.9999099969863892]	Two children and a man are looking at the grass beside a lake  . <sep> <cls>
+
+right label: 0	prob: [0.6645758152008057, 0.3354242444038391]	It is in tu itive ly obvious that guns do not actually cause violence  - - but it is equally in tu itive ly obvious that they make the violence that is committed more deadly  . <sep> <cls>
+
+right label: 1	prob: [0.001257874770089984, 0.9987421631813049]	author and actor pose at the after party for the premiere  . <sep> <cls>
+
+right label: 0	prob: [0.9603425860404968, 0.039657432585954666]	So the greater part of the inhabitants were awakened  .  " <sep> <cls>
+
+right label: 1	prob: [0.0009250225266441703, 0.9990749359130859]	The white dog is hard to see in the snow as it runs pay fully  . <sep> <cls>
+
+right label: 0	prob: [0.9549914002418518, 0.045008569955825806]	I called Mitch and our other friends  , hoping that shed crashed at one of their houses  , but I had no luck  . <sep> <cls>
+
+right label: 0	prob: [0.9830460548400879, 0.01695394515991211]	I reviewed the sequence several times and it is perfectly possible to see this text without pausing  . <sep> <cls>
+
+right label: 0	prob: [0.9417121410369873, 0.05828787758946419]	You may leave out the ‘ La dy  , boy  . <sep> <cls>
+
+right label: 1	prob: [0.00038743033655919135, 0.9996126294136047]	The white cow is sitting next to a standing brown cow  . <sep> <cls>
+
+right label: 1	prob: [0.00016913878789637238, 0.9998308420181274]	A young boy walks on a pipe that stretches over water  . <sep> <cls>
+
+right label: 1	prob: [0.000988763989880681, 0.9990111589431763]	The woman is happy with her dog  . <sep> <cls>
+
+right label: 1	prob: [0.03849680349230766, 0.9615032076835632]	For more than fifty years he has been crawling over this world  , cough ing  ,  s nee zing  , groan ing  , puff ing and blowing in all directions like a balloon with a hole in it  . <sep> <cls>
+
+right label: 0	prob: [0.975683331489563, 0.02431674115359783]	So he drafted a first baseman and a shortstop and the four - man team still won  , 7 - 0  . <sep> <cls>
+
+right label: 0	prob: [0.9411373734474182, 0.0588625967502594]	We can never leave  . <sep> <cls>
+
+right label: 0	prob: [0.7540398836135864, 0.2459600865840912]	Do you know what this thing does  ?” I shouted  , hardly able to hear myself  . <sep> <cls>
+
+right label: 0	prob: [0.871609091758728, 0.12839098274707794]	From the country club he had trailed Ren nie into her neighborhood  .  " <sep> <cls>
+
+right label: 0	prob: [0.90118008852005, 0.09881988167762756]	When I asked her if she  ' d ever seen them  – before I was old enough to stop believing  , I mean  – she would always look sad and tell me  ,  " No  , not since the family came to America has anything happened to us  . <sep> <cls>
+
+right label: 1	prob: [0.0037077937740832567, 0.996292233467102]	It was a fun night out for everyone  . <sep> <cls>
+
+right label: 1	prob: [0.00031954492442309856, 0.9996805191040039]	A tall  gir aff e is standing by some palm trees  . <sep> <cls>
+
+right label: 1	prob: [0.00017976317030843347, 0.9998202919960022]	pop artist performs on stage  . <sep> <cls>
+
+right label: 1	prob: [0.40783703327178955, 0.5921629667282104]	But  .  .  . well  , no one important ever disappear s  , so it does  n ' t really matter  , does it  . ” I could tell she was trying to remember whom she had known who had left  , and failing  . <sep> <cls>
+
+right label: 1	prob: [0.008297216147184372, 0.9917028546333313]	My brother is going to grill the meat  . <sep> <cls>
+
+right label: 0	prob: [0.96137934923172, 0.03862063214182854]	 ” Under their blows the Austro - Hungarian monarchy  , that prison of the people s  , would disintegrate as the Turkish Empire had disintegrate d  . <sep> <cls>
+
+right label: 0	prob: [0.9296786189079285, 0.07032136619091034]	I hate them  ,  " he had ground out between his teeth  .  .  . Very often  , of course  , I just have to refer them to him  , when it  ' s a question of a foreign document or something of that kind  . <sep> <cls>
+
+right label: 1	prob: [0.0004954031901434064, 0.999504566192627]	Children are under a large fountain in the city  . <sep> <cls>
+
+right label: 0	prob: [0.9151222109794617, 0.08487780392169952]	According to the LA Times  , the documentary genre  " owe s a huge debt to Michael Moore  "  - - after Bowling  ' s success  , films like  " Spe ll bound  " and  " Capt uring the Friedman s  " were taken seriously and shown in many more theatre s than otherwise likely  . <sep> <cls>
+
+right label: 0	prob: [0.9045180678367615, 0.09548196941614151]	Ho ney  ,” she said  , You  ' re going to be delighted  . <sep> <cls>
+
+right label: 0	prob: [0.9737444519996643, 0.026255570352077484]	The box files have been  re house d on new shelves  ; And as the photo n storms gather in swirling crowds around us  , preparing to tear apart the last of the red hot sun s  , I know you  re all going to settle back and enjoy with me what I know we will find all an immensely exciting and terminal experience  . <sep> <cls>
+
+right label: 1	prob: [0.06827452778816223, 0.9317255020141602]	People clung to vague ideas of worker collect iv ization  , but no one could really fat hom exactly how that would work  ; the people of Young s town were  , after all  , not particularly familiar with socialism or collect iv ization in general  . <sep> <cls>
+
+right label: 1	prob: [0.005242109764367342, 0.9947578310966492]	 i want to look this good when  i  '  m 50  . <sep> <cls>
+
+right label: 0	prob: [0.9874593019485474, 0.012540656141936779]	I smelled her perfume  , the treasure d natural  od our of her and the light  , flower y scent she favoured  , but I detected something else too  ; Gri ef s had been as su aged  , if only by time  , joy s had hardened into habit  , her body had cured its own minor  mala dies  . <sep> <cls>
+
+right label: 0	prob: [0.8829553127288818, 0.11704466491937637]	I thought that if her belt buckle were to fail and the belt snap her trunk would  flop into a perfectly spherical shape with her head on top like a large cherry on a  , well  , on a  bun  . <sep> <cls>
+
+right label: 1	prob: [0.0009890820365399122, 0.9990109205245972]	 S ku ll s are an important part of the decor  . <sep> <cls>
+
+right label: 0	prob: [0.9468079805374146, 0.05319200083613396]	A good decision  : I did  n ' t return all chill and  zen  , as one friend told me his roommate had  , but I certainly gained a few new ideas and approaches to mull over  , and dipped my hand into a previously unfamiliar piece of the world  . <sep> <cls>
+
+right label: 1	prob: [0.00040620254003442824, 0.9995937943458557]	A lone  gir aff e is walking through a grass y area  . <sep> <cls>
+
+right label: 0	prob: [0.982968270778656, 0.017031684517860413]	He  bash ed up a set of stairs set into the side of the wall  , and we chased up after him  , heading up a huge staircase that seemed to go up for more stories than the building could have held  . <sep> <cls>
+
+right label: 0	prob: [0.9034176468849182, 0.09658236801624298]	It is probably impossible to give empirical contents transcendent al value  , or to dis place them in the direction of a constituent subject ivity  , without giving rise  , at least silently  , to an anthropology  - that is  , to a mode of thought in which the right ful limitations of acquired knowledge  ( and consequently of all empirical knowledge  ) are at the same time the concrete forms of existence  , precisely as they are given in that same empirical knowledge  . <sep> <cls>
+
+right label: 1	prob: [0.006259494926780462, 0.9937404990196228]	This is some of my favorite pieces of art  . <sep> <cls>
+
+right label: 0	prob: [0.7787486910820007, 0.22125132381916046]	Mich ie was a  mous tach ed ex - service student who  ' d commanded a tank troop at An zio while Dixon was an R  . A  . F  . corporal in western Scotland  . <sep> <cls>
+
+right label: 0	prob: [0.8641884326934814, 0.13581152260303497]	Without funds to drive the efforts  , or even a real plan of action  , the Save Our Valley Campaign did more harm than good  . <sep> <cls>
+
+right label: 0	prob: [0.9898888468742371, 0.01011121366173029]	Zheng shook his head  . <sep> <cls>
+
+right label: 1	prob: [0.0005385582335293293, 0.9994614720344543]	Four firefighters are sitting atop a fire t ruck  . <sep> <cls>
+
+right label: 1	prob: [0.006023236084729433, 0.9939767122268677]	customers will never love a company until the employees love it first  . <sep> <cls>
+
+right label: 1	prob: [0.0002607272763270885, 0.9997392296791077]	 Cop motorcycle s lined up parked next to each other with the helmet s on them <sep> <cls>
+
+right label: 0	prob: [0.9804317951202393, 0.01956823654472828]	My driver turned again next to an old warehouse that I might have been in once when Mitch took us to a rave in sophomore year  . <sep> <cls>
+
+right label: 0	prob: [0.9910707473754883, 0.008929317817091942]	At least five tons of glitter alone had gone into it before them  , and covered every available surface  . <sep> <cls>
+
+right label: 0	prob: [0.6286028623580933, 0.37139710783958435]	The Jewish National Fund was founded in 1904 for the purpose of buying up land from Arabs  . <sep> <cls>
+
+right label: 1	prob: [0.18857859075069427, 0.8114214539527893]	We call it legitimate further ing of mutual interests here  . <sep> <cls>
+
+right label: 1	prob: [0.00031309304176829755, 0.9996869564056396]	 " a person reads newspaper  , the morning after the referendum results and person  " <sep> <cls>
+
+right label: 0	prob: [0.9000951051712036, 0.09990493953227997]	The light in the corners of my eyes rushed in  , con ver ging on the  ros y glow around the stone  , and for a moment I was blind  . <sep> <cls>
+
+right label: 0	prob: [0.5868896842002869, 0.4131103456020355]	It was the world  ' s largest free - standing  dome until 1960 when it was eclipse d by the Super dome in New Orleans  ! <sep> <cls>
+
+right label: 1	prob: [0.0007955938926897943, 0.9992044568061829]	professional road racing cyclist rings the largest harmonic ally tune d bell in the world <sep> <cls>
+
+right label: 1	prob: [0.00033565604826435447, 0.999664306640625]	a sign warns people of potential dangers <sep> <cls>
+
+right label: 0	prob: [0.9287103414535522, 0.07128965109586716]	Amy gave my hand a squeeze  . <sep> <cls>
+
+right label: 1	prob: [0.00028070859843865037, 0.9997193217277527]	The airplane was comfortable and she had a nice ride <sep> <cls>
+
+right label: 1	prob: [0.00036823717528022826, 0.9996317625045776]	A man is reading next to a pile of comic books  . <sep> <cls>
+
+right label: 0	prob: [0.9062603116035461, 0.09373968094587326]	May I remind you sir  ,  ” hissed Number Two at the Captain  , that you have now been in that bath for over three years  ?  ! <sep> <cls>
+
+right label: 0	prob: [0.7330039143562317, 0.2669961154460907]	However  , its oon became clear that although the local union leaders were prepared to fight  , the international branch was not  . <sep> <cls>
+
+right label: 0	prob: [0.9671061038970947, 0.0328938364982605]	Christian and Islamic Jerusalem For 60 years Jerusalem lay in ruins  , until the Roman Emperor Had rian ordered the city rebuilt as a Roman town dedicated to Jupiter  . <sep> <cls>
+
+right label: 0	prob: [0.8765718936920166, 0.12342812865972519]	You write  :  " Fact  : The little boy was the class  th ug  , already suspended from school for stabbing another kid with a pencil  , and had fought with Kay la the day before  "  . <sep> <cls>
+
+right label: 0	prob: [0.9044638276100159, 0.09553615748882294]	Ne p thy s turned back to the little man on the bed  , who had not moved  . <sep> <cls>
+
+right label: 1	prob: [0.0045345318503677845, 0.9954654574394226]	garnish the magic spicy tea and enjoy it  . <sep> <cls>
+
+right label: 0	prob: [0.9515127539634705, 0.048487234860658646]	 ( And in many of the more relaxed civilization s on the Out er Eastern Rim of the Galaxy  , it has long  s up plant ed the great En cyclo pa ed ia Galactic a as the standard repository of all knowledge and wisdom  , for though it has many omission s and contains much that is a po cry phal  , or at least wildly inaccurate  , it scores over the older and more pedestrian work in two important respects  . <sep> <cls>
+
+right label: 0	prob: [0.7869535088539124, 0.21304655075073242]	Several islands and Greek city - state s agreed to work together  , and created a treasury to fund their plans  , which was held on the island of De los  . <sep> <cls>
+
+right label: 0	prob: [0.9465143084526062, 0.053485654294490814]	The Bible describes how David s soldiers conquered Jerusalem by discovering a water tunnel under the walls and using it to take the city by surprise  . <sep> <cls>
+
+right label: 0	prob: [0.9225838780403137, 0.07741610705852509]	Get out of my sight now  – unless you know how to put it back  ? <sep> <cls>
+
+right label: 0	prob: [0.9894687533378601, 0.01053124200552702]	They had started law school at the same time  , but he flu nk ed out after a nasty round with co ke  . <sep> <cls>
+
+right label: 0	prob: [0.9566678404808044, 0.04333213344216347]	In the autumn the four so ws had all littered about simultaneously  , producing thirty - one young pigs between them  .  ' <sep> <cls>
+
+right label: 0	prob: [0.7901084423065186, 0.20989155769348145]	Letters and petition s were all very well  , but they did little to improve the s itu ation  . <sep> <cls>
+
+right label: 0	prob: [0.9913347363471985, 0.008665334433317184]	Jesus s entry into the Temple caused a commotion  ; after the Passover dinner he was arrested by the temple priests  , who were under direct Roman rule  . <sep> <cls>
+
+right label: 1	prob: [0.00058770488249138, 0.9994122982025146]	A man carrying a white sweat shirt wait s to cross the street  . <sep> <cls>
+
+right label: 0	prob: [0.9875877499580383, 0.012412241660058498]	On reflection he added  : Everything must be liquid ated  , the sooner the better  , and new routes must be found  , through other regions where it was possible to live and work with the people  . <sep> <cls>
+
+right label: 0	prob: [0.9476945996284485, 0.05230540409684181]	I hopped out  , ran after him  , and reached him just as he was knocking on the door  . <sep> <cls>
+
+right label: 1	prob: [0.009141630493104458, 0.9908583760261536]	One of these evening s  , we were gathered in the South Ball room for post - din ner drinks  , lo ung ing on couch es and watching other members of our populace move in circles on the dance floor  . <sep> <cls>
+
+right label: 0	prob: [0.6529761552810669, 0.3470238149166107]	He held it up  , adjusting the angle to the light  , and suddenly saw clearly the finely engraved shapes of words shadow ed on the glass  . <sep> <cls>
+
+right label: 0	prob: [0.9717777371406555, 0.028222227469086647]	 Relax  ,” he told me  , sliding a needle into my arm  . <sep> <cls>
+
+right label: 0	prob: [0.7167053818702698, 0.2832946479320526]	Then I m going to shed a little blood  , but don t worry  , none of your s  . ” I blinked at him  , but he just kept walking until we reached the corner  . <sep> <cls>
+
+right label: 1	prob: [0.001994130900129676, 0.9980059266090393]	 " For more senior jobs individuals will have already demonstrated an appropriate level of intelligence by their educational standards and successful work experience  .  ,  ,  " <sep> <cls>
+
+right label: 1	prob: [0.4151698052883148, 0.5848302245140076]	The natural conclusion of all these internal conflicts was the thought of death which always lurk s on the frontier s of every dream of happiness  . <sep> <cls>
+
+right label: 0	prob: [0.8447000980377197, 0.1552998274564743]	It  ' s quite easy  ,  " urged Arthur  ,  " if you do  n ' t know how  . <sep> <cls>
+
+right label: 1	prob: [0.00010795336129376665, 0.999891996383667]	politicians the first lady wore a dress by fashion designer  , x d <sep> <cls>
+
+right label: 1	prob: [0.00019545038230717182, 0.9998045563697815]	A blond man passionate ly sings into the microphone  . <sep> <cls>
+
+right label: 1	prob: [0.45336779952049255, 0.5466322302818298]	Even without this oath the man from P lev l je would have believed A bid aga  ' s threat  , for even in his dreams he used to shudder at his words and at his glance  . <sep> <cls>
+
+right label: 0	prob: [0.6887259483337402, 0.31127408146858215]	The herb vendor will tell you where you can find it  . <sep> <cls>
+
+right label: 0	prob: [0.978631854057312, 0.02136819064617157]	Miss Barbara had  ap portion ed the food in such a way that we could hold out for another three days  , and the amounts were really very small  .  " <sep> <cls>
+
+right label: 1	prob: [0.00011480674584163353, 0.9998852014541626]	People watch as a man plays a boxing video game in a building <sep> <cls>
+
+right label: 1	prob: [0.04681343585252762, 0.953186571598053]	I could  n ' t tell how many people were running  , much less where they were  . <sep> <cls>
+
+right label: 0	prob: [0.9830288887023926, 0.016971193253993988]	She breaks her gun  ,  e ject ing the cartridge s  , carefully em place s another pair  . <sep> <cls>
+
+right label: 1	prob: [0.16502059996128082, 0.8349794149398804]	Greece attempted to stay out of World War II  , but Mus sol ini saw Greece as an ideal addition to his Italian empire  . <sep> <cls>
+
+right label: 0	prob: [0.8976641893386841, 0.10233580321073532]	The eleventh of a month or the seventeen th  , whether it  ' s Wednesday or Sunday  , summer back on Earth or winter  , it does  n ' t affect us here  . ” Tiffany nodded  , but K ish ori spoke before the other woman could  . <sep> <cls>
+
+right label: 1	prob: [0.00011004832049366087, 0.9998899698257446]	Two men and one woman are sitting in a subway train  . <sep> <cls>
+
+right label: 1	prob: [0.1463915854692459, 0.8536084294319153]	The natural world is acknowledged but mostly as  ' un im prov ed  ' land suitable for wind farms  , a gri business  , reservoir s and the other large - scale developments needed to service those living in the towns  . <sep> <cls>
+
+right label: 1	prob: [0.0001625597506063059, 0.9998373985290527]	A batter is taking his best swing during the baseball game  . <sep> <cls>
+
+right label: 0	prob: [0.9850690960884094, 0.014930961653590202]	After I realized this  , I left my quarters  . <sep> <cls>
+
+right label: 1	prob: [0.00016561659867875278, 0.9998342990875244]	Two people wearing red are sitting on a brick wall drinking coffee  . <sep> <cls>
+
+right label: 0	prob: [0.9636463522911072, 0.03635368123650551]	Well be in and out in a minute  . ” Ne p thy s stepped in and D vor ov walked us towards the dance floor  . <sep> <cls>
+
+right label: 0	prob: [0.9040026664733887, 0.09599730372428894]	These keys have enlarged my radius of action  . <sep> <cls>
+
+right label: 1	prob: [0.00016855259309522808, 0.9998314380645752]	A large black cat is sitting inside of a suitcase  . <sep> <cls>
+
+right label: 0	prob: [0.96427983045578, 0.03572012856602669]	And now the time had come  , according to the story that Denise told herself about herself  , for the chef to car ve herself up and feed the pieces to her hungry parents  . <sep> <cls>
+
+right label: 0	prob: [0.7748615145683289, 0.22513850033283234]	Why did  n ' t you save them  ?” As much as Jesse had irritated me  , I did  n ' t like the picture my brain drew of him floating in his grave  , body swollen and bloated  . <sep> <cls>
+
+right label: 1	prob: [0.4250462055206299, 0.5749537944793701]	He would not cease to  na g  , but his help lessness  , he knew  , would continue to in fect his solicitor  s authority  . <sep> <cls>
+
+right label: 0	prob: [0.7846806645393372, 0.21531932055950165]	It often goes  undi agno s ed because there are no symptoms until it rupture s  , and then it  ' s usually too late  . <sep> <cls>
+
+right label: 1	prob: [0.00018244259990751743, 0.9998175501823425]	A brown bird is sitting on a wood post next to a plant  . <sep> <cls>
+
+right label: 0	prob: [0.7827508449554443, 0.21724912524223328]	You will find her manner s beyond any thing I can describe  ; and your wit and  viv a city I think must be acceptable to her  , especially when  tempered with the silence and respect which her rank will inevitably excit e  . <sep> <cls>
+
+right label: 1	prob: [0.00023798627080395818, 0.9997619986534119]	 " image may contain  : person  , on stage  , playing a musical instrument and outdoor  " <sep> <cls>
+
+right label: 1	prob: [0.00043435589759610593, 0.9995656609535217]	Just a get together  - everyone  ' s so happy  . <sep> <cls>
+
+right label: 1	prob: [0.00020732842676807195, 0.9997926354408264]	 " A red dog stands in a rocky shore  , its feet in the sea  .  " <sep> <cls>
+
+right label: 1	prob: [0.0004091458104085177, 0.9995908141136169]	A man in a black robe is walking into a old building  . <sep> <cls>
+
+right label: 0	prob: [0.8945928812026978, 0.10540718585252762]	You have our thanks  . ” Out side  , the thing at the herb cart nodded when we mentioned the stone  . <sep> <cls>
+
+right label: 1	prob: [0.0008258750312961638, 0.9991740584373474]	stand back  ! person pushes away the crowd as threatening people in white fill the area  , x d <sep> <cls>
+
+right label: 0	prob: [0.9813122153282166, 0.018687760457396507]	It split  , it ripped  . <sep> <cls>
+
+right label: 0	prob: [0.9642958045005798, 0.035704221576452255]	 ” And in fact  , before Ta hir Be y was half way there  , they had succeeded in both enhancing and de tract ing from his reputation  . <sep> <cls>
+
+right label: 1	prob: [0.0006181257776916027, 0.9993818998336792]	 " There are 3 Cowboys at the rode o  , one happens to have excellent pose timing  .  " <sep> <cls>
+
+right label: 0	prob: [0.8573126792907715, 0.1426873803138733]	I also expect that many others did not know when to quit  , mis managed their money  , left themselves minimal options and no exit strategies  . <sep> <cls>
+
+right label: 1	prob: [0.0028590671718120575, 0.9971410036087036]	They were all lined up like proud children  posing for their parents  . <sep> <cls>
+
+right label: 0	prob: [0.8431556820869446, 0.156844362616539]	I still have to sit down and do the day  ' s accounts  , total the checks  , send today  ' s thank - you letters  . <sep> <cls>
+
+right label: 0	prob: [0.8900452852249146, 0.10995472222566605]	 Hold this  ,  " she said  , shoved a stout rope in his hand and disappeared inside through the large white wooden doors from which  d angle d a fat pad lock off a black iron bar  . <sep> <cls>
+
+right label: 0	prob: [0.7685988545417786, 0.23140116035938263]	Za pho d Bee ble bro x was now the ex - President of the Galaxy  , and though every police force in the Galaxy was currently pursuing both him and this ship he had stolen  , the Vo gon was not interested  . <sep> <cls>
+
+right label: 1	prob: [0.000701583456248045, 0.9992984533309937]	 " A man in red scarf and white hat sits on a blanket on the ground  , surrounded by cake s of a brown  , fiber  - like substance that he is apparently selling  .  " <sep> <cls>
+
+right label: 1	prob: [0.0003154077276121825, 0.9996845722198486]	students run on a track integrated into the design of building <sep> <cls>
+
+right label: 1	prob: [0.13398107886314392, 0.8660188913345337]	She had studied psychology for a while in  grad school  , but now holds the view that psychologist s are going about understanding the mind and understanding the know er and what knowing is the wrong way  . <sep> <cls>
+
+right label: 0	prob: [0.5623289942741394, 0.4376709759235382]	I will never forget you  . <sep> <cls>
+
+right label: 1	prob: [0.007767464499920607, 0.9922325611114502]	My family was taking a trip in another country  . <sep> <cls>
+
+right label: 1	prob: [0.0215917881578207, 0.9784082174301147]	 " Proper little rogue and  va ga bon d  , was our Walter  .  " <sep> <cls>
+
+right label: 0	prob: [0.8152926564216614, 0.1847073882818222]	Then  , the whole campaign had progressed well  , from victory to victory  , and  , most importantly  , it had gone quickly  . <sep> <cls>
+
+right label: 0	prob: [0.8087003827095032, 0.19129955768585205]	As she moved down the L HC tunnel toward her father  ' s lab  , Vit toria realized she was about to unveil her father  ' s greatest achievement without him there  . <sep> <cls>
+
+right label: 1	prob: [0.0006171409622766078, 0.9993828535079956]	A man with a bike helmet and two young boys have just their heads peek ing up from a pile of leaves  . <sep> <cls>
+
+right label: 0	prob: [0.9777804017066956, 0.022219600155949593]	Then my eyes opened and Amy handed me the hammer and stake  . <sep> <cls>
+
+right label: 0	prob: [0.8667886257171631, 0.13321134448051453]	Oh  , shit  !” I said  . <sep> <cls>
+
+right label: 0	prob: [0.9102818965911865, 0.08971806615591049]	Then I realized  , someone must have noticed I had  n ' t left  , and was nice enough to send food my way  . <sep> <cls>
+
+right label: 0	prob: [0.9700765609741211, 0.029923491179943085]	I took it and  , dropping to one knee  , gave her fingers a small kiss  . <sep> <cls>
+
+right label: 1	prob: [0.0007639334653504193, 0.9992361068725586]	A baby  gir aff e and its mother are standing in a field  . <sep> <cls>
+
+right label: 0	prob: [0.8548879027366638, 0.1451120525598526]	He would flatter his well - born patients ingenious ly  , praising their strength and endurance  , a rous ing their vanity and will to resist their illness  ; or by suggestion  , be lit t ling the disease and its significance  . <sep> <cls>
+
+right label: 1	prob: [0.10032892972230911, 0.8996710777282715]	I sat sideways in the arm chair  , feet dangling over one arm  , neck resting against the other  , absent ly tracing invisible lines between the stars outside my window as I  rum inated on the situation  . <sep> <cls>
+
+right label: 1	prob: [0.0004176428774371743, 0.9995823502540588]	A train with engine is standing on the railway station  . <sep> <cls>
+
+right label: 0	prob: [0.9136106967926025, 0.08638934046030045]	With a flourish  , she opened the door to reveal a room with walls in laid with lap is and gold wire  , intricate patterns like a C zar s jewelry box crawling down the walls  . <sep> <cls>
+
+right label: 0	prob: [0.9373565316200256, 0.06264348328113556]	In a few minutes  , we were getting out a block down from the abandoned church  . <sep> <cls>
+
+right label: 1	prob: [7.783673208905384e-05, 0.9999221563339233]	A woman smoking a cigarette plays guitar  . <sep> <cls>
+
+right label: 0	prob: [0.6735638976097107, 0.3264361321926117]	I had been holding Chloe  s hand for so long I had ceased to feel it in mine  – not the prim al encounter itself could have  fused two flesh es so thoroughly as did those early hand - holding s v and when with a lurch and a stutter the screen went blank and her fingers twitch ed like fish es I twitch ed too  . <sep> <cls>
+
+right label: 1	prob: [0.03251665458083153, 0.9674833416938782]	A new sense of identity envelope d Greek people s throughout the Aegean  , thus comm encing a movement to expand Greece and un ify the disparate Orthodox populations  . <sep> <cls>
+
+right label: 0	prob: [0.8547873497009277, 0.14521265029907227]	There s no time to waste  . ” He saw that I wasn t moving  . <sep> <cls>
+
+right label: 0	prob: [0.9722539186477661, 0.02774600312113762]	After I d walked about a block  , a car rolled up behind me  . <sep> <cls>
+
+right label: 0	prob: [0.9769943356513977, 0.023005707189440727]	He opened one eye when we came in but did not move  . <sep> <cls>
+
+right label: 0	prob: [0.9741384387016296, 0.025861581787467003]	The trumpet was joined by more trumpet s  . <sep> <cls>
+
+right label: 1	prob: [0.0007971802842803299, 0.9992027878761292]	football player celebrate s what seemed an almost certain winner against the champions <sep> <cls>
+
+right label: 1	prob: [0.04948088154196739, 0.9505191445350647]	The ceiling was high and wooden  , and I could see part of a DJ s booth down the hall  . <sep> <cls>
+
+right label: 0	prob: [0.9058090448379517, 0.09419096261262894]	Try to keep in time with me  . ” We spun around three times  , and then something flashed across Ne p thy s hand and he shook a spray of blood onto the dust  . <sep> <cls>
+
+right label: 1	prob: [0.014346521347761154, 0.9856534600257874]	 " You will need an iron  , a flat metal bar  ( I used a level  ) a vacuum  , My lar bags and the food to be packaged  .  " <sep> <cls>
+
+right label: 1	prob: [0.010037044994533062, 0.9899629950523376]	 " In the c rock of a slow cook er  , whisk together the chicken broth  , orange  z est and juice  , mustard  , and measured salt  .  " <sep> <cls>
+
+right label: 0	prob: [0.9985419511795044, 0.0014580395072698593]	And the very next day the Der vent a Commander sent the Consul  ' s documents to the Vi zier  , a po log izing that they had been mis laid  .  " <sep> <cls>
+
+right label: 1	prob: [0.00048056308878585696, 0.9995194673538208]	Five men are working on a section of railroad tracks  . <sep> <cls>
+
+right label: 0	prob: [0.9724265933036804, 0.027573401108384132]	They have told me that they might set charges  , to level you completely  , but I think that it was said more to bring me down  , rather than you  . <sep> <cls>
+
+right label: 0	prob: [0.5172913074493408, 0.48270872235298157]	The snow was still falling  , the weather still had not brighten ed up at all  . <sep> <cls>
+
+right label: 1	prob: [0.00010640450636856258, 0.9998935461044312]	A black dog is in a dog race  . <sep> <cls>
+
+right label: 0	prob: [0.9629943370819092, 0.03700563311576843]	Con cer ning the Georgetown Hoy a interview where He ston was asked about Roll and  , you write  :  " There is no indication that [ He ston ] recognized Kay la Roll and  ' s case  .  " <sep> <cls>
+
+right label: 0	prob: [0.9744144082069397, 0.025585606694221497]	He took us to a squat  , long building whose roof bulge d up like the ribs of a gut ted animal  . <sep> <cls>
+
+right label: 1	prob: [0.018899040296673775, 0.9811009168624878]	If the US WA supported the efforts to revive the mills and encouraged worker control and ownership of the factories  , then the government  ( and potentially other important people and institutions as well  ) might begin to think that the U WS A leaders were encouraging socialism  . <sep> <cls>
+
+right label: 1	prob: [0.0006751800538040698, 0.9993247985839844]	 " A machine without human guidance is in flex ible and highly limited in recognition and learning facilities  .  ,  ,  " <sep> <cls>
+
+right label: 1	prob: [0.02526935376226902, 0.9747306704521179]	Choose a variety of apples  . Wash the apples  . Core and slice the apples  . <sep> <cls>506 out of 618
