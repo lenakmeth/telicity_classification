@@ -22,7 +22,6 @@ else:
     
 print('Uses verb segment ids: ' + args.verb_segment_ids)
 print('Model: ' + args.transformer_model)
-print('Model type: ' + (args.transformer_model).split("-")[0])
 
 if torch.cuda.is_available():      
     device = torch.device("cuda")
@@ -43,13 +42,11 @@ train_inputs, train_masks, train_segments = tokenize_and_pad(train_sentences)
 val_inputs, val_masks, val_segments = tokenize_and_pad(val_sentences)
 test_inputs, test_masks, test_segments = tokenize_and_pad(test_sentences
 
-
 print('\nLoaded sentences and converted.')
 
 print('Train set: ' + str(len(train_inputs)))
 print('Validation set: ' + str(len(val_inputs)))
 print('Test set: ' + str(len(test_inputs)))
-
 
 # Convert all inputs and labels into torch tensors, the required datatype for our model.
 train_inputs = torch.tensor(train_inputs)

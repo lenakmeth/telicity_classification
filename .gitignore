@@ -141,7 +141,6 @@ cython_debug/
 *.sh
 
 # Other stuff
-logs/
 checkpoints/
 *.out
 classify_tensorflow_logger.py

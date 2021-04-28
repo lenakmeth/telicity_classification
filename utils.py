@@ -224,15 +224,14 @@ def format_time(elapsed):
     return str(datetime.timedelta(seconds=elapsed_rounded))
 
 def save_torch_model(model, optimizer):
-    # save
     torch.save({
         'model_state_dict': model.state_dict(),
         'optimizer_state_dict': optimizer.state_dict()
     }, output_model)
     
-def decode_result(encoded_sequence):
     
-    # load tokenizer
+def decode_result(encoded_sequence):
+
     if (args.transformer_model).split("-")[0] == 'bert':
         tok = BertTokenizer.from_pretrained(args.transformer_model )
     elif (args.transformer_model).split("-")[0] == 'roberta':
@@ -253,6 +252,7 @@ def decode_result(encoded_sequence):
                         if w in tokens_to_remove]
     
     return ' '.join(decoded_sequence)
+
 
 def split_train_val_test(X, y, 
                          frac_train=0.8, frac_val=0.1, frac_test=0.1,
