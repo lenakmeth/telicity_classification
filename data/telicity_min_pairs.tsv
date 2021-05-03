@@ -1,0 +1,40 @@
+The girl walked a kilometer yesterday .	walked	2	0
+The girl walked yesterday .	walked	2	1
+I will receive new stock on Friday .	receive	2	0
+I will receive new stock on Fridays .	receive	2	1
+The boy is eating an apple .	eating	3	0
+The boy is eating apples .	eating	3	1
+I drank the whole bottle .	drank	1	0
+I drank juice .	drank	1	1
+I read the book in an hour .	read	1	0
+I read the book for an hour .	read	1	1
+The Prime Minister made that declaration yesterday .	made	3	0
+The Prime Minister made that declaration for months .	made	3	1
+The workers painted the house in an hour .	painted	2	0
+The workers painted the house for an hour .	painted	2	1
+The hunters chased the deer away .	chased	2	0
+The hunters chased the deer .	chased	2	1
+I finished reading the book at 5 pm .	reading	2	0
+I stopped reading the book at 5 pm .	reading	2	1
+The pond is freezing over .	freezing	3	0
+It 's freezing outside .	freezing	2	1
+The hunter occupied the mountain hut .	occupied	2	1
+The hunter reached the mountain hut .	reached	2	0
+I put on my red dress .	put	1	0
+I wore my red dress .	wore	1	1
+The artist draws a painting .	draws	2	0
+The artist studies a painting .	studies	2	1
+The policemen entered the church .	entered	2	0
+The policemen watched the church .	watched	2	1
+They caught the boar .	caught	1	0
+They hunted the boar .	hunted	1	1
+She fell asleep at 8 pm .	fell	1	0
+She slept at 8 pm .	slept	1	1
+She noticed him .	noticed	1	0
+She looked at him .	looked	1	1
+The people died from starvation .	died	2	0
+The people suffered from starvation .	suffered	2	1
+They built the house .	built	1	0
+They have been building the house .	building	3	1
+She ate that sandwich .	ate	1	0
+She has been eating that sandwich .	eating	3	1

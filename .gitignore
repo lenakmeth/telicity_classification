@@ -144,3 +144,4 @@ cython_debug/
 checkpoints/
 *.out
 classify_tensorflow_logger.py
+classify_tensorflow_tests.py
