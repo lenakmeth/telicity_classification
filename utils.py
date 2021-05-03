@@ -21,14 +21,14 @@ def read_sents(path, marker):
         with open(file, 'r', encoding='utf-8') as f:
             for line in f:
                 l = line.strip().split('\t')
-                sentences.append([l[1], l[2], int(l[3])])
-                labels.append(int(l[4]))
+                sentences.append([l[-4], l[-3], int(l[-2])])
+                labels.append(int(l[-1]))
                 
             return sentences,labels
         
     train_sentences, train_labels = open_file(path + '/' + marker + '_train.tsv')    
     val_sentences, val_labels = open_file(path +  '/' + marker + '_val.tsv')
-    test_sentences, test_labels = open_file(path +  '/' + marker + '_val.tsv')
+    test_sentences, test_labels = open_file(path +  '/' + marker + '_test.tsv')
 
     return train_sentences, train_labels, val_sentences, val_labels, test_sentences, test_labels
 

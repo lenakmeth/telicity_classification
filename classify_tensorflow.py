@@ -40,7 +40,7 @@ train_sentences, train_labels, val_sentences, val_labels, \
 
 train_inputs, train_masks, train_segments = tokenize_and_pad(train_sentences)
 val_inputs, val_masks, val_segments = tokenize_and_pad(val_sentences)
-test_inputs, test_masks, test_segments = tokenize_and_pad(test_sentences
+test_inputs, test_masks, test_segments = tokenize_and_pad(test_sentences)
 
 print('\nLoaded sentences and converted.')
 
