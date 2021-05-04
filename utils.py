@@ -223,12 +223,6 @@ def format_time(elapsed):
     # Format as hh:mm:ss
     return str(datetime.timedelta(seconds=elapsed_rounded))
 
-def save_torch_model(model, optimizer):
-    torch.save({
-        'model_state_dict': model.state_dict(),
-        'optimizer_state_dict': optimizer.state_dict()
-    }, output_model)
-    
     
 def decode_result(encoded_sequence):
 
@@ -249,7 +243,7 @@ def decode_result(encoded_sequence):
     tokens_to_remove = ['[PAD]', '[SEP]', '[CLS]' '<pad>', '<sep>', '<s>', '</s>']
     decoded_sequence = [w.replace('Ġ', '').replace('▁', '').replace('</w>', '')
                         for w in list(tok.convert_ids_to_tokens(encoded_sequence))
-                        if not w in tokens_to_remove]
+                        if not w.strip() in tokens_to_remove]
     
     return ' '.join(decoded_sequence)
 

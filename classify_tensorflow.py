@@ -382,18 +382,21 @@ for epoch_i in range(0, epochs):
     
     print('\tConfusion matrix:\n')
     print(classification_report(all_labels, all_preds))
-    
-    #save_name = 'checkpoints/' + args.label_marker + '/' + args.transformer_model + '_' + str(epoch_i + 1) + '_' + args.verb_segment_ids
-    #model.save_pretrained(save_name)
-    #torch.save(save_name)
         
+# Save the model on epoch 4
+
+output_model = 'checkpoints/' + args.data_path + '/' + args.label_marker + '/' + \
+                args.transformer_model + '_' + args.verb_segment_ids + '.pth'
+torch.save(model, output_model)  
+
 # ========================================
 #               TESTING
 # ========================================
 # Load the model of the last epoch
 
-#output_model = 'checkpoints/' + args.label_marker + '/' + args.transformer_model + '_' + '4'  + '_' + args.verb_segment_ids
-#checkpoint = torch.load(output_model, map_location='cpu')
+output_model = 'checkpoints/' + args.data_path + '/' + args.label_marker + '/' + \
+                args.transformer_model + '_' + args.verb_segment_ids + '.pth'
+checkpoint = torch.load(output_model, map_location=device)
 
 print('Loaded model succesful. Running testing...')
 
@@ -453,7 +456,7 @@ for n, sent in enumerate(all_inputs):
         counter += 1
         sentence = decode_result(sent)
         probs = all_probs[n]
-        print('Predicted: ', all_preds[n], '\tProbs: ', str(probs), '\tSent: ', sentence)
+        #print('Predicted: ', all_preds[n], '\tProbs: ', str(probs), '\tSent: ', sentence)
 
 print(str(counter) + ' out of ' + str(len(all_inputs)))
 
