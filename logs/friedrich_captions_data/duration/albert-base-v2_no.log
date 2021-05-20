@@ -1,0 +1,1061 @@
+
+Uses verb segment ids: no
+Model: albert-base-v2
+Model type: albert
+Train set: 3267
+Validation set: 408
+Test set: 408
+
+	======== Epoch 1 / 4 ========
+Training...
+	Batch    40	of	  103.		Elapsed: 0:04:06.
+	Batch    80	of	  103.		Elapsed: 0:08:14.
+	Average training loss: 0.26
+	Training epoch took: 0:10:32
+	Running Validation...
+	Accuracy: 0.93
+	Validation took: 0:00:27
+	Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.88      0.97      0.92       186
+           1       0.98      0.89      0.93       222
+
+    accuracy                           0.93       408
+   macro avg       0.93      0.93      0.93       408
+weighted avg       0.93      0.93      0.93       408
+
+	======== Epoch 2 / 4 ========
+Training...
+	Batch    40	of	  103.		Elapsed: 0:04:09.
+	Batch    80	of	  103.		Elapsed: 0:08:19.
+	Average training loss: 0.13
+	Training epoch took: 0:10:37
+	Running Validation...
+	Accuracy: 0.96
+	Validation took: 0:00:27
+	Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.92      0.99      0.96       186
+           1       0.99      0.93      0.96       222
+
+    accuracy                           0.96       408
+   macro avg       0.96      0.96      0.96       408
+weighted avg       0.96      0.96      0.96       408
+
+	======== Epoch 3 / 4 ========
+Training...
+	Batch    40	of	  103.		Elapsed: 0:04:09.
+	Batch    80	of	  103.		Elapsed: 0:08:19.
+	Average training loss: 0.09
+	Training epoch took: 0:10:37
+	Running Validation...
+	Accuracy: 0.95
+	Validation took: 0:00:27
+	Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.94      0.95      0.94       186
+           1       0.95      0.95      0.95       222
+
+    accuracy                           0.95       408
+   macro avg       0.95      0.95      0.95       408
+weighted avg       0.95      0.95      0.95       408
+
+	======== Epoch 4 / 4 ========
+Training...
+	Batch    40	of	  103.		Elapsed: 0:04:09.
+	Batch    80	of	  103.		Elapsed: 0:08:19.
+	Average training loss: 0.05
+	Training epoch took: 0:10:37
+	Running Validation...
+	Accuracy: 0.95
+	Validation took: 0:00:28
+	Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.94      0.96      0.95       186
+           1       0.96      0.95      0.96       222
+
+    accuracy                           0.95       408
+   macro avg       0.95      0.95      0.95       408
+weighted avg       0.95      0.95      0.95       408
+
+Loaded model succesful. Running testing...
+Accuracy: 0.95
+Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.94      0.96      0.95       186
+           1       0.96      0.95      0.96       222
+
+    accuracy                           0.95       408
+   macro avg       0.95      0.95      0.95       408
+weighted avg       0.95      0.95      0.95       408
+
+
+Wrong predictions:
+wrong_val: 1	prob: [0.36126384139060974, 0.6387361884117126]	i got a strange feeling that we werent supposed to be driving here  .
+wrong_val: 0	prob: [0.9927213788032532, 0.007278554141521454]	we call it legitimate further ing of mutual interests here  .
+wrong_val: 1	prob: [0.34756454825401306, 0.6524354815483093]	alfred lay catching his breath and repent ing his de fil ing of the baby  .
+wrong_val: 1	prob: [0.0006299084052443504, 0.9993701577186584]	 " if you feel regret  , it destroy s the merit  .  "
+wrong_val: 0	prob: [0.9979968667030334, 0.002003076719120145]	what is true is that bowling for columb ine is a diamond in the small world of big screen documentaries  , one that shine s brightly and illuminate s an often misunderstood aspect of american culture  .
+wrong_val: 0	prob: [0.9943310022354126, 0.005669026169925928]	i resolved to break the pattern  .
+wrong_val: 0	prob: [0.9904993176460266, 0.009500670246779919]	you just said that nobody suspected  .
+wrong_val: 0	prob: [0.9902194142341614, 0.009780634194612503]	but what if he had voiced his suspicions to viola  ?
+wrong_val: 0	prob: [0.9884042739868164, 0.011595744639635086]	with visible reluctance he handed it to hilda mach in  .
+wrong_val: 0	prob: [0.994686484336853, 0.005313454661518335]	she thinks i  ' m a wicked woman  .
+wrong_val: 0	prob: [0.9922089576721191, 0.007791056763380766]	is this mine  ?
+wrong_val: 0	prob: [0.9936422109603882, 0.006357793230563402]	it is brilliant ly  , if un eth ically  , done  .  "
+wrong_val: 1	prob: [0.0022687616292387247, 0.9977312684059143]	the island communities were  unde cid ed about which side to back for a time  .
+wrong_val: 0	prob: [0.9910129904747009, 0.008986991830170155]	but four hours later the fish was still swimming steadily out to sea  , to wing the ski ff  , and the old man was still braced solid ly with the line across his back  .
+wrong_val: 0	prob: [0.9870572686195374, 0.012942713685333729]	when she didnt move  , i knelt down and put a hand to her brow  .
+wrong_val: 1	prob: [0.0023872912861406803, 0.997612714767456]	 " tar rin says the planet  ' s a freaking gem stone  !
+wrong_val: 1	prob: [0.0023830796126276255, 0.9976170063018799]	initially many assumed that their union would take a lead role in fighting for the recovery of their jobs  .
+wrong_val: 1	prob: [0.34871232509613037, 0.6512876152992249]	it was a friday night  .
+wrong_val: 1	prob: [0.2077954262495041, 0.7922045588493347]	by contrast with the still unknown but evidently multi - dimensional organisation and functioning of the system in the human brain the data must be organised for communication in linear fashion  .19 out of 408
+
+Right predictions:
+right_val: 1	prob: [0.00045203673653304577, 0.9995478987693787]	a person is sitting with many surf boards  .
+right_val: 1	prob: [0.00039319947245530784, 0.9996067881584167]	this man is eating a don ut at an outdoor event  .
+right_val: 1	prob: [0.00040055345743894577, 0.9995995163917542]	a young boy with track on his shirt is smiling at a young boy with a batman logo on his shirt  .
+right_val: 1	prob: [0.00045651954133063555, 0.9995434880256653]	a girl is playing with water near a playground  .
+right_val: 1	prob: [0.112217478454113, 0.8877825140953064]	i  ' m not strong  .
+right_val: 1	prob: [0.0006075507262721658, 0.9993923902511597]	 " that does  n ' t prove anything  , said rose  .  "
+right_val: 0	prob: [0.9972797632217407, 0.0027201662305742502]	ne p thy s nodded  : its okay  , you can trust him  .
+right_val: 0	prob: [0.9791263341903687, 0.02087363786995411]	this sounds like it  ' s the one  .  "
+right_val: 1	prob: [0.0009466020856052637, 0.999053418636322]	feel like going on a shopping spree  ? check out shopping center  !
+right_val: 0	prob: [0.99326092004776, 0.00673911115154624]	they were now falling together  , which was all very sweet and romantic  , but did  n ' t solve the basic problem  , which was that they were falling  , and the ground was  n ' t waiting around to see if he had any more clever tricks up his sleeve  , but was coming up to meet them like an express train  .
+right_val: 1	prob: [0.0006946450448594987, 0.9993053674697876]	love the reflection and viewpoint for this photo  .
+right_val: 0	prob: [0.9972537159919739, 0.0027462372090667486]	warren s shaft  , part of a canaan ite water system discovered by 19 th - century archaeologists and open to visitors  , might be the very tunnel infiltrate d by david s army  .
+right_val: 0	prob: [0.9919403195381165, 0.008059642277657986]	i  ' ve got a replacement lined up  . <unk> i ran  .
+right_val: 1	prob: [0.0005179402651265264, 0.9994820952415466]	a large black cat is sitting inside of a suitcase  .
+right_val: 1	prob: [0.0006157608004286885, 0.9993841648101807]	starting your day off with breakfast is always a healthy move  .
+right_val: 1	prob: [0.0008006796706467867, 0.9991993308067322]	 " once you have poured all of your drinks into the glasses  , top with the foam to pping you made  . serve the drinks and your done  !  : d * please let me know what you think and if there is anything i could improve on  , or that you feel would make it taste better  .  "
+right_val: 1	prob: [0.0006249508005566895, 0.99937504529953]	decorating ideas for a man  s house  ,  e  , error , , no un phrase or adjective phrase syntax  ,
+right_val: 0	prob: [0.9948220252990723, 0.0051779779605567455]	when the bucket s fell  , she was at first only aware of a loud  , metallic clan g cutting through the music  , and then she was del ug ed in warmth and wet ness  .
+right_val: 0	prob: [0.9980629086494446, 0.0019371372181922197]	they are all that remains of the greatest experiment ever conducted  - to find the ultimate question and the ultimate answer of life  , the universe  , and everything  .
+right_val: 1	prob: [0.0005041196709498763, 0.9994958639144897]	a bird is standing on the small branch outside  .
+right_val: 1	prob: [0.0005071466439403594, 0.999492883682251]	 " oh yes  , i  ' ve have you enjoyed yourself at school  ?  ,  "
+right_val: 0	prob: [0.9945560693740845, 0.005443961825221777]	no longer grounded  . <unk> ray  , he said  , if we last forever  , if our eyes are the last eyes watching as the stars blink out  , it wo  n ' t mean a thing to us  .
+right_val: 1	prob: [0.001728343777358532, 0.9982717037200928]	careful  ; that  ' s live  .
+right_val: 1	prob: [0.0007013271097093821, 0.9992986917495728]	a fire to re through a  - square  - foot warehouse  .
+right_val: 0	prob: [0.9970636963844299, 0.0029363222420215607]	inside  , the entrance room was hung with bright silk s and scattered with velvet c ushi ons  .
+right_val: 1	prob: [0.0006593025755137205, 0.9993407130241394]	politician arrives in an aircraft
+right_val: 0	prob: [0.9975038170814514, 0.002496249508112669]	on the floor was  d vor ov s head  , separated from his body by several feet and a growing puddle of dark blood  .
+right_val: 0	prob: [0.9958844780921936, 0.004115533083677292]	but even the ray ah of all three faith s  , scattered over the steep outskirts or crowded together in their separate district  , were filled with the same feeling  , each in their own way and in accordance with their own condition  .
+right_val: 0	prob: [0.9960730075836182, 0.003926980774849653]	even after the fighting stopped more than a decade later  , the country was not stable  .
+right_val: 1	prob: [0.00042876967927441, 0.9995712637901306]	the man is  posing for a picture with his snowboard outside  .
+right_val: 1	prob: [0.00044327505747787654, 0.9995567202568054]	play around with different period times to get the look that you want and fit s your wedding theme  .
+right_val: 1	prob: [0.0008856267668306828, 0.9991143345832825]	i also got to spend time with the cat  .
+right_val: 1	prob: [0.0005742490175180137, 0.9994257688522339]	the real tor was really nice he gave us a tour at night  .
+right_val: 1	prob: [0.0008974996744655073, 0.9991024732589722]	but dave was having the most fun when he saw that de id re had style d up her hair so they could hang out as afro twins  .
+right_val: 0	prob: [0.9945884943008423, 0.005411558784544468]	the dome of the rock remains jerusalem s most striking monument  ; it is counted among the most beautiful buildings ever created  .
+right_val: 1	prob: [0.00036365800769999623, 0.9996362924575806]	pop artist performs on stage  .
+right_val: 1	prob: [0.0016899872571229935, 0.9983099699020386]	many people come out for the event and it reminds us of the importance of our armed forces and veterans  .
+right_val: 0	prob: [0.9952718615531921, 0.004728151485323906]	jerusalem grew  , surrounded with a formidable wall and defended by towers beside the jaffa gate  .
+right_val: 0	prob: [0.9946829676628113, 0.005317009519785643]	i do  n ' t want to be here forever  . <unk> but we  ' re not here forever  , <unk> objected sarah  .
+right_val: 1	prob: [0.0004390030517242849, 0.9995610117912292]	two people wearing red are sitting on a brick wall drinking coffee  .
+right_val: 0	prob: [0.9966523051261902, 0.0033476667013019323]	i wanted to prove to  adri enne that i wanted solve the ship  ' s mystery just as much as she did  .
+right_val: 0	prob: [0.9980359673500061, 0.0019639937672764063]	i welcomed this mysterious decision with blunt self - interest  , since her worker was now supplemented by china reconstruct s  , a here tical magazine posted direct from the distant continent  .
+right_val: 1	prob: [0.0012898698914796114, 0.9987101554870605]	in the early years there is extensive leisure devoted to play in which the basic  mani pul ative and social skills are developed  .
+right_val: 0	prob: [0.9976204037666321, 0.002379588084295392]	or again it might just have been one of the strange prompting s that occasionally surfaced from that dark area of his mind that he had in exp lic ably locked off prior to becoming president of the galaxy  .
+right_val: 0	prob: [0.9964565634727478, 0.003543466329574585]	it was a black baseball cap that read dead can dance <unk> in gold across the front  .
+right_val: 1	prob: [0.003491749754175544, 0.9965081810951233]	yes  ; we will miss you  !
+right_val: 1	prob: [0.0004880883207079023, 0.9995119571685791]	fire men emerge from a subway station  .
+right_val: 0	prob: [0.9900848865509033, 0.00991508737206459]	perhaps he coveted his mother  ' s affection s solely for himself  - - ther houses comprised a whole small quarter surrounded by fields  , plum - or char d s and shrub be ries  .  '
+right_val: 1	prob: [0.0004516064946074039, 0.9995483756065369]	a man is playing with a baby on a deck  .
+right_val: 0	prob: [0.9955466985702515, 0.004453243222087622]	he took us to the door of a building like a short pagoda that had a sign hanging over it showing a face with hands uplift ed  , like a saint under g  d s light  , and hand cuff ed  .
+right_val: 1	prob: [0.0012773165944963694, 0.9987226128578186]	i imagine i  ' ll be spending hours here  .
+right_val: 1	prob: [0.0005391991580836475, 0.999460756778717]	kids jump off the waterfall  .
+right_val: 0	prob: [0.9974325299263, 0.002567494288086891]	there was the surrounding hum of the tremendous generators hidden in the central well of the plant  , the faint sharp ness of ozone in the air  , the grim and silent threat of the red lines that marked the limits beyond which no one could pass without protective clothing  .
+right_val: 1	prob: [0.0018774225609377027, 0.99812251329422]	the quirk y decorations  ; such as this flaming o  - feather ed christmas tree  ; were an illustration of an area with a unique flavor  .
+right_val: 0	prob: [0.9970092177391052, 0.0029907634016126394]	at the same time  , the massive growth in air and road transport saw shipping decline in importance  .
+right_val: 1	prob: [0.0004753445682581514, 0.999524712562561]	a double  decker bus is riding along a busy street  .
+right_val: 0	prob: [0.9978159666061401, 0.0021840794943273067]	i assumed he was in dis pose d  . <unk> kish ori nodded in agreement  .
+right_val: 1	prob: [0.0006546335644088686, 0.9993453621864319]	 " do your worst  , doc  , he  ' d say  : put an end to it  .  "
+right_val: 1	prob: [0.00041966489516198635, 0.9995803236961365]	a hand is holding a sandwich on a long bun  .
+right_val: 1	prob: [0.0004939473583362997, 0.9995059967041016]	a woman is looking at sheep off in a field
+right_val: 0	prob: [0.9973881840705872, 0.002611863659694791]	but this does  n ' t mean that there is  n ' t merit to such studies  , nor that nothing of use can be learned in that way  .
+right_val: 1	prob: [0.0005463545676320791, 0.999453604221344]	 " cut the banana s into 1 inch slice s and freeze them  . freeze them on a tray  , and when frozen take out put into plastic bags  .  "
+right_val: 0	prob: [0.9884688258171082, 0.011531127616763115]	and he added bitterly that they would lull his suspicions and then  ' grab  ' him when he was least expecting it  .
+right_val: 0	prob: [0.9959083795547485, 0.004091629758477211]	fact  : if  , before all the air is sucked out of the ship  , a person is so lucky to have stuffed him or herself into a space suit  , that person has less than twenty - four hours to live  .
+right_val: 0	prob: [0.9938965439796448, 0.0061035011895000935]	the old me cared  .
+right_val: 1	prob: [0.0006324629066511989, 0.9993675351142883]	the street sign is clearly visible for all to see  .
+right_val: 1	prob: [0.0006486881757155061, 0.9993513226509094]	i never look forward to cleaning the snow off of the car  .
+right_val: 1	prob: [0.0007964085089042783, 0.999203622341156]	does anyone know who the name of the actress that plays the girl in this scene  ?
+right_val: 1	prob: [0.0004430099797900766, 0.9995569586753845]	a black cat eat s from a white bowl on the til ed kitchen floor in front of the stainless steel oven  .
+right_val: 0	prob: [0.994358479976654, 0.005641523282974958]	the venetian s fortified their main towns  <unk> na xo s town and anti par os town are wonderful examples of this  <unk> creating labyrinth s of narrow alley s and  cul - de - sac s that were designed to confuse and to de moral ize invaders  .
+right_val: 0	prob: [0.9976650476455688, 0.0023350182455033064]	knowledge and intuition worked together in him  , complement ing each other in a magical way  .
+right_val: 1	prob: [0.0009210342541337013, 0.9990789890289307]	 " you do  n ' t think it might have been better to let her have her say out suggested desmond  , and get it off her chest  ?  "
+right_val: 0	prob: [0.9937392473220825, 0.0062607345171272755]	the tan tal izing aroma of me s quite - smoke d meat lure d them into barbecue joint s  .
+right_val: 1	prob: [0.0005111355567350984, 0.9994888305664062]	siding going up on the garage  . , e  , error , , no un phrase or adjective phrase syntax  ,
+right_val: 1	prob: [0.0005797520861960948, 0.9994202852249146]	head coach as football player during the 25 th match played  ,  e  , error , , no un phrase or adjective phrase syntax  ,
+right_val: 0	prob: [0.997736930847168, 0.002263024216517806]	tara would not let giddy hopes drag them onto a rock that would spell the end for the project  , and the  arra ll in species  .
+right_val: 0	prob: [0.9954854846000671, 0.004514461383223534]	when i was done mentally exclaim ing over my impossible rescue  , i looked around  .
+right_val: 1	prob: [0.0004045717359986156, 0.9995954632759094]	a group of senior citizens are watching a performance  .
+right_val: 0	prob: [0.9963204860687256, 0.0036795332562178373]	opinions may vary on how taste less it was for he ston to hold a pro gun rally on the location of the nation  ' s youngest school shooting months after the fact  , but this sequence of  " bowling  " is without doubt the most unfair to he ston  .
+right_val: 1	prob: [0.0004082939412910491, 0.9995917677879333]	the man with the tie is playing his guitar  .
+right_val: 0	prob: [0.990034282207489, 0.009965695440769196]	the speech which this violent man delivered to the notable s astonished them even more than his appearance  :  " not if you exclude the french  ,  " said doyle  , trying to check his hunger from prompting him to pick up his bowl and drink  .
+right_val: 1	prob: [0.0005125702591612935, 0.9994874000549316]	add your meat to your a voca do  .
+right_val: 0	prob: [0.997130811214447, 0.002869272604584694]	it is probably correct that their primary reason for not doing so was to save money  , not to piss off the victims of co lub mine  .
+right_val: 1	prob: [0.0004589571035467088, 0.9995410442352295]	there were many employees monitoring the show  .
+right_val: 1	prob: [0.0007020974298939109, 0.9992978572845459]	that means it  ' s back to work tomorrow  .
+right_val: 1	prob: [0.0006584306829608977, 0.9993415474891663]	some lovely dessert s are available for sale  .
+right_val: 1	prob: [0.0004333860124461353, 0.9995666146278381]	a boy is eating pizza and salad with other children  .
+right_val: 0	prob: [0.9970640540122986, 0.0029358977917581797]	this time  , however  , we have a matter of doctrine on which to quiz p  . they screamed and baw led and holler ed till za pho d thought his ears would shatter  .
+right_val: 0	prob: [0.9819331765174866, 0.018066879361867905]	he sat still and ignored the thought furiously  .
+right_val: 0	prob: [0.997712254524231, 0.002287787152454257]	it is true that moore  ' s film is sometimes un in ten tion ally deceptive  , but to call it fraudulent is hyper bole to the extreme  .
+right_val: 0	prob: [0.9924609065055847, 0.007539048325270414]	 <unk> half pairs of socks rec lined in half - dr unk cups of coffee  .
+right_val: 1	prob: [0.0004935948527418077, 0.9995063543319702]	the boys are enjoying their self in the pool  .
+right_val: 0	prob: [0.9959361553192139, 0.004063880071043968]	par os and and ros contributed to the persian armory  , while others supported athens  .
+right_val: 1	prob: [0.00047306163469329476, 0.9995269775390625]	people stood outside with signs  .
+right_val: 0	prob: [0.9974000453948975, 0.002599944593384862]	it was all so fast  . <unk> she took a sip of her drink  , plain water because  , she had explained earlier  , she had never liked the taste of alcohol  , then fixed her gaze on me  .
+right_val: 0	prob: [0.997467041015625, 0.0025329296477138996]	the ship i was on  , i guess that  ' s what happened  , too  .
+right_val: 0	prob: [0.9970043301582336, 0.002995693124830723]	rachel  , her clothes torn and her face drawn  , looked like she might cry when she saw me  .
+right_val: 1	prob: [0.0005706582451239228, 0.9994292855262756]	a team of scientists will also be on hand every wednesday and sunday until the exhibition close s to speak to visitors
+right_val: 0	prob: [0.997093677520752, 0.002906346693634987]	even the city feels alive when spring comes  . <unk> tax i  ! <unk> she waved down a car and pulled me in  .
+right_val: 0	prob: [0.9973576664924622, 0.0026423439849168062]	the wines rich scent had a touch of something chemical that i recognized from the bar  , but it filled my mouth and sank into my veins with reassuring warmth  .
+right_val: 1	prob: [0.0005828592111356556, 0.9994171857833862]	a fan of the national team shows his team spirit in the stands
+right_val: 0	prob: [0.996704638004303, 0.003295335453003645]	yet not in vain will it prove  , maybe  , that you came to this land seeking aid  , as gand al f himself plain ly purpose d  .
+right_val: 0	prob: [0.9930457472801208, 0.006954192649573088]	you claim that there was  " no way to change location  , since you have to give advance notice of that to the members  , and there were upwards of 4  , 000  , 000 members  .  "
+right_val: 1	prob: [0.000432367785833776, 0.9995675683021545]	how to draw a barrel in style of graffiti with a pencil step by step  , q
+right_val: 1	prob: [0.00035839935299009085, 0.9996415376663208]	a young boy in a swim suit throws a rock into the water  .
+right_val: 1	prob: [0.0004130252345930785, 0.9995869994163513]	a group of men in suits are walking down a park sidewalk  .
+right_val: 0	prob: [0.9969044327735901, 0.0030955104157328606]	all the  lux uri es money can buy  . <unk> tiffany took a drink  , thinking  .
+right_val: 1	prob: [0.0005325535894371569, 0.9994674324989319]	worried  : farmers were concerned the high rise in temperatures this year would mean a shorter season for biological genus but the recent rain might help it to keep growing until the end of july  , x d  , state
+right_val: 0	prob: [0.9967775940895081, 0.003222407540306449]	our cuisine salute s our love of southern traditions at the table  , but like the good people of a she ville  , marches to its own drum  .
+right_val: 0	prob: [0.989519476890564, 0.010480493307113647]	he had seemed to understand that and had honored her wishes  .
+right_val: 0	prob: [0.9971363544464111, 0.0028636488132178783]	in effect  , it raised the hopes of workers without having any real chance at saving anything  .
+right_val: 1	prob: [0.0005920770345255733, 0.9994078874588013]	use the screw driver to bend the hin ge  .
+right_val: 0	prob: [0.9973651766777039, 0.0026348927058279514]	the pre eminent islands of this era were de los  , a sacred island and center of religion ruled by athens  ; sam os  , ruled by the tyrant poly cra tes  ; and na xo s  , whose ruler  ly g da mis undertook some major building projects  .
+right_val: 1	prob: [0.0004814124549739063, 0.999518632888794]	 " if you  ' re going to a wedding or going out  , try a black suit accentuat ed with metallic gold  . " , i
+right_val: 0	prob: [0.9912780523300171, 0.008721965365111828]	and if it is  n ' t a hoax  , then i am directly involved and so are they  , which en title s me to speak with them  .  "
+right_val: 1	prob: [0.0010406877845525742, 0.9989593029022217]	i work at a coffee shop  .
+right_val: 1	prob: [0.0004763937322422862, 0.9995236396789551]	two doctors in blue coat s are performing surgery  .
+right_val: 1	prob: [0.0028082297649234533, 0.997191846370697]	much of the vineyard  ' s success has to do with the ocean side climate  .
+right_val: 0	prob: [0.997822642326355, 0.002177370246499777]	have you seen anyone like that in your club  ? <unk> not that i can remember  , man  .
+right_val: 0	prob: [0.9976902008056641, 0.00230975984595716]	you would  n ' t believe half of the shit i  ' ve seen  , even when i was straight  .
+right_val: 0	prob: [0.9968948364257812, 0.0031050958205014467]	when your life  , the reason you lived  , the people and faces and places  , the emotions you felt  , who and what you loved  , when all that is gone  , faded  , what will you have left  ? <unk> i wondered how long ray had been on this ship  .
+right_val: 1	prob: [0.0006309605087153614, 0.9993690848350525]	everyone was really happy to celebrate my birthday with me  .
+right_val: 1	prob: [0.0004414710565470159, 0.9995585083961487]	spread the meat out on the de hydr ator rack s without touching each other and de hydrate at  155
+right_val: 1	prob: [0.00044049619464203715, 0.9995594620704651]	place the tea bags into the water filled jar  .
+right_val: 1	prob: [0.0005329133127816021, 0.9994670748710632]	both of them enjoyed playing with the ordinary robot  .
+right_val: 1	prob: [0.0011363655794411898, 0.998863697052002]	could  n ' t get up this morning  .
+right_val: 0	prob: [0.9921557903289795, 0.007844213396310806]	for all his accomplishments  , he rod was nevertheless hated by his subjects  ; he tax ed  , he tortured  , and he ordered the massacre of male jewish infants in an attempt to do away with the herald ed messiah  .
+right_val: 0	prob: [0.9886802434921265, 0.01131974533200264]	none of this is true  .
+right_val: 0	prob: [0.9979332685470581, 0.002066761953756213]	it looked like a normal river stone  , a gray oval with a white stripe through it  .
+right_val: 0	prob: [0.9902955889701843, 0.00970435980707407]	maybe that was enough  .
+right_val: 1	prob: [0.00044562004040926695, 0.9995543360710144]	a man is standing with a skateboard in his hand  .
+right_val: 0	prob: [0.9957143664360046, 0.004285631235688925]	i wo  n ' t penal ize you this time  , because perhaps you did  n ' t understand the directions  .
+right_val: 1	prob: [0.0010367626091465354, 0.9989632368087769]	i will be keeping the program in remembrance of the graduation  .
+right_val: 1	prob: [0.00043544956133700907, 0.9995645880699158]	the new mini comes with a display  .
+right_val: 0	prob: [0.9971511960029602, 0.0028487835079431534]	we fear what we do not understand  , a ring a rosa thought  , wondering if these critics had any idea how many lives  opus de i had enriched  .
+right_val: 1	prob: [0.00047486607218161225, 0.9995251893997192]	a female in black leather jacket pet s a small dog with a muzzle holding on to her leg  .
+right_val: 1	prob: [0.0005323266959749162, 0.999467670917511]	 " person  , chief of staff  , addresses soldiers and civilians assigned  "
+right_val: 1	prob: [0.0007638587849214673, 0.9992361068725586]	recurring competition maybe this body shape will be back in style  , x d  , state
+right_val: 0	prob: [0.9946650266647339, 0.005334965419024229]	did it truly matter what the ship  ' s origin was and why jefferson had saved me  , if now  , i was content  ?
+right_val: 1	prob: [0.0004453245201148093, 0.9995546936988831]	 " a voca do half some taco meat  - chicken or beef sh red ded cheese to mato salsa op tion al  : hot sauce  , sour cream  , other to pping s  "
+right_val: 0	prob: [0.997516393661499, 0.002483577001839876]	believe me  , i em path ize with your personal incentive to catch this man  .
+right_val: 1	prob: [0.0005803577951155603, 0.9994196891784668]	country artist performs a surprise set during festival
+right_val: 1	prob: [0.0004017335595563054, 0.9995983242988586]	find the bears  : look closely and you  ' ll see brown bears walking near the water  . , i
+right_val: 1	prob: [0.0004210429615341127, 0.9995790123939514]	a person is pushing a stroll er across the street with a dog  .
+right_val: 0	prob: [0.9960657954216003, 0.003934239502996206]	you use standard filmmaking technique as a basis to construct bizarre con spira cies which sound plausible to the gull ible reader  , without ever providing any evidence for the implicit or explicit claims of fraud and distortion  .
+right_val: 0	prob: [0.9953305721282959, 0.004669418092817068]	anatomical analysis of the vo gon reveals that its brain was originally a badly de formed  , mis placed and dys pe p tic liver  .
+right_val: 1	prob: [0.000492185412440449, 0.9995077848434448]	 " in serious cases the aim is to shut down the system safely  .  ,  ,  "
+right_val: 0	prob: [0.9944124817848206, 0.005587571766227484]	in a moment he said  , without quite succeeding in keeping the plan g ency out of his voice  : for the moment society seems keen to bind itself against such temptation s  , to place a mor ator ium on clon ing or germ line gene therapy and strict limits on embryonic research  , to for ego the medical possibilities in exchange for not risk ing the horror s of the unknown  .
+right_val: 1	prob: [0.0043969787657260895, 0.995603084564209]	a helicopter prepare s to drop special warfare
+right_val: 0	prob: [0.9973993301391602, 0.002600626088678837]	one of these walls  , the western wall  , is today a major reminder of jerusalem s great ness under he rod  .
+right_val: 1	prob: [0.00037001847522333264, 0.9996299743652344]	a man in a red shirt works on a white sculpture  .
+right_val: 1	prob: [0.00047001655912026763, 0.9995299577713013]	a little toddler with an umbrella is on the street  .
+right_val: 0	prob: [0.9973543882369995, 0.0026456157211214304]	although for other cities this would simply be a minor economic setback  , for the people of young stown and the surrounding area  , it meant disaster  .
+right_val: 1	prob: [0.0007777975988574326, 0.9992221593856812]	 "  rin s ing is  n ' t necessary for all types of rice  , but it helps improve the texture and flavor of most common varieties  . so ak the rice for up t to 30 minutes if you  ' ve got the time  - then drain it  .  "
+right_val: 1	prob: [0.0005893590277992189, 0.9994106292724609]	the blur ry bride and groom kiss on as the ring  bearer holds up some nice flowers  .
+right_val: 0	prob: [0.9975154399871826, 0.0024845802690833807]	their blast furnace  , hope well  , <unk> was the very first blast furnace in the area  .
+right_val: 1	prob: [0.0004272528749424964, 0.9995726943016052]	open the can of beans using the can opener set your stove top to a 6 or 7  . then put your beans into the pot then onto the stove  .
+right_val: 1	prob: [0.0004041583160869777, 0.9995958209037781]	a family is standing outside a large duck model on a field  .
+right_val: 1	prob: [0.0006076029385440052, 0.9993923902511597]	 " aerial  , little caucasian girl swimming in the outdoor swimming pool " , e  , error , , no un phrase or adjective phrase syntax  ,
+right_val: 1	prob: [0.0006508859223686159, 0.999349057674408]	lots of relatives came from far away  .
+right_val: 1	prob: [0.0004194017092231661, 0.9995805621147156]	a man carrying a white sweatshirt wait s to cross the street  .
+right_val: 1	prob: [0.006456668023020029, 0.9935433864593506]	i knew then you  ' d done for him all right  .
+right_val: 0	prob: [0.9949997663497925, 0.005000217352062464]	he means  , we  ' re going to change the future  .
+right_val: 0	prob: [0.9863864183425903, 0.0136135658249259]	next day i found the colonel rather more con cili atory  , and as his wife remarked that there were some places of interest in the neighbourhood  , it gave me an opening to ask whether my presence for one more night would in com mode them  .
+right_val: 1	prob: [0.00039689496043138206, 0.9996030926704407]	author and actor pose at the after party for the premiere  .
+right_val: 0	prob: [0.9928635954856873, 0.007136479020118713]	i imagine that people do not come here for un important reasons  . <unk> it hissed thoughtfully  .
+right_val: 1	prob: [0.0006060361047275364, 0.9993939399719238]	i love the zebra s because they look a lot like a striped horse  .
+right_val: 0	prob: [0.9936730861663818, 0.0063269673846662045]	the light screen provided had informed me when and where official meals were taking place  , but i had  n ' t bothered to acknowledge the invitation s  .
+right_val: 1	prob: [0.0006797871901653707, 0.9993202686309814]	 " as at all his power stations  , scott faced the building in a fine worcestershire brick that has weather ed to a lovely pink y  - brown  "
+right_val: 0	prob: [0.9960511326789856, 0.0039488826878368855]	i was born here  , and i was lucky enough not to get attached to any particular river  .
+right_val: 1	prob: [0.0005009170854464173, 0.9994990825653076]	 " make a vertical slit in one of the j umbo olive s  , this will be the body  , which you will stuff with cream cheese  .  ( you ; ll use 1 /3 of the block to stuff penguins  . save the rest for i cing the i glo o  .  )  "
+right_val: 0	prob: [0.9937037825584412, 0.006296253763139248]	we wo  n ' t care that we  ' re last and we wo  n ' t care that there are no more stars  .
+right_val: 0	prob: [0.9967605471611023, 0.0032394472509622574]	the church was completely different now  : sunlight fell through the stained glass  , catching dust that still hung in the air and sending a dry  , healthy warmth into the edges of the room  , through the stone and the powder y concrete that had been covered last night by flesh and flashing lights  .
+right_val: 0	prob: [0.9973700046539307, 0.0026300023309886456]	we arent quite what you d expect from reading the grimm s  . <unk> what do you mean  ? <unk> okay  , take elves  . <unk> he caught the bartender s eye for another shot  .
+right_val: 0	prob: [0.9973486661911011, 0.002651349175721407]	the ship had all the usual acc out re ments  ( artificial gravity  , taste fully painted walls  , sound damp ener s to keep the noise of the engines from driving the crew bat shit insane  , recycled air systems  )  , and a few less - us ual  : lush carpet ing  , lighting that was decorative as well as functional  , spacious corridor s  .
+right_val: 0	prob: [0.9948294758796692, 0.005170484539121389]	come on  , i have something to show you  . <unk> with that  , he made a sharp turn onto a side street that i hadnt noticed before  .
+right_val: 1	prob: [0.0004645738226827234, 0.9995354413986206]	a smiling baby is laying in a suitcase  .
+right_val: 1	prob: [0.0007350108353421092, 0.9992650151252747]	delicious food was being prepared
+right_val: 0	prob: [0.9967136383056641, 0.0032863502856343985]	your accusations of inappropriate cutting are once again entirely un supported  - - in fact  , it is quite clear from watching that particular scene that there is not a single cut from the point at which moore asks he ston a second time for the cause of the higher violence in the states  , and the point when he mentions the kayla roll and incident  .
+right_val: 1	prob: [0.00045532043441198766, 0.9995446801185608]	person adds a weather ed  - steel and concrete extension to a house
+right_val: 0	prob: [0.9964780211448669, 0.003521943697705865]	what  ' s our destination  ? <unk> tiffany  , she stopped walking  .
+right_val: 0	prob: [0.99081951379776, 0.009180525317788124]	on the steps in front of the altar  , i saw pale forms and realized that they were rachel and two other women  .
+right_val: 0	prob: [0.9909678101539612, 0.009032127447426319]	i called mitch and our other friends  , hoping that shed crashed at one of their houses  , but i had no luck  .
+right_val: 1	prob: [0.0004485782701522112, 0.9995513558387756]	a man sits on a bench with his arm around a lady  .
+right_val: 1	prob: [0.0010667609749361873, 0.9989332556724548]	 " she raised her chin a little  , and a hard look came into her eyes  .  ,  "
+right_val: 1	prob: [0.0004922935040667653, 0.9995076656341553]	a man pose s for the cameras while other pedestrian s roam and ming le  .
+right_val: 1	prob: [0.0095186373218894, 0.990481436252594]	do it how it sounds  .
+right_val: 1	prob: [0.0005473542842082679, 0.9994526505470276]	serve with a warm tort illa and top with a little cheese  .
+right_val: 0	prob: [0.9852070808410645, 0.014792938716709614]	but  .  .  . well  , no one important ever disappears  , so it does  n ' t really matter  , does it  . <unk> i could tell she was trying to remember whom she had known who had left  , and failing  .
+right_val: 1	prob: [0.0004783998883794993, 0.9995216131210327]	pour in some milk  .
+right_val: 1	prob: [0.0006062909378670156, 0.9993937015533447]	mix different flavor s of juice in a glass
+right_val: 1	prob: [0.00044000099296681583, 0.9995599389076233]	 " person  , person arrived in grand fashion with the team of the film  .  "
+right_val: 0	prob: [0.9979469180107117, 0.0020530596375465393]	some of that is surely due to good marketing  , but the real reason for its popularity is this  : that sandwich was so good  , i found myself eating slower and slower with each bite to savor it more completely  .
+right_val: 1	prob: [0.0005485979490913451, 0.9994514584541321]	there are free hotel rooms going this summer  - but there is a small catch  .
+right_val: 0	prob: [0.9966895580291748, 0.003310452215373516]	and each group considers that its well - being is  conditioned by the disadvantage of each of the other three faith s  , a rid that they can make progress only at their cost  .
+right_val: 1	prob: [0.0006170433480292559, 0.9993829727172852]	 " here he comes  : emerging on set between takes he was and he was dressed in character and sporting a thick grey ing beard and spectacle s for his leading role as person  , a partner " , x d
+right_val: 0	prob: [0.9681149125099182, 0.031885068863630295]	it looked like we were in the back of a nightclub  .
+right_val: 1	prob: [0.0007795057608745992, 0.9992204904556274]	pictured  : politician wins the day with the best  t  - shirt ever for a politician attending a 80 s  - the med event  .
+right_val: 1	prob: [0.0004704359162133187, 0.9995296001434326]	 " one girls is holding a fri s bee  , another girl is trying to get it  .  "
+right_val: 0	prob: [0.9964209794998169, 0.003579086624085903]	good  , round breasts  , too  , even though theyre small  , they suit her  . <unk> amy didnt blush  , and i hoped that she didnt understand what is is was saying  .
+right_val: 0	prob: [0.9968480467796326, 0.00315196649171412]	suffice it to say that not a trace of modest y did i perceive in this beautiful hardly formed young girl whom modern co - education  , juvenile more s  , the camp fire racket and so forth had utterly and hopeless ly de prav ed  .
+right_val: 1	prob: [0.00047261608415283263, 0.9995274543762207]	first heat the popcorn bags until the popcorn is fully popped  .
+right_val: 1	prob: [0.0004233924555592239, 0.9995766282081604]	a boy and a young woman in a heads car f make peace signs  .
+right_val: 0	prob: [0.9932002425193787, 0.006799743510782719]	under the wise reign of solomon  , the city flourished as the capital of an empire that stretched from damascus to the red sea and controlled the trade routes from egypt to pho en icia  .
+right_val: 0	prob: [0.9716147780418396, 0.02838519960641861]	the he ston interview is at the very end of the movie  .
+right_val: 1	prob: [0.0014664806658402085, 0.9985334873199463]	 " viola mach in  , seated in her bay window  , watched from under hooded lid s the approach of her daughter  - in  - law through the wall gate and up the garden path  .  "
+right_val: 1	prob: [0.00048182651516981423, 0.9995181560516357]	now in possession of the ball  ; the red team plans to make a point  .
+right_val: 1	prob: [0.0005654263077303767, 0.9994345307350159]	 " the two human factors which can be un ambi gu ously measured are age and sex  .  ,  ,  "
+right_val: 1	prob: [0.0005700252368114889, 0.9994300007820129]	mix the ingredients together with a blend er  .
+right_val: 1	prob: [0.0003698936488945037, 0.9996300935745239]	a young boy wearing brown is holding a tree in a park  .
+right_val: 1	prob: [0.0004474657471291721, 0.9995525479316711]	 " news gathering car remained  , parked outside house  .  "
+right_val: 0	prob: [0.996948778629303, 0.003051223000511527]	actually  , one main reason for the behavior of the us wa was that union leaders really had no idea what to do  .
+right_val: 1	prob: [0.00043582951184362173, 0.9995641112327576]	i enjoyed finally being able to relax and play a video game  .
+right_val: 0	prob: [0.9961022138595581, 0.0038978098891675472]	but it was plain enough  , this beauty  , this exquisite beauty  , and tears filled his eyes as he looked at the smoke words lang ui shing and melting in the sky and best ow ing upon him  , in their in ex haus t ible charity and laughing goodness  , one shape after another of un ima gin able beauty and signalling their intention to provide him  , for nothing  , for ever  , for looking merely  , with beauty  , more beauty  !
+right_val: 1	prob: [0.00048749501002021134, 0.9995125532150269]	 " at this level the practitioner is often the conscious monitor of the practice and facility in self  - monitoring is a useful indicator of skill  .  ,  ,  "
+right_val: 1	prob: [0.00044489785796031356, 0.9995550513267517]	a sad little girl sits by the window with person watching the rain drops fall
+right_val: 0	prob: [0.9961302280426025, 0.0038698085118085146]	i realized that rachel had disappeared without leaving a clue and i had no way to do anything but wait for her to show up  – which  , if she were in a situation where i should be doing something  , would probably be never  .
+right_val: 0	prob: [0.9841650724411011, 0.01583493873476982]	the people of the once - glo r ious city were forced into an exile known as the babylonian captivity  .
+right_val: 0	prob: [0.9953941106796265, 0.0046059200540184975]	the hitch hike r  s guide to the galaxy skip s lightly over this tangle of academic abstraction  , pausing only to note that the term future perfect  <unk> has been abandoned since it was discovered not to be  .
+right_val: 0	prob: [0.9977462887763977, 0.0022537210024893284]	i mean  , we might have a lot of work ahead of us  . <unk> are you kidding  ?
+right_val: 0	prob: [0.9960818886756897, 0.00391817931085825]	he was slim  , almost drawn  , but he had a kind of  . . . lust er to him  , i guess  .
+right_val: 1	prob: [0.0005567040061578155, 0.9994432330131531]	 " in a bowl put the let tu ce  , cr out ons  , bacon and sliced  ?  ? chicken  .  "
+right_val: 1	prob: [0.0007142617832869291, 0.9992857575416565]	actors attend the world premiere of science fiction film
+right_val: 0	prob: [0.9968895316123962, 0.00311051937751472]	as noted above  , the  " from my cold dead hands  " part is simply moore  ' s way to introduce he ston  .
+right_val: 0	prob: [0.9964084029197693, 0.0035916396882385015]	in the center was a dai s covered with white fur s and a young woman  , surrounded by more pale men  .
+right_val: 1	prob: [0.0005116252577863634, 0.999488353729248]	rainbow with small boat in the for e ground  ,  e  , error , , no un phrase or adjective phrase syntax  ,
+right_val: 0	prob: [0.9936922788619995, 0.0063077532686293125]	however  , its oon became clear that although the local union leaders were prepared to fight  , the international branch was not  .
+right_val: 0	prob: [0.9930047392845154, 0.006995280738919973]	the bank had been implicated in shady financial deals with the masonic lodge  .  .  . after half an hour  , when the twilight had co ag ulated into dark  , the silent negro who was driving the bug gy hailed an opaque body somewhere ahead of them in the g loo  .
+right_val: 0	prob: [0.9974133372306824, 0.002586707007139921]	if she s in trouble  , i want to find her  , wherever she is  . <unk> my driver took a deep breath  .
+right_val: 1	prob: [0.000587255519349128, 0.9994127750396729]	 " add your flour s  , and flax into a bowl  . grate your butter into the bowl  . gra ting it on the largest setting on your gra ter is a wonderful was to get the perfect size of butter pieces without trying to mix it into  pea sizes pieces  .  "
+right_val: 0	prob: [0.9979472756385803, 0.002052749041467905]	it is notable that the wall street journal  ' s reaction to this segment of the film was even more dismissive than your s  : it called moore  ' s claim  " prep oste rous  "  .
+right_val: 0	prob: [0.994860053062439, 0.0051399278454482555]	she found that the city s most beautiful roman temple  , dedicated to the goddess a ph rod ite  , stood on the site of the crucifixion  .
+right_val: 1	prob: [0.0007061817450448871, 0.9992938041687012]	pour apple mix over cake and spread even ly throughout  . re fri ger ate for 3  - 4 hours or overnight  .
+right_val: 0	prob: [0.9957393407821655, 0.004260708577930927]	is is  . . . you know some way to locate the undead  , dont you  ? <unk> i do  .
+right_val: 0	prob: [0.9923426508903503, 0.007657377049326897]	all that he knew  , and most sincerely desired to keep the orders and regulations  , but none the less he acted contrary to them  .
+right_val: 1	prob: [0.0005200159503147006, 0.9994800686836243]	the local kids are having a foot race  .
+right_val: 0	prob: [0.9936462640762329, 0.006353746168315411]	if it were a thing that gave advantage in battle  , i can well believe that bor omir  , the proud and fearless  , often rash  , ever anxious for the victory of  mina s tir i th  ( and his own glory there in  )  , might desire such a thing and be all ur ed by it  .  "
+right_val: 0	prob: [0.997565507888794, 0.0024344886187464]	it is not explained what  " normally  " is supposed to mean  , but that claim flat ly contradict s the statement of the bank official in the film  .
+right_val: 0	prob: [0.9983605742454529, 0.0016394461272284389]	curiously  , however  , the questions on the piece of paper more or less exactly matched the questions that were going through the massive battle - s car red industrial quality circuits of the robot  ' s mind  .
+right_val: 1	prob: [0.0006570722325704992, 0.9993428587913513]	actor arrives at the premiere
+right_val: 1	prob: [0.000575054669752717, 0.999424934387207]	the ice begins to weaken and great raft s break free and float downstream on the increasing current
+right_val: 1	prob: [0.0005457487422972918, 0.9994542002677917]	 rs  - coming in the summer  . , e  , error , , no un phrase or adjective phrase syntax  ,
+right_val: 1	prob: [0.0006679825601167977, 0.9993320107460022]	measure down 2 . 5 cm from the new top edge  . mark an horizontal line at this point on three sides  . cut along line through three sides  . leave band attached to one side of car ton body  .
+right_val: 0	prob: [0.9942148327827454, 0.005785180721431971]	now  , months later in the villa san giro lam o  , in the hill town north of florence  , in the  ar bour room that is his bedroom  , he re pose s like the sculpture of the dead knight in raven na  .
+right_val: 1	prob: [0.0005120625719428062, 0.9994878768920898]	this person looks to be snowboard ing on a very small pile of snow on a sunny cold day  .
+right_val: 1	prob: [0.0011575756361708045, 0.9988424181938171]	the scenery was pretty  .
+right_val: 1	prob: [0.000475327338790521, 0.999524712562561]	cook for another minute of two and remove from the skill et  . cut sam m ich in half on a plate  .
+right_val: 1	prob: [0.00035981362452730536, 0.9996402263641357]	a man in formal wear plays the guitar and sings  .
+right_val: 0	prob: [0.9784166812896729, 0.02158328890800476]	at the top was one door  .
+right_val: 0	prob: [0.9464669823646545, 0.053532980382442474]	immediately after the workers left the building  , us steel representatives told the local union leaders that they had changed their minds and were no longer interested in allowing the workers to purchase the mill  .
+right_val: 0	prob: [0.9974244832992554, 0.0025755492970347404]	weve had genie s  , in den tur ed sorcerer s  , even go lem s and the occasional elf  .
+right_val: 0	prob: [0.9941149353981018, 0.005885098595172167]	greece was handed a strip of land along the western coast of asia minor  , which for over 2  , 000 years had had a substantial greek population  .
+right_val: 1	prob: [0.0008301751804538071, 0.9991698265075684]	the train leaves railway station
+right_val: 1	prob: [0.0006748195155523717, 0.999325156211853]	person was featured prominently as part of the campaign in early march  .
+right_val: 1	prob: [0.0005695020081475377, 0.9994304776191711]	 " there is a need for formal  er gon omic s in any design where the designer himself is not an experienced user  .  ,  ,  "
+right_val: 0	prob: [0.9933290481567383, 0.00667103286832571]	after the first who osh of the air being sucked away  , there was lightning  , but no thunder  .
+right_val: 0	prob: [0.9946329593658447, 0.005366997793316841]	board man  , poland township  , strut her s  , lowell ville  , warren  , lord stown  , can field  , nile s  , and many other towns and districts are crowded around young stown  ( see figure 3  )  .
+right_val: 0	prob: [0.9964010715484619, 0.003598878625780344]	it is paradox ical notion s like this one which moore  ' s film seeks to address  .
+right_val: 1	prob: [0.0005211303941905499, 0.9994788765907288]	 " after the yeast has been activated  , you mix the remaining flour with what you have left rest  . then  , you kn ead the mix you have made  .  "
+right_val: 1	prob: [0.0003800087724812329, 0.9996199607849121]	a rock climb er pause s to look out over the ocean  .
+right_val: 1	prob: [0.0005911663756705821, 0.9994088411331177]	 " it may say we dding because of the ring  , but i  ' m pinning it for the nail polish  .  "
+right_val: 0	prob: [0.9969533681869507, 0.0030465847812592983]	in his mind the universe still divided into two parts  - the earth  , and everything else  .
+right_val: 1	prob: [0.035990167409181595, 0.9640098214149475]	psycho metric ally the problem is to develop appropriate descriptive taxon omi es so that a person  ' s actual or potential contribution to an organisation is  succin ct ly express ible  .
+right_val: 1	prob: [0.0005728236283175647, 0.9994271993637085]	roll into bite size  - balls  ( the size you roll them depends on how many you want to make  )  .
+right_val: 1	prob: [0.0004252190701663494, 0.9995747208595276]	a tennis player at a match is getting ready to hit the ball  .
+right_val: 1	prob: [0.0005293248104862869, 0.9994706511497498]	along the trail  ; there were steep cavern s
+right_val: 1	prob: [0.0009819807019084692, 0.9990179538726807]	slipped out from under your sweaty embrace  .
+right_val: 1	prob: [0.000638331868685782, 0.9993616938591003]	a person wearing a yellow jacket is riding a white motorcycle by a crowd of on look ers  .
+right_val: 1	prob: [0.0011852245079353452, 0.9988148212432861]	 " before anything wash your hands  . first pre heat the oven to  275 degrees  , then line your cookie tray with  foil  , un w rap your candy  , and arrange them in stack s of three  .  ( your options of colors ) note  : when you are arranging the candy make sure they are separated in a good amount of space  . so when the candy melt s  , they do  n ' t come together  .  "
+right_val: 0	prob: [0.9910747408866882, 0.008925327099859715]	americans were  glo ating over this de ment ed corpse show  :  " they squealed like little pig gies too  , so you  ' ll have to make do with  ' o ink  , o ink  ,  s que ee ee ee all ll  ' for their last words  .
+right_val: 1	prob: [0.00048057109233923256, 0.9995194673538208]	 " keep cutting and connecting them  , until you have a long chain  "
+right_val: 1	prob: [0.00042158676660619676, 0.9995784163475037]	a blond man in a dress shirt and tie is standing next to a fence and smiling  .
+right_val: 1	prob: [0.0004641995474230498, 0.9995357990264893]	a fan shows her disappointment as person were upset on saturday night  .
+right_val: 1	prob: [0.00041357247391715646, 0.9995864033699036]	three kids are playing musical instruments in a music concert  .
+right_val: 1	prob: [0.0005735657759942114, 0.9994264841079712]	 " a man is sitting on a ban n ister on a pier holding a bunch of colorful balloon s  , while more balloon s tied to the ban n ister behind him blow in the wind  .  "
+right_val: 1	prob: [0.00046932711848057806, 0.9995306730270386]	a few of them are sharing a dance  .
+right_val: 1	prob: [0.00043833773816004395, 0.999561607837677]	a laptop is sitting on a table with equipment
+right_val: 0	prob: [0.9964694976806641, 0.003530510701239109]	it must have been larger than my finger  .
+right_val: 0	prob: [0.9978335499763489, 0.0021664765663444996]	i think that our world is a reflection of your s  , or your s is a more boring reflection of our s  .
+right_val: 1	prob: [0.0005556909600272775, 0.999444305896759]	 " first of all you want it straight  , then you want it curly  !  "
+right_val: 0	prob: [0.9969504475593567, 0.003049612045288086]	the air around me seemed to still sound  , and light came in around the corners of my eyes  .
+right_val: 1	prob: [0.0006809855112805963, 0.9993190765380859]	demonstrator s walk near a damaged bus
+right_val: 1	prob: [0.002111431211233139, 0.9978886246681213]	mai cey thought it would be a good idea to take the left side of the trail  .
+right_val: 1	prob: [0.0005155068356543779, 0.9994844198226929]	a giant orange paw print marks the stadium from another side  .
+right_val: 1	prob: [0.00046010370715521276, 0.9995399713516235]	a young woman is pole vault ing  .
+right_val: 0	prob: [0.9949266910552979, 0.00507328798994422]	he took us to a squat  , long building whose roof bulge d up like the ribs of a gut ted animal  .
+right_val: 0	prob: [0.9883005619049072, 0.011699448339641094]	 <unk> the people wondered and felt insulted for a time and then began to grow accustomed to them  , as they had grown accustomed to so many other innovations  , even though they did not approve them  .
+right_val: 0	prob: [0.9939140677452087, 0.006085938774049282]	my wife  ' s name  , once  .
+right_val: 1	prob: [0.0005912629421800375, 0.9994087219238281]	 " take the sandwich and a gar nish if you wish  . i would suggest cutting in half to get a full bite of the best flavor  . i hope you liked the in struct able and more importantly  , i hope you enjoy the sandwich  :  ) enjoy  !  !  "
+right_val: 0	prob: [0.9964886903762817, 0.00351135665550828]	pilgrims came from all over the roman  ( and  , later  , byzantine  ) empire during the following centuries  , but the prosperity they brought lasted only until 6 14  , when persian armies over took jude a and reduced jerusalem to rubble again  .
+right_val: 0	prob: [0.9972518086433411, 0.0027482272125780582]	the shrill  ( and remarkably unsuccessful  ) internet campaign to  " rev oke  " his award seems to be motivated more by jealousy than by real concerns about the film  ' s accuracy  .
+right_val: 0	prob: [0.9939306974411011, 0.006069342140108347]	the gen o ese took control of the eastern aegean islands  , which were considered the most valuable for agriculture and trade  .
+right_val: 1	prob: [0.0025778128765523434, 0.9974222183227539]	the reception was held next to the marina  .
+right_val: 0	prob: [0.9974910020828247, 0.0025089727714657784]	it is the second intuition which gun rights groups like the  n ra seek to obscure using fraudulent data by the like s of john  " mary  " lot t  .
+right_val: 0	prob: [0.9936368465423584, 0.006363206077367067]	there is what we know  ( or think we know  ) to be the case  , there is what we believe to be the case  ( on the assurance of others whom we trust  )  , and then there is how we behave  .
+right_val: 1	prob: [0.00037394725950434804, 0.9996260404586792]	a dog runs to catch a fri s bee on astro tur f  .
+right_val: 0	prob: [0.9952775239944458, 0.004722470883280039]	until thirty seconds ago  , i didnt believe in magic or any of that kind of  . . . wei rd ness  . <unk> nathan  , i told you  : my family owe s your s a debt  .
+right_val: 0	prob: [0.9933433532714844, 0.006656613666564226]	for there was in sir william  , whose father had been a trades man  , a natural respect for breeding and clothing  , which shab bi ness nettle d  ; he was  , therefore  , safely shroud ed in a blanket of dark  obscur ity  .
+right_val: 1	prob: [0.0007649353938177228, 0.9992350339889526]	a dancer wearing white shirt and shorts is photographed by a man  ( who is  ) also wearing white  .
+right_val: 1	prob: [0.000432452536188066, 0.9995675683021545]	a man in a black hat walks down the street  .
+right_val: 0	prob: [0.9934431314468384, 0.006556836888194084]	we each had our own theory  .
+right_val: 1	prob: [0.000546775758266449, 0.9994532465934753]	when she goes out she always has a great time  .
+right_val: 1	prob: [0.0004276803520042449, 0.9995723366737366]	here is a hand a city constructed bag  .
+right_val: 1	prob: [0.0004883359069935977, 0.99951171875]	 " planning to spend above  rs lakh on marriage  ? person seeks cap on guests  , menu  - - here are the details " , x q
+right_val: 0	prob: [0.99491947889328, 0.005080470349639654]	how do you know my name  ? <unk> i know your family  .
+right_val: 1	prob: [0.0009238788625225425, 0.9990761280059814]	it  ' s not a party until the fri to s and to sti to s show up  !
+right_val: 1	prob: [0.0004482944495975971, 0.9995517134666443]	a blond child is playing with a metal yard ornament  .
+right_val: 1	prob: [0.0004640938132070005, 0.9995359182357788]	a baseball player is getting ready to hit the ball as the catcher and umpire watch  .
+right_val: 1	prob: [0.00046544731594622135, 0.9995346069335938]	a boy in a costume is sitting on a bike  .
+right_val: 1	prob: [0.0004099737270735204, 0.9995899796485901]	 " this car was inspired by the movie  ;  "  " al add in  .  "  "  "
+right_val: 0	prob: [0.9973189234733582, 0.002681036712601781]	this is a common technique  , but because conservative readers are not familiar with the basic s of filmmaking  , they believe critics who claim that he is  " dis tor ting  " the interview  .
+right_val: 1	prob: [0.00044682956649921834, 0.9995531439781189]	a natural way to re cycle food waste  - give it to the chicken s  , i
+right_val: 1	prob: [0.0009761350811459124, 0.9990239143371582]	stages of a relationship are similar to the many levels of infrastructure within a freeway
+right_val: 1	prob: [0.000613453215919435, 0.9993865489959717]	now put it inside the free zer to make it frozen
+right_val: 0	prob: [0.9827172160148621, 0.017282722517848015]	and when in fact the man went away  , they were only too pleased to be able to return to their usual habits  , and to go on sitting peacefully on the kap ia without conversations which made life disagree able and the future terrifying  , and to leave it to time to soften and ease the weight of the events which had taken place over there behind the mountains  .
+right_val: 0	prob: [0.9972234964370728, 0.0027764865662902594]	property owned by arab refugees  , who either fled war zones or were forced from their homes by the israeli army  ( another long - standing controversy  )  , was also taken over by individual jews or confiscated by the government  .
+right_val: 1	prob: [0.0026789552066475153, 0.9973210692405701]	after a while all the water starts to become cloud y with the salt  . this pic is how i had to have things set up  ( and try and cook at the same time  !  )
+right_val: 0	prob: [0.9920672178268433, 0.007932734675705433]	ne p thy s stood over him with a blue sword in his hand  .
+right_val: 1	prob: [0.00041745940688997507, 0.9995825886726379]	patrick threw the ball  ; they are fu m bling for it  .
+right_val: 1	prob: [0.0004833680286537856, 0.9995166063308716]	two street work men are working on the sidewalk  .
+right_val: 1	prob: [0.00047057541087269783, 0.9995294809341431]	a small dog is sleeping on a sheet
+right_val: 1	prob: [0.0009813887299969792, 0.9990185499191284]	add the worcestershire sauce & sri rach a sauce to the meat and mix well  . re fri ger ate overnight  .
+right_val: 0	prob: [0.9971454739570618, 0.0028545449022203684]	your s sincerely  , erik moll er this text is in the public domain  .
+right_val: 0	prob: [0.9972338080406189, 0.0027661880012601614]	are you hurt  ? <unk> she shook her head  , rubbing her face into the white fur and murmur ing something  .
+right_val: 1	prob: [0.0011117439717054367, 0.9988883137702942]	 " then he went back to contemplation of one of his local scenes  , his broad shoulders hunched in the vivid purple shirt  , his head pressed forward  .  "
+right_val: 1	prob: [0.00047067453851923347, 0.9995293617248535]	a dish of b rocco li sits on a a printed paper on a white plate  .
+right_val: 0	prob: [0.9899930357933044, 0.010006907396018505]	i am glad to be out of the favor - tra ding scene for half a minute  .
+right_val: 1	prob: [0.0004342921019997448, 0.9995656609535217]	a surfer is walking toward the water with board in to w with the horizon in the background  .
+right_val: 1	prob: [0.0007546318229287863, 0.9992454051971436]	add your filling to the pie crust  . place second pie crust on top and cr imp edges together  . decorate as desired  . be sure to poke a couple of holes in the top crust for vent ing  . you can either do this with a knife or a fork  .
+right_val: 0	prob: [0.9940460920333862, 0.005953941494226456]	greece attempted to stay out of world war ii  , but mussolini saw greece as an ideal addition to his italian empire  .
+right_val: 0	prob: [0.9938867688179016, 0.006113297771662474]	there are no fine r to spice a meal  , nor pure r to mix a potion  .
+right_val: 0	prob: [0.9959180951118469, 0.004081965424120426]	i could have started asking questions  , but i wanted to get my bearing s first  .
+right_val: 0	prob: [0.9972648620605469, 0.0027351179160177708]	regardless  , when  adri enne asked what the ship  ' s purpose was  , we all gave it a measure of thought  .
+right_val: 1	prob: [0.00038647366454824805, 0.9996135830879211]	a little boy is playing with a blue wheel on a swing set  .
+right_val: 1	prob: [0.0009366963640786707, 0.9990633130073547]	she relax es hoping that the rest will heal her body  .
+right_val: 0	prob: [0.988787829875946, 0.011212145909667015]	the other kids at school nicknamed him ix  , which in the language of be tel ge use five translates as  " boy who is [  ] not able sat is factor ily to explain what a h rung is  , nor why it should choose to collapse on be tel ge use seven  "  .  ]
+right_val: 1	prob: [0.00041293175308965147, 0.9995871186256409]	julie brought her baby franklin he loved the new house  .
+right_val: 0	prob: [0.9877017140388489, 0.012298336252570152]	he told ne p thy s the name of a woman who lived on a certain street  , and we set off  .
+right_val: 0	prob: [0.9932903051376343, 0.006709727458655834]	i had an urge to cover amy s eyes  .
+right_val: 0	prob: [0.9974744915962219, 0.00252547743730247]	yeah  , the captain was there  , with the rest of us  .
+right_val: 1	prob: [0.0003988572570960969, 0.9996011853218079]	one more friend has gotten in on the act and is singing along with her friends  ' guitar playing  .
+right_val: 1	prob: [0.00040889729280024767, 0.9995911717414856]	an asian looking man smiles as he is getting ready to hit a billiard ball  .
+right_val: 1	prob: [0.00043643524986691773, 0.9995635151863098]	 " a white with animal is standing in dirt  , its front right paw is up  .  "
+right_val: 1	prob: [0.00041806077933870256, 0.9995819926261902]	soccer player raises a smile during the match  .
+right_val: 1	prob: [0.0007635910296812654, 0.9992364645004272]	 " he was just med it ating whether he could risk running straight in through the kitchen door when he saw two of the fire men in masks  , doing just that  .  "
+right_val: 0	prob: [0.9927116632461548, 0.007288335356861353]	the second time this happened  , the lieutenant - colonel summoned the interpreter and told him that if it happened once more  , even in the mild est form  , he could expect the immediate application of the paragraph of the regulations relating to such repeated cases of serious in sub ordination  .
+right_val: 0	prob: [0.9938797950744629, 0.006120222620666027]	whether it was because he was drunk  , ill or suicidal ly insane would not have been apparent to a casual observer  , and indeed there were no casual observers in the old pink dog bar on the lower south side of han  d old city because it was  n ' t the sort of place you could afford to do things casually in if you wanted to stay alive  .
+right_val: 0	prob: [0.9451237320899963, 0.05487632378935814]	he lay for a while in the silent dusty rubble to which most of the room had been reduced  .
+right_val: 0	prob: [0.961978018283844, 0.0380219928920269]	the second temple was finished in  515 b  . c  .
+right_val: 0	prob: [0.9975426197052002, 0.002457393566146493]	i bet his hide - out is nearby  , too  .
+right_val: 0	prob: [0.9946650266647339, 0.005334965419024229]	did it truly matter what the ship  ' s origin was and why jefferson had saved me  , if now  , i was content  ?
+right_val: 0	prob: [0.9827936887741089, 0.017206326127052307]	the kid was a little bastard  , and the parents were involved in drugs  - - case closed  .
+right_val: 1	prob: [0.0007584550185129046, 0.9992415904998779]	even the towns make for amazing pictures  .
+right_val: 0	prob: [0.9824234247207642, 0.017576605081558228]	then i looked down and saw what had let us in  .
+right_val: 1	prob: [0.00044075012556277215, 0.999559223651886]	 " a young baseball player wearing a yellow shirt and a blue helmet with  "  "  t  "  " on it slides into home plate and the catcher  , while teammates watch  .  "
+right_val: 0	prob: [0.9972410202026367, 0.002758927410468459]	i kept track for a while <unk> thirty - eight days <unk> but after that  .  .  . i guess i did  n ' t see the point  . <unk> fact  : some places are time less  .
+right_val: 1	prob: [0.0004738515999633819, 0.9995261430740356]	the cat is sitting patiently on the piano bench  .
+right_val: 1	prob: [0.0006747043807990849, 0.9993252754211426]	1 cup pizza sauce 1 package d pizza crust  ( any type of crust ) 1/ 4 cup pepper oni slice s 1  1/2 cups shredded  moz zar ella , , ate lic
+right_val: 1	prob: [0.0004751470114570111, 0.9995248317718506]	now you have a delicious tuna sandwich  . eat up  !
+right_val: 1	prob: [0.00043936644215136766, 0.9995606541633606]	place the roast ed egg plant and ca uli flower into the food processor with the on ion and garlic  . pulse until reasonably smooth  ( some small chunk s are desirable  )
+right_val: 0	prob: [0.9963145852088928, 0.003685379633679986]	the girl was as soft and ros y as the stones glow  , and she was dressed in a white shift tied at the waist with a belt like a celtic knot  .
+right_val: 1	prob: [0.000496931781526655, 0.9995030164718628]	 " in a pre he ated 400 degree oven  , cook your zombie for 15  - 18 minutes  . serve with your favorite marina ra or bol gan ese  ! eat him before he eat s you  !  "
+right_val: 1	prob: [0.0005304572405293584, 0.9994695782661438]	setting up for a wedding  ,  e  , error , , no un phrase or adjective phrase syntax  ,
+right_val: 1	prob: [0.0009238819475285709, 0.9990761280059814]	well i sha  n ' t get it in there  .
+right_val: 1	prob: [0.000509474950376898, 0.99949049949646]	spread the bread with chocolate  .
+right_val: 1	prob: [0.001184702618047595, 0.9988152980804443]	claire and amanda had not seen each other in ten years and were over joy ed to spend time together again  .
+right_val: 1	prob: [0.017075303941965103, 0.98292475938797]	how - to - make - chun ky - cho co late - cook ies <unk> 2 <unk> 0 . jp g
+right_val: 0	prob: [0.9895936250686646, 0.010406428948044777]	would  n ' t we know it if we were part of a rebellion  ?
+right_val: 0	prob: [0.9961955547332764, 0.0038044198881834745]	i guess we all figured  , he knew what he was doing  .
+right_val: 0	prob: [0.9971502423286438, 0.002849832409992814]	all we  ' re doing is eating and drinking and shit ting  , breathing and fucking and nothing important  , ever  .
+right_val: 1	prob: [0.00045931118074804544, 0.9995406866073608]	a large bird is standing in an open window  .
+right_val: 0	prob: [0.9954865574836731, 0.004513437859714031]	as an i kung a explained  ,  " prayers  , wishes  , hopes  , aspiration s  - - someone  , many people  , may share those with you  .
+right_val: 0	prob: [0.99613356590271, 0.0038664734456688166]	but  , looking through their cigarette smoke into the distance  , beyond the inscription and the pla card  , they seemed to see somewhere in the world another and different life  , a life of great ascent s and sudden falls  , in which great ness mingled with tragedy and which in some manner maintained a balance with this peaceful and mono ton ous existence of their s on the kap ia  .
+right_val: 1	prob: [0.0005194920231588185, 0.9994805455207825]	drop ceiling much less noticeable when painted the same colour as the walls  ,  e  , error , , no un phrase or adjective phrase syntax  ,
+right_val: 0	prob: [0.9968493580818176, 0.0031506740488111973]	to invoke gai a without this in mind is no more than a counsel to perfection  .
+right_val: 0	prob: [0.9962956309318542, 0.0037043781485408545]	the  " new palestinian jew  ,  " they said  , needed to be physically tough er than the brain y shop keeper s who had been tramp led in europe  .
+right_val: 1	prob: [0.0005040154210291803, 0.9994959831237793]	 "  er no  , but one of them collected these one s  .  ,  "
+right_val: 1	prob: [0.0015392261557281017, 0.9984607696533203]	i usually beat him  .
+right_val: 0	prob: [0.9967039227485657, 0.0032961140386760235]	chip  ' s memories of 1990 were of tudor drama s  , inter min able futile rights with to ri tim mel man  , a secret un health y involvement with certain texts of to ri  ' s that illustrated the de human izing object ification s of pornography  , and little else  .  "
+right_val: 0	prob: [0.9980106949806213, 0.0019893678836524487]	this is the seat of his holiness the  sak ya tri zin in the united states  , a tibetan buddhist monastery established nine years ago  .
+right_val: 0	prob: [0.9966073036193848, 0.0033927438780665398]	the palestinian authority  ' s decision to make the sale of land to jews a capital crime reflects palestinian frustration with israeli land use  , specifically the creation of a new jewish neighborhood now under construction in east jerusalem  .
+right_val: 0	prob: [0.9947382807731628, 0.005261674989014864]	i would have sworn to you that he was dead  .
+right_val: 0	prob: [0.9934127926826477, 0.006587174721062183]	the a pathy of us wa united steel workers of america was the union representing the young stown steel workers when the closing s hit  .
+right_val: 0	prob: [0.9955644607543945, 0.004435512237250805]	now spring was back  , under the concrete  , and i could smell it even here  .
+right_val: 0	prob: [0.9753466248512268, 0.024653369560837746]	the has mon ean s ruled until pomp ey s roman legion s arrived in 63 b  . c  .
+right_val: 0	prob: [0.9957839846611023, 0.004216036293655634]	i do  n ' t know how jefferson knew to find me there  . <unk> she nodded  .
+right_val: 1	prob: [0.00044891753350384533, 0.9995511174201965]	 " in a large bowl  ,  dice up 4 cups of apple s of your choice  "
+right_val: 1	prob: [0.0006009074277244508, 0.9993990659713745]	rose laughed and looked more happy  .
+right_val: 0	prob: [0.9931852221488953, 0.00681476341560483]	i want to see what a magic stone looks like  .
+
+
+Uses verb segment ids: no
+Model: albert-base-v2
+Model type: albert
+Train set: 3267
+Validation set: 408
+Test set: 409
+
+	======== Epoch 1 / 4 ========
+Training...
+	Batch    40	of	  103.		Elapsed: 0:04:06.
+	Batch    80	of	  103.		Elapsed: 0:08:16.
+	Average training loss: 0.24
+	Training epoch took: 0:10:43
+	======== Epoch 2 / 4 ========
+Training...
+	Batch    40	of	  103.		Elapsed: 0:04:44.
+	Batch    80	of	  103.		Elapsed: 0:09:09.
+	Average training loss: 0.12
+	Training epoch took: 0:11:37
+	======== Epoch 3 / 4 ========
+Training...
+	Batch    40	of	  103.		Elapsed: 0:04:30.
+	Batch    80	of	  103.		Elapsed: 0:08:54.
+	Average training loss: 0.08
+	Training epoch took: 0:11:19
+	======== Epoch 4 / 4 ========
+Training...
+	Batch    40	of	  103.		Elapsed: 0:04:33.
+	Batch    80	of	  103.		Elapsed: 0:09:04.
+	Average training loss: 0.06
+	Training epoch took: 0:11:37
+Testing on Seen:
+Accuracy: 0.96
+Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.96      0.95      0.95       186
+           1       0.96      0.96      0.96       223
+
+    accuracy                           0.96       409
+   macro avg       0.96      0.96      0.96       409
+weighted avg       0.96      0.96      0.96       409
+
+
+Wrong predictions:
+wrong_seen: 1	prob: [0.012418989092111588, 0.9875810146331787]	all seemed pleased with the performance and anxious for another of the same sort  . 
+wrong_seen: 0	prob: [0.8840416073799133, 0.11595840007066727]	this band is currently contract ing even further in european societies  . 
+wrong_seen: 1	prob: [0.019920358434319496, 0.980079710483551]	the safety of the crew is absolutely assured  . 
+wrong_seen: 0	prob: [0.9440932869911194, 0.05590672791004181]	greg saw bill  clough blink agitated ly and look sharply at his wife  . 
+wrong_seen: 0	prob: [0.9942359328269958, 0.005764131899923086]	the black door opened as we came up to it  , and a pale man opened the door  . 
+wrong_seen: 0	prob: [0.9941816926002502, 0.0058183264918625355]	miss ben net was therefore established as a sweet girl  , and their brother felt authorised by such commendation to think of her as he chu se  . 
+wrong_seen: 1	prob: [0.0009985493961721659, 0.9990014433860779]	we were all quiet for a moment  . 
+wrong_seen: 0	prob: [0.7134642004966736, 0.2865358293056488]	she struggled to her feet to see him to the door  . 
+wrong_seen: 1	prob: [0.001522780628874898, 0.9984772801399231]	because it  ' s so much fun to do so  ? 
+wrong_seen: 1	prob: [0.05243610218167305, 0.947563886642456]	then i saw the bar on the other side of the crowd and knew where to start looking  . 
+wrong_seen: 0	prob: [0.9924739003181458, 0.007526015397161245]	you do  n ' t notice  , do you  . <unk> sarah looked indignant  . 
+wrong_seen: 1	prob: [0.013287209905683994, 0.9867128133773804]	this whole house reek s of those god aw ful on ion sandwiches he brings from home  . 
+wrong_seen: 1	prob: [0.02643277682363987, 0.9735672473907471]	the accompanying bottle of wine was a nice touch  . 
+wrong_seen: 0	prob: [0.6904547214508057, 0.30954527854919434]	 " proper little rogue and v aga bon d  , was our walter  .  " 
+wrong_seen: 1	prob: [0.3119754195213318, 0.6880245804786682]	medical a i were even more expensive than the bar keep  . 
+wrong_seen: 0	prob: [0.9794346690177917, 0.020565297454595566]	a company of angels follows us wherever we go  . 
+wrong_seen: 1	prob: [0.022970154881477356, 0.9770298004150391]	the way it function ed was very interesting  . 17 out of 409
+
+Right predictions:
+right_seen: 1	prob: [0.0003673823375720531, 0.9996325969696045]	 " three boys  , one in red  , two in blue  , play soccer  .  " 
+right_seen: 1	prob: [0.0003373706713318825, 0.9996626377105713]	a woman is smiling while speaking and shaking hands with a man in a board room  . 
+right_seen: 0	prob: [0.9926849603652954, 0.0073149967938661575]	i intend to discuss it in more depth later  , so stay tune d  . 
+right_seen: 0	prob: [0.9942941069602966, 0.005705928895622492]	what is true is that bowling for columb ine is a diamond in the small world of big screen documentaries  , one that shine s brightly and illuminate s an often misunderstood aspect of american culture  . 
+right_seen: 0	prob: [0.9834672808647156, 0.016532711684703827]	you  ' ve asked nothing that per tain s to the first law  .  " 
+right_seen: 1	prob: [0.0011077573290094733, 0.9988922476768494]	tree house is a  - story residential building clad in metal panels that fit into its wooded context  . 
+right_seen: 1	prob: [0.0003027054772246629, 0.9996973276138306]	a man is riding the wave while surf board ing  . 
+right_seen: 0	prob: [0.9950404763221741, 0.00495950086042285]	this is perhaps the criticism repeated the most often  , and it also the most inaccurate  . 
+right_seen: 0	prob: [0.994040310382843, 0.005959706846624613]	ray  , a plump man who was grey where he was  n ' t bald  . 
+right_seen: 0	prob: [0.9900814890861511, 0.009918458759784698]	the girl is  . . . sur pris ing  , <unk> he concluded  . 
+right_seen: 1	prob: [0.00032181525602936745, 0.9996782541275024]	the dog walks through the water  . 
+right_seen: 0	prob: [0.9765190482139587, 0.02348097786307335]	or so i imagine i m told  . 
+right_seen: 1	prob: [0.0004301230364944786, 0.999569833278656]	 " now add the rice then bring it to a boil and allow to  s immer for 15 minutes tip  : watch carefully  , the water can evaporate causing the rice stick to the pan and burning  . finally s tir in the frozen  pea s and seafood  ( optional  ) and cook for a further five minutes your done  " 
+right_seen: 1	prob: [0.0003642997471615672, 0.9996356964111328]	 " image may contain  : person  , on stage  , playing a musical instrument and outdoor  " 
+right_seen: 0	prob: [0.9825261831283569, 0.01747383549809456]	do our laws conn ive at them  ? 
+right_seen: 0	prob: [0.9921525120735168, 0.007847501896321774]	any crew member that would je op ard ize the project was meat  . 
+right_seen: 0	prob: [0.9948963522911072, 0.0051036616787314415]	fact  : if  , before all the air is sucked out of the ship  , a person is so lucky to have stuffed him or herself into a space suit  , that person has less than twenty - four hours to live  . 
+right_seen: 1	prob: [0.0005952813662588596, 0.9994046688079834]	the third step is to grab the piece of bread and spread the peanut butter onto the bread  . 
+right_seen: 1	prob: [0.0006146433297544718, 0.9993853569030762]	a little go th makeup  ; and a pretty dress start the transformation  . 
+right_seen: 1	prob: [0.00042890949407592416, 0.9995711445808411]	 " it  ' s  , it  ' s a bit silly is could have done some damage to your eye  .  ,  " 
+right_seen: 0	prob: [0.993604838848114, 0.006395156029611826]	after a moment  , ray said  , i do  n ' t think so  . <unk> are there patterns  ? <unk>  adri enne asked  . 
+right_seen: 1	prob: [0.020792020484805107, 0.9792079329490662]	we were very close  . 
+right_seen: 0	prob: [0.9888226985931396, 0.011177357286214828]	there is nothing inaccurate whatsoever about the bank scene  . 
+right_seen: 0	prob: [0.9954955577850342, 0.004504482727497816]	you believe the other medicine may have just as much value  , but in other situations  , not this one  . 
+right_seen: 1	prob: [0.00044811220141127706, 0.9995518326759338]	 " fill 30 cup cake tin s with batter  , 3 /4 full  . bake in oven for about 17 minutes or until a tooth pick inserted comes out clean  . cool in pan s for about ten minutes then finish cooling on cooling rack  .  " 
+right_seen: 1	prob: [0.00026811115094460547, 0.9997318387031555]	a young baseball player is wearing full catcher s gear  . 
+right_seen: 0	prob: [0.9940997362136841, 0.005900240503251553]	sitting before the ban which was falling into dissolution before his eyes  , he replied to all those who tried to dissuade him or pi tied him  : on a rise  , behind the crowd which was completely absorbed in the scene before it  , he was able to watch un ob served and to see clearly victims  , execution ers and spectators  . 
+right_seen: 1	prob: [0.0003209502901881933, 0.9996790885925293]	 " but the surprise came at the end  .  ,  ,  " 
+right_seen: 1	prob: [0.0002940804697573185, 0.9997058510780334]	a man in a blue shirt emerge s from a doorway  . 
+right_seen: 1	prob: [0.0004644088912755251, 0.9995355606079102]	happy little girl learns how to ride a bike in the park  . 
+right_seen: 0	prob: [0.9947874546051025, 0.005212549120187759]	sound travels as a mechanical wave through a medium  , and in space  , there is no medium  . 
+right_seen: 1	prob: [0.0003659105859696865, 0.9996340274810791]	four women covered in tattoos are holding small flags  . 
+right_seen: 0	prob: [0.9954192638397217, 0.004580703563988209]	this is the key message of this part of the animation  , which is again being ignored by its critics  . 
+right_seen: 0	prob: [0.990965723991394, 0.009034305810928345]	do you want to be stuck here for the rest of your life  ? <unk> sarah did  n ' t reply  . 
+right_seen: 1	prob: [0.0003257838252466172, 0.9996742010116577]	the park looks pretty covered in snow  . 
+right_seen: 0	prob: [0.9946787357330322, 0.0053212326020002365]	after they lost jerusalem  , a mongol invasion swept through  , and in 12 44 the ma mel uk e dynasty of egypt took control  , ruling jerusalem for the next 250 years  . 
+right_seen: 0	prob: [0.992782711982727, 0.007217290345579386]	it all stems from the fact that there is no sultan sel im any more  . 
+right_seen: 1	prob: [0.0004557398788165301, 0.9995442032814026]	my daughter loves the flaming os  . 
+right_seen: 1	prob: [0.0003242015081923455, 0.9996758699417114]	 " head up and  , when you get to the first landing  , there  ' s this interesting room to the right  .  " 
+right_seen: 1	prob: [0.0003597386821638793, 0.9996402263641357]	 " with a roller  , you flat ten the dough to give it a circular form  . and with a stick  , you make little holes to let the dough breath  .  " 
+right_seen: 1	prob: [0.0004113132890779525, 0.999588668346405]	method introduces a dish and hand soap in a bottle made from plastic debris washed up on beaches  . 
+right_seen: 1	prob: [0.0005486214649863541, 0.9994513392448425]	fashion s on the  ent rant s take to the stage  . 
+right_seen: 1	prob: [0.0009286653366871178, 0.9990713596343994]	make yourself a delicious looking  ome lette  . i put a little milk into my egg batter and whisk ed till it was fluffy 
+right_seen: 1	prob: [0.0003199768834747374, 0.9996800422668457]	chop 4 c love s of garlic and a piece of ginger in the food processor and add it to the pan  . 
+right_seen: 0	prob: [0.9948347806930542, 0.005165236536413431]	as moore correctly points out  , it is bizarre for a society to openly embrace the production of destructive weapons  , but on the other hand see no connection of this to everyday violence  - - children learn by i mit ating adults  . 
+right_seen: 1	prob: [0.00032101207762025297, 0.9996789693832397]	give farm equipment time to find a place to pull over on narrow roads so you can pass  . , i 
+right_seen: 1	prob: [0.00027997331926599145, 0.99972003698349]	a clock structure is standing in a town  . 
+right_seen: 1	prob: [0.006737205665558577, 0.9932628273963928]	the score board could be clearly seen  . 
+right_seen: 1	prob: [0.00025316118262708187, 0.9997468590736389]	a group of men and women are dancing at a house party  . 
+right_seen: 0	prob: [0.9951047897338867, 0.004895251709967852]	god  , the vertical game  , intersects with death  , the horizontal one  , making up the biggest puzzle of all  . 
+right_seen: 1	prob: [0.00034230129676871, 0.9996577501296997]	hard rock artist and actor attend their wedding held 
+right_seen: 1	prob: [0.000608822563663125, 0.9993911981582642]	 " all that water has been reduced  . we  ' re nearly there  , but now we need to pay more close attention to avoid getting the salt stuck to the bottom of the pan  . it  ' s just a question of heating and stirring  . . .  " 
+right_seen: 0	prob: [0.9927904605865479, 0.007209524977952242]	and never shut your eyes  ,  ' roo ie always admonish ed the new girls  . 
+right_seen: 0	prob: [0.9691553115844727, 0.03084472380578518]	but  .  .  . well  , no one important ever disappears  , so it does  n ' t really matter  , does it  . <unk> i could tell she was trying to remember whom she had known who had left  , and failing  . 
+right_seen: 1	prob: [0.0003586511011235416, 0.9996412992477417]	 " add the egg  , then the o at s  , milk  , and vanilla extract and beat together until well blended  .  " 
+right_seen: 1	prob: [0.0005474325153045356, 0.999452531337738]	enjoy  ! it wo  n ' t last long  .  ( let us know your thoughts if you made it  ) 
+right_seen: 0	prob: [0.9948187470436096, 0.005181275773793459]	it was a stupid dog  , could not even read an auto cu e  , which way why some people had protested about its name  , but it should at least have been able to recognize arthur instead of standing there  , hack les raised  , as if arthur was the most fearful apparition ever to in trude upon its feeble - witt ed life  . 
+right_seen: 0	prob: [0.9918219447135925, 0.008178033865988255]	i thought that i could feel a slight it ching  . 
+right_seen: 0	prob: [0.9942485094070435, 0.005751503631472588]	its face was small and wrinkled  , with penny - sized smoke d glasses balanced on its thin nose  . 
+right_seen: 0	prob: [0.9926422238349915, 0.007357797585427761]	petition s  , protests  , rallies  , collect iv ization  , and even the takeover of a steel company s headquarters were all attempted in a desperate movement by those in the industry to preserve the only source of employment that this town had  . 
+right_seen: 1	prob: [0.0002637930738274008, 0.9997362494468689]	assorted items sit on a desk next to a laptop computer  . 
+right_seen: 0	prob: [0.9947910308837891, 0.005208937916904688]	jerusalem s physical existence as a spiritual city seemed finished  , but its spiritual power for jews  , and for the struggling new christian religion  , remained  . 
+right_seen: 0	prob: [0.9939644932746887, 0.006035521626472473]	it is the typical right - wing reaction which looks for simple answers that do not contradict the republican mind set  . 
+right_seen: 1	prob: [0.0005402810638770461, 0.9994596838951111]	i drove by and saw a truck pulled over on the highway  . 
+right_seen: 1	prob: [0.0010669418843463063, 0.9989330172538757]	i just put it underneath  . 
+right_seen: 0	prob: [0.994350016117096, 0.005649982485920191]	jesus s entry into the temple caused a commotion  ; after the pass over dinner he was arrested by the temple priests  , who were under direct roman rule  . 
+right_seen: 1	prob: [0.00027334087644703686, 0.9997265934944153]	a woman sits on a bed with pillow s  . 
+right_seen: 0	prob: [0.9878585338592529, 0.012141524814069271]	langdon was intrigued  . 
+right_seen: 0	prob: [0.994814395904541, 0.0051856329664587975]	young stown was perhaps hit harder than any other town by the collapse of the steel industry  , but it was not alone  . 
+right_seen: 0	prob: [0.9936774373054504, 0.006322543602436781]	nevertheless  , the incentive s to sell at the market price are substantial  , and if the threats create new scar c ities  , higher prices will probably encourage sellers to un load their land  . 
+right_seen: 0	prob: [0.9946538209915161, 0.005346130114048719]	i have forgotten his name  " of necessity implies  , pre s up pose s  , that i knew him  )  ; a cab driver  ' s job is to drive people anywhere they want to go in big yellow machines called taxi s  . 
+right_seen: 1	prob: [0.03749437630176544, 0.9625056385993958]	maybe this is how you normally picture an indian wedding  . 
+right_seen: 1	prob: [0.0025529200211167336, 0.99744713306427]	it  ' ll be your s when she goes  . 
+right_seen: 0	prob: [0.9950581789016724, 0.004941888153553009]	she looks at me  , one eyebrow hoisted  . 
+right_seen: 0	prob: [0.9942452311515808, 0.005754792597144842]	it was  d vor ov  . 
+right_seen: 1	prob: [0.0004262986476533115, 0.9995736479759216]	 " transfer to a wire rack to cool for 10 minutes  . slide a knife around the perimeter of the pan  , in vert to release the bread  , and cool completely on the wire rack before serving  .  " 
+right_seen: 1	prob: [0.0003852889349218458, 0.9996147155761719]	open the lid and leave just a little bit still attached  . 
+right_seen: 0	prob: [0.9902338981628418, 0.00976605899631977]	da ville nurture d this curious friendship  . 
+right_seen: 1	prob: [0.0003982548660133034, 0.9996017813682556]	we sleep in the cool  ; long tunnels  . 
+right_seen: 0	prob: [0.9939238429069519, 0.006076113786548376]	when we reached the street  , i expected some sort of temple  , or a row of anti qua ries  , or at least a  s lea zy  , black - market relics merchant  . 
+right_seen: 1	prob: [0.00045709064579568803, 0.9995429515838623]	bake cheese cake for 40  - 50 minutes at  375 degrees  . just to make sure constantly check on it so you do  n ' t over bake  !  !  !  !  !  !  !  !  ! 
+right_seen: 0	prob: [0.9945705533027649, 0.005429403856396675]	i sat sideways in the armchair  , feet dangling over one arm  , neck resting against the other  , absently tracing invisible lines between the stars outside my window as i rum inated on the situation  . 
+right_seen: 1	prob: [0.002228506375104189, 0.9977715015411377]	 " after it she felt soothe d of any irritation she may have felt with the last letter  , wiped her mouth with satisfaction  , and picked up the oswald ston gazette  .  " 
+right_seen: 0	prob: [0.9927470088005066, 0.007252996321767569]	it was natural that a small town hod za could not maintain what a grand  ve zir had founded and which historical events had sentenced to disaster  . 
+right_seen: 1	prob: [0.0003674665349535644, 0.9996324777603149]	lots of people are walking they participate in a parade 
+right_seen: 1	prob: [0.0004058755002915859, 0.9995941519737244]	 " her mother looked up from her letters  , and gazed hard at her daughter  .  " 
+right_seen: 0	prob: [0.9946889877319336, 0.0053110793232917786]	 rak al  , her first officer  , was staring pen s ive ly at his panel  . 
+right_seen: 1	prob: [0.0004633513744920492, 0.9995366334915161]	he took the early train up to london  . 
+right_seen: 0	prob: [0.9946032166481018, 0.005396795924752951]	jerusalem grew  , surrounded with a formidable wall and defended by towers beside the jaffa gate  . 
+right_seen: 1	prob: [0.0004565477720461786, 0.9995433688163757]	let the tea cool off before serving  . mine was so hot i poured myself a glass and had to put it in the free zer to cool down before i drank it  . add some ice to keep your drink cold and a mint leaf to give it some class  . enjoy  ! 
+right_seen: 1	prob: [0.00030201656045392156, 0.9996980428695679]	a man in a suit and tie is  posing for the camera  . 
+right_seen: 1	prob: [0.0003182801010552794, 0.9996817111968994]	bunny tries to hide behind the flowers after being caught on the table 
+right_seen: 1	prob: [0.0538780614733696, 0.946121871471405]	did you and walter quarrel  ? 
+right_seen: 1	prob: [0.0003758988168556243, 0.9996241331100464]	the surfer is riding the surf s with his surf board 
+right_seen: 0	prob: [0.9939594268798828, 0.006040581036359072]	under the wise reign of solomon  , the city flourished as the capital of an empire that stretched from damascus to the red sea and controlled the trade routes from egypt to pho en icia  . 
+right_seen: 1	prob: [0.0010424128267914057, 0.9989575147628784]	i love the elephants because they breath through their trunk  ; which i think is pretty strange  . 
+right_seen: 0	prob: [0.9936075210571289, 0.006392474751919508]	only the best and strongest amongst them threw themselves into action with the fanatic ism of fa kir s and were there burnt up like flies  , to be immediately hailed by their fellows as martyrs and saints  ( for there is no generation without its saints  ) and placed on pedestal s as inaccessible examples  . 
+right_seen: 1	prob: [0.00027539487928152084, 0.9997245669364929]	a guy is eating a don ut and drinking coffee  . 
+right_seen: 1	prob: [0.0019524290692061186, 0.9980475902557373]	we are growing exponential ly as a brand 
+right_seen: 0	prob: [0.9945429563522339, 0.005456988699734211]	after all  , early in the movie he discard s the possibility that playing violent video games and watching violent flick s can cause violence  - - because canadian s like  , and japanese positively love  , those  . 
+right_seen: 0	prob: [0.993949294090271, 0.006050687283277512]	the people of young stown  , being now une mp loy ed had very little money to spend on anything but staying alive  . 
+right_seen: 1	prob: [0.0027049153577536345, 0.997295081615448]	 nope  . we got kernel s  . only need like  . . . about an  ounce ? ( bad linux joke  . i m not sorry  ) 
+right_seen: 1	prob: [0.0006813058280386031, 0.9993187189102173]	 " fire engines called  : this was the scene after lightning hit a house  , destroying the roof of the property " , x d  , state 
+right_seen: 1	prob: [0.0005070922779850662, 0.999492883682251]	 " the guitarist  , singer and progressive rock artist performs a live concert at national register of historic places location  .  " 
+right_seen: 1	prob: [0.0003817829128820449, 0.9996181726455688]	a speaker introduces a documentary in an art gallery on the quiet outskirts  . 
+right_seen: 0	prob: [0.9932388067245483, 0.006761134136468172]	i want to know  . <unk> i explained  , in two brief sentences  , my earlier imp asse  . 
+right_seen: 0	prob: [0.9939320087432861, 0.006068076938390732]	a mathematical theory of languages was created by the linguist no am cho m sky  , inspired by linguistic problems  , and the logical theory of semantic s predominate s today  , particularly in linguistic sentence analysis  . 
+right_seen: 1	prob: [0.0004305234469939023, 0.9995694756507874]	mat za balls are cooking in preparation for the jewish celebration  . 
+right_seen: 0	prob: [0.9921407699584961, 0.00785914808511734]	the whole amounted to an expression of absolute security and lack of knowledge of any trans gress ion  . 
+right_seen: 1	prob: [0.00040958955651149154, 0.9995904564857483]	noble person inspired dress and wig made entirely of flowers  . 
+right_seen: 1	prob: [0.00034647813299670815, 0.9996535778045654]	 " place the pie on indirect heat on the grill at  425 degrees f . for 20 minutes  , reduce the  temp to about  375 degrees f . for the last 20 to 25 minutes  . turn the pie every so often to allow for even cooking if needed  .  " 
+right_seen: 0	prob: [0.994814932346344, 0.005185017827898264]	even though they eventually failed  , the fact that they tri ed to preserve what they felt belonged to them is an amazing example of how far people will go to save their lives and the future s of their children  . 
+right_seen: 1	prob: [0.00031920813489705324, 0.999680757522583]	a little boy stands looking away from the camera holding on to a red suitcase  . 
+right_seen: 0	prob: [0.9952540397644043, 0.004745943006128073]	however  , the representatives were shun ted to the side and ignored in washington  , since young stown s political influence had died with its industry  . 
+right_seen: 0	prob: [0.9951100945472717, 0.004889884032309055]	he was not  d aunt ed by the distance  , i am sure  . 
+right_seen: 1	prob: [0.0005138364504091442, 0.9994860887527466]	they display this history during the afternoon  . 
+right_seen: 1	prob: [0.00036214146530255675, 0.9996378421783447]	a green  ve ggi e is laying on a red plate 
+right_seen: 1	prob: [0.0005473050405271351, 0.9994526505470276]	 " this is perfect for using up any crust left over s from your sandwich cut outs  ! on medium heat just toast up some bread with the center cut out of it  , drop an egg in the center and let it cook up  - you can also flit it to cook and toast the top side or do the whole thing in the oven  !  " 
+right_seen: 0	prob: [0.9946771860122681, 0.0053227622993290424]	even sup posing this was the home of some ancient civilization now gone to dust  , even sup posing a number of exceeding ly unlikely things  , there was no way that vast treasure s of wealth were going to be stored there in any form that would still have meaning now  . 
+right_seen: 0	prob: [0.9655963778495789, 0.03440359979867935]	arthur was sitting on a high rock watching the thunder ing sea smashing itself against the crag gy pro mont orie s  . 
+right_seen: 0	prob: [0.9953210949897766, 0.004678917117416859]	days passed  , weeks passed  , but i could  n ' t tell if it had been months or years since i was rescued  . 
+right_seen: 1	prob: [0.0005013484042137861, 0.9994986057281494]	the man is standing on the beach just after sunrise  . 
+right_seen: 0	prob: [0.9943367838859558, 0.005663175135850906]	his main mistake is that he does not use population corrected data  , his second mistake is that he does not  cite his sources  ( and  , as you correctly point out  , he probably uses different reporting methods for the different countries  )  . 
+right_seen: 1	prob: [0.00036379185621626675, 0.999636173248291]	leave to rise covered in a warm place till double in size this may take 3  - 4 hours  . 
+right_seen: 1	prob: [0.0002897033700719476, 0.9997102618217468]	a tv mounted above a fireplace in a nicely furnished living room  . 
+right_seen: 0	prob: [0.9949561953544617, 0.005043781362473965]	you figure theyre some lincoln - green pretty boys who run around in the forest with bow s and live forever in halls of glory  , right  ? 
+right_seen: 0	prob: [0.9935153722763062, 0.006484575569629669]	it is by now well documented that the cia tolerate d crack sales in us cities to fund the operation of south american  " contra s  " it is equally well known that the so - called  " war on drugs  " begun under the nixon administration is a failure which has cost hundreds of billion s and made america the world leader in prison population  ( both in relative and absolute numbers  )  . 
+right_seen: 0	prob: [0.9945406317710876, 0.0054594227112829685]	not surprisingly  , gun cite  , too  , compare s data from different years  - - as i know from personal experience  , it is quite difficult to do comparison s of crime statistics due to differences in reporting frequency and methodology  . 
+right_seen: 0	prob: [0.9953036308288574, 0.004696323070675135]	that was tonight  ' s melodrama tic theme  : the ephemer al nature of life  . 
+right_seen: 1	prob: [0.0012707520509138703, 0.9987292885780334]	 " there  , by the easy chair  , he had placed the works of gerald seymour  - stra che y three fairly substantial  - looking volumes  .  " 
+right_seen: 0	prob: [0.9954387545585632, 0.004561248701065779]	you ca  n ' t hold on forever  , even if you do  n ' t ever  , ever want to forget  . 
+right_seen: 1	prob: [0.0013983844546601176, 0.9986016154289246]	 " rose left it on the coffee table by her husband  ' s chair  , and when he had had his usual mixed fry  - up and was preparing to have his  s no o ze  , his eye caught it as it lay there  .  " 
+right_seen: 1	prob: [0.000840447552036494, 0.999159574508667]	 " for the premiere  , the actress wore her hair up with loose wavy tendrils  - - an a typical look for her  , but it showed off her striking face beautifully  .  " 
+right_seen: 1	prob: [0.0011678632581606507, 0.9988321661949158]	 " sketch of rock and roll artist done some time ago  , forgot about it and thought i  ' d share it with you all  !  "  , x d 
+right_seen: 1	prob: [0.0003802780411206186, 0.999619722366333]	 " for this recipe you will need  : flour sugar van illa extract an egg oil  ,  ( vegetable preferred ) milk  " 
+right_seen: 0	prob: [0.9955297112464905, 0.004470326006412506]	poverty is frequently portrayed as natural  , and the poor in america are seen by conservatives as v cr - owner s who are just too lazy to work  . 
+right_seen: 0	prob: [0.9949613809585571, 0.0050386181101202965]	but if they did  n ' t  , one of their functions was to continue the racism of the k kk  . 
+right_seen: 0	prob: [0.9910445213317871, 0.00895552709698677]	perhaps he coveted his mother  ' s affection s solely for himself  - - ther houses comprised a whole small quarter surrounded by fields  , plum - or char d s and shrub be ries  .  ' 
+right_seen: 0	prob: [0.9937699437141418, 0.006230018567293882]	functional ly attractive in shades of be i ge and green  , it is situated a short distance from the airport  , in the middle of a strip of such hotels that cater predominantly to business people with neither the time nor inclination for sight - see ing  , or to travelers connecting with early morning flights  . 
+right_seen: 0	prob: [0.9823306798934937, 0.01766936667263508]	you sound like you do  n ' t  subscribe to that set of rules  .  " 
+right_seen: 1	prob: [0.0012197119649499655, 0.9987803101539612]	surfing and skateboard ing culture exist side by side  . 
+right_seen: 1	prob: [0.0007947364938445389, 0.9992052912712097]	the three members of hanson are performing at a concert  . 
+right_seen: 0	prob: [0.9946476817131042, 0.005352351348847151]	the figure tru d ged  , or rather slo shed  , onwards till the hill resumed and the treacherous sheet of water was left behind  . 
+right_seen: 0	prob: [0.9942376613616943, 0.005762377288192511]	may i have a little more of what you gave me before  , ne p thy s  ? <unk> i asked  . 
+right_seen: 1	prob: [0.00041639068513177335, 0.9995836615562439]	the older folks are on the side enjoying the weather and kids playing in the pool  . 
+right_seen: 0	prob: [0.9947974681854248, 0.005202554631978273]	it was becoming increasingly clear that without the industrial base provided by the mills  , the city of young stown would soon become a ghost town  , inhabited by those too poor or hopeful to escape  . 
+right_seen: 1	prob: [0.0006710408488288522, 0.9993289709091187]	everyone had worked so hard over the past four years  ; and it was finally time to graduate and celebrate our accomplishments  . 
+right_seen: 1	prob: [0.0005513166543096304, 0.9994487166404724]	make wish for new year  . , i 
+right_seen: 0	prob: [0.9851698279380798, 0.014830108731985092]	there is no evidence  – there could be no evidence  – that my grandfather featured in these statistics  .  " 
+right_seen: 1	prob: [0.0016618160298094153, 0.9983381032943726]	 " since then they had come into contact over one or two smaller matters  , and it was to him that greg naturally went in the aftermath of hilda mach in  ' s death  .  " 
+right_seen: 1	prob: [0.0003583382349461317, 0.9996416568756104]	we we dock ed we took a walk around the pier  . 
+right_seen: 0	prob: [0.9943219423294067, 0.005678016226738691]	in 1934 jerusalem  ' s mu ft i  , the spiritual leader of the city  ' s muslims  , decree d that believers were duty bound to murder other muslims who sold land to jews  . 
+right_seen: 1	prob: [0.00048673839773982763, 0.9995132684707642]	 " a sharp knife  , a table knife  , a tea spoon  , a strain er  , a plate  .  " 
+right_seen: 0	prob: [0.9946452379226685, 0.005354799330234528]	amy  , still holding my hand  , smiled  . 
+right_seen: 0	prob: [0.9948234558105469, 0.005176595877856016]	in reality  , what moore describes here is the most vivid example of what can only be called wage slavery i have ever seen  , to the de tri ment of families  . 
+right_seen: 1	prob: [0.000872644770424813, 0.9991273283958435]	this is how i started my day today  . 
+right_seen: 1	prob: [0.00033419416286051273, 0.9996658563613892]	these girls are dating some of the players  . 
+right_seen: 0	prob: [0.9906999468803406, 0.009300021454691887]	what did you intend doing with christine  , that  ' s what i want to know  .  ' 
+right_seen: 0	prob: [0.9941569566726685, 0.005843048449605703]	 <unk> scholars speculate that sha lim might have been an ancient  semitic deity of peace  , for the name resembles the modern hebrew and arabic words for peace <unk>  : shal om and sala am  , respectively  . 
+right_seen: 0	prob: [0.9945780038833618, 0.005422004032880068]	 <unk> asked  adri enne  , using sarah  ' s  phra s ing  . 
+right_seen: 0	prob: [0.9949927926063538, 0.005007182713598013]	archaeology shows that  , during this time  , societies lived mainly in coastal trading towns with little settlement inland  . 
+right_seen: 1	prob: [0.0003388925106264651, 0.9996610879898071]	 " friends guys with hair style standing with hands crossed  , one of them giving thumb up and both smile and looking " , e  , error , , no un phrase or adjective phrase syntax  , 
+right_seen: 0	prob: [0.995162308216095, 0.004837731830775738]	serge  , kneeling behind her with his face pressed into collar fur  , imagine s the bullet piercing the jacket  s leather and travelling onwards through both the observer and cecil e  , then  , broken down into a million particles  , lodging in him not only harmless ly but also beneficial ly  , as though he were both its and the other two  s final destination  , the natural conclusion of a process whose trajectory con joined them all  . 
+right_seen: 1	prob: [0.0005070038023404777, 0.9994930028915405]	 " key  - board manipulation is a skill relevant to many tasks and is typical of psycho  - motor skills in that the per cept ual elements of identify and select dominate the motor element of actual key pressing  .  ,  ,  " 
+right_seen: 0	prob: [0.9949148893356323, 0.005085071548819542]	even the official quoted by moore blame s the welfare to work program  , knowing full well that the drug issue is a red her ring  . 
+right_seen: 0	prob: [0.994134247303009, 0.005865755490958691]	none the less  ,  lotte had imagined him at least as a leading lawyer in vienna or l wow  , since being a jew he could not become a senior civil servant which would best have accord ed with her ambition s  . 
+right_seen: 1	prob: [0.0008621168090030551, 0.9991378784179688]	i had never seen an owl like this up close in daylight  ; and he was gorgeous  . 
+right_seen: 0	prob: [0.994340181350708, 0.005659830756485462]	it is not a flawless diamond  - - the  " 48 hours  " scene in particular suffer s from bad editing  , the statistics are sub opti mal  , and he ston gets a bit more bash ing than he deserves  . 
+right_seen: 0	prob: [0.994733452796936, 0.005266554653644562]	he stood in front of a blue light  , so i could  n ' t see him clearly  , but what i saw was memorable  . 
+right_seen: 0	prob: [0.9943379759788513, 0.005662001669406891]	they packed the baggage space with two suitcase s of personal effects  , two bags of food  , and a rolled - up blanket in a fresh plaid cover with a pillow  - after all  , she opined  , they could  n ' t sleep in the same one that poor girl  .  .  . the  tum ult of elizabeth  ' s mind was all ay ed by this conversation  . 
+right_seen: 1	prob: [0.0013718109112232924, 0.9986282587051392]	armed force and profession hold the flag to commemorate independence day on the flight deck 
+right_seen: 1	prob: [0.022304855287075043, 0.9776951670646667]	why had she done it  ? 
+right_seen: 1	prob: [0.0004619355604518205, 0.9995380640029907]	stand back  ! person pushes away the crowd as threatening people in white fill the area  , x d 
+right_seen: 1	prob: [0.0004896426689811051, 0.9995104074478149]	your going to need 2 apple s one a little smaller than the other  . and if you need it maybe a little peanut butter  . 
+right_seen: 1	prob: [0.00032137217931449413, 0.9996786117553711]	a woman is holding unto a bear dressed like a british sold er  . 
+right_seen: 0	prob: [0.9913660287857056, 0.008634005673229694]	this is a slave shop  , <unk> he explained quietly  . 
+right_seen: 1	prob: [0.0018102368339896202, 0.9981897473335266]	there was a marathon event going on 
+right_seen: 0	prob: [0.9948752522468567, 0.005124705843627453]	i got older and went to school  , then to college  , and i replaced the dreams my nana gave me with the music dj s mixed for crowds in clubs  , web s of pulse that shook us until we could believe anything  . 
+right_seen: 0	prob: [0.9899262189865112, 0.01007379312068224]	you do not go to the drug store and buy everything in it  - - you just buy what would be beneficial to you now  . 
+right_seen: 1	prob: [0.1846783459186554, 0.8153216242790222]	here you are  ! 
+right_seen: 1	prob: [0.0005497878300957382, 0.9994502663612366]	 " there  , so i  ' ll save this  .  " 
+right_seen: 1	prob: [0.0009166224044747651, 0.999083399772644]	 " a young girl stands behind several k nick  - knack s  , such as dolls  , a statue of jesus  , and a statue of the virgin mary  , outdoor s  " 
+right_seen: 0	prob: [0.995378851890564, 0.004621169064193964]	urine and perfume  , so rich ly comm ing led that the result resembled bad meat  . 
+right_seen: 1	prob: [0.00039871869375929236, 0.9996013045310974]	fill the glass with ice  . 
+right_seen: 1	prob: [0.00023168243933469057, 0.9997683167457581]	a group of young men hang out in a park with their skateboard s  . 
+right_seen: 1	prob: [0.0006744764395989478, 0.9993255138397217]	take the sliced pickle s and place on top of the swiss cheese covering as much space as you can because the flavor of the pickle s is essential for the sandwich  . 
+right_seen: 1	prob: [0.0009269887814298272, 0.9990730285644531]	 " and she says she  ' ll try and phone me up  , but i reckon she does  n ' t even  er i sa ask her mum  .  " 
+right_seen: 1	prob: [0.00024296445189975202, 0.9997569918632507]	a brown bird is sitting on a wood post next to a plant  . 
+right_seen: 0	prob: [0.9950226545333862, 0.004977307748049498]	if these causes were addressed  , gun ownership in the united states would not be a problem  ( but also unnecessary  )  ; just like it is in switzerland  . 
+right_seen: 1	prob: [0.0002972479851450771, 0.9997027516365051]	animal and year ling mule deer are curious to see who is visiting  . 
+right_seen: 0	prob: [0.9945906400680542, 0.005409416742622852]	she felt  obliterat ed  ,  exp ung ed from the room  , and was relieved  . 
+right_seen: 1	prob: [0.000298547325655818, 0.9997014403343201]	 " bedroom in concrete ex ude s a minimal  , rustic vibe  " 
+right_seen: 1	prob: [0.000424415833549574, 0.9995755553245544]	the person is holding a don ut inside of their mouth  . 
+right_seen: 0	prob: [0.9942718744277954, 0.005728160962462425]	when i was done mentally exclaim ing over my impossible rescue  , i looked around  . 
+right_seen: 1	prob: [0.0015260399086400867, 0.9984739422798157]	should be alright then  . 
+right_seen: 1	prob: [0.0008400792721658945, 0.9991599321365356]	there is light at the end of the tunnel 
+right_seen: 0	prob: [0.9949836730957031, 0.00501636415719986]	this may do no good at all  , but it may  - - if everyone hopes and wishes and dreams and a spire s  , perhaps it will do good  . 
+right_seen: 0	prob: [0.995053768157959, 0.004946190398186445]	when your life  , the reason you lived  , the people and faces and places  , the emotions you felt  , who and what you loved  , when all that is gone  , faded  , what will you have left  ? <unk> i wondered how long ray had been on this ship  . 
+right_seen: 1	prob: [0.0043450589291751385, 0.9956549406051636]	chop on ions and green chill ies  . while cutting on ions try to prevent tears from your eyes  .  :  ) 
+right_seen: 1	prob: [0.00026041598175652325, 0.9997395873069763]	a young baseball player is standing next to a young girl  . 
+right_seen: 0	prob: [0.9936914443969727, 0.0063085779547691345]	these attempts to save the mills were hinder ed by several major factors  , including the decline of the world steel market  , which made american steel impossible to sell or export  . 
+right_seen: 1	prob: [0.000715213012881577, 0.9992848038673401]	i drove around as fast as i could until i found the school  . 
+right_seen: 0	prob: [0.9943513870239258, 0.005648610647767782]	a method ical search of my two adjoining rooms  , the ample closet space  , and the attached bathroom facility had similarly provided no fo dder  . 
+right_seen: 0	prob: [0.9952913522720337, 0.004708710126578808]	all there was  , all i remembered  , was a blur  . 
+right_seen: 0	prob: [0.9887304902076721, 0.01126947347074747]	11  ) he ston  ' s allegedly implied racism  . 
+right_seen: 0	prob: [0.9949737787246704, 0.00502623850479722]	he was standing right in front of some blue lights  , so i could  n ' t see him very well  , but i noticed the way that the light set off his pale skin  . 
+right_seen: 1	prob: [0.0013222377747297287, 0.9986777901649475]	make another one if you love it  !  !  ! 
+right_seen: 1	prob: [0.00037408721982501447, 0.9996259212493896]	billy had a terrific train set that went round and round  ; complete with a nearby town  . 
+right_seen: 0	prob: [0.9941944479942322, 0.005805525928735733]	he was irritated by the young man s optimism  , his desire to penetrate deeper into the past  , the customs and beliefs of these people  ; to find explanation s for their shortcomings  ; and  , finally  , to discover the good in them  , stifle d and distorted by the unusual circumstances in which they were obliged to live  . 
+right_seen: 1	prob: [0.0009804939618334174, 0.9990195035934448]	the restaurant  ' s architectural design was impressive  . 
+right_seen: 0	prob: [0.9935153722763062, 0.006484575569629669]	it is by now well documented that the cia tolerate d crack sales in us cities to fund the operation of south american  " contra s  " it is equally well known that the so - called  " war on drugs  " begun under the nixon administration is a failure which has cost hundreds of billion s and made america the world leader in prison population  ( both in relative and absolute numbers  )  . 
+right_seen: 0	prob: [0.9955626726150513, 0.004437364172190428]	the room  s tank  , mostly of his own despair  . 
+right_seen: 0	prob: [0.9951234459877014, 0.0048765866085886955]	i died in those last moments  ,  s uff oc ating on my own exhaled breath  , and this  , this was my reward  . 
+right_seen: 0	prob: [0.8467395305633545, 0.1532604992389679]	the high quality of the seam on milo s ensured that the area remained popular with early travelers  . 
+right_seen: 0	prob: [0.9950478076934814, 0.004952244460582733]	statistics are moore  ' s weak est point  , and it is surprising that his critics do  n ' t dwell on them longer  . 
+right_seen: 0	prob: [0.9954417943954468, 0.004558238200843334]	i wanted to find something  , anything  , that would prove all this was normal and san e  . 
+right_seen: 1	prob: [0.0002936078526545316, 0.9997063279151917]	a young blond woman wearing sunglasses on top of her head is laughing  . 
+right_seen: 0	prob: [0.9944471120834351, 0.005552899558097124]	but lacking the means to enforce its decision  , the united nations was power less to halt the fighting that erupted as the british withdrew their troops in 1948  . 
+right_seen: 0	prob: [0.993802011013031, 0.006197999231517315]	moore portrays the  n ra as an un eth ical  , dishonest organization  ; he sees the paranoia and fear in the united states as a primary cause of violence  , and he does not see gun ownership itself as a problem  . 
+right_seen: 1	prob: [0.0008972453651949763, 0.9991028308868408]	bake at 180 degrees of 40  - 50 minutes  . do  n ' t think highly too that cheese was  n ' t over ro as ted  . 
+right_seen: 0	prob: [0.9930353164672852, 0.006964745465666056]	constantinople was taken by crusader forces in 12 04  , and they stripped the city of many of its finest treasure s  <unk> which now grace the public buildings of venice  <unk> although a large con sign ment of books and manuscripts was transferred to the monastery at pat mos before the city fell  . 
+right_seen: 1	prob: [0.0005540435668081045, 0.9994459748268127]	 " a sustainable financial product makes money for the bank  , but also provides a service that meets the needs of customers  .  " 
+right_seen: 0	prob: [0.9952410459518433, 0.004758928902447224]	one might well ask who needs it  , and how it ji bes with all the frantic appeals for economy which are constantly being din ned into our ears  . 
+right_seen: 1	prob: [0.000483150128275156, 0.9995168447494507]	i  ' ll get it off and sent carol  . 
+right_seen: 0	prob: [0.9939020872116089, 0.006097894627600908]	the next thing that comes out of your mouth is probably what shell respond to until we figure out how to put her back  . <unk> i was at a loss  . 
+right_seen: 0	prob: [0.9893894791603088, 0.010610571131110191]	i mean  , he is kinda tight about that stuff  . <unk> he didnt look very surprised  . 
+right_seen: 0	prob: [0.9946433305740356, 0.005356630310416222]	a new school of jewish historians is more critical of the dis location s caused by jewish land acquisition  , and concludes that it was not always fair  . 
+right_seen: 0	prob: [0.9948703050613403, 0.005129758734256029]	good luck  . <unk> something with too many arms was manning the turn table s above the crowd  , which looked more imp ene tr able tonight than ever before  . 
+right_seen: 0	prob: [0.990815281867981, 0.009184706956148148]	we  ' re selective about our passengers  , <unk> he continued  . 
+right_seen: 0	prob: [0.9944685697555542, 0.0055313860066235065]	behaviour ism fell with a famous 1950 s experiment in wisconsin in which orphan baby monkeys became emotionally attached to cloth models of their mothers even when fed only from wire models  , thus refusing to obey the theory that we mammals can be  conditioned to prefer the feel of anything that gives us food  - a preference for soft mothers is probably in nate  . 
+right_seen: 1	prob: [0.0003777030506171286, 0.9996222257614136]	the people in the area were easy going  . 
+right_seen: 1	prob: [0.00025255029322579503, 0.9997474551200867]	a young man is sleeping in bed with a dog and remote control  . 
+right_seen: 0	prob: [0.9764798283576965, 0.023520205169916153]	i know your family because an ancestor of mine made a bargain with an ancestor of your s  . 
+right_seen: 1	prob: [0.0017630165675655007, 0.9982370138168335]	 " well  , i never knew him really  , till right at the end  .  " 
+right_seen: 0	prob: [0.9943367838859558, 0.005663193762302399]	the first law of thermodynamic s states un equi vocal ly that energy is always conserved  , and therefore it can neither be lost nor renewed  . 
+right_seen: 0	prob: [0.9945247173309326, 0.005475279409438372]	whether this will ever happen remains to be seen  , but perhaps the aid offered by greece to turkey after 1999 s devastating earthquake is a sign that the an imo s ity between these two traditional enemies is beginning to diminish  . 
+right_seen: 0	prob: [0.9960404634475708, 0.003959587775170803]	that bit  , remember  ? 
+right_seen: 1	prob: [0.0006964625790715218, 0.9993035793304443]	i want to look this good when i  ' m 50  . 
+right_seen: 1	prob: [0.0005184027832001448, 0.9994816184043884]	 " football player  , seen here during a training session earlier in the week  , is set for his third world cup  .  " 
+right_seen: 0	prob: [0.9691437482833862, 0.030856285244226456]	but theatre does not media te that kind of help  ; it is not a church  . 
+right_seen: 1	prob: [0.004399693105369806, 0.9956003427505493]	what do you want dad  ? 
+right_seen: 1	prob: [0.001147399889305234, 0.9988526105880737]	continuing with the party was a great shadow dance by the model  . 
+right_seen: 0	prob: [0.9759758114814758, 0.024024153128266335]	i decided it could  n ' t have been  . 
+right_seen: 0	prob: [0.9896578192710876, 0.010342208668589592]	it almost looked like the light bent around him without actually touching him directly  . 
+right_seen: 0	prob: [0.9936259984970093, 0.00637401407584548]	dixon liked and revered him for his air of de test ing everything that presented itself to his senses  , and of not meaning to let this de te station become sta led by custom  . 
+right_seen: 0	prob: [0.9901280999183655, 0.00987185351550579]	your daughter elizabeth  , it is presumed  , will not long bear the name of ben net  , after her elder sister has resigned it  , and the chosen partner of her fate may be reasonably looked up to as one of the most illustrious person ages in this land  .  " 
+right_seen: 1	prob: [0.00026892885216511786, 0.9997310042381287]	the man on the grass is playing with his soccer ball  . 
+right_seen: 1	prob: [0.0003498410515021533, 0.9996501207351685]	 " a red dog stands in a rocky shore  , its feet in the sea  .  " 
+right_seen: 1	prob: [0.0030868512112647295, 0.9969130754470825]	the stands were absolutely packed at this year  ' s virginia tech graduation ceremony  . 
+right_seen: 0	prob: [0.9945429563522339, 0.005456988699734211]	after all  , early in the movie he discard s the possibility that playing violent video games and watching violent flick s can cause violence  - - because canadian s like  , and japanese positively love  , those  . 
+right_seen: 1	prob: [0.0011314961593598127, 0.9988685846328735]	do  n ' t talk stupid  ! 
+right_seen: 1	prob: [0.0003009679785463959, 0.9996991157531738]	woman looks at the ocean  . 
+right_seen: 1	prob: [0.0003548050008248538, 0.9996452331542969]	we went to see the animal kingdom  ; and our first stop was some gaze lle like animal  . 
+right_seen: 1	prob: [0.0002366395347053185, 0.9997633099555969]	a man stands in front of a building wearing a hat and suit  . 
+right_seen: 1	prob: [0.0003580060147214681, 0.999642014503479]	an old television is sitting on a sandy beach  . 
+right_seen: 0	prob: [0.9840400815010071, 0.01595996879041195]	 <unk> he had almost exhausted his polite little waiter repertoire and would soon be slipping into his role of a rather tight lipp ed and sarcastic little waiter  . 
+right_seen: 1	prob: [0.0007997745415195823, 0.9992002844810486]	playing on a small laptop and a phone at the same time is not recommended 
+right_seen: 0	prob: [0.9924662709236145, 0.007533741649240255]	they were spirits of a certain branch of the volga and the village based around a mill on that tributary  . 
+right_seen: 1	prob: [0.0030823012348264456, 0.996917724609375]	you can try and try and try  . 
+right_seen: 1	prob: [0.000359079975169152, 0.999640941619873]	 " enjoy ! to make rice even more easily  , you could also check out some rice cook er reviews and take your rice cooking to the next level  !  " 
+right_seen: 1	prob: [0.0004497825284488499, 0.9995501637458801]	add  1/2 cup fine ly  dic ed  jala pen o pepper  . use more or less for desired heat  . remove seeds and membrane s from  jala pen o to reduce heat levels  . 
+right_seen: 1	prob: [0.0011014892952516675, 0.9988985061645508]	 " so we contact the widow  , take over the rights from the original publishers  , and bingo  !  " 
+right_seen: 0	prob: [0.9948516488075256, 0.00514838146045804]	be re ft of my previous familiar life  , i latched onto kish ori and ray and zheng  , and sarah with alexis dragged along on her arm now and then  ( he was mostly her favorite dancing partner  ; she confide d to us one night that his conversation al skills left something to be desired  )  . 
+right_seen: 1	prob: [0.0003072608378715813, 0.9996927976608276]	the boy was looking at the fence as people were around  . 
+right_seen: 1	prob: [0.00046771756024099886, 0.9995323419570923]	pour the hot water with the no od les and cover it for a minute then add the flavor ing  . mix it  . 
+right_seen: 1	prob: [0.000295050471322611, 0.999704897403717]	a pen s ive looking man uses an electric razor to shave himself  . 
+right_seen: 1	prob: [0.00028775769169442356, 0.9997121691703796]	a lady is hanging up her clothing to dry  . 
+right_seen: 1	prob: [0.0004021688364446163, 0.9995978474617004]	making arts and crafts  . 
+right_seen: 0	prob: [0.9946322441101074, 0.0053678033873438835]	young stown is the name of the major city area  , but surrounding it on all sides are small communities which to the casual viewer are in distinguishable from the main city itself  . 
+right_seen: 0	prob: [0.9949148893356323, 0.005085071548819542]	even the official quoted by moore blame s the welfare to work program  , knowing full well that the drug issue is a red her ring  . 
+right_seen: 1	prob: [0.0049020410515367985, 0.9950979351997375]	teaching young people about history can be a complex and highly sensitive task 
+right_seen: 1	prob: [0.0006359141552820802, 0.9993640780448914]	painting by visual artist of general who captured a city  ,  e  , error , , no un phrase or adjective phrase syntax  , 
+right_seen: 1	prob: [0.0006954816053621471, 0.9993045330047607]	called from darkness by the song of the sea  ,  e  , error , , no un phrase or adjective phrase syntax  , 
+right_seen: 1	prob: [0.00040778127731755376, 0.9995922446250916]	looking up at the lighthouse  ,  e  , error , , no un phrase or adjective phrase syntax  , 
+right_seen: 0	prob: [0.9948433637619019, 0.0051566180773079395]	i was more dismay ed  , elsewhere in en right  s book  , to come across the following quotation forge modern demons for modern man  . 
+right_seen: 0	prob: [0.9948588609695435, 0.005141108296811581]	for the first time  , she looked vulnerable  . 
+right_seen: 1	prob: [0.00027440834674052894, 0.9997255206108093]	a young child is sitting at a table with a cake in front of them  . 
+right_seen: 0	prob: [0.9955297112464905, 0.004470326006412506]	poverty is frequently portrayed as natural  , and the poor in america are seen by conservatives as v cr - owner s who are just too lazy to work  . 
+right_seen: 1	prob: [0.0002946650783997029, 0.9997052550315857]	a man pulls a suitcase next to a train  . 
+right_seen: 1	prob: [0.00030261141364462674, 0.9996974468231201]	the elephant with tusk s is walking through the dirt trail  . 
+right_seen: 0	prob: [0.9930364489555359, 0.006963508203625679]	i wish i had a daughter so i could forbid her to marry one  .  .  .  "  ( when he reached home  , des  foss es jo t ted down  : this is something we are both aware of  : that the world is groaning  , choking with a multitude of creation s  , that it is buried by objects and strangled by ideas which all pretend to be necessary  , useful or beautiful and therefore lay claim to perpetual endurance  . 
+right_seen: 1	prob: [0.00041702447924762964, 0.9995829463005066]	put in a good heap ing tea spoon of your favorite instant coffee  . 
+right_seen: 1	prob: [0.000466595811303705, 0.9995334148406982]	football coach is encouraging his team to step forward and help the community in the aftermath  . 
+right_seen: 0	prob: [0.9866905212402344, 0.013309470377862453]	the bible describes how david s soldiers conquered jerusalem by discovering a water tunnel under the walls and using it to take the city by surprise  . 
+right_seen: 0	prob: [0.990880012512207, 0.009119929745793343]	the greatest danger  loom s for dogs when they  ' re taken out to perform their physical needs  , number one and two  . 
+right_seen: 1	prob: [0.00028395047411322594, 0.9997159838676453]	 " a couple of bears sitting on a coach  , one is holding a book  .  " 
+right_seen: 0	prob: [0.9949606657028198, 0.005039358977228403]	in this case  , han lon  ' s razor can be applied to he ston  - - he is probably not racist  , but incompetent  . 
+right_seen: 1	prob: [0.0007163354894146323, 0.9992837309837341]	latin pop artist attend s award category honor ing musical artist 
+right_seen: 1	prob: [0.0002495516382623464, 0.9997504353523254]	a bear is standing in the woods with grass in its mouth  . 
+right_seen: 0	prob: [0.9954692125320435, 0.004530829377472401]	if it was march  , that meant that wed been together almost a year and a half  . 
+right_seen: 1	prob: [0.0003266400017309934, 0.9996733665466309]	here is a lighter jacket and tee shirt combination that is really nice  . 
+right_seen: 0	prob: [0.9949041604995728, 0.005095846951007843]	it adored working for the hitch hike r  s guide to the galaxy  , it just wished there was some way of keeping all the hitch - hi kers away  . 
+right_seen: 0	prob: [0.995693564414978, 0.004306386690586805]	that goes for your grandson mustafa too  , by the way  . 
+right_seen: 1	prob: [0.0002587883791420609, 0.99974125623703]	a boy wearing a hat and sitting on a wall looks over at a group of people standing by the riverside  . 
+right_seen: 0	prob: [0.993540346622467, 0.006459709256887436]	love - in s  , rave s  , gathering s where society is put on hold and humans open themselves to emotion  : that is where entities from this world tend to go when they cross over  , and that is where rachel met someone from this world  . 
+right_seen: 0	prob: [0.9947355389595032, 0.005264466628432274]	certainly  , moore is one of the most talented filmmakers in the united states today  , and his film fully deserved its oscar  . 
+right_seen: 0	prob: [0.9911670088768005, 0.008832991123199463]	the  n ra was fully aware of the scandal it would cause through its rally and decided to push on because they believed to have enough media support to successfully do so  . 
+right_seen: 0	prob: [0.99459308385849, 0.005406943615525961]	one would think that this unnecessary waste of energy could easily be ob vi ated  , for night her ons are fundamentally able to recognize fellow members of their species  . 
+right_seen: 1	prob: [0.002672637114301324, 0.9973273277282715]	seeing a fire truck out in this weather is not a good sign  . 
+right_seen: 1	prob: [0.00023017423518467695, 0.9997698664665222]	a young man is holding a pizza on a cooking sheet  . 
+right_seen: 1	prob: [0.0003042542957700789, 0.9996957778930664]	put in l olli pop s in each square 
+right_seen: 1	prob: [0.0004450524866115302, 0.9995549321174622]	 " well we did  n ' t  , we come back well yo we did  n ' t come back till december  !  ,  " 
+right_seen: 1	prob: [0.0004334085388109088, 0.9995666146278381]	we attended a great little get together camping trip for land rover owners  ! 
+right_seen: 1	prob: [0.00027420438709668815, 0.9997257590293884]	a smiling little boy jumps up to a to y basketball hoop  . 
+right_seen: 1	prob: [0.0008712540147826076, 0.9991287589073181]	 " he was very consider ate like that and he taught us girls a thing or two we lived to be grateful for later on  , i can tell you  .  " 
+right_seen: 1	prob: [0.0005831617745570838, 0.9994168281555176]	mussel s are some of the best in the world 
+right_seen: 1	prob: [0.0003663896641228348, 0.9996335506439209]	 " once the spin ach mix has  cooled a bit  , add sun dried tomatoes  , olive s  , pine nuts and fe ta cheese to the spin ach mix and stir to combine  .  " 
+right_seen: 1	prob: [0.00029412645380944014, 0.9997058510780334]	a gir affe is standing in front of a trough  . 
+right_seen: 1	prob: [0.000454464927315712, 0.9995455145835876]	 " then what happened afterwards  : she panic s  , everyone says  .  ,  " 
+right_seen: 1	prob: [0.0013413650449365377, 0.9986586570739746]	 " he was that smart  , viola  , he would never have fallen for your little game  .  " 
+right_seen: 1	prob: [0.0004053451702930033, 0.9995946288108826]	pay cash for christmas  : simple ways to earn $ 500 by christmas day  . , i 
+right_seen: 1	prob: [0.0007181091350503266, 0.9992819428443909]	all you  '  ve ever wanted to know about pallet wood 
+right_seen: 1	prob: [0.0006372422212734818, 0.9993627667427063]	 " to make your water mel on slice r  , you will need : 4 feet of p vc pipe  ( i used 1 1 /4 inch  , but other thickness es may work as well ) 4 right angle elbow pieces rough ly 8 feet of thin metal wire a pair of needle nose  pli ers a power drill a hack saw  " 
+right_seen: 0	prob: [0.9952014684677124, 0.004798561334609985]	the thing tend ing the cart reminded me of the caterpillar from alice in wonderland  : it had the same opium - dream wise man quality id always given the caterpillar  . 
+right_seen: 0	prob: [0.9935154914855957, 0.006484471261501312]	this is naive to the extreme  - - he ston would not be president of the  n ra if he was not kept up to date on the most prominent cases of gun violence  . 
+right_seen: 0	prob: [0.9922427535057068, 0.007757276762276888]	it was time to find out what hell looked like  . 
+right_seen: 0	prob: [0.9941766262054443, 0.005823412444442511]	according to the la times  , the documentary genre  " owe s a huge debt to michael moore  "  - - after bowling  ' s success  , films like  " spell bound  " and  " capturing the friedman s  " were taken seriously and shown in many more theatre s than otherwise likely  . 
+right_seen: 1	prob: [0.00027444236911833286, 0.9997255206108093]	a man is romantic ally kissing a woman on a park path  . 
+right_seen: 0	prob: [0.9943808913230896, 0.005619178991764784]	b  ) why should moore leave the words  " clinton is on the today show  " visible in the text  , which is necessary to correctly interpret the highlighted part  ? 
+right_seen: 1	prob: [0.00045189590309746563, 0.9995481371879578]	a zebra is standing out in a field 
+right_seen: 1	prob: [0.0004052889416925609, 0.9995947480201721]	they are very excited for the upcoming festivities  . 
+right_seen: 1	prob: [0.0002831559395417571, 0.9997168183326721]	two women are walking through an urban setting with camping equipment  . 
+right_seen: 1	prob: [0.0003431710647419095, 0.9996567964553833]	once the hamburger is brown ed and broken up  . add 1 /3 cup  dic ed on ions 1 /4 cup  dic ed cel ery and continue cooking until done 
+right_seen: 0	prob: [0.9931232333183289, 0.0068767559714615345]	i do  n ' t know much  , <unk> she said  , still annoyed but at least cooperative  . 
+right_seen: 0	prob: [0.9869753122329712, 0.013024657033383846]	that was all  . 
+right_seen: 1	prob: [0.002793028252199292, 0.99720698595047]	we were  n ' t sure what we  ' d be doing  ; but we knew there would be hard work ahead when we saw a barge approaching with lumber  . 
+right_seen: 1	prob: [0.0007777020218782127, 0.9992222785949707]	 " the obsession  , of current management  , with measurement and the reduction of every variable to numbers for ease of computer manipulation has worsened the situation  .  " 
+right_seen: 1	prob: [0.00027512587257660925, 0.999724805355072]	a man is sitting on his black motorcycle  . 
+right_seen: 0	prob: [0.994327962398529, 0.005672062281519175]	arthur sipped his  , and was surprised to discover it tasted very like a whisky and soda  . 
+right_seen: 1	prob: [0.00043567916145548224, 0.9995643496513367]	two women are kissing in the street as someone stands next to them staring at the ground  . 
+right_seen: 0	prob: [0.9944350719451904, 0.005564892664551735]	if there is any boon that you would have us do in return  , we would be glad to do it  . <unk> he continued to lie in place  , still breathing heavily  . 
+right_seen: 1	prob: [0.000635495875030756, 0.9993645548820496]	very tiny organisms made up of a small number of cells they can have characteristics similar to plants or animals 
+right_seen: 1	prob: [0.002610767027363181, 0.9973892569541931]	who  ' s the boy that can laugh at a storm cloud  ? that  ' s me person  ! 
+right_seen: 0	prob: [0.9935389161109924, 0.006461083423346281]	they parted like two men who did not have much to say to each other  , for each was too preoccupied and weighed down by his own worries  . 
+right_seen: 1	prob: [0.00032879202626645565, 0.999671220779419]	 " finally you pour 20 ml of coffee onto the c hipped ice and yo gur t mixture  . in the summer  , vietnamese people often drink this kind of drink  . enjoy the great taste  .  " 
+right_seen: 1	prob: [0.0005524157313629985, 0.9994475245475769]	 " playing in the park  , taken by person  . " , e  , error , , no un phrase or adjective phrase syntax  , 
+right_seen: 1	prob: [0.00046328362077474594, 0.9995367527008057]	van set drawing style  - this is why i love his work  . , x d  , state 
+right_seen: 0	prob: [0.9923891425132751, 0.007610852364450693]	g ide  , whose own journal overlap s for many years with re nard  s  , complained  ( perhaps rival rous ly  ) that the latter  s was  <unk> not a river but a distillery  ; that  ' s what he had sur m ised  , but hearing her say it lent this moment  , this day  , even more significance  .  " 
+right_seen: 0	prob: [0.9939024448394775, 0.0060975560918450356]	black monday and the crash of the steel industry the announcement of the closing of the mills in 1977 was the beginning of a downward spiral  , which would send the enti re valley into chaos and ruin  . 
+right_seen: 1	prob: [0.0005000388482585549, 0.9994999170303345]	 " break up the cooked bacon into bits and sprinkle them onto tort illa and let tu ce  . then sprinkle on the cut up tomatoes  . if you want to add the mayo  , add it on top of the to mato bits  .  " 
+right_seen: 1	prob: [0.0005445536226034164, 0.9994553923606873]	 " then he walked around the little living  - room  , cradling the mug in his hands  , and thinking  .  " 
+right_seen: 1	prob: [0.0010172373149544, 0.9989827275276184]	 " he paused  , seeming to survey the landscape of his relationship with the mach in s  .  " 
+right_seen: 1	prob: [0.0006886335904709995, 0.9993113279342651]	a cloud  - seed ing plane flies over mughal structure  . 
+right_seen: 1	prob: [0.00031523610232397914, 0.9996848106384277]	the water is pumped and filtered  . 
+right_seen: 1	prob: [0.0012951818061992526, 0.9987047910690308]	village has recently converted to shared space where pedestrian s and vehicles share the same 
+right_seen: 1	prob: [0.0002196848945459351, 0.9997803568840027]	a baby lamb is sitting in the grass next an adult sheep  . 
+right_seen: 1	prob: [0.00031877963920123875, 0.9996812343597412]	a man in a leather jacket and cowboy hat holds his hand out on the street  . 
+right_seen: 0	prob: [0.9953729510307312, 0.004627002868801355]	anyway  , this is the dance floor  , man  . 
+right_seen: 0	prob: [0.8859477043151855, 0.11405228823423386]	you believe in something  ! 
+right_seen: 1	prob: [0.00046209851279854774, 0.9995379447937012]	 " a child grimace s for a photo  , teeth bar ed  , while eating a blue  , heart  - shaped l olli pop  .  " 
+right_seen: 1	prob: [0.00022800960869062692, 0.9997720122337341]	a small cat is sitting on top of a suite case  . 
+right_seen: 1	prob: [0.0005928300670348108, 0.999407172203064]	 " he sat up in bed  , stub bed his cigarette out  , and put his arms around his knees in thought  .  " 
+right_seen: 1	prob: [0.0005485205329023302, 0.9994514584541321]	line two baking pan s with  foil  . this is only optional if you like to wash pan s that have been totally  frac ked up by molten sugar y rock  . 
+right_seen: 1	prob: [0.00042529733036644757, 0.9995747208595276]	i finish about ten to one  . 
+right_seen: 0	prob: [0.9944409728050232, 0.005559011362493038]	captain  ' s cohort  , she had a glass of orange - brown liquid in one hand  ; it might have been orange juice and some kind of berry liquor  . 
+right_seen: 0	prob: [0.9948078989982605, 0.005192064214497805]	he ran down a hallway and slipped behind one of the doors  , but ne p thy s was close behind him and left it open for me  . 
+right_seen: 1	prob: [0.002557759638875723, 0.9974422454833984]	the witness was driving northbound along route when the object was first seen  . 
+right_seen: 0	prob: [0.9937406182289124, 0.0062593137845396996]	his female colleagues often rib bed him that his collection of museum - quality artifacts was nothing more than a transparent attempt to fill an empty home  , a home they insisted would benefit greatly from the presence of a woman  . 
+right_seen: 1	prob: [0.004914235323667526, 0.9950857758522034]	let  ' s have a feel  ? 
+right_seen: 0	prob: [0.9935450553894043, 0.006454930640757084]	mahon ing county was a one - in dust ry area  , and the people of young stown  , strut her s  , campbell  , board man township  , and the numerous other small towns and villages in the area only had one main employer  : the steel mills  . 
+right_seen: 1	prob: [0.00046015760744921863, 0.999539852142334]	one of big pumpkin fell down  . 
+right_seen: 0	prob: [0.9945756196975708, 0.005424401257187128]	returning home  , the field chaplain became convinced that nothing could save  s ve jk  , that it was for e or dai ned that he serve lieutenant luka s  . 
+right_seen: 1	prob: [0.00026378099573776126, 0.9997362494468689]	a surfer is taking the downhill slide on green water  . 
+right_seen: 0	prob: [0.9948453903198242, 0.005154573358595371]	i guess we all figured  , he knew what he was doing  . 
+right_seen: 1	prob: [0.0005233617266640067, 0.9994766116142273]	actor attend s the premiere of historical drama film  . 
+right_seen: 1	prob: [0.0003180850762873888, 0.9996819496154785]	a group of formally dressed co ed s are dancing in a colorful ly lit room  . 
+right_seen: 1	prob: [0.00024368851154576987, 0.9997562766075134]	a man on a field is holding a baseball bat  . 
+right_seen: 0	prob: [0.9911443591117859, 0.008855638094246387]	za pho d stared at him as if he expected a cuckoo to leap out of his forehead on a small spring  . 
+right_seen: 1	prob: [0.0002553940284997225, 0.9997445940971375]	a tall gir affe is standing by some palm trees  . 
+right_seen: 1	prob: [0.00022652203915640712, 0.9997734427452087]	a man is sitting on a couch using a laptop  . 
+right_seen: 0	prob: [0.9951137900352478, 0.004886207636445761]	it seemed like tonight s darkness was small and personal  , cupped hands offering a place for two  , not the burning  , open darkness of a rave  . 
+right_seen: 1	prob: [0.0002751843712758273, 0.999724805355072]	a bird sits on the edge of the water  . 
+right_seen: 0	prob: [0.9942522644996643, 0.005747681017965078]	you write  :  " fact  : the little boy was the class thug  , already suspended from school for stabbing another kid with a pencil  , and had fought with kayla the day before  "  . 
+right_seen: 0	prob: [0.9950095415115356, 0.004990481771528721]	as the balkan s flared to war once again  , greek nationalism has stirred  , and there have been discussions in the ka fen e ion about the land of macedonia returning to the fold of its for e father s  . 
+right_seen: 0	prob: [0.9947199821472168, 0.005279961042106152]	no  , he said that his research was purely academic  , not for hunters  . <unk> bu mmer  . 
+right_seen: 0	prob: [0.995046854019165, 0.004953207913786173]	everything to fade away  , lost as dust and scattered atoms between the stars  , and every one of us to be left as alone as the moment we were born  . 
+right_seen: 0	prob: [0.9941942095756531, 0.005805823020637035]	19 th - century aspiration s at the same time  , many jews sought religious freedom and fulfillment by moving to palestine  ( as the holy land was traditionally called  ) and especially to jerusalem  . 
+right_seen: 0	prob: [0.994168758392334, 0.005831235554069281]	she had studied psychology for a while in  grad school  , but now holds the view that psychologist s are going about understanding the mind and understanding the know er and what knowing is the wrong way  . 
+right_seen: 0	prob: [0.9932504892349243, 0.006749546620994806]	souls no ur ish it  .  .  . ly ing in bed with his atlas  , he mapped a trail through the southwest  . 
+right_seen: 1	prob: [0.0005353533197194338, 0.9994646906852722]	 " the chain can be used like any other chain  ( but without the same breaking strength  )  . they are cheap  , easy  , and look really cool  " 
+right_seen: 0	prob: [0.9947102069854736, 0.005289802793413401]	the ottoman s brought new influences to the islands that they controlled  , forming a large empire that stretched around the eastern mediterranean  . 
+right_seen: 1	prob: [0.0014946273295208812, 0.9985053539276123]	 " it envi s ages replacing the bull ring development with a vast new shopping complex  , almost free from the graffiti  - spray ed subway s that have characterised central birmingham since the mid  - sixties  .  ,  " 
+right_seen: 1	prob: [0.0009151069680228829, 0.9990848302841187]	my band mates and i were so excited  . 
+right_seen: 0	prob: [0.9946424961090088, 0.005357471294701099]	it was not an attractive face right now  ; her ebony eyes shadow ed by hours on the watch  , full lips pursed with frustration  . 
+right_seen: 1	prob: [0.0005762139917351305, 0.9994238615036011]	a dog is sitting on a couch in a motor home 
+right_seen: 1	prob: [0.00040594744496047497, 0.9995940327644348]	a beard ed man is wearing a blue shirt and orange tie 
+right_seen: 0	prob: [0.8967008590698242, 0.10329906642436981]	it looked like we were in the back of a nightclub  . 
+right_seen: 0	prob: [0.9912500381469727, 0.008749973960220814]	a couple people staying in their rooms  , even if you switch out the people  , wo  n ' t make a difference  . <unk> he dropped the pec ans back into the dish  , one by one  . 
+right_seen: 0	prob: [0.9949984550476074, 0.005001517944037914]	i dont want my customers think in that anything s wrong  , you know  ? <unk> of course  . 
+right_seen: 1	prob: [0.0005498642567545176, 0.999450147151947]	his parents were so happy  ; even though his dad still could  n ' t seem to smile for the camera  . 
+right_seen: 1	prob: [0.010820806957781315, 0.989179253578186]	 " but seeing a look of sympathy  , she replied  : yes  , that  ' s right  .  " 
+right_seen: 1	prob: [0.00044969184091314673, 0.9995502829551697]	 " into a bowl pour  1/2 cup of boiling water and  1/2 cup of cold water add 1  t sp of sugar to the water and stir add 1  tb sp of yeast to the water  , stir and leave for 10 minutes  ( a fro th should develop on the surface of the water  )  " 
+392 out of 409
+Testing unseen
+Accuracy: 0.80
+Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       1.00      0.32      0.48        19
+           1       0.61      1.00      0.75        20
+
+    accuracy                           0.67        39
+   macro avg       0.80      0.66      0.62        39
+weighted avg       0.80      0.67      0.62        39
+
+
+Wrong predictions:
+
+wrong_unseen: 1	prob: [0.0009075120324268937, 0.9990924596786499]	bread consists of flour , water and yeast  . 
+
+wrong_unseen: 1	prob: [0.002257751766592264, 0.9977422952651978]	this box contains a cake  . 
+
+wrong_unseen: 1	prob: [0.0013591339811682701, 0.9986408352851868]	i have disliked mushroom s for years  . 
+
+wrong_unseen: 1	prob: [0.0008614250109530985, 0.999138593673706]	this shirt fit s me well  . 
+
+wrong_unseen: 1	prob: [0.00045071044587530196, 0.9995492100715637]	julie  ' s always hated dogs  . 
+
+wrong_unseen: 1	prob: [0.0012198620242998004, 0.9987801909446716]	do you hear music  ? 
+
+wrong_unseen: 1	prob: [0.0011915512150153518, 0.9988085031509399]	this cookbook includes a recipe for bread  . 
+
+wrong_unseen: 1	prob: [0.0020970250479876995, 0.9979029893875122]	i  ' ve known julie for ten years  . 
+
+wrong_unseen: 1	prob: [0.0006247364217415452, 0.9993752837181091]	i like reading detective stories  . 
+
+wrong_unseen: 1	prob: [0.0004422247875481844, 0.9995577931404114]	i love chocolate  . 
+
+wrong_unseen: 1	prob: [0.0005621400778181851, 0.9994378685951233]	i prefer chocolate ice cream  . 
+
+wrong_unseen: 1	prob: [0.055198024958372116, 0.9448020458221436]	your idea sounds great  . 
+
+wrong_unseen: 1	prob: [0.001256686868146062, 0.9987433552742004]	i suppose john will be late  . 13 out of 39
+
+Right predictions:
+
+right_unseen: 0	prob: [0.980494499206543, 0.019505470991134644]	i do  n ' t believe the news  . 
+
+right_unseen: 0	prob: [0.9813209176063538, 0.018679078668355942]	i disagree with you  . 
+
+right_unseen: 0	prob: [0.9831273555755615, 0.016872575506567955]	i did  n ' t realise the problem  . 
+
+right_unseen: 0	prob: [0.9015235304832458, 0.09847649931907654]	i did  n ' t recognise my old friend  . 
+
+right_unseen: 0	prob: [0.9576661586761475, 0.04233384132385254]	he did  n ' t remember my name  . 
+
+right_unseen: 0	prob: [0.9811518788337708, 0.01884809136390686]	the noise surprised me  . 
+
+right_unseen: 1	prob: [0.0004540269437711686, 0.9995459914207458]	she plays tennis every friday  . 
+
+right_unseen: 1	prob: [0.0004111527814529836, 0.9995889067649841]	she ' s playing tennis right now  . 
+
+right_unseen: 1	prob: [0.0002936910605058074, 0.9997063279151917]	the snow melt s every spring  . 
+
+right_unseen: 1	prob: [0.0003799642145168036, 0.9996199607849121]	the snow is melting right now  . 
+
+right_unseen: 1	prob: [0.00032676520640961826, 0.9996732473373413]	the boxer hits his opponent  . 
+
+right_unseen: 1	prob: [0.0003896079433616251, 0.9996103644371033]	the boxer is hitting his opponent  . 
+
+right_unseen: 1	prob: [0.0007527705747634172, 0.9992473125457764]	they  ate their dinner in silence  . 
+
+right_unseen: 1	prob: [0.0006412812508642673, 0.9993587136268616]	i walked past the barn  . 
+
+right_unseen: 1	prob: [0.0002842096728272736, 0.9997157454490662]	we learned to make past a  . 
+
+right_unseen: 1	prob: [0.00032198033295571804, 0.9996780157089233]	he grew potatoes in his farm  . 
+
+right_unseen: 1	prob: [0.000526999996509403, 0.9994730353355408]	i slept all morning  . 
+
+right_unseen: 1	prob: [0.00033906541648320854, 0.9996609687805176]	we talked for hours on our trips  . 
+
+right_unseen: 1	prob: [0.0009660724899731576, 0.9990339279174805]	i will write you a letter tomorrow  . 
+
+right_unseen: 1	prob: [0.0005745599628426135, 0.9994254112243652]	she runs ten kilometers a day  . 
+
+right_unseen: 1	prob: [0.0002939050318673253, 0.9997060894966125]	he read a fairy tale to his kids  . 
+
+right_unseen: 1	prob: [0.00030257998150773346, 0.9996974468231201]	the boy kicked the ball hard  . 
+
+right_unseen: 1	prob: [0.0010986735578626394, 0.9989013671875]	we will go soon  . 
+
+right_unseen: 1	prob: [0.0008185433689504862, 0.9991814494132996]	he screamed for help  . 
+
+right_unseen: 1	prob: [0.0004528881690930575, 0.9995470643043518]	the dogs bark all night  . 
+
+right_unseen: 1	prob: [0.029181960970163345, 0.9708181023597717]	she closed the door  . 26 out of 39

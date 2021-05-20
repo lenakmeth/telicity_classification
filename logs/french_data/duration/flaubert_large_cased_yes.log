@@ -1,0 +1,1066 @@
+
+Uses verb segment ids: yes
+Model: flaubert/flaubert_large_cased
+Train set: 3328
+Validation set: 416
+Test set: 416
+transformer.attentions.0.q_lin.bias                          (1024,)
+transformer.attentions.0.k_lin.weight                   (1024, 1024)
+transformer.attentions.0.k_lin.bias                          (1024,)
+transformer.attentions.0.v_lin.weight                   (1024, 1024)
+transformer.attentions.0.v_lin.bias                          (1024,)
+transformer.attentions.0.out_lin.weight                 (1024, 1024)
+transformer.attentions.0.out_lin.bias                        (1024,)
+transformer.attentions.1.q_lin.weight                   (1024, 1024)
+transformer.attentions.1.q_lin.bias                          (1024,)
+transformer.attentions.1.k_lin.weight                   (1024, 1024)
+transformer.attentions.1.k_lin.bias                          (1024,)
+transformer.attentions.1.v_lin.weight                   (1024, 1024)
+transformer.attentions.1.v_lin.bias                          (1024,)
+transformer.attentions.1.out_lin.weight                 (1024, 1024)
+transformer.attentions.1.out_lin.bias                        (1024,)
+transformer.attentions.2.q_lin.weight                   (1024, 1024)
+	======== Epoch 1 / 4 ========
+Training...
+	Batch    40	of	  104.		Elapsed: 0:18:07.
+	Batch    80	of	  104.		Elapsed: 0:35:35.
+	Average training loss: 0.81
+	Training epoch took: 0:46:13
+	Running Validation...
+	Accuracy: 0.68
+	Validation took: 0:02:07
+	Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.65      0.91      0.76       227
+           1       0.79      0.41      0.54       189
+
+   micro avg       0.68      0.68      0.68       416
+   macro avg       0.72      0.66      0.65       416
+weighted avg       0.71      0.68      0.66       416
+
+	======== Epoch 2 / 4 ========
+Training...
+	Batch    40	of	  104.		Elapsed: 0:17:23.
+	Batch    80	of	  104.		Elapsed: 0:34:35.
+	Average training loss: 0.63
+	Training epoch took: 0:45:21
+	Running Validation...
+	Accuracy: 0.74
+	Validation took: 0:02:07
+	Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.71      0.88      0.78       227
+           1       0.80      0.56      0.66       189
+
+   micro avg       0.74      0.74      0.74       416
+   macro avg       0.75      0.72      0.72       416
+weighted avg       0.75      0.74      0.73       416
+
+	======== Epoch 3 / 4 ========
+Training...
+	Batch    40	of	  104.		Elapsed: 0:17:29.
+	Batch    80	of	  104.		Elapsed: 0:34:44.
+	Average training loss: 0.51
+	Training epoch took: 0:45:17
+	Running Validation...
+	Accuracy: 0.79
+	Validation took: 0:02:05
+	Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.74      0.95      0.83       227
+           1       0.91      0.60      0.73       189
+
+   micro avg       0.79      0.79      0.79       416
+   macro avg       0.83      0.78      0.78       416
+weighted avg       0.82      0.79      0.78       416
+
+	======== Epoch 4 / 4 ========
+Training...
+	Batch    40	of	  104.		Elapsed: 0:17:07.
+	Batch    80	of	  104.		Elapsed: 0:34:29.
+	Average training loss: 0.45
+	Training epoch took: 0:44:59
+	Running Validation...
+	Accuracy: 0.81
+	Validation took: 0:02:05
+	Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.81      0.84      0.82       227
+           1       0.80      0.77      0.78       189
+
+   micro avg       0.81      0.81      0.81       416
+   macro avg       0.80      0.80      0.80       416
+weighted avg       0.81      0.81      0.80       416
+
+Loaded model succesful. Running testing...
+Accuracy: 0.81
+Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.81      0.84      0.82       227
+           1       0.80      0.77      0.78       189
+
+   micro avg       0.81      0.81      0.81       416
+   macro avg       0.80      0.80      0.80       416
+weighted avg       0.81      0.81      0.80       416
+
+
+Wrong predictions:
+wrong_val: 1	prob: [0.28027504682540894, 0.7197249531745911]	Une petite fille dans un harnais est dans les airs par une journée ensoleillée . 
+wrong_val: 1	prob: [0.29198306798934937, 0.7080169320106506]	De les groupes de personnes sont dans un parc urbain ou marchent vers le quartier principal . 
+wrong_val: 1	prob: [0.41873788833618164, 0.5812620520591736]	Il sait pour nous . 
+wrong_val: 0	prob: [0.8937634229660034, 0.10623657703399658]	Je comprends , la police ne porterait pas plainte pour une personne qui a disparu pendant la nuit . 
+wrong_val: 1	prob: [0.21291987597942352, 0.7870801091194153]	Il m ' a fallu une trentaine de secondes pour choisir le sandwich à le poulet Charles ton : poitrine de poulet mar inée et grill ée sur un pain à le lev ain avec de le hav ar ti fondu , de la lai tue romaine et de la mayonnaise à les cann e berges . 
+wrong_val: 1	prob: [0.06790868937969208, 0.9320912957191467]	Une foule se rassemble dans un bar local . 
+wrong_val: 1	prob: [0.37964269518852234, 0.6203573346138]	Un homme en chemise rouge tient deux animaux écor chés morts sur une table , avec une scie à proximité et un couteau à la main . 
+wrong_val: 1	prob: [0.21917006373405457, 0.7808299660682678]	Deux hommes regardent dans les télesco pes solaires . 
+wrong_val: 0	prob: [0.5459593534469604, 0.4540405571460724]	inquiet : les agriculteurs craign aient que la forte hausse de les températures cette année n ' entraîne un raccour c issement de la saison de culture de le genre biologique , mais les pluies récentes pourraient l ' aider à poursuivre sa croissance jusqu ' à la fin de le mois de juillet 
+wrong_val: 0	prob: [0.5453928112983704, 0.454607218503952]	Les conditions d ' hygiène dans les bidon villes sont catastrophiques . 
+wrong_val: 0	prob: [0.8710567951202393, 0.12894318997859955]	Certains messages étaient politiques . 
+wrong_val: 1	prob: [0.301300585269928, 0.6986994743347168]	La chaîne de la corde s ' en roule sur mes genoux . 
+wrong_val: 0	prob: [0.6463695764541626, 0.3536304533481598]	Ça ne te fati gu erait pas ? dit rapidement Des mond . 
+wrong_val: 0	prob: [0.6809231042861938, 0.319076806306839]	Des mond dit que c ' est la femme avec qui il vit , n ' est -ce pas terrible , à son âge ! 
+wrong_val: 0	prob: [0.8306548595428467, 0.16934515535831451]	Je commençais à être très fatigué . 
+wrong_val: 0	prob: [0.6171402931213379, 0.3828596770763397]	Nous pourrions juste nous asseoir et collecter les loyers d ' un nombre toujours plus réduit de locataires . 
+wrong_val: 1	prob: [0.4646449685096741, 0.5353550314903259]	Notre cuisine rend hommage à notre amour de les traditions de le Sud à table , mais , comme les bonnes gens d ' Ash eville , elle marche à son propre rythme . 
+wrong_val: 1	prob: [0.4111975431442261, 0.5888023972511292]	Une femme a un tatouage dans le dos . 
+wrong_val: 1	prob: [0.49256739020347595, 0.5074325203895569]	Elle a de le bon sang sous les joues . 
+wrong_val: 1	prob: [0.1238204836845398, 0.8761794567108154]	Voy ager à l ' étranger peut être un plaisir ! 
+wrong_val: 1	prob: [0.4069652557373047, 0.5930347442626953]	" De les demi- paires de chaussettes allon gées dans de les tasses de café à moitié bu es . 
+wrong_val: 1	prob: [0.4354163706302643, 0.5645835995674133]	Une femme en chemise rouge est sous une couverture et dort dans un véhicule . 
+wrong_val: 0	prob: [0.8345236778259277, 0.16547633707523346]	Je veux prendre mon badge , sinon si tu le ti res , il va déchirer mon jean . 
+wrong_val: 0	prob: [0.7052244544029236, 0.2947755455970764]	Cette petite poupée avait l ' impression qu ' elle ne pouvait plus continuer . 
+wrong_val: 0	prob: [0.845626175403595, 0.1543739140033722]	Il est clair que les questions doivent être telles que l ' on peut s ' attendre à ce que la population concernée les comprenne et y réponde en connaissance de cause . 
+wrong_val: 0	prob: [0.5383866429328918, 0.46161338686943054]	J ' ai décidé de briser ce schéma . 
+wrong_val: 0	prob: [0.7783198356628418, 0.22168023884296417]	Cas ey , qui n ' était pas sûre de son avenir , était devenue une grande créatrice de mode à New York . 
+wrong_val: 0	prob: [0.7809152007102966, 0.21908481419086456]	Je ne l ' ai jamais fait , dit Rose , avec sa vieille énergie . 
+wrong_val: 1	prob: [0.22558686137199402, 0.7744131088256836]	a demandé Adri enne , en utilisant la formulation de Sarah . 
+wrong_val: 0	prob: [0.7660735249519348, 0.23392640054225922]	Rien de le tout , dit Greg en sortant par la porte d ' entrée . 
+wrong_val: 0	prob: [0.7215648293495178, 0.27843523025512695]	Est -ce que Claire est passée ? 
+wrong_val: 0	prob: [0.5055654644966125, 0.4944344758987427]	Tout le monde semble s ' intéresser à lui ces derniers temps . 
+wrong_val: 0	prob: [0.9302246570587158, 0.0697752982378006]	Ils devaient être riches , vu la taille de leurs pierres tomb ales . 
+wrong_val: 1	prob: [0.25869354605674744, 0.741306483745575]	Les pommes de terre étaient légères et non grasses ; 
+wrong_val: 1	prob: [0.26672762632369995, 0.7332723736763]	Tout le monde est habillé à les couleurs de mon mariage . 
+wrong_val: 1	prob: [0.2604486346244812, 0.739551305770874]	Un chien noir participe à une course de chiens . 
+wrong_val: 1	prob: [0.24156425893306732, 0.7584357261657715]	C ' est Halloween et tous les enfants sont dégu isés . 
+wrong_val: 1	prob: [0.22265595197677612, 0.7773440480232239]	De nombreuses personnes sont dehors et regardent les patin eurs sur glace . 
+wrong_val: 1	prob: [0.11463917791843414, 0.885360836982727]	Un petit garçon en chemise blanche fait de l ' escalade . 
+wrong_val: 0	prob: [0.7718156576156616, 0.22818440198898315]	Eh bien , je ne vais pas le faire là-dedans . 
+wrong_val: 0	prob: [0.5898635983467102, 0.4101363718509674]	Un homme portant une casquette noire , une chemise noire à manches longues et un tablier violet est souriant 
+wrong_val: 0	prob: [0.8428935408592224, 0.1571064442396164]	La vérité est que je n ' ai aucune chance de trouver un emploi . 
+wrong_val: 0	prob: [0.5648033618927002, 0.4351966381072998]	Je dis , tu veux une autre bière ? 
+wrong_val: 1	prob: [0.09605972468852997, 0.9039402604103088]	De les adultes et de les enfants dansent dans une pièce . 
+wrong_val: 0	prob: [0.9840835928916931, 0.0159163661301136]	Il ne l ' attribue certainement pas à un discours où elle n ' a pas été prononcée et , comme indiqué ci-dessus , le faire deux fois n ' aurait aucun sens si Moore était le maître de la tromperie que ses détracteurs prétendent qu ' il est . 
+wrong_val: 0	prob: [0.7207603454589844, 0.2792397141456604]	Par exemple , toute tâche de diagnostic peut être facilitée par une tax onomie de les symptômes et une tax onomie de les causes , ainsi que par les liens entre eux . 
+wrong_val: 0	prob: [0.5175801515579224, 0.4824198782444]	De les personnes sur de les motos descendent une rue où flotte un drapeau américain . 
+wrong_val: 0	prob: [0.9605609774589539, 0.03943900763988495]	Pas seulement parce que c ' était un motif ridi culement in adéquat , mais parce que ce n ' était pas vrai . , 
+wrong_val: 1	prob: [0.19888170063495636, 0.8011182546615601]	Une maison est en construction . 
+wrong_val: 0	prob: [0.929063081741333, 0.07093694061040878]	Mais ... bon , personne d ' important ne disparaît jamais , alors ça n ' a pas vraiment d ' importance , n ' est -ce pas ? 
+wrong_val: 0	prob: [0.7611432671546936, 0.238856703042984]	Nous étions très proches . 
+wrong_val: 0	prob: [0.5319746136665344, 0.46802541613578796]	Claire et Amanda ne s ' étaient pas vues depuis dix ans et étaient ravi es de passer de le temps ensemble . 
+wrong_val: 0	prob: [0.6070265769958496, 0.3929734528064728]	Ici , à une réunion de Team USA , ils montrent la nouvelle ligne de vêtements pour 2015 . 
+wrong_val: 1	prob: [0.3764322102069855, 0.6235677599906921]	Un joueur de tennis asiatique s ' apprête à frapper la balle . 
+wrong_val: 0	prob: [0.8022962808609009, 0.19770368933677673]	Mais voyant un regard de sympathie , elle a répondu : Oui , c ' est vrai . 
+wrong_val: 1	prob: [0.291061669588089, 0.7089383602142334]	Une femme est dans un bus public traversant une ville . 
+wrong_val: 1	prob: [0.37897056341171265, 0.6210294961929321]	Un homme vêtu de cuir noir avec un band ana rouge sourit à la caméra . 
+wrong_val: 1	prob: [0.14949274063110352, 0.8505073189735413]	Les photos vont être magnifiques . 
+wrong_val: 1	prob: [0.3018215596675873, 0.6981784701347351]	La réception va être géniale . 
+wrong_val: 0	prob: [0.7321145534515381, 0.2678854465484619]	Je me suis sentie si bien lorsque mon nom a été appelé et que je me suis dirigée vers l ' avant de la scène pour recevoir mon diplôme . 
+wrong_val: 1	prob: [0.03082863800227642, 0.9691712856292725]	vous l ' utilisez pour faire naviguer un mini ra deau sur la lente et lourde rivière M oth ; 
+wrong_val: 0	prob: [0.567301869392395, 0.43269816040992737]	J ' ai roulé aussi vite que possible jusqu ' à ce que je trouve l ' école . 
+wrong_val: 1	prob: [0.49862006306648254, 0.5013799071311951]	La nourriture était délicieuse et tout le monde était rassasi é et heureux . 
+wrong_val: 0	prob: [0.5376367568969727, 0.46236318349838257]	Ils avaient une grande variété d ' aliments parmi lesquels choisir . 
+wrong_val: 0	prob: [0.8591720461845398, 0.14082792401313782]	Et cela aurait pu facilement la faire pani quer . 
+wrong_val: 1	prob: [0.2959272861480713, 0.7040727138519287]	Deux jeunes hommes exécutent un numéro de danse moderne . 
+wrong_val: 0	prob: [0.655728816986084, 0.3442712128162384]	Voilà , je vais garder ça . 
+wrong_val: 1	prob: [0.3229677677154541, 0.6770322322845459]	De les gens sont dehors en train de danser lors d ' un événement nocturne tandis que les artistes chantent et jouent de les instruments sur une scène bien éclairée . 
+wrong_val: 0	prob: [0.8406158089637756, 0.15938416123390198]	Je n ' aime pas l ' attitude de le peuple Emma . 
+wrong_val: 0	prob: [0.7675598859786987, 0.23244014382362366]	Le soir , les routes étaient relativement dégag ées . 
+wrong_val: 1	prob: [0.2909541726112366, 0.7090457677841187]	Les couverts sont vraiment magnifiques . 
+wrong_val: 1	prob: [0.41097015142440796, 0.589029848575592]	Et les meilleurs acteurs , chanteurs et danseurs de l ' Opéra étaient là pour agrémenter les dîners . 
+wrong_val: 1	prob: [0.47993600368499756, 0.5200639963150024]	Tu veux rester coincé ici pour le reste de ta vie ? 
+wrong_val: 0	prob: [0.7831021547317505, 0.2168978601694107]	Après minuit , tout le monde se sentait fatigué et étour di . 
+wrong_val: 1	prob: [0.27698034048080444, 0.7230196595191956]	Un jeune garçon est sur le dos d ' une autre personne qui porte un chapeau . 
+wrong_val: 0	prob: [0.7931071519851685, 0.20689283311367035]	Dans une étrange juxta position de la réalité , un vieux piano est assis à le coin d ' une rue animée la nuit . 
+wrong_val: 0	prob: [0.6767630577087402, 0.3232369124889374]	Par définition et inten tionnellement , les rou tines sont inflexi bles . 
+wrong_val: 0	prob: [0.6983412504196167, 0.3016586899757385]	Bien sûr , dit Greg .. , 
+wrong_val: 0	prob: [0.8742964863777161, 0.1257035732269287]	Il y avait aussi beaucoup de gens qui prê taient serment . 
+wrong_val: 0	prob: [0.5003836750984192, 0.4996163249015808]	Bon , je vais aller me coiff er . 
+wrong_val: 1	prob: [0.3287080228328705, 0.6712919473648071]	Mais nous voyons de nouveaux visages . 81 out of 416
+
+Right predictions:
+right_val: 0	prob: [0.934571385383606, 0.06542865186929703]	Mais ce décret n ' avait pas la puissance de le droit civil derrière lui . 
+right_val: 0	prob: [0.9319830536842346, 0.06801699101924896]	Il est certain que Moore est l ' un de les cinéastes les plus talentueux de les États-Unis aujourd' hui , et que son film méritait pleinement son Oscar . 
+right_val: 0	prob: [0.7574194669723511, 0.24258048832416534]	C ' était juste une petite installation où quelqu' un avait empil é quelques caisses et apporté quelque chose d ' alcool isé à partager , principalement de la bière . 
+right_val: 1	prob: [0.09450195729732513, 0.9054980278015137]	Un chien blond est allongé sur le carrelage 
+right_val: 1	prob: [0.02110322378575802, 0.9788967967033386]	Une personne tient un long ho t- dog devant une boîte d ' animaux en peluche . 
+right_val: 1	prob: [0.08632445335388184, 0.9136755466461182]	Une femme tient un ours en peluche et sourit . 
+right_val: 1	prob: [0.3366798758506775, 0.6633201241493225]	Une femme tient un ours habillé comme un soldat britannique . 
+right_val: 0	prob: [0.9656346440315247, 0.034365396946668625]	C ' est naïf à l ' extrême - Hes ton ne serait pas président de la N RA s ' il n ' était pas tenu à le courant de les cas les plus marquants de violence armée . 
+right_val: 0	prob: [0.6057896614074707, 0.3942103385925293]	Je ne suis pas sûre d ' être prête à sortir . 
+right_val: 1	prob: [0.04223819449543953, 0.9577617645263672]	Elle aimait poser et sourire pour l ' appareil photo . 
+right_val: 1	prob: [0.3750852048397064, 0.624914824962616]	cabines privées - pour les invités les plus importants , nous avons de les lits situés dans de les cabines privées . 
+right_val: 1	prob: [0.23078079521656036, 0.7692192196846008]	Il s ' est rapidement famili arisé avec les collègues de la nouvelle entreprise . 
+right_val: 0	prob: [0.972564160823822, 0.02743583172559738]	Le tout se résu mait à l ' expression d ' une sécurité absolue et à l ' ignorance de toute transgr ession . 
+right_val: 1	prob: [0.09522625058889389, 0.9047737717628479]	Un alpin iste grimpe à le sommet d ' une montagne ennei gée . 
+right_val: 1	prob: [0.06104135885834694, 0.9389587044715881]	Une main tient de la nourriture et une boisson est sur la table . 
+right_val: 1	prob: [0.24906793236732483, 0.7509320378303528]	J ' ai essayé de m ' entraîner à faire de les portraits ces derniers temps . 
+right_val: 0	prob: [0.8165454268455505, 0.18345452845096588]	Mon nom , Jesus Qui les , est juste là . 
+right_val: 0	prob: [0.6990520358085632, 0.3009479343891144]	Arthur essayait de mesurer la vitesse à laquelle ils voyage aient , mais le noir extérieur était absolu et il n ' avait aucun point de référence . 
+right_val: 1	prob: [0.1174468845129013, 0.8825531005859375]	Une femme fum ant une cigarette joue de la guitare . 
+right_val: 1	prob: [0.014152126386761665, 0.9858478307723999]	vous êtes-vous déjà demandé à quoi ressemble la maison blanche pendant les vacances ? 
+right_val: 1	prob: [0.4990878105163574, 0.5009122490882874]	Monte . 
+right_val: 0	prob: [0.633145809173584, 0.36685416102409363]	En refer mant la boîte , il s ' est arrêté près de la porte ouverte et m ' a regardé . 
+right_val: 1	prob: [0.041263461112976074, 0.9587365388870239]	La femme lit un livre dans la bibliothèque . 
+right_val: 0	prob: [0.9225532412528992, 0.07744675874710083]	Dans les régions pauvres , le commerce très rentable de la drogue est souvent considéré comme le dernier recours . 
+right_val: 0	prob: [0.9299620389938354, 0.07003802061080933]	Concernant l ' extrait de le site de la N RA sur l ' affaire et le sur lign age de la phrase 48 heures après que Kay la Rolland ait été déclarée morte : 
+right_val: 0	prob: [0.7548494338989258, 0.24515052139759064]	J ' étais maintenant l ' un d ' entre eux . 
+right_val: 0	prob: [0.7775883078575134, 0.22241166234016418]	On pourrait dire que je suis plus différent que différent . 
+right_val: 0	prob: [0.9332330822944641, 0.06676694005727768]	Par une coïncidence extraordinaire , le jour suivant , il y avait deux rapports dans le journal , l ' un concernant les incidents les plus étonnants avec une sou coupe vol ante , et l ' autre sur une série d ' émeutes incon ven antes dans les pubs . 
+right_val: 0	prob: [0.9738917946815491, 0.026108263060450554]	Jé hu se rendit alors à Je z réel où résidait la vieille re ine- mère , Jé z abel . 
+right_val: 1	prob: [0.20804397761821747, 0.7919560074806213]	comment se battre si l ' on est arrêté à un feu rouge 
+right_val: 1	prob: [0.33049264550209045, 0.6695073843002319]	Un homme portant un chapeau de cow- boy monte un cheval brun . 
+right_val: 0	prob: [0.5123392939567566, 0.4876607060432434]	Curtis souri ait et se frott ait les mains , savour ant le coup de grâce . 
+right_val: 1	prob: [0.27502912282943726, 0.7249709367752075]	les clients n ' aimer ont jamais une entreprise tant que les employés ne l ' aiment pas d ' abord . 
+right_val: 1	prob: [0.34930655360221863, 0.6506935358047485]	Un groupe de personnes hab illées professionnellement à l ' extérieur . 
+right_val: 0	prob: [0.9917752742767334, 0.008224657736718655]	Cependant , la ville étant divisée par de les fortifications et de les fils barbel és , aucun pèler in israélien ou juif n ' a été autorisé à visiter le Mur occidental ou d ' autres sites juifs à Jérusalem-Est . 
+right_val: 0	prob: [0.8127413988113403, 0.18725857138633728]	Lorsque le lecteur souhaite approfondir certains sujets , ou lorsque de les questions techniques sont en jeu , la lecture de les ouvrages pertinents cités dans la bibliographie est recommandée . 
+right_val: 0	prob: [0.7659076452255249, 0.2340923249721527]	En un clin d ' oeil à la lumière str ob oscopique , il était sur ses pieds et se précipi tait hors de la pièce . 
+right_val: 1	prob: [0.056018829345703125, 0.9439811110496521]	un joueur de football a échangé de les maillots signés en été lorsque l ' intérêt était 
+right_val: 0	prob: [0.9708579778671265, 0.029142020270228386]	Nous ne nous souci ons pas d ' être les derniers et nous ne nous souci ons pas qu ' il n ' y ait plus d ' étoiles . 
+right_val: 0	prob: [0.8650705218315125, 0.13492952287197113]	Je veux voir à quoi ressemble une pierre magique . 
+right_val: 1	prob: [0.41084763407707214, 0.589152455329895]	mais 4 écr ous sur vos 4 boul ons comme le montre l ' image . 
+right_val: 0	prob: [0.8574198484420776, 0.14258013665676117]	Elle prit une gor gée de sa boisson , de l ' eau plate car , avait -elle expliqué plus tôt , elle n ' avait jamais aimé le goût de l ' alcool , puis fix a son regard sur moi . 
+right_val: 0	prob: [0.8907033801078796, 0.10929665714502335]	Il est toutefois peu probable que les attaques injustes dont il fait l ' objet aient un impact significatif . 
+right_val: 1	prob: [0.4733465611934662, 0.5266534090042114]	J ' ai rencontré certains de les coureurs . 
+right_val: 1	prob: [0.2634469270706177, 0.7365530729293823]	Un homme en costu me- cravate et chapeau tient un pistolet . 
+right_val: 0	prob: [0.9902376532554626, 0.00976239051669836]	Il était naturel qu ' une petite ville ho d za ne puisse maintenir ce qu ' un Grand V ez ir avait fondé et que les événements historiques avaient condamné à le désastre . 
+right_val: 0	prob: [0.9706814885139465, 0.029318541288375854]	Mais si jamais tu vois une fée , dis- lui que tu es de le sang d ' Ivan Bog aty ri vitch et elle ne te laissera pas passer si vite . 
+right_val: 1	prob: [0.006635421421378851, 0.9933645725250244]	Mettez l ' ail , le basilic , les câ pres et le jus de citron dans un mix eur avec environ une demi- tasse d ' huile d ' olive et commencez à mixer . 
+right_val: 1	prob: [0.10348627716302872, 0.8965137004852295]	Il y a plusieurs verres de vin vides sur la table . 
+right_val: 0	prob: [0.9871058464050293, 0.012894155457615852]	Une grande partie de la meilleure architecture islamique de la ville a été construite à l ' époque mam el ou ke , mais les mille dernières années ont fait de les ravages : Jérusalem n ' a pas pu retrouver la prospérité dont elle avait bénéficié auparavant . 
+right_val: 0	prob: [0.9546394944190979, 0.04536055400967598]	Quand votre vie , la raison pour laquelle vous avez vécu , les gens , les visages , les lieux , les émotions que vous avez ressenti es , les personnes et les choses que vous avez aim ées , quand tout cela aura disparu , qu ' est -ce qu ' il vous restera ? 
+right_val: 0	prob: [0.9887034296989441, 0.011296575888991356]	La reine Hélène , une chrétienne fer vente et la mère de l ' empereur Constantin le Grand , a fait un pèlerinage en Terre Sainte en 3 26 pour identifier les sites associés à la vie de Jésus . 
+right_val: 0	prob: [0.796867311000824, 0.20313262939453125]	Dans une main , je tenais en équilibre mon assiette de cr ack ers en forme d ' étoile , de boules de tremp ettes et de garni tures élégantes , de petites boules rou lées de viandes et de fromages traversées par de les tiges d ' une plante vert pâle , et un ensemble d ' autres petites choses délec tables . 
+right_val: 0	prob: [0.9468263983726501, 0.053173646330833435]	Et bien que cette pensée eût dû être douloureuse , l ' avocat était cal mé par la certitude que personne ne s ' affli gerait . 
+right_val: 0	prob: [0.9325472712516785, 0.06745272129774094]	Ceux d ' entre nous qui vivent en permanence dans ce monde ont tendance à s ' installer dans de les endroits comme celui-ci , où la population humaine est si écrasante qu ' on ne les remarque pas dans le bon coin , avec les bons sorts de protection ... 
+right_val: 0	prob: [0.9239794611930847, 0.07602056115865707]	Vos accusations de coupures in appropriées sont une fois de plus totalement in fondées . 
+right_val: 0	prob: [0.9401149153709412, 0.05988500267267227]	Ses yeux étaient rouges et il avait dénu dé une série de cro cs qui auraient pu m ' arracher la main . 
+right_val: 1	prob: [0.14420653879642487, 0.8557934165000916]	Nous avons profité de le reste de la journée à le bord de la plage en regardant le coucher de le soleil . 
+right_val: 1	prob: [0.4088027775287628, 0.5911972522735596]	Une n ageuse portant un costume rose sort de l ' eau d ' une piscine et fait de les éclabou ssures . 
+right_val: 0	prob: [0.9516952037811279, 0.04830483719706535]	Je ne sais pas comment Jeff erson a su que je me trouvais là . 
+right_val: 0	prob: [0.7850722670555115, 0.21492771804332733]	La seule chose que l ' on savait . 
+right_val: 1	prob: [0.03407496213912964, 0.9659250378608704]	Faites une fente verticale dans l ' une de les olives Jum bo , ce sera le corps , que vous far ci rez de fromage frais . 
+right_val: 0	prob: [0.9746639728546143, 0.025336094200611115]	Constantinople a été prise par les forces de les Cro isés en 120 4 , qui ont dépouillé la ville de nombre de ses plus beaux trésors - qui or nent aujourd' hui les bâtiments publics de Venise - bien qu ' un important lot de livres et de manuscrits ait été transféré à le monastère de Pat mos avant la chute de la ville . 
+right_val: 0	prob: [0.6459596157073975, 0.35404038429260254]	Hé , j ' ai dit , tu es sûr qu ' on devrait aller par là ? 
+right_val: 1	prob: [0.08399654179811478, 0.9160035252571106]	Faites - en un autre si vous l ' aimez ! ! ! 
+right_val: 0	prob: [0.9882358908653259, 0.011764131486415863]	A l ' époque , Jérusalem était un bastion can an éen situé sur une route commerciale secondaire , bien moins important que les villes bibliques telles que Haz or , Me gi d do , B eth She an et Si che m . 
+right_val: 0	prob: [0.7287772297859192, 0.27122271060943604]	Tous les mets raffinés et les éclairages décoratifs , il fallait un prix exorbi tant pour les entretenir . 
+right_val: 1	prob: [0.023549159988760948, 0.9764508008956909]	Un surf eur chev auche une vague sur sa planche de surf . 
+right_val: 0	prob: [0.8975651264190674, 0.10243488848209381]	Je me suis assis de côté dans le fauteuil , les pieds pend us à un bras , le cou reposant contre l ' autre , traçant dis traitement de les lignes invisibles entre les étoiles à l ' extérieur de ma fenêtre pendant que je ru min ais la situation . 
+right_val: 1	prob: [0.34836840629577637, 0.6516315937042236]	Elle a lutté pour se lever et l ' accompagner jusqu ' à la porte . 
+right_val: 0	prob: [0.927697479724884, 0.07230249792337418]	Régi on alis me Dès ses premiers jours , la vallée de Mah oning a été une région remplie de petits villages et hameaux . 
+right_val: 0	prob: [0.909541130065918, 0.09045886993408203]	Alors , quelle est notre cargaison , hein , capitaine ? 
+right_val: 1	prob: [0.081119604408741, 0.9188804030418396]	le plus important est de s ' assurer que la taille de le costume est adaptée à votre morphologie . 
+right_val: 0	prob: [0.5375083088874817, 0.4624916911125183]	Un homme et une femme sont dans un bus . 
+right_val: 0	prob: [0.6784350872039795, 0.32156485319137573]	Sa cr inière est si cool . 
+right_val: 0	prob: [0.971224308013916, 0.02877570316195488]	Une nouvelle école d ' historiens juifs est plus critique à l ' égard de les bouleversements causés par l ' acquisition de terres par les Juifs , et conclut que cela n ' a pas toujours été juste . 
+right_val: 1	prob: [0.11734787374734879, 0.8826521635055542]	un bun ker secret , nouvellement construit , est situé sous le vaste terrain . 
+right_val: 1	prob: [0.43245363235473633, 0.5675463676452637]	Essayez de comprendre les gens avant de leur faire confiance . 
+right_val: 1	prob: [0.004593061748892069, 0.995406985282898]	un réalisateur assiste à la cérémonie de remise d ' une étoile à un acteur . 
+right_val: 1	prob: [0.4373193681240082, 0.5626806616783142]	Une vue à la première personne d ' un homme qui regarde la télévision les pieds en l ' air . 
+right_val: 0	prob: [0.5672805905342102, 0.4327193796634674]	Une femme en vêtements noirs est dans une cuisine , en train de râ per de le fromage . 
+right_val: 0	prob: [0.9428746700286865, 0.0571252666413784]	Ce que l ' étranger pen sera , c ' est qu ' un homme qui peut faire de le stop à travers la galaxie , la rendre difficile , l ' en can ailler , lutter contre de terribles obstacles , gagner , et qui sait toujours où se trouve sa serviette est clairement un homme avec lequel il faut compter . 
+right_val: 0	prob: [0.9349693655967712, 0.06503058224916458]	Il nous a conduits à la porte d ' un bâtiment ressemblant à une pag ode courte surmontée d ' une enseigne montrant un visage à les mains levées , comme un saint sous la lumière de Dieu , et men ot tés . 
+right_val: 0	prob: [0.9712234139442444, 0.028776589781045914]	Son taux de change de huit N ing is pour un P u est assez simple , mais comme un N ing i est une pièce triangulaire en caoutchouc de six mille huit cents milles de côté , personne n ' a jamais rassemblé assez de pièces pour posséder un P u . 
+right_val: 0	prob: [0.9802089929580688, 0.019790975376963615]	Après avoir vu mon vaisseau se déchirer , après avoir passé vingt-trois bonnes heures à flotter en silence dans l ' épave , après m ' être demandé si je faisais face à les étoiles de la const ellation de la Balance ou de la const ellation d ' Ori on vues de la Terre , après m ' être demandé ce que je ressent ais en suff o quant et après avoir eu le sentiment que oui , j ' allais mourir seul dans l ' espace , il m ' a fallu de le temps pour que ce sentiment se dissi pe . 
+right_val: 0	prob: [0.9522716999053955, 0.047728344798088074]	Cela ressemble plus à une correction ultérieure à de les fins de relations publiques , mais bien sûr , personne ne remet en question les déclarations de la banque lorsqu ' elles peuvent être utilisées contre Moore . 
+right_val: 0	prob: [0.6068875789642334, 0.393112450838089]	Cela fait plus d ' une semaine , et je veux danser . 
+right_val: 1	prob: [0.3409730792045593, 0.6590269207954407]	Le cla quement de la porte résonne dans toute la maison . 
+right_val: 1	prob: [0.02593601495027542, 0.9740639925003052]	Roul ez - les en boules de la taille d ' une bouchée ( la taille de les boules dépend de la quantité que vous voulez faire ) . 
+right_val: 0	prob: [0.8397521376609802, 0.16024792194366455]	Il s ' est él ancé vers un escalier encastr é dans le mur , et nous avons couru après lui , en montant un énorme escalier qui semblait avoir plus d ' étages que le bâtiment ne pouvait en contenir . 
+right_val: 0	prob: [0.7937880158424377, 0.20621201395988464]	Alors , un camarade a demandé , Donner sa vie pour un autre être est le don ultime ? 
+right_val: 1	prob: [0.0036232240963727236, 0.9963768124580383]	un artiste country donne un concert surprise pendant le festival 
+right_val: 0	prob: [0.9903910160064697, 0.009609016589820385]	Notre héritage ancien et notre physiologie même nous disent que le sexe est naturel - une voie privilégiée vers l ' épanouissement spirituel - et pourtant la religion moderne le déc rie comme honteux , nous apprenant à craindre notre désir sexuel comme la main de le diable . 
+right_val: 0	prob: [0.9962965846061707, 0.0037034472916275263]	Pendant les 19 années suivantes , Jérusalem était deux villes . 
+right_val: 0	prob: [0.9055343866348267, 0.09446565806865692]	Il est maintenant bien documenté que la CIA a toléré la vente de cr ack dans les villes américaines pour financer les opérations de les contr as sud- américains 
+right_val: 1	prob: [0.12955623865127563, 0.8704438209533691]	J ' ai aussi pu passer de le temps avec le chat . 
+right_val: 0	prob: [0.9846174716949463, 0.01538248360157013]	La question de la vente de les terres est depuis longtemps un sous- thème de la lutte entre Juifs et Arabes . 
+right_val: 0	prob: [0.8802076578140259, 0.11979236453771591]	Mais Ron deau n ' a pas tenu compte de l ' avertissement . 
+right_val: 0	prob: [0.6659823060035706, 0.33401772379875183]	Ils ont rempli la sou te à bagages de deux valises d ' effets personnels , de deux sacs de nourriture et d ' une couverture rou lée dans une housse à carreaux fraîche avec un oreiller - après tout , selon elle , ils ne pouvaient pas dormir dans la même que cette pauvre fille ... 
+right_val: 1	prob: [0.020586783066391945, 0.9794132709503174]	Maintenant , mettez le tout dans le congélateur pour qu ' il soit congel é . 
+right_val: 1	prob: [0.05472150072455406, 0.9452784657478333]	En vous assurant qu ' elles sont encore chaudes , remplissez un mix eur ou un robot de cuisine avec les cacahu ètes grillées . 
+right_val: 1	prob: [0.010459822602570057, 0.989540159702301]	Dans un bol , verser 1 / 2 tasse d ' eau bouillante et 1 / 2 tasse d ' eau froide Ajouter 1 cuillère à café de sucre à l ' eau et remuer Ajouter 1 cuillère à soupe de levure à l ' eau , remuer et laisser reposer 10 minutes ( une mousse doit se former à la surface de l ' eau ) . 
+right_val: 0	prob: [0.8946022391319275, 0.10539773851633072]	Nous , et de les milliers d ' autres comme nous , vivons séparément depuis qu ' il y a une société humaine , dit mon chauffeur . 
+right_val: 0	prob: [0.932637631893158, 0.06736236810684204]	En fait , cela a fait naître l ' espoir chez les travailleurs sans qu ' il y ait une réelle chance de sauver quoi que ce soit . 
+right_val: 0	prob: [0.9366329908370972, 0.06336699426174164]	La fille était aussi douce et rose que l ' éclat de les pierres , et elle était vêtue d ' une robe blanche attachée à la taille par une ceinture comme un noeud celtique . 
+right_val: 0	prob: [0.9789617657661438, 0.021038180217146873]	Ou encore , il pouvait s ' agir d ' une de ces étranges incitations qui surg issaient de temps à autre de cette zone sombre de son esprit qu ' il avait in explic ablement verrou illée avant de devenir président de la galaxie . 
+right_val: 1	prob: [0.08090785890817642, 0.9190921187400818]	c ' est un bain de salade . 
+right_val: 0	prob: [0.970613956451416, 0.029386067762970924]	La brume bleue semblait s ' arrêter juste à côté de sa pâ leur , mettant en valeur son visage frappant sans en illumin er les détails , et ses poignets étincel aient de blancheur dans l ' obscurité . 
+right_val: 1	prob: [0.07098328322172165, 0.9290167689323425]	La personne sur une moto roule sur la plage . 
+right_val: 0	prob: [0.7982968091964722, 0.20170322060585022]	En quelques minutes , nous étions de retour à la première porte à laquelle nous avons frappé dans cette ville et D vor ov lui-même nous accueillait . 
+right_val: 0	prob: [0.5135930180549622, 0.48640701174736023]	Ce passage , tu te souviens ? 
+right_val: 0	prob: [0.9723113179206848, 0.02768869325518608]	Les gens s ' accro chaient à de vagues idées de collecti vis ation de les travailleurs , mais personne ne pouvait vraiment comprendre comment cela fonctionn erait exactement ; les habitants de You ng sto wn n ' étaient , après tout , pas particulièrement familiers avec le socialisme ou la collecti vis ation en général . 
+right_val: 0	prob: [0.9451409578323364, 0.05485907569527626]	L ' a pathie de l ' US W A United Steel Wor kers of America était le syndicat qui représentait les travailleurs de l ' acier de You ng sto wn à le moment de les fermetures . 
+right_val: 1	prob: [0.3658848702907562, 0.6341151595115662]	Une machine agricole bleue tire de les personnes le long de rangées de végétation , tandis que quatre personnes font quelque chose avec la végétation dans les rangées . 
+right_val: 0	prob: [0.8617706298828125, 0.13822942972183228]	Je me sens encore un peu étour di . 
+right_val: 0	prob: [0.8535641431808472, 0.14643587172031403]	C ' est une généralisation erronée . 
+right_val: 0	prob: [0.9615166783332825, 0.03848334774374962]	Il promet un État moderne à son peuple , mais la situation devenant explosive , de les troubles civils éclatent dans les villes turques et les personnes considérées comme grecques sont victimes de menaces et de violences . 
+right_val: 1	prob: [0.36849695444107056, 0.6315030455589294]	Elle détes tait ces escaliers . 
+right_val: 0	prob: [0.9666481018066406, 0.03335188701748848]	Je ne savais pas comment ils pouvaient manquer de les traits si exotiques , même dans cette lumière dé for mante . 
+right_val: 0	prob: [0.9771968722343445, 0.022803092375397682]	J ' ai été surpris à l ' époque que vous par don ni ez si facilement mes fausses accusations contre les Spa c ers , alors que vous m ' aviez auparavant ser m onné sur leur sensibilité . 
+right_val: 1	prob: [0.435882031917572, 0.5641179084777832]	Une femme tient un parapluie blanc par une nuit noire . 
+right_val: 1	prob: [0.13059647381305695, 0.8694035410881042]	une personne va finalement jusqu ' à le bout 
+right_val: 1	prob: [0.03878513351082802, 0.9612149000167847]	Le chat est assis patiemment sur le banc de le piano . 
+right_val: 0	prob: [0.8292264938354492, 0.1707734316587448]	Une médecine pour l ' esprit 
+right_val: 0	prob: [0.7777830958366394, 0.2222168743610382]	Je vous aurais juré qu ' il était mort . 
+right_val: 0	prob: [0.9195860028266907, 0.08041393756866455]	Ils tombaient maintenant ensemble , ce qui était très gentil et romantique , mais ne résol vait pas le problème de base , qui était qu ' ils tombaient , et que le sol n ' attendait pas de voir s ' il avait d ' autres tours dans son sac , mais venait à leur rencontre comme un train express . 
+right_val: 0	prob: [0.9166527390480042, 0.08334728330373764]	En ce qui concerne son apparence physique , il suffit de dire que Doy le était assez vi ril pour les tâches qu ' il s ' était fixées , robuste , athl étique , sans vanité , mais pas au-dessus d ' un pinc ement conditionné de la honte s ' il rencontrait de les supérieurs sociaux alors qu ' il portait de les man chettes ou un col effi lo chés par ses limites financières . 
+right_val: 1	prob: [0.3630504012107849, 0.6369495987892151]	Je vous le li rai plus tard et vous dirai exactement ce qui se passe . 
+right_val: 0	prob: [0.9905461072921753, 0.009453858248889446]	Cependant , le résultat de leurs arguments est toujours le même et témoigne de leur sagesse : après chaque conflit , les Grecs et les Arméniens demandent de les temples séparés . 
+right_val: 1	prob: [0.046335771679878235, 0.953664243221283]	Un chien court avec un jouet dans sa gueule . 
+right_val: 0	prob: [0.9746154546737671, 0.025384532287716866]	Qu ' il me suff ise de dire que je n ' ai pas perçu la moindre trace de modestie chez cette belle jeune fille à peine formée que la mixité moderne , les mœurs juvéni les , le vac arme de les feux de camp , etc. avaient complètement et irrémédiablement dé pr av ée . 
+right_val: 1	prob: [0.1118084192276001, 0.8881915807723999]	De nombreuses personnes marchent et participent à un défilé . 
+right_val: 1	prob: [0.2907121181488037, 0.7092879414558411]	Deux personnes s ' affrontent dans un match d ' arts martiaux . 
+right_val: 1	prob: [0.03024987131357193, 0.9697501063346863]	je veux ce texte , avec un arbre dans la chambre de mon fils . 
+right_val: 0	prob: [0.9409894943237305, 0.05901053175330162]	A l ' intérieur , l ' espace s ' ouvrait sur une large chambre carrée , avec de les miroirs et si sombre qu ' elle aurait pu être de n ' importe quelle taille . 
+right_val: 1	prob: [0.12657508254051208, 0.8734249472618103]	consacré : la veille de la grande annonce , le couple a été vu avec ses enfants en train de se promener près de leur maison . 
+right_val: 0	prob: [0.9677268862724304, 0.032273069024086]	Car même les meilleures qualités d ' une personne ne peuvent être appréciées à leur juste valeur que si elles nous sont présentées d ' une manière conforme à nos propres opinions et inclin ations . 
+right_val: 0	prob: [0.851814329624176, 0.14818568527698517]	L ' écran lumineux fourni m ' avait informé de la date et de le lieu de les repas officiels , mais je n ' avais pas pris la peine de répondre à les invitations . 
+right_val: 1	prob: [0.0033862991258502007, 0.9966136813163757]	un homme est debout sur un sk ate board dans une rue 
+right_val: 0	prob: [0.9261313676834106, 0.07386865466833115]	Moi , j ' ai suivi l ' exemple d ' Adri enne et je n ' ai rien dit ( je me suis inventé de les excuses pour rester en sécurité dans le mode d ' observation " g ath er- info " ) . 
+right_val: 0	prob: [0.6429141163825989, 0.3570859432220459]	S ' il vous plaît , si nous pouvions le voir , nous vous en serions très reconnaissants . 
+right_val: 1	prob: [0.007151088677346706, 0.9928488731384277]	Ré fri gérer l ' écorce jusqu ' à ce qu ' elle soit complètement dur cie . 
+right_val: 0	prob: [0.9637405872344971, 0.03625941276550293]	Le jaune de ce ciel n ' était pas seulement de le smo g : il était d ' une noirceur pes ante et sanglante . 
+right_val: 0	prob: [0.9892693161964417, 0.010730737820267677]	En 1946 , les Juifs ne possédaient que 7 % de la Palestine , mais la menace de déplacement était largement perçue par les Arabes . 
+right_val: 0	prob: [0.9520169496536255, 0.0479830838739872]	J ' ai réalisé que Rachel avait disparu sans laisser d ' indice et que je ne pouvais rien faire d ' autre qu ' attendre qu ' elle se manifeste - ce qui , si elle était dans une situation où je devrais faire quelque chose , ne serait probablement jamais . 4 
+right_val: 1	prob: [0.05919526889920235, 0.9408047199249268]	personne , a déménagé et vient certains vendredis soirs pour rencontrer de nouvelles personnes . 
+right_val: 1	prob: [0.25280091166496277, 0.7471991181373596]	Elle se dé tend en espérant que le repos guéri ra son corps . 
+right_val: 0	prob: [0.9272597432136536, 0.07274024933576584]	Une fois - c ' était dans les années trente - il m ' a dit avec un certain embarras que les femmes ne sont jamais tout à fait elles-mêmes , ou , pour le dire cr ûment , qu ' elles sont toujours en train de faire semblant et de prendre de les attitudes . 
+right_val: 0	prob: [0.9946073889732361, 0.005392658989876509]	Les lois inexor ables de la mécanique céleste avaient décrété que l ' En de av our était le premier , et le dernier , de tous les vaisseaux de l ' Homme qui entr eraient en contact avec R ama . 
+right_val: 1	prob: [0.18963876366615295, 0.8103612065315247]	Un homme blond chante passionn ément dans le microphone . 
+right_val: 1	prob: [0.11337801069021225, 0.8866219520568848]	J ' ai passé un bon moment là-bas . 
+right_val: 1	prob: [0.19625017046928406, 0.8037497997283936]	Certains outils à main sont magnifiquement conçus pour s ' adapter à l ' utilisateur , par exemple la faux à deux mains . 
+right_val: 0	prob: [0.9240407347679138, 0.07595930248498917]	Les be ys et les ay ans se lev èrent et prirent congé en silence , heureux d ' être en vie et aussi perpl exes que s ' ils avaient assisté à un spectacle de pres tidi gi tation . 
+right_val: 1	prob: [0.026026545092463493, 0.9739733934402466]	une fan montre sa déception alors que la personne était bouleversée le samedi soir . 
+right_val: 1	prob: [0.14275695383548737, 0.857243001461029]	Ce sont les côtes que mon mari cuisine . 
+right_val: 1	prob: [0.06754017621278763, 0.932459831237793]	Un homme est assis sur le bord de la route à un stand de fruits . 
+right_val: 0	prob: [0.9172623157501221, 0.08273766934871674]	Elle a soudain repris sa manière de parler , celle qu ' il associ ait à leur conversation téléphonique : l ' Herzégovine était paci fiée . 
+right_val: 0	prob: [0.9594965577125549, 0.04050343483686447]	Voilà ce qui arrive quand on n ' utilise pas de mercenaires . 
+right_val: 1	prob: [0.03289961814880371, 0.9671003222465515]	détendu : une personne a passé son bras autour de l ' épaule de le modèle . 
+right_val: 0	prob: [0.6835795044898987, 0.3164204955101013]	J ' ai appuyé mes jambes contre le sol en pierre et il était sur moi . 
+right_val: 1	prob: [0.019865578040480614, 0.9801344275474548]	Les enfants se sont amus és à jouer ensemble . 
+right_val: 0	prob: [0.9528940916061401, 0.047105930745601654]	Ess ayer de soutenir les usines d ' une ville était impossible face à la dépression qui s ' est étendue à toute l ' industrie . 
+right_val: 0	prob: [0.5841749310493469, 0.41582512855529785]	Mon chauffeur a tourné à nouveau à côté d ' un vieil entrepôt dans lequel j ' ai peut-être été une fois lorsque Mit ch nous a emmenés à une r ave en deuxième année . 
+right_val: 1	prob: [0.010877566412091255, 0.9891224503517151]	une façon naturelle de recycler les déchets alimentaires - les donner à les poules 
+right_val: 0	prob: [0.5027803182601929, 0.4972197115421295]	Le calme de la pièce y a contribué , tout comme la vue . 
+right_val: 0	prob: [0.7876584529876709, 0.21234162151813507]	L ' ob sidi enne est une roche volcanique dure et vitr euse , qui pouvait être faç onnée en outils de coupe et de poign ard age . 
+right_val: 0	prob: [0.8289083242416382, 0.17109164595603943]	Z h eng avait l ' air sceptique . 
+right_val: 0	prob: [0.9795326590538025, 0.020467320457100868]	Les Ott om ans ont apporté de nouvelles influences à les îles qu ' ils contrô laient , formant un vaste empire qui s ' étendait autour de la Méditerranée orientale . 
+right_val: 0	prob: [0.7327848076820374, 0.26721519231796265]	Après un moment , Ray a dit , je ne pense pas . 
+right_val: 1	prob: [0.20648005604743958, 0.793519914150238]	Ils ont continué à prendre de les photos ensemble devant d ' autres sites historiques . 
+right_val: 1	prob: [0.03761628642678261, 0.9623836874961853]	-S avou rez ces ti kk is avec de le ket chu p . 
+right_val: 0	prob: [0.9800936579704285, 0.019906271249055862]	Ces personnes ne ressentent pas le besoin d ' exprimer leur sympathie , ni de réfléchir à de les moyens d ' éviter de tels incidents , mais elles ressentent le besoin d ' affirmer leurs droits et de chercher de les réponses rapides et simples - comme le dit Bus ch , les propriétaires d ' armes à feu voulaient pendre [ l ' enfant ] à l ' arbre le plus haut . 
+right_val: 0	prob: [0.9400793313980103, 0.05992072820663452]	A ceux qui disaient qu ' ils avaient le sentiment que le savon ne se trouvait pas dans les mines , le Capitaine s ' était risqué à suggérer que c ' était peut-être parce que personne n ' avait assez cherché , et cette possibilité avait été reconnue à contrec œur . 
+right_val: 0	prob: [0.9649781584739685, 0.0350218266248703]	Il reste à voir si cela se produira un jour , mais l ' aide offerte par la Grèce à la Turquie après le tremblement de terre dévastateur de 1999 est peut-être un signe que l ' anim osité entre ces deux ennemis traditionnels commence à diminuer . 
+right_val: 0	prob: [0.778605043888092, 0.22139498591423035]	Je me suis demandé si la nourriture livrée dans mes quartiers ces derniers jours avait été aussi incroyable . 
+right_val: 0	prob: [0.9856589436531067, 0.014341033063828945]	En 15 66 , ils arra chent Chi os à les Gén ois , renforçant ainsi leur mainmise sur les îles orientales de la mer É gée , mais les Cycl ades restent à les mains de les V éni tiens pendant une autre génération ou plus - Tin os est la dernière à tomber en 17 15 . 
+right_val: 0	prob: [0.8299115300178528, 0.1700884997844696]	Un matériau ancien important , l ' ob sidi enne , a été découvert sur l ' île de Mil os . 
+right_val: 0	prob: [0.6960365772247314, 0.3039633631706238]	On m ' empois onne , mais on ne sait pas que je ... si je ... 
+right_val: 1	prob: [0.1985061764717102, 0.8014938235282898]	De les gens regardent un homme jouer à un jeu vidéo de boxe dans un immeuble . 
+right_val: 1	prob: [0.0033924845047295094, 0.9966075420379639]	Une bouteille de Fran ks Red Hot Buffalo Sau ce est parfaite pour cette recette ! 
+right_val: 1	prob: [0.24014277756214142, 0.7598572373390198]	Un policier est assis sur une moto . 
+right_val: 1	prob: [0.024939803406596184, 0.975060224533081]	un conférencier présente un documentaire dans une galerie d ' art de la banlieue tranquille . 
+right_val: 0	prob: [0.6850780248641968, 0.3149219751358032]	Madame , je dois tenir compte de sa santé . 
+right_val: 1	prob: [0.06739301979541779, 0.9326069951057434]	La famille prenant quelques verres avant notre barbecue annuel est toujours un bon souvenir . 
+right_val: 0	prob: [0.9986091256141663, 0.0013908923137933016]	Cependant , même ces ré visionn istes conviennent que les Juifs n ' avaient pas l ' intention d ' expulser les musulmans de Palestine . 
+right_val: 1	prob: [0.18920820951461792, 0.8107917308807373]	On a eu de la dinde ce soir . 
+right_val: 1	prob: [0.08073115348815918, 0.9192689061164856]	Le chien est assis à l ' arrière de la voiture . 
+right_val: 0	prob: [0.9494463205337524, 0.05055363476276398]	Et si ce n ' est pas un can ul ar , alors je suis directement impliqué et eux aussi , ce qui me donne le droit de parler avec eux . 
+right_val: 1	prob: [0.10194123536348343, 0.8980587720870972]	L ' avion de ligne est montré devant le hangar après son arrivée . 
+right_val: 1	prob: [0.0025272066704928875, 0.9974728226661682]	Placez le ham burger dans une casserole avec 1 / 3 de tasse d ' eau , assais onnez avec de le sel et de le poivre . 
+right_val: 0	prob: [0.9802089929580688, 0.019790975376963615]	Après avoir vu mon vaisseau se déchirer , après avoir passé vingt-trois bonnes heures à flotter en silence dans l ' épave , après m ' être demandé si je faisais face à les étoiles de la const ellation de la Balance ou de la const ellation d ' Ori on vues de la Terre , après m ' être demandé ce que je ressent ais en suff o quant et après avoir eu le sentiment que oui , j ' allais mourir seul dans l ' espace , il m ' a fallu de le temps pour que ce sentiment se dissi pe . 
+right_val: 0	prob: [0.7969121336936951, 0.20308785140514374]	Elles ont toujours été ma partie préférée de les mythes grecs que j ' ai lus à l ' école primaire . 
+right_val: 1	prob: [0.03507357835769653, 0.9649264216423035]	la recherche biomédi cale comporte de nombreux murs angulaires . 
+right_val: 0	prob: [0.9866154193878174, 0.013384521938860416]	L ' origine de le navire et la raison pour laquelle Jeff erson m ' a sauvé avaient -elles vraiment de l ' importance , si maintenant , j ' étais content ? 
+right_val: 0	prob: [0.8652909398078918, 0.13470904529094696]	Quelle est notre destination ? 
+right_val: 1	prob: [0.4199587404727936, 0.5800411701202393]	Deux hommes et une femme sont assis dans une rame de métro . 
+right_val: 0	prob: [0.9223193526268005, 0.07768066972494125]	L ' univers tel que nous le connaissons ne sera plus le même . 
+right_val: 0	prob: [0.9195132255554199, 0.0804867297410965]	Maintenant , pouvez -vous me dire quel sera votre plan d ' attaque avant que nous ne tour ni ons dans le sens inverse de les aiguilles d ' une montre dans un roman d ' Anne Rice ? 
+right_val: 1	prob: [0.0007047483813948929, 0.9992952346801758]	Pour faire la pâte 1 tasse de farine tout usage / Mai da 1 tasse d ' eau 1 cuillère à soupe de sucre 1 cuillère à soupe d ' huile végétale 1 / 2 cuillère à café de sel Pour faire les Chur ros Huile pour la fri ture Pour saupoudrer / Roul er 1 cuillère à soupe de sucre 1 cuillère à café de cannelle mou lue 
+right_val: 1	prob: [0.19061264395713806, 0.8093873858451843]	Patrick a lancé la balle ; 
+right_val: 1	prob: [0.033269308507442474, 0.9667306542396545]	Ben se dé tend dans un fauteuil confortable à le coin de le feu . 
+right_val: 0	prob: [0.8746254444122314, 0.12537458539009094]	Il n ' a pas été décour agé par la distance , j ' en suis sûr . 
+right_val: 0	prob: [0.868537962436676, 0.13146206736564636]	Tout membre de l ' équipe qui aurait pu mettre en danger le projet était de la viande . 
+right_val: 1	prob: [0.020939510315656662, 0.9790605306625366]	Un j ockey monte un cheval dans l ' herbe verte . 
+right_val: 0	prob: [0.9383232593536377, 0.061676692217588425]	Cela ne déran geait personne ; 
+right_val: 1	prob: [0.4789423942565918, 0.5210576057434082]	dans son discours , le militaire a assuré les pays de son engagement durable envers la sécurité et la prospérité de la région . 
+right_val: 1	prob: [0.26303645968437195, 0.7369635105133057]	De les pom - po m girls en tenue rouge s ' entraînent dans l ' herbe . 
+right_val: 0	prob: [0.7249113917350769, 0.2750885486602783]	Le plafond était haut et en bois , et je pouvais voir une partie de la cabine d ' un DJ à le bout de le couloir . 
+right_val: 0	prob: [0.811531126499176, 0.18846888840198517]	J ' en doute , dit Mar vin . 
+right_val: 1	prob: [0.07099529355764389, 0.9290047287940979]	Papa veut savoir si ces bal ances sont arrivées . 
+right_val: 0	prob: [0.9437674283981323, 0.0562325082719326]	Le comté de Mah oning était une région mon o- industrielle et les habitants de You ng sto wn , S tru thers , Campbell , Bo ard man Town ship et de les nombreux autres petits villages de la région n ' avaient qu ' un seul employeur principal : les aci éries . 
+right_val: 1	prob: [0.0021911226212978363, 0.9978088736534119]	une personne a dirigé la cérémonie de découpe de le gâteau de la fête nationale 
+right_val: 0	prob: [0.9460180401802063, 0.05398198962211609]	La Grèce se voit attribuer une bande de terre le long de la côte occidentale de l ' Asie Min eure , où la population grecque était importante depuis plus de 2 000 ans . 
+right_val: 1	prob: [0.14971880614757538, 0.8502811789512634]	Vous aurez besoin d ' un fer à repasser , d ' une barre métallique plate ( j ' ai utilisé un niveau ) , d ' un aspirateur , de sacs M yl ar et de les aliments à emballer . 
+right_val: 0	prob: [0.9716920852661133, 0.028307896107435226]	Le vaisseau , il était étrange et vieux , soit tellement dépassé , soit tellement modifié que je ne pouvais pas dire de quelle marque il était , et d ' une certaine manière , l ' équipage qui se tenait autour de moi correspondait à la même description , un amalgame de personnes singulièrement atypique . 
+right_val: 1	prob: [0.004094542935490608, 0.9959053993225098]	Utilisez une cuillère ou un couteau à beurre pour répartir la gelée sur la tranche de pain opposée , encore ordinaire . 
+right_val: 0	prob: [0.7287695407867432, 0.2712304890155792]	... c ' est ce que je pensais . 
+right_val: 0	prob: [0.954975962638855, 0.04502401873469353]	Franchement , je ne sais pas si nous pouvons faire quoi que ce soit contre un vampire . 
+right_val: 1	prob: [0.2518947422504425, 0.7481052875518799]	L ' homme est souriant et porte un costume . 
+right_val: 0	prob: [0.9223904609680176, 0.07760956138372421]	Et moi , je suppose que j ' étais une pièce de plus dans leur puzzle . 
+right_val: 0	prob: [0.9799543023109436, 0.020045647397637367]	Les événements qui ont suivi cette date ( connus sous le nom de " lundi noir " ) sont considérés par les personnes qui en ont été témoins soit comme de les histoires de grand courage et de détermination , soit comme de les monuments de l ' échec humain et de les faux espoirs . 
+right_val: 0	prob: [0.9044542908668518, 0.09554573893547058]	Il était temps de découvrir à quoi ressemblait l ' enfer . 
+right_val: 1	prob: [0.35722315311431885, 0.6427768468856812]	J ' adore , dit Greg , et il regarde Hil ary aller vers une petite bouilloire sur une plaque chauff ante dans le coin de la pièce et verser de l ' eau bouillante sur un sachet de thé . 
+right_val: 1	prob: [0.044057752937078476, 0.9559422135353088]	je vais me faire faire ça pour mes cheveux . 
+right_val: 1	prob: [0.19982005655765533, 0.8001799583435059]	Mes meilleures amies et moi avons fait en sorte de prendre de les photos ensemble . 
+right_val: 0	prob: [0.9125228524208069, 0.08747721463441849]	Moi , j ' ai suivi l ' exemple d ' Adri enne et je n ' ai rien dit ( je me suis inventé de les excuses pour rester en sécurité en mode observation ) . même si je pensais que Z h eng avait raison . 
+right_val: 0	prob: [0.6700519919395447, 0.32994797825813293]	Cordi alement , Erik M ö ller 
+right_val: 1	prob: [0.055462080985307693, 0.944537878036499]	Un sk ater fait de les figures dans le hal f pipe . 
+right_val: 0	prob: [0.7827064394950867, 0.21729354560375214]	Qu ' est -ce que tu en penses ? demanda le boss u . 
+right_val: 0	prob: [0.7416126728057861, 0.25838735699653625]	Lorsque j ' ai posté sur Facebook que je venais en ville , pas moins de trois personnes m ' ont dit que je devais absolument visiter le Tu pel o Hon ey Caf e . 
+right_val: 0	prob: [0.5506314039230347, 0.4493686854839325]	Eh bien , vous devez vous détendre beaucoup dans un travail comme le mien , dit -il . 
+right_val: 0	prob: [0.9732291102409363, 0.02677096053957939]	Un observateur occasionnel n ' aurait pas su dire si c ' était parce qu ' il était ivre , malade ou suicidaire , et en effet , il n ' y avait pas d ' observateurs occasionnels dans le vieux Pink Do g Bar de le quartier sud de Han D old City , car ce n ' était pas le genre d ' endroit où l ' on pouvait se permettre de faire les choses avec désinvol ture si l ' on voulait rester en vie . 
+right_val: 1	prob: [0.0522141233086586, 0.9477858543395996]	Un ours brun se tient dans l ' herbe le long d ' une route . 
+right_val: 0	prob: [0.9795326590538025, 0.020467320457100868]	Les Ott om ans ont apporté de nouvelles influences à les îles qu ' ils contrô laient , formant un vaste empire qui s ' étendait autour de la Méditerranée orientale . 
+right_val: 0	prob: [0.9511356949806213, 0.04886429384350777]	Di xon ne pouvait s ' empêcher d ' admirer la façon dont , sans rien dire ni faire de particulier , ils s ' établis saient si facilement qu ' il n ' était pas censé les accompagner lui-même . 
+right_val: 0	prob: [0.9237880706787109, 0.07621197402477264]	Nous n ' avons pas embarqué beaucoup de passagers , juste quelques privilégiés , épar pillés ici et là entre les étoiles . 
+right_val: 0	prob: [0.7992771863937378, 0.20072287321090698]	La poussière épaisse amor tiss ait nos pas . 
+right_val: 1	prob: [0.03152800723910332, 0.9684720039367676]	" Si vous le souhaitez , vous pouvez rassembler de le glaçage ou d ' autres garni tures et décorer votre gâteau " " Cup " " avant de le manger . 
+right_val: 1	prob: [0.3059714734554291, 0.6940285563468933]	Une jeune femme et un jeune homme discutent avec un groupe d ' autres personnes autour d ' eux . 
+right_val: 0	prob: [0.9055771231651306, 0.09442293643951416]	Le riche parfum de le vin avait une touche de quelque chose de chimique que j ' ai reconnu de le bar , mais il a rempli ma bouche et a coulé dans mes veines avec une chaleur rassurante . 
+right_val: 1	prob: [0.024737060070037842, 0.9752629399299622]	L ' homme pose pour une photo avec une cravate , de les lunettes de soleil et un chapeau . 
+right_val: 0	prob: [0.9055343866348267, 0.09446565806865692]	Il est maintenant bien documenté que la CIA a toléré la vente de cr ack dans les villes américaines pour financer les opérations de les contr as sud- américains 
+right_val: 0	prob: [0.7864648103713989, 0.21353521943092346]	Son affirmation selon laquelle il est possible d ' acheter de les munitions dans les supermarchés est indépendante de cette affirmation . 
+right_val: 1	prob: [0.09550833702087402, 0.9044917225837708]	Elle prépare le restaurant pour l ' arrivée de les clients . 
+right_val: 1	prob: [0.13624319434165955, 0.8637567758560181]	Elle entre dans le bâtiment . 
+right_val: 1	prob: [0.18273396790027618, 0.8172659873962402]	Ce sont de les filles qui jouent à un jeu vidéo 
+right_val: 0	prob: [0.9773160815238953, 0.022683914750814438]	Ceux qui vivaient encore étaient frappés et a pathiques , comme s ' ils souff raient d ' une maladie de l ' esprit plutôt que de le corps . 
+right_val: 1	prob: [0.018345193937420845, 0.9816547632217407]	l ' image peut contenir : personne , sur scène , assis , jouant d ' un instrument de musique et intérieur 
+right_val: 0	prob: [0.5943286418914795, 0.4056713879108429]	Il s ' est assis sans bouger et a ignoré la pensée furi eusement . 
+right_val: 1	prob: [0.1120181754231453, 0.8879818320274353]	Un troupeau de z èbres b route dans un champ . 
+right_val: 0	prob: [0.9582173228263855, 0.04178266227245331]	Les jours passaient , les semaines passaient , mais je ne pouvais pas dire si cela faisait de les mois ou de les années que j ' avais été secour u . 
+right_val: 1	prob: [0.11949221789836884, 0.88050776720047]	Un homme marche dans un marché étroit 
+right_val: 0	prob: [0.9057006239891052, 0.09429942071437836]	J ' ai appelé Mit ch et nos autres amis , en espérant que le hangar s ' était écrasé chez l ' un d ' entre eux , mais je n ' ai pas eu de chance . 
+right_val: 0	prob: [0.8751015663146973, 0.1248985007405281]	C ' était D vor ov . 
+right_val: 1	prob: [0.0020875500049442053, 0.9979124665260315]	Chau ffer le four à 375 degrés F. Déposer une couche de sauce à le fond d ' un plat de cuisson de 9 par 13 pouces . 
+right_val: 0	prob: [0.8030420541763306, 0.19695793092250824]	Tara ne laissera pas ses espoirs dé mesurés les entraîner sur un rocher qui signifierait la fin de le projet et de l ' espèce Arr allin . 
+right_val: 0	prob: [0.904261589050293, 0.09573843330144882]	La pièce pu ait , principalement son propre désespoir . 
+right_val: 1	prob: [0.0015946051571518183, 0.998405396938324]	Un hib ou est assis dans la branche d ' un arbre 
+right_val: 1	prob: [0.2109571248292923, 0.7890428304672241]	Un jeune homme et une femme apprécient un repas . 
+right_val: 1	prob: [0.11738242954015732, 0.8826176524162292]	Un homme est debout dans un salon . 
+right_val: 0	prob: [0.7795434594154358, 0.22045648097991943]	Je ne sais pas comment on aurait pu l ' entendre avec la musique . " 
+right_val: 0	prob: [0.9690377712249756, 0.030962251126766205]	Tout s ' efface , se perd en poussière et en atomes dispersés entre les étoiles , et chacun d ' entre nous se retrouve aussi seul qu ' à le moment de sa naissance . 
+right_val: 0	prob: [0.9873284101486206, 0.012671545147895813]	Il ne savait pas que Ted Cole avait cessé d ' être un travailleur acharné , et que ce qui restait de les " normes " douteuses de Ted avait été compromis par l ' échec insupportable de son mariage avec Marion - ceci en combinaison avec ces décès inacceptables . 
+right_val: 1	prob: [0.1736638844013214, 0.8263360857963562]	Un avi ateur guide un drone alors qu ' il se dirige vers la piste d ' atterrissage . 
+right_val: 0	prob: [0.9106749892234802, 0.08932498097419739]	J ' essaie de me lever , mais je retombe , paralysé par le froid et la prise de conscience de ma misérable impuissance . 
+right_val: 0	prob: [0.8107272386550903, 0.18927273154258728]	Must afa avait 14 ans quand il a été tué . 
+right_val: 0	prob: [0.7086020708084106, 0.29139792919158936]	R . 
+right_val: 1	prob: [0.07743378728628159, 0.9225662350654602]	Pour créer le visage de Pep pa , vous devez réaliser une forme de cœur . 
+right_val: 0	prob: [0.8113609552383423, 0.1886390596628189]	La raison pour laquelle il a été publié sous la forme d ' un composant électronique micro- sous- mé son est que s ' il était imprimé sous la forme d ' un livre normal , un auto- stopp eur inter st ell aire aurait besoin de plusieurs bâtiments de taille in commode pour le transporter . 
+right_val: 0	prob: [0.6298834681510925, 0.37011656165122986]	Deux femmes et un homme portent de les vestes noires et souri ent . 
+right_val: 0	prob: [0.9795668721199036, 0.020433153957128525]	Après avoir vu mon vaisseau se déchirer , après avoir passé vingt-trois bonnes heures à flotter en silence dans l ' épave , à me demander si je faisais face à les étoiles de la const ellation de la Balance ou de la const ellation d ' Ori on vues de la Terre , à me demander ce que cela faisait de suff o quer , et après avoir eu le sentiment que oui , j ' allais en fait mourir seul dans l ' espace , il a fallu de le temps pour que ce sentiment se dissi pe . 
+right_val: 0	prob: [0.9354832172393799, 0.06451676785945892]	La lutte a con tourné la plupart de les îles , bien que de violents combats aient eu lieu à Sam os . 
+right_val: 1	prob: [0.019304275512695312, 0.9806956648826599]	voiture de reportage restée gar ée devant la maison . 
+right_val: 1	prob: [0.04336119070649147, 0.9566388130187988]	Un jeune ours gri zz ly se promène dans un ruisseau . 
+right_val: 0	prob: [0.9604762196540833, 0.039523787796497345]	Il est maintenant bien documenté que la CIA a toléré la vente de cr ack dans les villes américaines pour financer les opérations de les contr as sud- américains . 
+right_val: 1	prob: [0.16133399307727814, 0.8386660814285278]	Une vieille télévision est assise sur une plage de sable . 
+right_val: 0	prob: [0.9918928146362305, 0.008107193745672703]	L ' Empire byzantin possédait de les villes puissantes et bien forti fiées , mais les campagnes et les îles périphériques étaient rav agées par de les vagues d ' envahisseurs . 
+right_val: 1	prob: [0.14163406193256378, 0.8583659529685974]	Un homme passe devant un bâtiment couvert de graffi tis . 
+right_val: 1	prob: [0.1983090192079544, 0.8016910552978516]	un ami est quelqu' un qui peut voir la vérité et la douleur en vous , même lorsque vous tromp ez tout le monde . 
+right_val: 0	prob: [0.8294829726219177, 0.1705169975757599]	C ' est le message clé de cette partie de l ' animation , qui est à nouveau ignoré par ses détracteurs . 
+right_val: 1	prob: [0.43874311447143555, 0.5612568855285645]	2 ) 
+right_val: 1	prob: [0.14874091744422913, 0.8512590527534485]	Plusieurs personnes se dirigent vers la plage pour aller faire de le surf . 
+right_val: 1	prob: [0.056323714554309845, 0.943676233291626]	Un jeune garçon se tient à le bord d ' un étang . 
+right_val: 0	prob: [0.5078619718551636, 0.4921380579471588]	Dans un autre ordre d ' idées , j ' ai fait une découverte à le Tu pel o Hon ey Caf e , que j ' aimerais partager avec vous maintenant . 
+right_val: 1	prob: [0.003756521735340357, 0.9962434768676758]	une personne utilise de les huiles pour peindre à la main une publicité . 
+right_val: 0	prob: [0.7910690903663635, 0.20893095433712006]	Un opportun iste et un homme d ' affaires , tel était Jeff erson . 
+right_val: 1	prob: [0.1788315623998642, 0.8211684226989746]	Un homme vérifie son télé phone en s ' asse yant sur un banc de pierre . 
+right_val: 1	prob: [0.36762499809265137, 0.6323749423027039]	les cow- boys comme lui existent -ils vraiment ? 
+right_val: 0	prob: [0.7826015949249268, 0.21739834547042847]	Si - " Vous voyez ce que je veux dire . 
+right_val: 0	prob: [0.8716169595718384, 0.12838302552700043]	Comment pourrait -il même penser à blâmer la pauvreté et les programmes de travail forcé pour tout ce qui arrive de mal ? 
+right_val: 1	prob: [0.32933393120765686, 0.6706660389900208]	Ils vont seulement se perdre dans les miens . 
+right_val: 0	prob: [0.9502768516540527, 0.04972316697239876]	On pourrait penser que ce sont là les philosophes professionnels : trop occupés à thé oriser dans l ' abstrait pour remarquer à quelle station ils se trouvent , sans parler de ce qui se passe dans le monde non abstrait dans lequel nous vivons tous . 
+right_val: 1	prob: [0.00301083130761981, 0.9969891905784607]	R assembl ez les ingrédients nécessaires à la préparation de les cup cakes à le chocolat . 
+right_val: 1	prob: [0.1386501044034958, 0.861349880695343]	Un jeune garçon en maillot de bain jette une pierre dans l ' eau . 
+right_val: 1	prob: [0.06260398775339127, 0.9373960494995117]	Un homme est assis dans l ' herbe avec une vache près d ' une clôture . 
+right_val: 1	prob: [0.4102356731891632, 0.5897643566131592]	Debout devant un tableau noir numérique , il a commencé à noter de les informations importantes qui se sont affichées instantanément . 
+right_val: 0	prob: [0.7356314659118652, 0.26436853408813477]	Un homme vêtu d ' un swe at- shirt à capuche bleu a les mains sur les rayons arrière de son vélo renversé , alors qu ' il est assis sur un mur et couvert de graffi tis parmi de les palmiers . 
+right_val: 0	prob: [0.9695948362350464, 0.030405115336179733]	Il savait que cette grotte sacrée était réservée exclusivement à les reliques de les Pap es , mais d ' une certaine manière Mor tat i a senti que c ' était approprié . 
+right_val: 1	prob: [0.10594454407691956, 0.8940554857254028]	Une vieille femme regarde le gâteau de son 9 5e anniversaire . 
+right_val: 1	prob: [0.024349451065063477, 0.9756504893302917]	amélior ez votre événement avec une performance de qualité , nous pouvons vous aider , appelez - nous dès aujourd' hui ! 
+right_val: 0	prob: [0.7798835635185242, 0.22011640667915344]	mais j ' ad mets que le roman est actuellement en retard sur la réalité probable . 
+right_val: 1	prob: [0.0020875500049442053, 0.9979124665260315]	Chau ffer le four à 375 degrés F. Déposer une couche de sauce à le fond d ' un plat de cuisson de 9 par 13 pouces . 
+right_val: 0	prob: [0.8962445855140686, 0.1037554070353508]	Si c ' était en mars , cela signifiait que nous étions ensemble depuis presque un an et demi . 
+right_val: 0	prob: [0.5042856931686401, 0.49571433663368225]	Un homme en maillot de bain noir est en train de plonger d ' un plon ge oir dans une piscine . 
+right_val: 0	prob: [0.6698971390724182, 0.3301028609275818]	Personne ne s ' en soucie ; 
+right_val: 1	prob: [0.003825924824923277, 0.996174156665802]	Placez le beurre et le sucre dans un grand bol à mélanger et batt ez - les ensemble jusqu ' à ce qu ' ils soient légers et mouss eux . 
+right_val: 0	prob: [0.833488941192627, 0.16651101410388947]	Même Lock he ed ne croyait pas que le public était aussi cré dule . 
+right_val: 1	prob: [0.34173616766929626, 0.6582638025283813]	Je ne pouvais pas m ' arrêter sans prendre une dernière photo de les montagnes ennei gées ! 
+right_val: 0	prob: [0.9581975936889648, 0.04180239513516426]	L ' acier étranger était également beaucoup moins cher . 
+right_val: 0	prob: [0.924702525138855, 0.07529745995998383]	C ' était le thème mél o dramatique de ce soir : la nature éphémère de la vie . 
+right_val: 0	prob: [0.673569917678833, 0.326430082321167]	Plusieurs personnes , dont l ' une est à vélo , traversent une rue très fréquentée . 
+right_val: 1	prob: [0.3889710009098053, 0.6110289692878723]	Une aptitude est donc une capacité plus une incl ination ou un intérêt . 
+right_val: 1	prob: [0.018606115132570267, 0.9813939332962036]	É gou tter le bœuf haché en laissant une petite quantité de graisse dans la casserole avec le bœuf haché et ajouter le ro tel , la crème de soupe à le poulet , l ' assaisonnement pour tac os , le jal ap eno haché et une boîte de soupe pleine d ' eau . 
+right_val: 1	prob: [0.0031816125847399235, 0.9968184232711792]	Batt ez en crème le beurre et le sucre jusqu ' à ce qu ' ils soient légers et mouss eux . 
+right_val: 1	prob: [0.03202180936932564, 0.9679781198501587]	Le chat regarde à l ' intérieur de le sac à dos ouvert . 
+right_val: 1	prob: [0.24435018002986908, 0.7556498646736145]	Un homme est allongé dans le sable à côté d ' une vache . 
+right_val: 0	prob: [0.6410521268844604, 0.35894787311553955]	Sur votre page web , vous déclar ez que la résolution de Moore est discutable . 
+right_val: 0	prob: [0.8492026329040527, 0.15079733729362488]	Le sien était coupé de près , avec une touche de style qui accen tu ait les beaux angles de ses pomm ettes et de sa mâchoire . 
+right_val: 0	prob: [0.6245576739311218, 0.3754422664642334]	Il allait nous donner de les informations précieuses pour elle . 
+right_val: 0	prob: [0.848382294178009, 0.15161773562431335]	Le taux de chômage est faible par rapport à les villes environnantes , et les rues sont propres et bien entreten ues . 
+right_val: 0	prob: [0.9345226287841797, 0.06547731161117554]	L ' église était complètement différente maintenant : la lumière de le soleil tombait à travers les vitraux , attrap ant la poussière qui flott ait encore dans l ' air et envoyant une chaleur sèche et saine dans les bords de la pièce , à travers la pierre et le béton poudr eux qui avaient été recouverts la nuit dernière par la chair et les lumières cli gnot antes . 
+right_val: 1	prob: [0.24887077510356903, 0.7511292099952698]	Les gens passaient un bon moment et avaient de les conversations . 
+right_val: 1	prob: [0.10277009755373001, 0.8972299098968506]	Un chat noir et blanc regarde dans la cuvette de les toilettes . 
+right_val: 1	prob: [0.05446489527821541, 0.9455351233482361]	Les ingrédients nécessaires pour ce goûter sont une préparation pour gâteau à le chocolat , 3 œufs , 1 / 3 de tasse d ' huile végétale , 1 tasse d ' eau , 1 boîte de sucre en poudre , 1 bâton de mar gar ine , 4 cuillères à soupe de cacao , 1 / 4 de tasse de lait , de les T wi zz lers , de les M & M' s , de les paillettes , de le papier ci ré et de les écor ces d ' amandes à le chocolat blanc . 
+right_val: 0	prob: [0.9892693161964417, 0.010730737820267677]	En 1946 , les Juifs ne possédaient que 7 % de la Palestine , mais la menace de déplacement était largement perçue par les Arabes . 
+right_val: 0	prob: [0.8747462034225464, 0.1252538412809372]	La première loi de la ther modyn amique affirme sans équivoque que l ' énergie est toujours conservée et qu ' elle ne peut donc ni se perdre ni se renouveler . 
+right_val: 1	prob: [0.0032041643280535936, 0.9967958331108093]	Dans un four préchauffé à 400 degrés , faites cuire votre zombie pendant 15- 18 minutes . 
+right_val: 1	prob: [0.03639955073595047, 0.9636003971099854]	Un homme marche tout en utilisant son télé phone portable . 
+right_val: 0	prob: [0.6524646282196045, 0.3475353717803955]	C ' est de lui qu ' il s ' agissait . 
+right_val: 1	prob: [0.03299210965633392, 0.9670079350471497]	Un enfant blond joue avec un ornement de jardin en métal . 
+right_val: 0	prob: [0.9683664441108704, 0.03163354843854904]	Par os et An dro s ont contribué à l ' armement per se , tandis que d ' autres sou tenaient Athènes . 
+right_val: 0	prob: [0.753764808177948, 0.24623513221740723]	Fait : L ' enfer , c ' est les autres . 
+right_val: 0	prob: [0.9144080281257629, 0.08559200167655945]	Ne p th ys nous a conduit dans un couloir qui correspondait à la façade de le bâtiment , un couloir voû té , un intestin nerv ur é , dont les murs noirs avaient un aspect organique inquiétant . 
+right_val: 0	prob: [0.9800311326980591, 0.01996888965368271]	Le nouveau juif palestinien , disaient -ils , devait être physiquement plus fort que les commerçants intelli gents qui avaient été piétin és en Europe . 
+right_val: 1	prob: [0.16353482007980347, 0.8364651799201965]	l ' organisation a déménagé dans de les locaux temporaires près de l ' intersection de les routes en avril pendant que le bâtiment principal subit de les rénovations d ' une valeur de 14, 4 millions de dollars . 335 out of 416
+
+
+Uses verb segment ids: yes
+Model: flaubert/flaubert_large_cased
+Model type: flaubert/flaubert_large_cased
+Train set: 3328
+Validation set: 416
+Test set: 416
+transformer.attentions.0.q_lin.bias                          (1024,)
+transformer.attentions.0.k_lin.weight                   (1024, 1024)
+transformer.attentions.0.k_lin.bias                          (1024,)
+transformer.attentions.0.v_lin.weight                   (1024, 1024)
+transformer.attentions.0.v_lin.bias                          (1024,)
+transformer.attentions.0.out_lin.weight                 (1024, 1024)
+transformer.attentions.0.out_lin.bias                        (1024,)
+transformer.attentions.1.q_lin.weight                   (1024, 1024)
+transformer.attentions.1.q_lin.bias                          (1024,)
+transformer.attentions.1.k_lin.weight                   (1024, 1024)
+transformer.attentions.1.k_lin.bias                          (1024,)
+transformer.attentions.1.v_lin.weight                   (1024, 1024)
+transformer.attentions.1.v_lin.bias                          (1024,)
+transformer.attentions.1.out_lin.weight                 (1024, 1024)
+transformer.attentions.1.out_lin.bias                        (1024,)
+transformer.attentions.2.q_lin.weight                   (1024, 1024)
+	======== Epoch 1 / 4 ========
+Training...
+	Batch    40	of	  104.		Elapsed: 0:15:38.
+	Batch    80	of	  104.		Elapsed: 0:30:41.
+	Average training loss: 0.88
+	Training epoch took: 0:39:49
+	======== Epoch 2 / 4 ========
+Training...
+	Batch    40	of	  104.		Elapsed: 0:14:44.
+	Batch    80	of	  104.		Elapsed: 0:29:52.
+	Average training loss: 0.80
+	Training epoch took: 0:38:45
+	======== Epoch 3 / 4 ========
+Training...
+	Batch    40	of	  104.		Elapsed: 0:14:54.
+	Batch    80	of	  104.		Elapsed: 0:29:45.
+	Average training loss: 0.59
+	Training epoch took: 0:38:42
+	======== Epoch 4 / 4 ========
+Training...
+	Batch    40	of	  104.		Elapsed: 0:15:09.
+	Batch    80	of	  104.		Elapsed: 0:29:46.
+	Average training loss: 0.53
+	Training epoch took: 0:38:41
+Testing on Seen:
+Accuracy: 0.79
+Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       0.82      0.79      0.80       228
+           1       0.75      0.79      0.77       188
+
+   micro avg       0.79      0.79      0.79       416
+   macro avg       0.79      0.79      0.79       416
+weighted avg       0.79      0.79      0.79       416
+
+
+Wrong predictions:
+wrong_seen: 0	prob: [0.5188652873039246, 0.48113468289375305]	Et tout le monde avait l ' air très bien habillé dans ses habits de le dimanche .
+wrong_seen: 0	prob: [0.5119958519935608, 0.48800408840179443]	Ils étaient délicieux .
+wrong_seen: 1	prob: [0.14810673892498016, 0.8518932461738586]	Ce jeune homme fait de l ' escalade .
+wrong_seen: 0	prob: [0.6372508406639099, 0.3627491891384125]	Un groupe de cinq jeunes garçons se tiennent les doigts dans l ' oreille , tandis qu ' un garçon blond vêtu d ' un tee-shirt de les Marl ins de Floride tient ses mains le long de le corps devant un grillage .
+wrong_seen: 0	prob: [0.6111459136009216, 0.38885408639907837]	De nombreux employés surveill aient le spectacle .
+wrong_seen: 1	prob: [0.14671963453292847, 0.8532803654670715]	C ' est le portrait de famille .
+wrong_seen: 0	prob: [0.5080654621124268, 0.491934597492218]	Une personne portant une veste jaune conduit une moto blanche à côté d ' une foule de bad auds .
+wrong_seen: 0	prob: [0.5470998287200928, 0.4529001712799072]	J ' ai dit la même chose à un de ses garçons quand il était ici .
+wrong_seen: 1	prob: [0.44952428340911865, 0.5504757761955261]	Un homme jouant d ' une guitare rouge et chantant dans un microphone a un homme plus grand jouant de la batterie derrière lui .
+wrong_seen: 1	prob: [0.4035109281539917, 0.5964890718460083]	Deux femmes sont dans une cuisine et l ' une d ' elles tient une petite fille dans ses bras .
+wrong_seen: 1	prob: [0.03433937206864357, 0.9656606316566467]	Un homme est haut perché sur un support métallique .
+wrong_seen: 1	prob: [0.0016159620136022568, 0.9983839988708496]	6 )
+wrong_seen: 1	prob: [0.3523324131965637, 0.647667646408081]	Un homme retient un autre homme par une prise d ' arm bar ras sur le sol d ' un gymnase .
+wrong_seen: 0	prob: [0.8757988214492798, 0.12420115619897842]	Un bâtiment se détache dans ce panorama décour ageant de médiocrité d ' après-guerre : une masse sombre et puissante de briques avec une grande tour centrale qui se dresse juste en face de la Tam ise , en face de le dôme de W ren .
+wrong_seen: 1	prob: [0.2020970731973648, 0.7979029417037964]	Trois personnes sont dans un voilier sur l ' eau .
+wrong_seen: 0	prob: [0.5104089975357056, 0.48959094285964966]	Deux hommes sont en train de réparer quelque chose .
+wrong_seen: 1	prob: [0.08180282264947891, 0.9181971549987793]	Une femme est dans un bus public traversant une ville .
+wrong_seen: 0	prob: [0.9789370894432068, 0.021062863990664482]	Les compétences sociales sont en principe plus complexes que les compétences percep ti vo -mo trices car ces dernières supposent ( à juste titre ) un monde passif qui ré agira de manière neutre , selon les lois de la physique .
+wrong_seen: 0	prob: [0.9172301292419434, 0.08276986330747604]	De les recherches sur l ' influence de les facteurs culturels sur les tests d ' intelligence et leurs résultats ont été menées à grande échelle et les résultats sont discutés sans fin en raison de le mélange inex tric able de jugements techniques et de valeurs ... ,
+wrong_seen: 1	prob: [0.2614668011665344, 0.7385331988334656]	Je veux voir à quoi ressemble une pierre magique .
+wrong_seen: 0	prob: [0.861099362373352, 0.13890065252780914]	Après cela , elle se sentit apaisée de toute irritation qu ' elle avait pu ressentir avec la dernière lettre , s ' essu ya la bouche avec satisfaction , et prit la Gazette d ' Os wal d ston .
+wrong_seen: 1	prob: [0.29100877046585083, 0.7089911699295044]	Un chien est en haut d ' un tobog gan bleu et un petit garçon est derrière lui .
+wrong_seen: 1	prob: [0.4644279181957245, 0.5355720520019531]	dit Arthur , horri fié .
+wrong_seen: 1	prob: [0.0634288564324379, 0.9365711212158203]	Un homme mange de la nourriture devant un restaurant ayant pignon sur rue .
+wrong_seen: 0	prob: [0.9325071573257446, 0.0674927681684494]	Je suis sûr que c ' est dû à le fait que j ' ai vu de les adolescents réagir à la personne d ' une entreprise financée par de les capitaux à risque plus tôt dans la soirée .
+wrong_seen: 1	prob: [0.01765376329421997, 0.98234623670578]	De les personnes sont dans un restaurant en train de manger .
+wrong_seen: 0	prob: [0.9008582234382629, 0.09914178401231766]	Le noir est la plus belle de les couleurs , car il ne reflète pas , il absorbe tout en lui .
+wrong_seen: 0	prob: [0.7389851808547974, 0.26101478934288025]	Je suis un ami de les vieilles dames , a - t -il dit .
+wrong_seen: 0	prob: [0.756679356098175, 0.24332058429718018]	La foule était tellement dans le coup qu ' il s ' est assuré de diriger le micro vers nous pour que nous puissions être entendus aussi !
+wrong_seen: 1	prob: [0.10463709384202957, 0.8953628540039062]	Plusieurs personnes portant de les couronnes en aluminium sont réunies autour d ' une table en train de manger .
+wrong_seen: 1	prob: [0.3094116151332855, 0.6905883550643921]	Deux enfants en bas âge , l ' un debout et l ' autre assis , sont dans une salle de bains .
+wrong_seen: 0	prob: [0.7995671629905701, 0.20043282210826874]	La machine n ' a été en vente qu ' entre mille neuf cent trente- six et mille neuf cent quarante .
+wrong_seen: 0	prob: [0.7256295084953308, 0.2743704915046692]	L ' écrivain a porté de nombreuses cas quettes en tant que journaliste et auteur .
+wrong_seen: 0	prob: [0.6743130683898926, 0.3256869614124298]	Quatre femmes couvertes de tatouages tiennent de petits drapeaux .
+wrong_seen: 1	prob: [0.1692182719707489, 0.8307817578315735]	Un homme est à le télé phone , assis sur une chaise le long d ' une plage roch euse .
+wrong_seen: 1	prob: [0.28362390398979187, 0.7163761258125305]	Un joueur de baseball vêtu d ' un maillot vert est en train de jouer , l ' officiel se trouvant dans le cadre .
+wrong_seen: 1	prob: [0.36361750960350037, 0.6363824605941772]	Il s ' agit d ' un immense restaurant extérieur où de nombreuses personnes viennent se rassembler pour la nuit .
+wrong_seen: 1	prob: [0.4445123076438904, 0.5554876923561096]	La femme en chemise orange a la main levée .
+wrong_seen: 1	prob: [0.08992127329111099, 0.910078763961792]	Un surf eur est sur le ventre et sur fe sur une vague .
+wrong_seen: 1	prob: [0.16003744304180145, 0.8399626016616821]	Un enfant endormi a un papillon posé sur sa tête blonde .
+wrong_seen: 1	prob: [0.41006073355674744, 0.589939296245575]	Une personne vêtue d ' un t-shirt rouge , d ' un pantalon bleu marine et d ' un casque de sécurité est attachée à un câble et saute vers une balle rouge .
+wrong_seen: 1	prob: [0.29166802763938904, 0.7083319425582886]	De les ouvriers de le bâtiment sont occupés tard dans la nuit .
+wrong_seen: 0	prob: [0.5893611907958984, 0.4106387794017792]	On dirait que ce chien n ' a aucune idée de ce qu ' il fait .
+wrong_seen: 0	prob: [0.8206219673156738, 0.1793779879808426]	Vous venez de dire que personne ne se doutait de rien .
+wrong_seen: 1	prob: [0.09524722397327423, 0.904752790927887]	Deux femmes font de le cat ch dans la boue dans une piscine pour enfants .
+wrong_seen: 1	prob: [0.020642826333642006, 0.979357123374939]	Trois filles s ' amusent en jouant à un jeu de cartes .
+wrong_seen: 1	prob: [0.10469094663858414, 0.8953090310096741]	Je suis Madame En tera , à votre service .
+wrong_seen: 1	prob: [0.1692182719707489, 0.8307817578315735]	Un homme est à le télé phone , assis sur une chaise le long d ' une plage roch euse .
+wrong_seen: 1	prob: [0.08719751983880997, 0.9128024578094482]	Voy ager sur ce bateau .
+wrong_seen: 0	prob: [0.9218133091926575, 0.07818668335676193]	Le dernier de les z élo tes résiste encore trois ans à Mass ada ( voir page 76 ) .
+wrong_seen: 1	prob: [0.46778038144111633, 0.5322195887565613]	La cérémonie a été longue et pom peuse mais elle en valait la peine .
+wrong_seen: 1	prob: [0.4961361289024353, 0.5038638710975647]	Un adolescent asiatique en veste rouge a le pouce levé et la langue tirée .
+wrong_seen: 1	prob: [0.4086356461048126, 0.5913643836975098]	Votre Dieu met un pom mier à le milieu d ' un jardin et dit : " Faites ce que vous voulez les gars , mais ne mangez pas la pomme " .
+wrong_seen: 0	prob: [0.5470998287200928, 0.4529001712799072]	J ' ai dit la même chose à un de ses garçons quand il était ici .
+wrong_seen: 1	prob: [0.33782681822776794, 0.6621732115745544]	Cinq enfants sont sur un terrain de football et se dirigent vers le but .
+wrong_seen: 0	prob: [0.7527368664741516, 0.24726317822933197]	J ' ai un désir ardent , laissez -moi me tenir à côté de ce feu !
+wrong_seen: 1	prob: [0.3648597300052643, 0.6351402401924133]	Ces signaux étaient les hér auts de mes sauv eurs .
+wrong_seen: 1	prob: [0.06499672681093216, 0.9350032806396484]	C ' est une photo d ' amis qui s ' amusent .
+wrong_seen: 0	prob: [0.9082902073860168, 0.09170971810817719]	Son visage prit une expression de sublime vanité , et une fois de plus il se pen cha en avant avec un air de confidentialité .
+wrong_seen: 1	prob: [0.4587806463241577, 0.5412193536758423]	Dans l ' ensemble , la fête était amusante et réussie .
+wrong_seen: 0	prob: [0.9211358428001404, 0.07886413484811783]	C ' est un travail brillant , bien que contraire à l ' éthique .
+wrong_seen: 0	prob: [0.8484381437301636, 0.1515618860721588]	L ' intelligence est liée à la cogni tion mais la personnalité intègre la con ation .
+wrong_seen: 0	prob: [0.7886049151420593, 0.21139512956142426]	Nous pouvions voir qu ' il menait à de les civilisations .
+wrong_seen: 0	prob: [0.7762262225151062, 0.2237737476825714]	Même de l ' extérieur , vous saviez que c ' était spécial .
+wrong_seen: 1	prob: [0.11740700900554657, 0.882593035697937]	Un homme avec un crayon derrière l ' oreille et un autre qui boit dans une tasse discutent dans un salon .
+wrong_seen: 0	prob: [0.6068554520606995, 0.39314448833465576]	Ils l ' ont fait faire vers octobre , je lui ai demandé juste avant de partir .
+wrong_seen: 1	prob: [0.18853919208049774, 0.8114608526229858]	Une machine agricole bleue tire de les personnes le long de rangées de végétation , tandis que quatre personnes font quelque chose avec la végétation dans les rangées .
+wrong_seen: 0	prob: [0.5825958251953125, 0.4174041748046875]	Mais les sourires de sa mère et de ses tantes ont compensé .
+wrong_seen: 0	prob: [0.5353378653526306, 0.46466222405433655]	À midi et demi , Pop a fait sur sauter tout le monde en entrant dans la cour à le volant d ' une Roll s- Roy ce , une land aul ette noire d ' avant- guerre , avec de les portes couleur paille qui avaient l ' air d ' avoir été fabriquées en v ann erie .
+wrong_seen: 1	prob: [0.4785482883453369, 0.5214517116546631]	C ' est la première chose que nous avons vue en entrant dans les jardins bot aniques .
+wrong_seen: 1	prob: [0.1903843730688095, 0.8096156120300293]	Destination nulle part .
+wrong_seen: 0	prob: [0.5005714893341064, 0.49942848086357117]	Vous pensez que ça va tenir ?
+wrong_seen: 1	prob: [0.37111881375312805, 0.6288812160491943]	J ' ai un remplaçant en vue .
+wrong_seen: 0	prob: [0.6471852660179138, 0.35281476378440857]	J ' ai rencontré beaucoup de gens à le Black burn Li ter ary Club .
+wrong_seen: 1	prob: [0.3497246503829956, 0.6502753496170044]	J ' ai l ' intention d ' en discuter plus en profondeur plus tard , alors restez à l ' écoute .
+wrong_seen: 1	prob: [0.4015227258205414, 0.5984772443771362]	Le calme de la pièce y a contribué , tout comme la vue .
+wrong_seen: 0	prob: [0.6478158831596375, 0.35218411684036255]	changement rapide : plus tard , il a été vu portant un swe at à capuche et un jean clair retrou ssé sur de les baskets blanches .
+wrong_seen: 0	prob: [0.8082672357559204, 0.191732719540596]	Les contributions potentielles de les facteurs humains à le processus de conception à grande échelle sont résu mées à la figure 1.4 .
+wrong_seen: 1	prob: [0.31424272060394287, 0.6857572793960571]	Cette nuit était consacrée à l ' observation .
+wrong_seen: 1	prob: [0.1512202024459839, 0.8487797975540161]	L ' infirmière , toute de blanc vêtue , marche dans une rue .
+wrong_seen: 0	prob: [0.6118506789207458, 0.38814932107925415]	Les anciens combattants et les membres de les forces armées prononcent souvent de les discours .
+wrong_seen: 0	prob: [0.6944884657859802, 0.30551156401634216]	Tout cela maintient l ' intérêt !
+wrong_seen: 1	prob: [0.13127774000167847, 0.8687222599983215]	Deux personnes sont dans une petite voiture de course et passent devant une colline verte .
+wrong_seen: 0	prob: [0.8050363659858704, 0.19496363401412964]	Elle a poursuivi : Mais c ' est drôle aussi , n ' est -ce pas ?
+wrong_seen: 0	prob: [0.9480760097503662, 0.05192393809556961]	John ne voyait pas vraiment comment une prise de sang supplémentaire pouvait mettre en danger la vie de quelqu' un , mais , tout de même , le Dr . 14 0 .
+wrong_seen: 1	prob: [0.28881046175956726, 0.7111895680427551]	L ' homme en swe at- shirt bleu est dans une cuisine .
+wrong_seen: 1	prob: [0.15449318289756775, 0.8455068469047546]	Un menu d ' options d ' affichage , me permettant de personnaliser toutes les caractéristiques superficielles de l ' écran lumineux .
+wrong_seen: 1	prob: [0.1484714150428772, 0.8515285849571228]	Un homme est occupé à faire quelque chose avec le bois .88 out of 416
+
+Right predictions:
+right_seen: 1	prob: [0.15510807931423187, 0.8448919057846069]	les portes de placard peuvent contribuer à transformer toute votre pièce et à vous faire accorder plus d ' attention à un espace souvent oublié que nous utilisons tous les jours .
+right_seen: 1	prob: [0.17057377099990845, 0.8294262290000916]	On se voit demain matin .
+right_seen: 0	prob: [0.9048243165016174, 0.09517570585012436]	I sis ... tu connais un moyen de localiser les mort s- vivants , n ' est -ce pas ?
+right_seen: 0	prob: [0.9593621492385864, 0.040637873113155365]	Ray , il a dit , si nous sommes éternels , si nos yeux sont les derniers à regarder les étoiles s ' éteindre , cela ne veut rien dire pour nous .
+right_seen: 0	prob: [0.9333069920539856, 0.06669300049543381]	Ce n ' est pas un diamant sans défaut - la scène de les 48 heures en particulier souffre d ' un mauvais montage , les statistiques sont sous- optimales et Hes ton est un peu plus critiqué qu ' il ne le mérite .
+right_seen: 0	prob: [0.9748277068138123, 0.025172317400574684]	À le début , ce n ' était qu ' une vague humeur générale , qui ne se manifes tait que par de les gestes brefs et de les mal édictions dont chacun savait à qui ils se rap portaient .
+right_seen: 1	prob: [0.23642854392528534, 0.7635714411735535]	Vous allez avoir besoin de 2 pommes , une un peu plus petite que l ' autre .
+right_seen: 0	prob: [0.9695184230804443, 0.03048154152929783]	Tant que je l ' ai regardé , il n ' y avait aucune étincelle ou lueur magique .
+right_seen: 0	prob: [0.9297537207603455, 0.07024629414081573]	Dire qu ' ils n ' auraient pas pu faire autrement est un mensonge é hon té de les détracteurs de Moore .
+right_seen: 0	prob: [0.7949991226196289, 0.20500093698501587]	Pen ché sur la fenêtre en bois d ' un bâtiment sur notre droite , quelque chose avec de longs cheveux verts drap és sur les sept bras dé gin gan dés accrochés à le rebord de la fenêtre .
+right_seen: 0	prob: [0.6103048920631409, 0.38969507813453674]	La largeur est un signe de richesse et d ' importance ;
+right_seen: 1	prob: [0.019818894565105438, 0.9801810383796692]	Enfin , versez 20 ml de café sur la glace pil ée et le mélange de yaourt .
+right_seen: 0	prob: [0.7581294178962708, 0.24187053740024567]	C ' était le cerveau , principalement ;
+right_seen: 1	prob: [0.40177416801452637, 0.5982258915901184]	Le parc a l ' air bien couvert de neige .
+right_seen: 1	prob: [0.0005542542785406113, 0.9994457364082336]	une personne crie de les slogans anti et brûle un drapeau lors d ' une manifestation
+right_seen: 1	prob: [0.03365157172083855, 0.9663484692573547]	Am us ez -vous à faire de jolis visages pour tous les différents bon hommes de neige !
+right_seen: 1	prob: [0.10027580708265305, 0.8997241854667664]	Un grand oiseau se tient dans une fenêtre ouverte .
+right_seen: 1	prob: [0.02431006170809269, 0.9756898880004883]	Un homme effectue de les travaux de construction sur le toit d ' un immeuble .
+right_seen: 1	prob: [0.0024995559360831976, 0.997500479221344]	À l ' aide d ' un couteau de table , étal ez votre confiture sur la crème de le gâteau de fond .
+right_seen: 0	prob: [0.9844956398010254, 0.015504308044910431]	Mais à sa mort , l ' empire s ' est effondré , et le royaume israéli te a été divisé en deux nations distinctes , appauv ries et souvent en guerre : Israël , avec sa capitale à Si che m à le nord , dirigé par une série de dynas ties nordiques , et le petit royaume de Ju da , avec sa capitale à Jérusalem , d ' où la dynastie d avi dique a continué à régner .
+right_seen: 0	prob: [0.8265447616577148, 0.1734551638364792]	Je pense que nous avons tous compris qu ' il savait ce qu ' il faisait .
+right_seen: 1	prob: [0.01481574960052967, 0.9851841926574707]	Le riz ordinaire est parfait , mais vous pouvez aussi l ' agrémenter de sel , de beurre ou d ' huile .
+right_seen: 0	prob: [0.8658155202865601, 0.13418447971343994]	Dans une interview accordée à le Wall Street Journal , dont le lien figure sur votre site , un employé affirme que l ' arme aurait normalement été récupérée chez un autre revendeur .
+right_seen: 0	prob: [0.9600691199302673, 0.03993089869618416]	Quoi qu ' il en soit , Moore ne fait à aucun moment une fausse déclaration , ce qui contredit les affirmations de les critiques selon lesquelles son documentaire est rempli de mensonges .
+right_seen: 1	prob: [0.40452829003334045, 0.5954716205596924]	E r remar quez , nous avons fait décorer la maison
+right_seen: 0	prob: [0.842766523361206, 0.15723347663879395]	Ser ais -tu heureux de retrouver une vie normale , de travailler , de vivre et de pleurer dans la cor vée de ce qui est normal de nos jours ?
+right_seen: 1	prob: [0.0030494099482893944, 0.9969505071640015]	Préparez le sirop de sucre .
+right_seen: 0	prob: [0.8842353224754333, 0.11576462537050247]	De les voiles d ' un orange ob scène et d ' un vert qui insulte le printemps sont suspendus drap és dans de les rouges qui auraient pu être sensu els ailleurs mais qui ne sont ici qu ' offens ants .
+right_seen: 0	prob: [0.9797894954681396, 0.02021048031747341]	Le plus ancien nom associé à la ville , U r us ali m , signifie peut-être ville de Sh ali mor fondée par Sh ali m . 12
+right_seen: 1	prob: [0.3365192711353302, 0.6634806990623474]	les échecs peuvent être bénéfiques pour les adultes aussi , bien que les avantages de jouer soient plus discutés
+right_seen: 1	prob: [0.3469814360141754, 0.653018593788147]	L ' oiseau est debout à le milieu de la rivière .
+right_seen: 1	prob: [0.06432848423719406, 0.9356715679168701]	Un homme sur un terrain tient une bat te de baseball .
+right_seen: 0	prob: [0.8006510734558105, 0.19934894144535065]	Une femme à les longs cheveux bruns portant une chemise blanche sans manches , un homme à les longs cheveux bruns portant un t-shirt vert et de les tatouages sur les bras , et une autre femme à les cheveux noirs portant une robe verte , également avec de les tatouages , sont dans la file d ' attente de la caisse d ' un supermarché .
+right_seen: 0	prob: [0.8541395664215088, 0.1458604484796524]	Je pense que notre monde est un reflet de le tien , ou que le tien est un reflet plus ennuyeux de le nôtre .
+right_seen: 1	prob: [0.13964691758155823, 0.8603531122207642]	Tout le monde m ' a emmené manger dans ma pizz eria préférée .
+right_seen: 0	prob: [0.9042506814002991, 0.09574934840202332]	Non , il a dit que ses recherches étaient purement académiques , pas pour les chasseurs . " Dommage .
+right_seen: 0	prob: [0.9673405289649963, 0.03265950083732605]	L ' air recyclé avait un goût sucré dans ma bouche , et toutes les pensées qui me travers aient l ' esprit étaient de les métaphores bon marché sur les substances qui donnent la vie et comment respirer était comme le sexe , mais en mieux .
+right_seen: 0	prob: [0.8324461579322815, 0.1675538867712021]	Il n ' y a rien de mal à cela : la nourriture dans ces pots est probablement délicieuse , bien que je me demande si le miel de tu pel o à 10 $ devait venir de Floride ou s ' il était produit localement .
+right_seen: 0	prob: [0.7106541991233826, 0.28934577107429504]	Le couloir dans lequel ils étaient cachés n ' était pas comme les autres .
+right_seen: 1	prob: [0.05503390356898308, 0.9449661374092102]	le bri efing journalistique quotidien de les responsables de les quotidiens se déroule autour d ' une table ronde .
+right_seen: 1	prob: [0.028337659314274788, 0.9716623425483704]	Une fourchette est posée sur une assiette à moitié man gée .
+right_seen: 0	prob: [0.9503375887870789, 0.049662452191114426]	Quand je lui ai demandé si elle les avait déjà vus - avant que je sois assez vieux pour arrêter de croire , je veux dire - elle avait toujours l ' air triste et me disait , Non , depuis que la famille est venue en Amérique , il ne nous est rien arrivé .
+right_seen: 0	prob: [0.8091985583305359, 0.19080142676830292]	Ses habitants sont principalement italiens et catholiques romains , avec une petite concentration de métho distes sur le côté est .
+right_seen: 0	prob: [0.9244120121002197, 0.07558803260326385]	Quoi qu ' il en soit , lorsque Adri enne a demandé quel était le but de le navire , nous y avons tous réfléchi .
+right_seen: 1	prob: [0.042894236743450165, 0.9571057558059692]	1 1 / 2 l b de bœuf haché ( le degré de mai gr eur est votre préférence .
+right_seen: 1	prob: [0.00600384920835495, 0.9939961433410645]	Faites -le fri re .
+right_seen: 0	prob: [0.9325801730155945, 0.06741981953382492]	Une théorie mathématique de les langues a été créée par le lingu iste No am Ch om sky , inspiré par les problèmes linguistiques , et la théorie logique de la sémantique pré domine aujourd' hui , en particulier dans l ' analyse de les phrases linguistiques .
+right_seen: 1	prob: [0.04223219305276871, 0.9577677845954895]	L ' individu sain et bien adapté les maintient en équilibre dans un équilibre dynamique .. ,
+right_seen: 0	prob: [0.9656963348388672, 0.034303657710552216]	La romancière s ' interro geait - car bien qu ' elle ait toujours affirmé qu ' un bon écrivain pouvait tout imaginer ( et l ' imaginer vraiment ) , et bien qu ' elle ait souvent soutenu que l ' expérience de la vie réelle était suré valu ée , même Ruth était surprise par la précision avec laquelle elle avait imaginé être veuve .
+right_seen: 1	prob: [0.3291553556919098, 0.6708446741104126]	tout le monde dit qu ' il aime les accents , jusqu ' à ce que vous soyez une fille avec un fort accent - .
+right_seen: 1	prob: [0.24033011496067047, 0.7596698999404907]	Dans tous les cas , nous passons de bons moments ensemble .
+right_seen: 1	prob: [0.0004814014246221632, 0.999518632888794]	un couple d ' hommes en costume monte dans un wagon de train
+right_seen: 0	prob: [0.9400396943092346, 0.05996028706431389]	Les responsables de la sécurité israélienne pensent que le marchand de biens immobiliers assassiné a été exécuté par de les policiers en civil de l ' Autorité palestinienne .
+right_seen: 0	prob: [0.9404234290122986, 0.05957655981183052]	Cela signifie que les installations étrangères étaient plus modernes et plus efficaces que les usines américaines , et qu ' elles étaient donc en mesure d ' exporter un produit plus compétitif .
+right_seen: 1	prob: [0.4857698380947113, 0.5142301917076111]	4 grandes briques ( j ' ai eu les miennes chez Home De pot pour environ 4 dollars chacune ) Gri lle de four Char bon de bois
+right_seen: 0	prob: [0.929827094078064, 0.07017286121845245]	Autour de ce k olo sinu eux et circulaire de jeunes corps qui saut aient inlassablement dans le même rythme , les enfants jouaient , couraient entre les pieds qui dans aient comme à travers une barrière mobile , se tenaient à le centre de ce k olo que l ' on dan sait pour la première fois de leur vie sur ce pont dont on parlait tant depuis de les années , et même sur la k ap ia , où , disait -on , le malheureux Arabe était emprisonné et se montrait de les nuits entières .
+right_seen: 0	prob: [0.8459036946296692, 0.15409626066684723]	Rien qui ne justifie un acte d ' accusation de 160 pages sur la conspiration .
+right_seen: 1	prob: [0.12377788126468658, 0.8762221336364746]	noble personne qui se promène ... sur cette photo elle me fait penser à une jeune femme .
+right_seen: 0	prob: [0.7142757773399353, 0.2857242524623871]	Je voulais demander , mais il était toujours en train de parler , et j ' étais trop gêné pour l ' interrompre .
+right_seen: 0	prob: [0.8988026976585388, 0.10119735449552536]	Nous avons roulé entre de les logements insalu bres et de les vitrines si délab rées que je ne pouvais pas dire si elles étaient abandonnées .
+right_seen: 1	prob: [0.11428914964199066, 0.8857108354568481]	Il y a trois ours en peluche et une grenouille en peluche .
+right_seen: 1	prob: [0.47000542283058167, 0.5299944877624512]	Ils ont tous de les dr ains vers l ' extérieur .
+right_seen: 0	prob: [0.5034046173095703, 0.4965953528881073]	Vous avez tout faux .
+right_seen: 0	prob: [0.5778167843818665, 0.42218318581581116]	Un joueur de football en blanc s ' apprête à frapper le ballon devant une foule nombreuse , alors qu ' un adversaire en rouge tente de l ' attaquer .
+right_seen: 1	prob: [0.0012952805263921618, 0.9987046718597412]	Faire de les sandwichs à le beurre de cacahu ète et à la gelée .
+right_seen: 0	prob: [0.8175997138023376, 0.18240031599998474]	Ce que , par hasard , je suis .
+right_seen: 1	prob: [0.0032741993200033903, 0.9967257976531982]	Laissez refroidir le thé avant de le servir .
+right_seen: 1	prob: [0.279895156621933, 0.7201048731803894]	mais combien de managers donneront une chance à les jeunes anglais dans leur équipe première ?
+right_seen: 0	prob: [0.8760648369789124, 0.12393513321876526]	Nous ne sommes pas tout à fait ce que vous attendez de la lecture de les Grim ms .
+right_seen: 0	prob: [0.9558970332145691, 0.044103022664785385]	Wit t gen stein s ' oppose désormais à l ' atom isme logique et à son principe selon lequel le monde se reflète dans le langage .
+right_seen: 0	prob: [0.9032438397407532, 0.09675611555576324]	Ceux d ' entre nous qui vivent en permanence dans ce monde ont tendance à s ' installer dans de les endroits comme celui-ci , où la population humaine est si écrasante qu ' ils ne se font pas remarquer dans le bon coin , avec les bons sorts de protection ... " Il sortit les indications de le boss u et jeta un coup d ' œil à une ruelle derrière nous ...
+right_seen: 0	prob: [0.92657870054245, 0.07342125475406647]	Les doigts étaient gros jusqu ' à la première articulation et de là s ' effi laient jusqu ' à le bout : les mains de sa mère , me suis -je rendu compte .
+right_seen: 1	prob: [0.3485586643218994, 0.6514413952827454]	Un grim peur se tient sur de les rochers surplombant une chaîne de montagnes ennei gées .
+right_seen: 1	prob: [0.047321293503046036, 0.9526787400245667]	Un banc solitaire est assis près de l ' herbe verte .
+right_seen: 1	prob: [0.03727656230330467, 0.962723433971405]	Un chien est assis à la fenêtre derrière l ' ordinateur portable .
+right_seen: 0	prob: [0.7063125967979431, 0.2936874032020569]	À ce coin de rue , dit -il , interrom pant ma crise de panique imminente , nous allons nous arrêter et tourner trois fois dans le sens inverse de les aiguilles d ' une montre , puis nous ferons face à l ' est .
+right_seen: 1	prob: [0.33736714720726013, 0.6626328825950623]	c ' est de l ' or : le sceau présidentiel en or , la couleur de prédilection , figure à le recto .
+right_seen: 0	prob: [0.9714017510414124, 0.028598226606845856]	Mais ils sont aussi moins bons en ce qu ' ils peuvent , sans le vouloir , transmettre leurs propres peurs à leurs patients , insister trop sur la guérison et fuir la mort comme un échec .
+right_seen: 1	prob: [0.3480667471885681, 0.6519332528114319]	Je ne suis jamais impatiente de nettoyer la neige sur la voiture .
+right_seen: 0	prob: [0.8171173930168152, 0.18288257718086243]	Les habitants de You ng sto wn , désormais sans emploi , avaient très peu d ' argent à dépenser , sauf pour rester en vie .
+right_seen: 0	prob: [0.9577372670173645, 0.04226274788379669]	Ils sont presque aussi rares ici , et je n ' ai jamais entendu d ' histoire fiable de quelqu' un ayant réussi à combattre un vampire .
+right_seen: 1	prob: [0.32068443298339844, 0.6793155670166016]	Un train avec sa locomotive est à l ' arrêt dans une gare .
+right_seen: 1	prob: [0.21969887614250183, 0.7803010940551758]	Une plaque de rue et un poteau se trouvent sous un pont .
+right_seen: 0	prob: [0.7427021265029907, 0.25729793310165405]	Il a de belles manières , Ne p th ys , malgré son mauvais goût pour les chapeaux .
+right_seen: 0	prob: [0.7383673191070557, 0.26163268089294434]	J ' ai visité beaucoup de restaurants " de la ferme à la fourchette " , et celui-ci est peut-être le meilleur que j ' aie vu en matière d ' auto- marketing .
+right_seen: 0	prob: [0.7982916831970215, 0.20170830190181732]	Je me suis rendu compte qu ' elle avait augmenté la mise depuis la dernière fois que j ' étais là : elle faisait quatre ou cinq coups pour chaque coup que je faisais .
+right_seen: 0	prob: [0.6021363735198975, 0.39786362648010254]	Le vieux moi s ' en souci ait .
+right_seen: 0	prob: [0.9488649964332581, 0.051135044544935226]	Il est probablement exact que leur principale raison de ne pas le faire était d ' économiser de l ' argent , et non d ' énerver les victimes de Col u b mine .
+right_seen: 0	prob: [0.9488881826400757, 0.051111772656440735]	Certaines choses dans ce monde , nous devons les rendre permanentes nous-mêmes .
+right_seen: 1	prob: [0.29314884543418884, 0.7068511843681335]	Tout le monde les portera pour les matchs .
+right_seen: 0	prob: [0.8889825940132141, 0.11101739853620529]	Nos lois leur font -elles de la peine ?
+right_seen: 0	prob: [0.875130295753479, 0.12486965954303741]	Il m ' a fallu quelques jours pour réaliser que j ' étais , en fait , toujours en vie .
+right_seen: 1	prob: [0.44092267751693726, 0.559077262878418]	Un homme âgé et chau ve court près d ' un jeune garçon à les cheveux noirs lors d ' une course .
+right_seen: 1	prob: [0.008634090423583984, 0.991365909576416]	transform ez votre chambre à coucher en une évasion glamour de le quotidien .
+right_seen: 1	prob: [0.3839956820011139, 0.616004228591919]	Les bâtiments de la ville étaient uniques .
+right_seen: 0	prob: [0.517841100692749, 0.48215892910957336]	Deux lut teurs s ' affrontent pendant que la foule les regarde attentivement .
+right_seen: 0	prob: [0.8734668493270874, 0.12653309106826782]	Premièrement , les citations réelles de le film sont souvent re produites de manière in correcte .
+right_seen: 1	prob: [0.14260150492191315, 0.857398509979248]	Un chien brun et noir court sur une plage de sable .
+right_seen: 0	prob: [0.9660682082176208, 0.033931832760572433]	Si Arthur D ent s ' était trouvé à moins de huit kilomètres de les si los à haut-parleurs , sa dernière pensée aurait été que , tant par sa taille que par sa forme , l ' installation sonore ressemblait beaucoup à Manhattan .
+right_seen: 1	prob: [0.052427541464567184, 0.9475724697113037]	vente d ' une voiture en excellent état .
+right_seen: 1	prob: [0.04814529046416283, 0.9518547058105469]	de les jeunes gens profitent d ' un dîner et d ' une dégustation de vin dans le vignoble
+right_seen: 0	prob: [0.9240195751190186, 0.07598045468330383]	Les statistiques sont le point faible de Moore , et il est surprenant que ses détracteurs ne s ' y att ardent pas davantage .
+right_seen: 0	prob: [0.9627872109413147, 0.03721284121274948]	Maintenant , il y avait deux choses ici qui avaient ridi culement peu de sens .
+right_seen: 1	prob: [0.1490577608346939, 0.8509421944618225]	Le chien est debout entre les sièges d ' une voiture .
+right_seen: 1	prob: [0.06695141643285751, 0.9330486059188843]	une personne témoigne lors d ' une audience .
+right_seen: 0	prob: [0.7970033884048462, 0.2029966413974762]	La vieille église voû tée a été dépou illée : il n ' y avait pas de tissu sur l ' autel , juste une boîte à outils de DJ et sa bière .
+right_seen: 0	prob: [0.7988520264625549, 0.2011479139328003]	Il est certain que Moore est l ' un de les cinéastes les plus talentueux de les États-Unis aujourd' hui , et que son film méritait pleinement son Oscar .
+right_seen: 0	prob: [0.8783126473426819, 0.12168733775615692]	Ne p th ys disait quelque chose qui ressemblait à , je n ' en ai aucune idée ! mais je ne pouvais pas l ' entendre .
+right_seen: 0	prob: [0.8525538444519043, 0.14744611084461212]	Jérusalem se développe , entourée d ' une formidable muraille et défendue par de les tours près de la porte de J aff a .
+right_seen: 0	prob: [0.9403907656669617, 0.05960921570658684]	Combien de temps avant que tout ce dont vous vous souvenez soit ça , le vaisseau , l ' épaisse moquette rouge , les chan de liers , les conversations vides que vous tenez avec les autres coquillages qui étaient de les personnes ?
+right_seen: 0	prob: [0.6897042393684387, 0.3102957606315613]	Kis hor i , petite , ses cheveux sont attachés en une série de tr esses qui lui arrivent presque à la taille .
+right_seen: 1	prob: [0.03638051822781563, 0.9636194705963135]	Un chat noir dort sur le dessus d ' une toilette .
+right_seen: 0	prob: [0.9080273509025574, 0.09197264909744263]	La pauvreté est souvent décrite comme naturelle , et les pauvres en Amérique sont considérés par les conservateurs comme de les propriétaires de magnét osco pes trop paresseux pour travailler .
+right_seen: 1	prob: [0.2927195727825165, 0.7072804570198059]	Elle lui manque toujours .
+right_seen: 1	prob: [0.28694167733192444, 0.713058352470398]	certains toits coûtent plus cher à réparer que d ' autres ...
+right_seen: 1	prob: [0.048181742429733276, 0.9518182277679443]	une personne âgée joue de la guitare , isolée sur fond blanc
+right_seen: 0	prob: [0.9553658366203308, 0.04463419318199158]	Bien sûr , le dessin animé est très simplifié et la plupart de les critiques considèrent qu ' il s ' agit de l ' une de les parties les plus faibles de le film .
+right_seen: 0	prob: [0.7689539194107056, 0.23104609549045563]	Ce n ' est pas loin , tu ne vas pas avoir d ' ampoules .
+right_seen: 1	prob: [0.05971290543675423, 0.9402871131896973]	poignée de main : on les a vus se tenir la main dans l ' eau pendant que les chiens pag ay aient .
+right_seen: 1	prob: [0.420315146446228, 0.579684853553772]	Nous avons été agréablement surpris par le confort qu ' elle offrait .
+right_seen: 0	prob: [0.8715592622756958, 0.12844078242778778]	Comme l ' a expliqué An i Kun ga , les prières , les souhaits , les espoirs , les aspirations - quelqu' un , plusieurs personnes , peuvent les partager avec vous .
+right_seen: 0	prob: [0.6690322756767273, 0.3309677541255951]	Un homme en costume bleu et rouge est renversé dans les airs sous le regard de son partenaire , également en costume bleu et rouge , et d ' une grande foule de personnes .
+right_seen: 1	prob: [0.037219054996967316, 0.9627808928489685]	Un homme en costume promène son chien près d ' un lam pa daire vert .
+right_seen: 0	prob: [0.9756434559822083, 0.024356462061405182]	C ' est parce qu ' ils savent trop bien que Moore a raison : les États-Unis ont un taux d ' homicide ( avec ou sans arme ) bien plus élevé que la plupart de les autres pays de le monde .
+right_seen: 1	prob: [0.24053622782230377, 0.7594637274742126]	Un homme âgé avec une chemise et une cravate sourit pour la caméra .
+right_seen: 1	prob: [0.1897048056125641, 0.8102952241897583]	Un para surf eur se déplace légèrement au-dessus de l ' eau .
+right_seen: 0	prob: [0.9797099828720093, 0.020289987325668335]	Les chercheurs pensent que Sh ali m aurait pu être une ancienne divinité sémi tique de la paix , car le nom ressemble à les mots modernes hébreu et arabe pour la paix : sh alom et sal a am , respectivement .
+right_seen: 1	prob: [0.12394393235445023, 0.8760560154914856]	Tu vas me coiff er avant de partir ?
+right_seen: 1	prob: [0.3339134752750397, 0.6660864949226379]	Nous dor mons à le frais dans les longs tunnels .
+right_seen: 0	prob: [0.9647014737129211, 0.03529853746294975]	Les sang- mêlé et les dangers qu ' ils représentent pour une société pacifique de sang pur En ce qui concerne Wi ck ham , les voyageurs s ' aperç oivent rapidement qu ' il n ' est pas tenu en grande estime dans la région ;
+right_seen: 0	prob: [0.5543911457061768, 0.44560885429382324]	Comment et pourquoi ce vaisseau existe .
+right_seen: 0	prob: [0.9216044545173645, 0.07839549332857132]	Le métal était si chaud qu ' il leur a presque fait de les clo ques à les doigts , mais il pesait étonnamment peu et pend ait mol lement entre leurs bras .
+right_seen: 0	prob: [0.9014977812767029, 0.09850221872329712]	Bl ess ée , engour die , et à moitié détruite , avec seulement ses nerfs qui vib rent et s ' agitent .
+right_seen: 0	prob: [0.9696646928787231, 0.030335359275341034]	Ses bras étaient fins et assez longs pour atteindre n ' importe quelle herbe depuis son coussin à le centre de le chariot , et avec son long torse à les épaules multiples , il s ' élevait au-dessus de nos têtes , même assis .
+right_seen: 0	prob: [0.9055752754211426, 0.09442470222711563]	Son inquiétude m ' a donné l ' impression que je venais de descendre d ' un bateau et que le sol vaci ll ait sous mes pieds .
+right_seen: 0	prob: [0.9058781266212463, 0.09412193298339844]	Je voulais trouver quelque chose , n ' importe quoi , qui prouver ait que tout ceci était normal et sain d ' esprit .
+right_seen: 1	prob: [0.11882280558347702, 0.8811772465705872]	Une femme est debout devant sa moto .
+right_seen: 0	prob: [0.8313462734222412, 0.16865378618240356]	Ne sont -elles pas magnifiques ?
+right_seen: 0	prob: [0.6596407890319824, 0.3403592109680176]	Un jeune cavalier de ro dé o vêtu d ' une chemise blanche et d ' un jean bleu a un genou à terre en train de réparer sa botte tandis que son chapeau de cow- boy est à côté de lui .
+right_seen: 0	prob: [0.5214563012123108, 0.4785436987876892]	Une grande foule de personnes est à l ' extérieur et un grand panneau indique AI DS W AL K en arrière-plan parmi les arbres .
+right_seen: 0	prob: [0.7796596884727478, 0.22034034132957458]	Une merveille , n ' est -ce pas ? dit -elle .
+right_seen: 0	prob: [0.7749478220939636, 0.225052148103714]	Il semblait presque que la lumière se pen chait autour de lui sans le toucher directement .
+right_seen: 1	prob: [0.3639760911464691, 0.6360238790512085]	Dor a ne voulait pas d ' une autre photo , mais elle est si mignonne .
+right_seen: 0	prob: [0.9239100217819214, 0.07608999311923981]	Ses bras et ses jambes étaient envelopp és de lin blanc jusqu ' à les poignets et à les chevilles , et de les bottes en cuir blanc souple lui tenaient les pieds .
+right_seen: 1	prob: [0.17465175688266754, 0.8253482580184937]	Ma famille faisait un voyage dans un autre pays .
+right_seen: 0	prob: [0.8797372579574585, 0.12026271224021912]	La philosophie bouddhiste tibét aine aborde également l ' esprit et le soi de l ' intérieur .
+right_seen: 1	prob: [0.031686246395111084, 0.9683138132095337]	l ' image peut contenir : personne , jouant d ' un instrument de musique , sur scène , guitare et rayures
+right_seen: 0	prob: [0.9582036137580872, 0.041796423494815826]	Peut-être étions - nous tous fatigués de la fri vo lité de notre vie , ayant atteint un certain seuil ou un certain point de rupture .
+right_seen: 0	prob: [0.9890407919883728, 0.0109591418877244]	Il ne l ' attribue certainement pas à un discours qui n ' a pas été prononcé et , comme indiqué ci-dessus , le faire deux fois n ' aurait aucun sens si Moore était le maître de la tromperie que ses détracteurs prétendent qu ' il est .
+right_seen: 0	prob: [0.7240340113639832, 0.27596601843833923]	Fait : Je n ' étais pas mort .
+right_seen: 1	prob: [0.42171671986579895, 0.5782833099365234]	Une femme portant une chemise marron et un chapeau de cow- boy monte un cheval brun .
+right_seen: 0	prob: [0.8086740374565125, 0.19132597744464874]	Et je ne veux pas dire que vous me dégoû tez .
+right_seen: 1	prob: [0.32254987955093384, 0.6774501204490662]	forces armées et profession tiennent le drapeau pour commémorer le jour de l ' indépendance sur le pont d ' envol
+right_seen: 1	prob: [0.15187907218933105, 0.848120927810669]	Un homme est debout devant l ' évier et regarde
+right_seen: 0	prob: [0.8922396898269653, 0.10776031762361526]	Les forces apparentes de les forces dans toute théorie de les champs dépendent de deux types de paramètres numériques : les masses ( s ' il y en a ) de les particules comme les particules W et Z qui transmettent les forces , et certaines forces intrins èques ( également appelées constantes de couplage ) qui caractérisent la probabilité que de les particules comme les phot ons , les glu ons ou les particules W et Z soient émises et ré absorb ées dans les réactions entre particules .
+right_seen: 0	prob: [0.8985235691070557, 0.10147646069526672]	Moore n ' est pas de le Colorado - sa question est générique et ne vise pas à faire spécifiquement référence à l ' usine Lock he ed Martin en question .
+right_seen: 1	prob: [0.17312370240688324, 0.8268762826919556]	la mariée et le marié s ' embrass ent pendant que le porteur d ' anneau tient de belles fleurs .
+right_seen: 0	prob: [0.6871111989021301, 0.31288883090019226]	Ainsi , le pont , qui unit les deux parties de la route de Sarajevo , relie la ville à les villages environnants .
+right_seen: 1	prob: [0.006565673276782036, 0.9934343099594116]	Une petite fille est debout et mange quelque chose à la cuillère .
+right_seen: 0	prob: [0.8714085221290588, 0.12859147787094116]	Il avait semblé comprendre cela et avait honoré ses souhaits .
+right_seen: 1	prob: [0.09609252214431763, 0.9039074182510376]	Un jeune surf eur est allongé sur sa planche de surf et sur fe sur une vague .
+right_seen: 1	prob: [0.10293936729431152, 0.8970606327056885]	Les jeunes filles écoutent avec de les livres devant elles .
+right_seen: 1	prob: [0.264697790145874, 0.7353021502494812]	Un homme en bleu joue à le football .
+right_seen: 0	prob: [0.5652442574501038, 0.43475577235221863]	Je pourrais parler d ' Ash eville pendant de les semaines , mais il est temps de passer à autre chose .
+right_seen: 0	prob: [0.7825503349304199, 0.2174496352672577]	L ' homme avait l ' air d ' avoir plus de quarante ans , et il conduisait une voiture que j ' aurais peur de conduire dans cette rue .
+right_seen: 1	prob: [0.14535915851593018, 0.854640781879425]	De les hommes se prom ènent dans un quartier d ' affaires pavé de briques et très éclairé .
+right_seen: 0	prob: [0.9666454195976257, 0.03335459157824516]	Cependant , il est apparu rapidement que si les dirigeants syndicaux locaux étaient prêts à se battre , la branche internationale ne l ' était pas .
+right_seen: 1	prob: [0.026332158595323563, 0.9736678600311279]	Le chat est sur le dessus de le sac à dos .
+right_seen: 0	prob: [0.9412263035774231, 0.05877365171909332]	L ' archéologie montre qu ' à cette époque , les sociétés vivaient principalement dans de les villes de commerce côtières , avec peu d ' établissements à l ' intérieur de les terres .
+right_seen: 1	prob: [0.27303871512413025, 0.7269613146781921]	Un homme en débar deur jaune avec un ami en chemise blanche vérifie le gri l .
+right_seen: 0	prob: [0.9610111713409424, 0.03898882493376732]	Je veux dire , bien sûr , j ' ai eu mon moment d ' exaltation quand j ' ai réalisé que j ' avais été sauvé , mais je n ' ai pas compris .
+right_seen: 0	prob: [0.6249417662620544, 0.37505826354026794]	Et il y avait de les fruits qui étaient très jolis à regarder et qui avaient l ' air délicieux .
+right_seen: 0	prob: [0.6884539723396301, 0.3115459978580475]	Je pensais que je pouvais sentir une légère démange aison .
+right_seen: 1	prob: [0.35139036178588867, 0.6486096382141113]	Voir un camion de pompiers dehors par ce temps n ' est pas bon signe .
+right_seen: 1	prob: [0.039954785257577896, 0.9600452184677124]	La purée de pommes de terre est la clé de cette recette .
+right_seen: 0	prob: [0.521249532699585, 0.47875046730041504]	Elle me regarde , un sour cil en l ' air .
+right_seen: 0	prob: [0.627632200717926, 0.37236785888671875]	Deux hommes , tous deux vêtus d ' une chemise k aki , d ' une cravate ray ée , d ' un pantalon marine et d ' un chapeau , se trouvent dans une campagne herb euse , l ' un portant une guitare et l ' autre une mall ette .
+right_seen: 1	prob: [0.06069772318005562, 0.9393022656440735]	comment changer la batterie dans l ' industrie
+right_seen: 0	prob: [0.8823293447494507, 0.11767058074474335]	Dans ce cas , le rasoir de Han lon peut être appliqué à Hes ton -- il n ' est probablement pas raciste , mais in compétent .
+right_seen: 0	prob: [0.6247784495353699, 0.37522152066230774]	La nuit ne va pas tarder à tomber .
+right_seen: 1	prob: [0.2969142496585846, 0.703085720539093]	La fête s ' est poursuivie par une superbe danse de les ombres de la part de le modèle .
+right_seen: 0	prob: [0.9639106392860413, 0.036089375615119934]	Cela n ' avait pas semblé pertinent , d ' une certaine manière , étant donné que j ' étais encore sous le choc de l ' explosion , de la mort de mes coéquipiers et de le sauvetage .
+right_seen: 1	prob: [0.07675385475158691, 0.9232461452484131]	Je travaille dans un café .
+right_seen: 1	prob: [0.23790322244167328, 0.7620967626571655]	Quatre jeunes adultes avec deux micro phones font de les grim aces à la caméra .
+right_seen: 0	prob: [0.8841131329536438, 0.1158868744969368]	Selon le LA Times , le genre de le documentaire a une énorme dette envers Michael Moore - après le succès de Bow ling , de les films comme S pell bou nd et Cap tur ing the Fried mans ont été pris à le sérieux et projetés dans beaucoup plus de salles que prévu .
+right_seen: 1	prob: [0.44493308663368225, 0.5550668835639954]	Deux ouvriers de la rue travaillent sur le trottoir .
+right_seen: 0	prob: [0.5702348947525024, 0.42976510524749756]	Elle ressemblait à une pierre de rivière normale , un ovale gris avec une bande blanche à travers .
+right_seen: 0	prob: [0.8600260615348816, 0.1399739384651184]	Il ador ait travailler pour le Guide gal actique de l ' auto- stopp eur , mais il souhaitait simplement qu ' il y ait un moyen d ' éloigner tous les auto- stopp eurs .
+right_seen: 0	prob: [0.969698429107666, 0.03030160255730152]	Ce que nous faisons , en nous reb ell ant contre l ' oppression de les nombreux gouvernements qui s ' opposent à nous , nous allons laisser un héritage .
+right_seen: 1	prob: [0.12089529633522034, 0.879104733467102]	Un petit enfant en pyjama tient la télécommande .
+right_seen: 0	prob: [0.6760251522064209, 0.3239748477935791]	S ' il y a une faveur que vous voulez que nous vous fas sions en retour , nous serons heureux de le faire . "
+right_seen: 0	prob: [0.9643418192863464, 0.03565816208720207]	Il n ' est pas surprenant que la plupart de les critiques de le film de Moore soient erronées ou carrément fausses , souvent bien plus in exactes que l ' œuvre de Moore elle-même .
+right_seen: 0	prob: [0.824015200138092, 0.17598484456539154]	Notre cuisine rend hommage à notre amour de les traditions de le Sud à table , mais comme les bonnes gens d ' Ash eville , elle marche à son propre rythme .
+right_seen: 1	prob: [0.46870291233062744, 0.5312971472740173]	Mai cey a pensé que ce serait une bonne idée de prendre le côté gauche de le sentier .
+right_seen: 0	prob: [0.9244910478591919, 0.0755089670419693]	Je ne pouvais pas dire ce que le regard pen sif sur son visage signifiait .
+right_seen: 1	prob: [0.2104068547487259, 0.7895931601524353]	Un ours polaire blanc est couché dans la neige .
+right_seen: 0	prob: [0.7712244391441345, 0.22877554595470428]	Pour ceux d ' entre vous qui ont toujours espéré voir la lumière à le bout de le tunnel , il a dit , c ' est ici .
+right_seen: 1	prob: [4.054234887007624e-05, 0.9999594688415527]	un chat gris se promène sur une table en verre et il y a un feu dans la cheminée
+right_seen: 1	prob: [0.01217785943299532, 0.9878221154212952]	un artiste pop se produit sur scène .
+right_seen: 0	prob: [0.9587845206260681, 0.04121551662683487]	Ou bien avait -elle une connotation vaguement mal venue , impliquant qu ' elle " compr endrait " que toute cette histoire entre eux lui apparaissait maintenant comme une erreur romantique , Margaret ou pas Margaret ?
+right_seen: 0	prob: [0.8615574836730957, 0.13844254612922668]	Sur la droite s ' élevait le Palais de le Tribunal , la luxuri ante résidence pa pale , qui n ' avait d ' égal que Versailles pour son embel lissement baroque .
+right_seen: 0	prob: [0.9811939597129822, 0.018806010484695435]	Une partie de son cerveau lui disait qu ' il savait parfaitement ce qu ' il regardait et ce que les formes représentaient , tandis qu ' une autre , tout à fait raisonnable , refusait d ' admettre cette idée et renon çait à toute responsabilité pour toute réflexion ultérieure dans ce sens .
+right_seen: 0	prob: [0.9439380764961243, 0.05606192722916603]	Quelle importance avait l ' origine de le vaisseau et pourquoi Jeff erson m ' avait sauvé , si maintenant , je suis content ?
+right_seen: 0	prob: [0.9403680562973022, 0.05963188409805298]	Le Français a dirigé ses mercenaires vers le nord , de l ' autre côté de la frontière autrichienne , et l ' Autri chien a envoyé les siens vers le sud , en direction de la Dal matie , qui était gouvern ée par les Français .
+right_seen: 0	prob: [0.9670881628990173, 0.032911788672208786]	Les guerres per ses Alors qu ' Athènes gagnait en influence et en puissance à l ' Ouest , elle était re jointe à l ' Est par la montée en puissance de l ' Empire per se .
+right_seen: 0	prob: [0.9773513674736023, 0.0226486437022686]	Une théorie populaire compare l ' impératif de le sionisme d ' acquérir de les terres à l ' idée américaine de la destinée manifeste ( selon laquelle les États-Unis avaient le droit divin de régner d ' un océan à l ' autre ) .
+right_seen: 0	prob: [0.9612053036689758, 0.03879472613334656]	J ' avais espéré que nos sentiments coïnci daient en tout point , mais je dois me démarquer de vous à le point de penser que nos deux plus jeunes filles sont exceptionnellement stupides .
+right_seen: 0	prob: [0.8523532748222351, 0.1476467251777649]	Les habitants de chaque ville travaillent , font leurs courses , mangent et se rencontrent dans de les villes différentes de la leur , ce qui rend chaque ville fortement dépendante de les autres .
+right_seen: 1	prob: [0.053898897022008896, 0.9461010694503784]	Cette petite poupée se sentait très triste .
+right_seen: 1	prob: [0.24665158987045288, 0.7533484697341919]	Un homme en tenue de cow- boy sur un cheval marche dans la rue sous le regard de les gens .
+right_seen: 1	prob: [0.038658902049064636, 0.961341142654419]	Un homme est debout dans une pièce et tient une planche de surf .
+right_seen: 0	prob: [0.8801044225692749, 0.11989560723304749]	Privé de ma vie familière précédente , je me suis accroché à Kis hor i et Ray et Z h eng , et Sarah avec Alexis traîné le long de son bras de temps en temps ( il était surtout son partenaire de danse préféré ;
+right_seen: 1	prob: [0.2576732337474823, 0.7423267960548401]	Une petite fille triste est assise près de la fenêtre et regarde les gouttes de pluie tomber .
+right_seen: 0	prob: [0.8872434496879578, 0.11275658011436462]	Vous avez l ' air ridicule avec un crâne rasé , il a pris le premier chapeau qui c ouvri rait ma tête et pourrait repasser dans le vrai Boston .
+right_seen: 1	prob: [0.04845217987895012, 0.9515478610992432]	Un couple pose ensemble sur un court de tennis .
+right_seen: 1	prob: [0.22825442254543304, 0.7717455625534058]	Un homme en blouson de cuir et chapeau de cow- boy tend la main dans la rue .
+right_seen: 0	prob: [0.9808971881866455, 0.019102860242128372]	En réalité , ce que Moore décrit ici est l ' exemple le plus frappant de ce qu ' on ne peut appeler que l ' esclavage salarié que j ' ai jamais vu , à le détriment de les familles .
+right_seen: 1	prob: [0.0982629656791687, 0.9017370343208313]	Un jeune homme joue une partie de baseball sur le terrain .
+right_seen: 1	prob: [0.24799410998821259, 0.752005934715271]	Si vous avez de la chance et que vous vivez dans ou près d ' une ferme , vous verrez peut-être de les sau ter elles sau tiller , certaines familles mexic aines prennent quelques heures pour en obtenir une bonne quantité pour le dîner ,
+right_seen: 0	prob: [0.9412786960601807, 0.05872131511569023]	Et pour lui , étudier signifiait s ' identifier pendant un certain temps à le sujet de ses études , être excité par lui , l ' adopter à le moins momentanément comme sa seule foi exclusive , et rejeter tout ce qu ' il avait cru auparavant et qui l ' avait enthousias mé jusqu ' alors ...
+right_seen: 1	prob: [0.0024956143461167812, 0.9975044131278992]	Sur une table , deux figurines , une tasse à café et deux beign ets .
+right_seen: 1	prob: [0.3121319115161896, 0.6878681182861328]	Il faut probablement faire les exercices de toute façon .
+right_seen: 0	prob: [0.8793931007385254, 0.12060695886611938]	Vous ne voyez pas de sens parce qu ' il n ' y a pas de sens , dit -elle .
+right_seen: 1	prob: [0.07749956846237183, 0.9225004315376282]	l ' artiste de hard rock et l ' acteur assistent à leur mariage
+right_seen: 0	prob: [0.9443584680557251, 0.0556415356695652]	Je me suis demandé pourquoi , s ' il avait de les perspectives si peu favorables , il n ' avait pas essayé de changer sa situation .
+right_seen: 0	prob: [0.8643499612808228, 0.13565008342266083]	Mais w ow , il s ' est amélioré dès que j ' ai eu l ' air d ' être une sorte de critique gastronomique ou d ' écrivain de voyage .
+right_seen: 0	prob: [0.9263409376144409, 0.07365910708904266]	Amy n ' a pas rou gi , et j ' espère qu ' elle n ' a pas compris ce que disait I sis .
+right_seen: 1	prob: [0.0021680169738829136, 0.9978320002555847]	Chau ffer le four à 375 degrés F. Déposer une couche de sauce à le fond d ' un plat de cuisson de 9 par 13 pouces .
+right_seen: 1	prob: [0.1634681075811386, 0.8365318775177002]	De les gens se prom ènent dans un centre commercial intérieur très éclairé .
+right_seen: 1	prob: [0.051459554582834244, 0.948540449142456]	Un ours polaire est assis sur une corniche de glace .
+right_seen: 1	prob: [0.0949125662446022, 0.905087411403656]	Deux personnes portant de le rouge sont assises sur un mur de briques et boivent de le café .
+right_seen: 0	prob: [0.983068585395813, 0.016931381076574326]	La deuxième hypothèse de Moore est que la politique étrangère de l ' Amérique peut contribuer à la croyance que la violence est un moyen approprié pour résoudre les conflits , une hypothèse partagée par de nombreux sociologues et psychologues .
+right_seen: 0	prob: [0.8337689638137817, 0.16623100638389587]	Alors que les courants d ' air secou ent son corps , ses vêtements s ' accro chent , accen tuant son torse mince et ses petits seins .
+right_seen: 1	prob: [0.02132490836083889, 0.978675127029419]	Une personne ajoute une extension en acier et en béton à une maison .
+right_seen: 1	prob: [0.0028766703326255083, 0.9971233010292053]	Utiliser cinq morceaux de chou .
+right_seen: 1	prob: [0.1110045537352562, 0.8889954090118408]	Une femme âgée est debout à côté d ' un cheval .
+right_seen: 0	prob: [0.8657960891723633, 0.1342039406299591]	Bien sûr , cela me manque d ' avoir un endroit où m ' installer , mais c ' est mieux que d ' attendre d ' être endi gué .
+right_seen: 0	prob: [0.9639279246330261, 0.036072034388780594]	La façon dont ils étaient tous alimentés était un mystère - aussi bonne que soit la technologie , un robot de qualité comme celui-ci était toujours un puits d ' énergie .
+right_seen: 1	prob: [0.12493392080068588, 0.8750661611557007]	Un homme âgé regarde par terre et sourit .
+right_seen: 1	prob: [0.35460805892944336, 0.6453920006752014]	Maintenant , profitez de votre plaisir
+right_seen: 0	prob: [0.9363644123077393, 0.06363561749458313]	Quelque part vers le centre de la piste de danse , j ' ai entendu un hur lement qui a envoyé un vent glacial sous mes vêtements - pendant une seconde , j ' étais de retour avec ma famille en Russie , me cachant de le froid .
+right_seen: 0	prob: [0.8158215284347534, 0.1841784417629242]	Il était si isolé entre les falaises que peu de gens le connaissaient , même parmi les Lap ons eux-mêmes .
+right_seen: 1	prob: [0.0574493333697319, 0.9425507187843323]	Un garçon saute dans un lac .
+right_seen: 1	prob: [0.11602383106946945, 0.8839761018753052]	Le rinçage n ' est pas nécessaire pour tous les types de riz , mais il permet d ' améliorer la texture et la saveur de la plupart de les variétés couran tes. Faites tremper le riz jusqu ' à 30 minutes si vous avez le temps - puis égout tez -le .
+right_seen: 0	prob: [0.7801382541656494, 0.21986174583435059]	Peut-être qu ' une meilleure question est : est -ce que quelqu' un revient jamais ?
+right_seen: 0	prob: [0.7921623587608337, 0.20783764123916626]	Nous avions chacun notre propre théorie .
+right_seen: 0	prob: [0.9639108777046204, 0.03608907386660576]	Je veux dire , bien sûr , j ' ai eu mon moment d ' exaltation quand j ' ai réalisé que j ' avais été secour u , mais je n ' ai pas compris .
+right_seen: 1	prob: [0.02885032258927822, 0.9711496233940125]	de les visiteurs regardent de les robots souder une voiture .
+right_seen: 0	prob: [0.9118325710296631, 0.0881674513220787]	Quoi qu ' il en soit , il est agréable de voir un restaurant construit sur l ' éthique et qui se trouve être incroyablement occupé .
+right_seen: 0	prob: [0.6712036728858948, 0.3287963569164276]	Ce travail lui a permis de garder les pieds sur terre pendant les sept années où elle a super visé les soins de santé de Jack .
+right_seen: 1	prob: [0.030331697314977646, 0.9696682691574097]	Trois photographes utilisent de les tré pieds pour prendre de les photos dans un couloir carrel é .
+right_seen: 0	prob: [0.8711623549461365, 0.12883760035037994]	J ' ai entendu dire qu ' il y avait un certain nombre d ' étapes dans le processus de deuil et de choc ;
+right_seen: 0	prob: [0.9726787209510803, 0.02732132561504841]	A côté de cela , rien d ' autre ne comptait .
+right_seen: 0	prob: [0.6590635180473328, 0.34093642234802246]	La vieille structure en décomposition était grande et effrayante .
+right_seen: 0	prob: [0.8311465978622437, 0.16885340213775635]	Le bateau sur lequel j ' étais , je suppose que c ' est ce qui s ' est passé aussi .
+right_seen: 1	prob: [0.06644423305988312, 0.9335557222366333]	J ' adore les fêtes costu mées avec mes amis .
+right_seen: 1	prob: [0.40471482276916504, 0.595285177230835]	Ils avaient beaucoup de sty los de rechange pour s ' assurer qu ' ils ne manquent pas d ' encre !
+right_seen: 1	prob: [0.04685097932815552, 0.9531489610671997]	l ' image peut contenir : personne , jouant d ' un instrument de musique et sur scène
+right_seen: 1	prob: [0.2060544192790985, 0.7939455509185791]	Le paysage était joli .
+right_seen: 1	prob: [0.08318065106868744, 0.9168193340301514]	Une personne conduit une moto sur de la terre .
+right_seen: 1	prob: [0.0507638193666935, 0.9492361545562744]	Un oiseau brun est assis sur un poteau en bois à côté d ' une plante .
+right_seen: 0	prob: [0.8672211170196533, 0.13277888298034668]	On peut se demander qui en a besoin , et comment cela s ' accorde avec tous les appels fréné tiques à l ' économie que l ' on nous rab â che sans cesse à l ' oreille .
+right_seen: 1	prob: [9.381734707858413e-05, 0.9999061822891235]	un lapin essaie de se cacher derrière les fleurs après avoir été surpris sur la table
+right_seen: 1	prob: [0.12385930120944977, 0.8761406540870667]	Un joueur de football à le casque doré court avec un ballon .
+right_seen: 1	prob: [0.10546457022428513, 0.8945354223251343]	Deux femmes s ' embrass ent .
+right_seen: 1	prob: [0.01019646693021059, 0.9898035526275635]	Un garçon descend un tobog gan dans une petite piscine de jardin .
+right_seen: 0	prob: [0.9191247224807739, 0.08087524026632309]	Cela correspond à le type de violence induite par les médias décrit ci-dessus , et n ' a aucun rapport avec la théorie de la violence induite par les jeux vidéo ou la musique .
+right_seen: 0	prob: [0.9194051027297974, 0.08059487491846085]	L ' église était complètement différente maintenant : la lumière de le soleil tombait à travers les vitraux , attrap ant la poussière qui flott ait encore dans l ' air et envoyant une chaleur sèche et saine dans les bords de la pièce , à travers la pierre et le béton poudr eux qui avaient été couverts la nuit dernière par la chair et les lumières cli gnot antes .
+right_seen: 0	prob: [0.9527437686920166, 0.04725616052746773]	Ces pensées indign ées l ' ont affli gée jusqu ' à ce qu ' elle soit presque arrivée à son propre service quand elle s ' est souven ue de les hommes avec de les bé quilles en bas , attendant d ' être amenés dans l ' ascenseur .
+right_seen: 1	prob: [0.013640973716974258, 0.9863590598106384]	Ajoutez le masque et la transformation est complète .
+right_seen: 0	prob: [0.9271231293678284, 0.07287686318159103]	Le goût , l ' ouïe et le toucher sont devenus un seul flou , et je ne sais pas si mes yeux étaient ouverts .
+right_seen: 1	prob: [0.010327850468456745, 0.9896721839904785]	une femme tient et utilise un télé phone portable
+right_seen: 0	prob: [0.946614682674408, 0.05338527634739876]	Elle a découvert que le plus beau temple romain de la ville , dédié à la déesse Aph ro dite , se trouvait sur le lieu de la cruci fix ion .
+right_seen: 1	prob: [0.1497589349746704, 0.8502411246299744]	l ' arrière-plan animé drapeau présente un drapeau avec un tissu brillant et une texture de coton souff lant dans le vent .
+right_seen: 0	prob: [0.7969945073127747, 0.20300552248954773]	J ' ai commencé à me demander à quel point mes guides étaient fiables .
+right_seen: 0	prob: [0.7139087915420532, 0.2860911786556244]	Il n ' y a rien d ' in exact dans la scène de la banque .
+right_seen: 1	prob: [0.1653442680835724, 0.8346557021141052]	Mon frère va faire griller la viande .
+right_seen: 0	prob: [0.9625607132911682, 0.03743929788470268]	Dans son esprit , l ' univers est toujours divisé en deux parties : la Terre et tout le reste .
+right_seen: 0	prob: [0.6392601132392883, 0.36073991656303406]	Ça me fait froid dans le dos .
+right_seen: 1	prob: [0.44321879744529724, 0.5567811727523804]	Un concurrent chevau chant un poney dans un ro dé o est projeté par le cheval , sous le regard d ' un autre cow- boy dans l ' arène et de spectateurs derrière une barrière .
+right_seen: 1	prob: [0.10087262094020844, 0.8991274237632751]	Un surf eur expérimenté sur fe sur une très grosse vague .
+right_seen: 0	prob: [0.9471383094787598, 0.05286165326833725]	Tout ce que j ' ai vu , tout ce dont je me souviens , c ' est un flou .
+right_seen: 1	prob: [0.05253257229924202, 0.9474675059318542]	se lever tôt pour aller à l ' épicerie peut s ' avérer fastidi eux .
+right_seen: 1	prob: [0.04225768893957138, 0.9577422738075256]	et ils ont partagé un gâteau digne d ' une fête .
+right_seen: 0	prob: [0.9380072355270386, 0.061992816627025604]	Je ne voulais pas penser à les disparitions , à le temps , à les buts et à les conséquences .
+right_seen: 1	prob: [0.0993497371673584, 0.9006502628326416]	Une vache brune regarde dans l ' emb ra sure de la porte .
+right_seen: 1	prob: [0.07507849484682083, 0.9249215126037598]	le couple avait l ' air détendu en s ' asse yant et en mangeant dans ce restaurant populaire .
+right_seen: 1	prob: [0.16771970689296722, 0.8322802782058716]	Un homme pose pour les caméras tandis que d ' autres piétons déambu lent et se mélangent .
+right_seen: 1	prob: [0.08260691910982132, 0.9173930287361145]	Une femme tient quelque chose pour une photo professionnelle pendant que le photographe prend le cliché .
+right_seen: 1	prob: [0.2514929473400116, 0.748507022857666]	Une fille portant de les lunettes tient un chat .
+right_seen: 0	prob: [0.9386448264122009, 0.06135512888431549]	Tu vois , Nathan , il y a ... une société distincte de la tienne ... oh , z ut !
+right_seen: 1	prob: [0.0020219101570546627, 0.997978150844574]	Préparez le gri l ou faites chauffer une poêle ( vap orisée d ' un spray de cuisson ) à un feu moyen- élevé .
+right_seen: 0	prob: [0.8811687231063843, 0.11883129924535751]	Et nous tous , nous étions de les personnages permanents dans les histoires de les autres .
+right_seen: 1	prob: [0.06387945264577866, 0.9361205697059631]	Un oiseau est debout sur la petite branche à l ' extérieur .
+right_seen: 0	prob: [0.9086553454399109, 0.09134461730718613]	Pos ant un bras sur mon épaule , il me dit , Nathan , ce que tu vois ici peut être effrayant , mais ces choses que tu as vues sont de les gens comme toi .
+right_seen: 1	prob: [0.30741238594055176, 0.6925876140594482]	Eh bien , laissez -moi y aller !
+right_seen: 1	prob: [0.22280831634998322, 0.7771916389465332]	Un bébé bo vin regarde la caméra sous le regard de les autres .
+right_seen: 1	prob: [0.2654247283935547, 0.7345752120018005]	Tout le monde s ' est beaucoup amusé et nous avons bu un peu plus que d ' habitude .
+right_seen: 0	prob: [0.858399510383606, 0.14160047471523285]	Il était beaucoup plus intri gué par le souvenir de les femmes dont l ' initiative érotique était étouff ée et dont l ' apparence était quelconque ;
+right_seen: 0	prob: [0.9675801396369934, 0.0324198417365551]	L ' hypothèse de Moore ( qui provient apparemment , à le moins en partie , de le livre Culture of Fe ar de Barry Gl ass ner , également annoncé sur le site Web de Moore ) est que le bombardement constant de messages de peur peut inciter à la paranoï a , qui peut elle-même conduire à de les actes violents .
+right_seen: 1	prob: [0.3356877863407135, 0.6643122434616089]	Une femme portant de le noir et de le rouge est assise sur une moto .
+right_seen: 1	prob: [0.08140537142753601, 0.9185946583747864]	C ' était l ' heure de la remise de les diplômes pour le groupe d ' amis !
+right_seen: 0	prob: [0.680069625377655, 0.3199303448200226]	Leur haut fourneau , Hop e well , a été le tout premier haut fourneau de la région .
+right_seen: 1	prob: [0.07998887449502945, 0.9200111031532288]	Vous rép andez le sel sur toute la farine de blé , puis dans le trou que vous avez fait vous placez la levure , l ' eau et une pincée de sucre . & # 160 ;
+right_seen: 0	prob: [0.9627872109413147, 0.03721284121274948]	Maintenant , il y avait deux choses ici qui avaient ridi culement peu de sens .
+right_seen: 1	prob: [0.010334853082895279, 0.9896652102470398]	Un garçon lit une bande dessinée devant une chaise rouge et un grill .
+right_seen: 0	prob: [0.615757942199707, 0.3842420279979706]	On aurait dit que nous étions à le fond d ' une boîte de nuit .
+right_seen: 0	prob: [0.9149096608161926, 0.08509039878845215]	Cependant , la Grèce n ' était pas encore un pays ;
+right_seen: 1	prob: [0.07565305382013321, 0.9243469834327698]	un journaliste de télévision assiste à la première de la saison
+right_seen: 0	prob: [0.9485337734222412, 0.051466260105371475]	Vous trouverez de les exemples originaux dans les musées archéologiques de les Cycl ades , bien que l ' un de les plus anciens exemples se trouve à le musée de Par os .
+right_seen: 0	prob: [0.6897984147071838, 0.31020161509513855]	La loi pa pale interdit l ' autopsie .
+right_seen: 0	prob: [0.842562198638916, 0.15743780136108398]	L ' instinct ne l ' avait pas trahi , il avait bien choisi .
+right_seen: 1	prob: [0.45830273628234863, 0.5416972637176514]	rise of fic tional char ac ter est un jeu de cartes stratégique d ' influence et d ' horreur pour les joueurs .
+right_seen: 0	prob: [0.9472219347953796, 0.05277802050113678]	A la vue de les visages de mes compagnons , je savais qu ' ils pensaient la même chose .
+right_seen: 1	prob: [0.1497003734111786, 0.850299596786499]	Une jeune femme qui fait une grim ace joue à la Wii .
+right_seen: 0	prob: [0.9446952939033508, 0.05530465766787529]	Nous ne nous souci ons pas d ' être les derniers et nous ne nous souci ons pas qu ' il n ' y ait plus d ' étoiles .
+right_seen: 0	prob: [0.9312101006507874, 0.06878985464572906]	La vitesse de le son dans l ' air sec à vingt degrés Cel sius ou soixante- huit degrés Fah ren he it est de trois cent quarante- trois mètres par seconde , ou mille cent vingt-cinq pieds par seconde .
+right_seen: 0	prob: [0.9540728330612183, 0.04592720791697502]	You ng sto wn a peut-être été plus durement touchée que toute autre ville par l ' effondrement de l ' industrie sidérur gique , mais elle n ' était pas la seule .
+right_seen: 0	prob: [0.7523797154426575, 0.24762028455734253]	Cela dépend de ce qui ressorti ra de la réunion , dit Zar ni woo p .
+right_seen: 0	prob: [0.9386882185935974, 0.0613117441534996]	Elle a découvert que le plus beau temple romain de la ville , dédié à la déesse Aph ro dite , se trouvait sur le site de la cruci fix ion .
+right_seen: 0	prob: [0.9659539461135864, 0.03404601290822029]	Seuls ceux de l ' équipe interne de l ' In surrection d ' Arr allin savaient qu ' il n ' était pas un vulgaire " beta fur ry " .
+right_seen: 1	prob: [0.09703046828508377, 0.9029695391654968]	Une personne tient une bouteille de vin à côté d ' un énorme ho t- dog couvert de ch ili .
+right_seen: 0	prob: [0.8746956586837769, 0.12530434131622314]	La ville semblait eng lu ée dans une hiber nation grise et brum euse .
+right_seen: 0	prob: [0.7161897420883179, 0.28381025791168213]	Il s ' est retiré autour de le bout de ses doigts , qui portaient de les choses qui auraient pu être de les ongles ou de les griffes .
+right_seen: 1	prob: [0.0043139588087797165, 0.9956860542297363]	ajouter les oignons à le mélange et mélanger le tout .
+right_seen: 1	prob: [0.22393018007278442, 0.7760698199272156]	L ' homme à la cravate joue de la guitare .
+right_seen: 0	prob: [0.6743378639221191, 0.32566213607788086]	Elle avait le regard de tous les chefs qu ' elle avait connus .
+right_seen: 1	prob: [0.18169613182544708, 0.8183038830757141]	chien triste est un chiot mignon mais triste avec son ours en peluche à côté de lui s ' il veut être réconfor té .328 out of 416
+Testing unseen
+Accuracy: 0.83
+Confusion matrix:
+              precision    recall  f1-score   support
+
+           0       1.00      0.45      0.62        20
+           1       0.65      1.00      0.78        20
+
+   micro avg       0.72      0.72      0.73        40
+   macro avg       0.82      0.72      0.70        40
+weighted avg       0.82      0.72      0.70        40
+
+
+Wrong predictions:
+wrong_unseen: 1	prob: [0.01749253459274769, 0.9825074076652527]	Le pain est composé de farine , d ' eau et de levure .
+wrong_unseen: 1	prob: [0.0023588817566633224, 0.9976410865783691]	Cette boîte contient un gâteau .
+wrong_unseen: 1	prob: [0.11488928645849228, 0.8851106762886047]	Cette chemise me va bien .
+wrong_unseen: 1	prob: [0.36356717348098755, 0.6364327669143677]	Julie a toujours dét esté les chiens .
+wrong_unseen: 1	prob: [0.022207103669643402, 0.9777928590774536]	Ce livre de cuisine contient une recette de pain .
+wrong_unseen: 1	prob: [0.05701776593923569, 0.9429822564125061]	J ' aime lire des romans policiers .
+wrong_unseen: 1	prob: [0.0635332390666008, 0.9364667534828186]	J ' aime le chocolat .
+wrong_unseen: 1	prob: [0.008428138680756092, 0.9915719032287598]	Je préfère la glace au chocolat .
+wrong_unseen: 1	prob: [0.49121353030204773, 0.5087864995002747]	Il ne s ' est pas souven u de mon nom .
+wrong_unseen: 1	prob: [0.49335625767707825, 0.5066437125205994]	Je suppose que John sera en retard .
+wrong_unseen: 1	prob: [0.4951936900615692, 0.5048062801361084]	Le bruit m ' a surpris .11 out of 40
+
+Right predictions:
+right_unseen: 0	prob: [0.6898524761199951, 0.31014755368232727]	Elle n ' était pas d ' accord avec nous .
+right_unseen: 0	prob: [0.8075425028800964, 0.1924574375152588]	Je ne crois pas les nouvelles .
+right_unseen: 0	prob: [0.8433899879455566, 0.15661008656024933]	Je ne suis pas d ' accord avec vous .
+right_unseen: 0	prob: [0.7042291760444641, 0.29577088356018066]	Je n ' aime pas les champignons depuis des années .
+right_unseen: 0	prob: [0.5383805632591248, 0.46161940693855286]	Tu entends de la musique ?
+right_unseen: 0	prob: [0.5011504292488098, 0.4988495111465454]	Je connais Julie depuis dix ans .
+right_unseen: 0	prob: [0.5213187336921692, 0.4786812663078308]	Je ne me suis pas rendu compte du problème .
+right_unseen: 0	prob: [0.7067283391952515, 0.2932717204093933]	Je n ' ai pas reconnu mon vieil ami .
+right_unseen: 0	prob: [0.5998656153678894, 0.4001343846321106]	Ton idée est géniale .
+right_unseen: 1	prob: [0.1066630557179451, 0.8933369517326355]	Elle joue au tennis tous les vendredis .
+right_unseen: 1	prob: [0.10563509911298752, 0.8943648934364319]	Elle joue au tennis en ce moment .
+right_unseen: 1	prob: [0.13265682756900787, 0.8673431277275085]	La neige fond chaque printemps .
+right_unseen: 1	prob: [0.09800489991903305, 0.9019951224327087]	La neige fond en ce moment .
+right_unseen: 1	prob: [0.2978239357471466, 0.702176034450531]	Le boxeur frappe son adversaire .
+right_unseen: 1	prob: [0.16599015891551971, 0.8340098857879639]	Le boxeur va frapper son adversaire .
+right_unseen: 1	prob: [0.09144439548254013, 0.9085555672645569]	Ils ont mangé leur dîner en silence .
+right_unseen: 1	prob: [0.34586668014526367, 0.6541333198547363]	Je suis passé devant la grange .
+right_unseen: 1	prob: [0.005667668767273426, 0.9943323135375977]	Nous avons appris à faire des pâtes .
+right_unseen: 1	prob: [0.11678191274404526, 0.8832181096076965]	Il cultiv ait des pommes de terre dans sa ferme .
+right_unseen: 1	prob: [0.3011183738708496, 0.6988816261291504]	J ' ai dormi toute la matinée .
+right_unseen: 1	prob: [0.36328399181365967, 0.6367160081863403]	Nous avons parlé pendant des heures de nos voyages .
+right_unseen: 1	prob: [0.17577427625656128, 0.824225664138794]	Je t ' écri rai une lettre demain .
+right_unseen: 1	prob: [0.17326007783412933, 0.8267399668693542]	Elle court dix kilomètres par jour .
+right_unseen: 1	prob: [0.179033100605011, 0.820966899394989]	Il a lu un conte de fées à ses enfants .
+right_unseen: 1	prob: [0.14174647629261017, 0.858253538608551]	Le garçon a frappé le ballon avec force .
+right_unseen: 1	prob: [0.31527283787727356, 0.6847271919250488]	Nous allons bientôt partir .
+right_unseen: 1	prob: [0.2503746449947357, 0.7496253848075867]	Il a crié à l ' aide .
+right_unseen: 1	prob: [0.1951918601989746, 0.8048081398010254]	Les chiens ab oient toute la nuit .
+right_unseen: 1	prob: [0.02027653157711029, 0.9797234535217285]	Elle a fermé la porte .29 out of 40
