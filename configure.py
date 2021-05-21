@@ -9,7 +9,7 @@ def parse_args():
     """
     parser = argparse.ArgumentParser()
     
-    parser.add_argument("--do_training", default="yes", type=str, 
+    parser.add_argument("--training", default="yes", type=str, 
                         help="Do we train?")
     
     parser.add_argument("--label_marker", default="telicity", type=str, 
