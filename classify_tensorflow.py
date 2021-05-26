@@ -401,23 +401,43 @@ if args.training == 'yes':
 # Load the model of the last epoch
 
 if (args.transformer_model).split("-")[0] == 'bert':
-    model = BertForSequenceClassification.from_pretrained('checkpoints/' + args.data_path[5:] + '/' + args.label_marker + '/' + \
-                                                            args.transformer_model.split('/')[-1] + '_' + args.verb_segment_ids)
+    model = BertForSequenceClassification.from_pretrained(
+        'checkpoints/' + args.data_path[5:] + '/' + \
+        args.label_marker + '/' + args.transformer_model.split('/')[-1] + \
+        '_' + args.verb_segment_ids)
+    
 elif (args.transformer_model).split("-")[0] == 'roberta':
-    model = RobertaForSequenceClassification.from_pretrained('checkpoints/' + args.data_path[5:] + '/' + args.label_marker + '/' + \
-                                                            args.transformer_model.split('/')[-1] + '_' + args.verb_segment_ids)
+    model = RobertaForSequenceClassification.from_pretrained(
+        'checkpoints/' + args.data_path[5:] + '/' + \
+        args.label_marker + '/' + args.transformer_model.split('/')[-1] + \
+        '_' + args.verb_segment_ids)
+    
 elif (args.transformer_model).split("-")[0] == 'albert':
-    model = AlbertForSequenceClassification.from_pretrained('checkpoints/' + args.data_path[5:] + '/' + args.label_marker + '/' + \
-                                                            args.transformer_model.split('/')[-1] + '_' + args.verb_segment_ids)
+    model = AlbertForSequenceClassification.from_pretrained(
+        'checkpoints/' + args.data_path[5:] + '/' + \
+        args.label_marker + '/' + args.transformer_model.split('/')[-1] + \
+        '_' + args.verb_segment_ids)
+    
 elif (args.transformer_model).split("-")[0] == 'xlnet':
-    model = XLNetForSequenceClassification.from_pretrained('checkpoints/' + args.data_path[5:] + '/' + args.label_marker + '/' + \
-                                                            args.transformer_model.split('/')[-1] + '_' + args.verb_segment_ids)
+    model = XLNetForSequenceClassification.from_pretrained(
+        'checkpoints/' + args.data_path[5:] + '/' + \
+        args.label_marker + '/' + args.transformer_model.split('/')[-1] + \
+        '_' + args.verb_segment_ids)
+    
 elif 'flaubert' in args.transformer_model:
-    model = FlaubertForSequenceClassification.from_pretrained('checkpoints/' + args.data_path[5:] + '/' + args.label_marker + '/' + \
-                                                            args.transformer_model.split('/')[-1] + '_' + args.verb_segment_ids)
+    model = FlaubertForSequenceClassification.from_pretrained(
+        'checkpoints/' + args.data_path[5:] + '/' + \
+        args.label_marker + '/' + args.transformer_model.split('/')[-1] + \
+        '_' + args.verb_segment_ids)
+    
 elif 'camembert' in args.transformer_model:
-    model = CamembertForSequenceClassification.from_pretrained('checkpoints/' + args.data_path[5:] + '/' + args.label_marker + '/' + \
-                                                            args.transformer_model.split('/')[-1] + '_' + args.verb_segment_ids)
+    model = CamembertForSequenceClassification.from_pretrained(
+        'checkpoints/' + args.data_path[5:] + '/' + \
+        args.label_marker + '/' + args.transformer_model.split('/')[-1] + \
+        '_' + args.verb_segment_ids)
+
+if torch.cuda.is_available():  
+    model.cuda()
 
 print('Loaded model succesful. Running testing...')
 

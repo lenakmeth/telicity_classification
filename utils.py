@@ -240,7 +240,7 @@ def decode_result(encoded_sequence):
         tok = FlaubertTokenizer.from_pretrained(args.transformer_model )
     
     # decode + remove special tokens
-    tokens_to_remove = ['[PAD]', '[SEP]', '[CLS]' '<pad>', '<sep>', '<s>', '</s>']
+    tokens_to_remove = ['[PAD]', '[SEP]', '[CLS]', '<pad>', '<sep>', '<s>', '</s>']
     decoded_sequence = [w.replace('Ġ', '').replace('▁', '').replace('</w>', '')
                         for w in list(tok.convert_ids_to_tokens(encoded_sequence))
                         if not w.strip() in tokens_to_remove]
