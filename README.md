@@ -32,7 +32,8 @@ Code based on [aniruddhachoudhury](https://github.com/aniruddhachoudhury/BERT-Tu
     --transformer_model [...] \
     --num_epochs [2-4] \
     --batch_size [...] \
-    --verb_segment_ids ['yes', 'no']`
+    --verb_segment_ids ['yes', 'no']
+    --training ['yes', 'no']`
 
 #### Arguments
 
@@ -42,3 +43,4 @@ Code based on [aniruddhachoudhury](https://github.com/aniruddhachoudhury/BERT-Tu
 * `num_epochs`: Recommended 2-4. Default: _4_
 * `batch_size`: Default: _32_
 * `verb_segment_ids`: Whether we use token_type_ids or not to mark the verb position. Default: _no_. ATTN: RoBERTa + Camembert models do NOT support token_type_ids, always pass _no_. Also, the flag is NOT a boolean True/False, it's yes/no.
+* `training`: Whether we train the model or load a model from the checkpoints folder.
