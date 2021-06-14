@@ -1,0 +1,80 @@
+1	I ate a fish for lunch at noon .	ate	1	0
+2	I had eaten a fish for lunch at noon .	eaten	2	0
+3	At noon , I ate a fish for lunch .	ate	4	0
+4	At noon , I had eaten a fish for lunch .	eaten	5	0
+5	John built a house in a year .	built	1	0
+6	John had built a house in a year .	built	2	0
+7	In a year , John built a house .	built	5	0
+8	In a year , John had built a house .	built	6	0
+9	I ran a mile in under 10 minutes yesterday .	ran	1	0
+10	I had run a mile in under 10 minutes yesterday .	run	2	0
+11	I ran a mile yesterday in under 10 minutes .	ran	1	0
+12	I had run a mile yesterday in under 10 minutes .	run	2	0
+13	Yesterday I ran a mile in under 10 minutes .	ran	2	0
+14	Yesterday I had run a mile in under 10 minutes .	run	3	0
+15	The inspector checked our tickets after the first stop .	checked	2	0
+16	The inspector had checked our tickets after the first stop .	checked	3	0
+17	After the first stop , the inspector checked our tickets .	checked	7	0
+18	After the first stop , the inspector had checked our tickets .	checked	8	0
+19	The classes lasted one hour and took place twice a week over a four-week period .	lasted	2	0
+20	The classes lasted one hour and had taken place twice a week over a four-week period .	lasted	2	0
+21	The classes took place twice a week over a four-week period and lasted one hour .	lasted	12	0
+22	The classes had taken place twice a week over a four-week period and lasted one hour .	lasted	13	0
+23	Over a four-week period , the classes lasted one hour and took place twice a week .	lasted	7	0
+24	Over a four-week period , the classes lasted one hour and had taken place twice a week .	lasted	7	0
+25	Louise made the biggest progress out of everyone this year .	made	1	0
+26	Louise had made the biggest progress out of everyone this year .	made	2	0
+27	Out of everyone this year , Louise made the biggest progress .	made	7	0
+28	Out of everyone this year , Louise had made the biggest progress .	made	8	0
+29	This year , Louise had made the biggest progress out of everyone .	made	5	0
+30	This year , Louise made the biggest progress out of everyone .	made	4	0
+31	The soup cooled in an hour .	cooled	2	0
+32	The soup had cooled in an hour .	cooled	3	0
+33	In an hour , the soup cooled .	cooled	6	0
+34	In an hour , the soup had cooled .	cooled	7	0
+35	John Wilkes Booth killed Lincoln on 1865 .	killed	3	0
+36	On 1865 , John Wilkes Booth killed Lincoln .	killed	6	0
+37	Lincoln was killed by John Wilkes Booth on 1865 .	killed	2	0
+38	On 1865 , Lincoln was killed by John Wilkes Booth .	killed	5	0
+39	John Wilkes Booth had killed Lincoln before the play ended .	killed	4	0
+40	Before the play ended , John Wilkes Booth had killed Lincoln .	killed	9	0
+1	I eat a fish for lunch on Fridays .	eat	1	1
+2	I usually eat a fish for lunch of Fridays .	eat	2	1
+3	On Fridays , I eat a fish for lunch .	eat	4	1
+4	On Fridays , I usually eat a fish for lunch .	eat	5	1
+5	John watched TV .	watched	1	1
+6	John watched TV all afternoon .	watched	1	1
+7	John watched TV every afternoon .	watched	1	1
+8	John watched TV after finishing his homework . 	watched	1	1
+9	I 'm running 10 miles every day for my training process .	running	2	1
+10	Every day I 'm running  10 miles for my training process .	running	4	1
+11	We swim in the lake in the afternoons .	swim	1	1
+12	We swim in the lake each afternoon .	swim	1	1
+13	In the afternoons , we swim in the lake .	swim	5	1
+14	Each afternoon , we swim in the lake .	swim	4	1
+15	Kim is singing .	singing	2	1
+16	Kim is singing a song .	singing	2	1
+17	Kim is writing .	writing	2	1
+18	Kim is writing a song .	writing	2	1
+19	In the summer months James sleeps in every morning .	sleeps	5	1
+20	James sleeps in every morning in the summer months .	sleeps	1	1
+21	Grandma is making pancakes for breakfast .	making	2	1
+22	Grandma is making pancakes whenever we visit her .	making	2	1
+23	For breakfast , grandma is making pancakes .	making	5	1
+24	Whenever we visit her , grandma is making pancakes .	making	7	1
+25	I will receive new stock on Fridays .	receive	2	1
+26	I receive new stock on Fridays .	receive	1	1
+27	On Fridays , I will receive new stock ,	receive	5	1
+28	On Fridays , I receive new stock .	receive	4	1
+29	I read the book for an hour .	read	1	1
+30	I have been reading the book for an hour .	reading	3	1
+31	The Prime Minister made that declaration for months .	made	3	1
+32	The Prime Minister has been making that declaration for months .	making	5	1
+33	For months the Prime Minister made that declaration .	made	5	1
+34	For months the Prime Minister has been making that declaration .	making	7	1
+35	The workers painted the house for an hour .	painted	2	1
+36	The workers have been painting the house for an hour .	painting	4	1
+37	The workers painted the house since 8 am .	painted	2	1
+38	The workers have been painting the house since 8 am .	painting	4	1
+39	The workers had been painting the house for an hour .	painting	4	1
+40	The workers had been painting the house since 8 am .	painting	4	1
