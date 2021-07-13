@@ -7,6 +7,8 @@ import time
 import datetime
 import numpy as np
 from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 args = parse_args()
 
@@ -32,6 +34,7 @@ def read_sents(path, marker):
 
     return train_sentences, train_labels, val_sentences, val_labels, test_sentences, test_labels
 
+            
 
 def tokenize_and_pad(sentences):
     """ We are using .encode_plus. This does not make specialized attn masks 
@@ -42,153 +45,23 @@ def tokenize_and_pad(sentences):
     segment_ids = [] # token type ids
     attention_masks = []
     
-    
     if (args.transformer_model).split("-")[0] == 'bert':
         tok = BertTokenizer.from_pretrained(args.transformer_model)
-        
-        for sent in sentences:
-            sentence = sent[0]
-
-            # encode_plus is a prebuilt function that will make input_ids, 
-            # add padding/truncate, add special tokens, + make attention masks 
-            encoded_dict = tok.encode_plus(
-                            sentence,                      
-                            add_special_tokens = True, # Add '[CLS]' and '[SEP]'
-                            max_length = 128,      # Pad & truncate all sentences.
-                            padding = 'max_length',
-                            truncation = True,
-                            return_attention_mask = True, # Construct attn. masks.
-                            # return_tensors = 'pt',     # Return pytorch tensors.
-                       )
-
-            # Add the encoded sentence to the list.
-            input_ids.append(encoded_dict['input_ids'])
-
-            # Add segment ids, add 1 for verb idx
-            segment_id = encoded_dict['token_type_ids']
-            segment_id[sent[2]] = 1
-            segment_ids.append(segment_id)
-            
-            attention_masks.append(encoded_dict['attention_mask'])
-    
-    # ======== RoBERTa ========
     elif (args.transformer_model).split("-")[0] == 'roberta':
         tok = RobertaTokenizer.from_pretrained(args.transformer_model)
-        
-        for sent in sentences:
-            # encode_plus is a prebuilt function that will make input_ids, 
-            # add padding/truncate, add special tokens, + make attention masks 
-            encoded_dict = tok.encode_plus(
-                            sent[0],                      
-                            add_special_tokens = True, # Add '[CLS]' and '[SEP]'
-                            max_length = 128,      # Pad & truncate all sentences.
-                            padding = 'max_length',
-                            truncation = True,
-                            return_attention_mask = True, # Construct attn. masks.
-                            # return_tensors = 'pt',     # Return pytorch tensors.
-                       )
-            # Add the encoded sentence to the list.
-            input_ids.append(encoded_dict['input_ids'])
-            
-            # This attention mask simply differentiates padding from non-padding.
-            attention_masks.append(encoded_dict['attention_mask'])
-            
-        # RoBERTa doesn't use segment ids!  
-        segment_ids = None
-    
-    # ======== AlBERT ========
     elif (args.transformer_model).split("-")[0] == 'albert':
         tok = AlbertTokenizer.from_pretrained(args.transformer_model )
-        
-        for sent in sentences:
-            # encode_plus is a prebuilt function that will make input_ids, 
-            # add padding/truncate, add special tokens, + make attention masks 
-            encoded_dict = tok.encode_plus(
-                            sent[0],                      
-                            add_special_tokens = True, # Add '[CLS]' and '[SEP]'
-                            max_length = 128,      # Pad & truncate all sentences.
-                            padding = 'max_length',
-                            truncation = True,
-                            return_attention_mask = True, # Construct attn. masks.
-                            # return_tensors = 'pt',     # Return pytorch tensors.
-                       )
-            # Add the encoded sentence to the list.
-            input_ids.append(encoded_dict['input_ids'])
-            
-            # Add segment ids, add 1 for verb idx
-            segment_id = encoded_dict['token_type_ids']
-            segment_id[sent[2]] = 1
-            segment_ids.append(segment_id)
-
-            # This attention mask simply differentiates padding from non-padding.
-            attention_masks.append(encoded_dict['attention_mask'])
-
-    # ======== XLNET ======== 
     elif (args.transformer_model).split("-")[0] == 'xlnet':
         # Tokenize all of the sentences and map the tokens to their word IDs.
         tok = XLNetTokenizer.from_pretrained(args.transformer_model )
-        
-        for sent in sentences:
-
-            # encode_plus is a prebuilt function that will make input_ids, 
-            # add padding/truncate, add special tokens, + make attention masks 
-            encoded_dict = tok.encode_plus(
-                            sent[0],                      
-                            add_special_tokens = True, # Add '[CLS]' and '[SEP]'
-                            max_length = 128,      # Pad & truncate all sentences.
-                            padding = 'max_length',
-                            truncation = True,
-                            return_attention_mask = True, # Construct attn. masks.
-                            # return_tensors = 'pt',     # Return pytorch tensors.
-                       )
-
-            # Add the encoded sentence to the list.
-            input_ids.append(encoded_dict['input_ids'])
-
-            # Add segment ids, add 1 for verb idx
-            segment_id = [0] * 128
-            segment_id[sent[2]] = 1
-            segment_ids.append(segment_id)
-
-            # This attention mask simply differentiates padding from non-padding.
-            attention_masks.append(encoded_dict['attention_mask'])
-
-        # ======== FlauBERT ======== 
     elif 'flaubert' in args.transformer_model:
         # Tokenize all of the sentences and map the tokens to their word IDs.
         tok = FlaubertTokenizer.from_pretrained(args.transformer_model )
-        
-        for sent in sentences:
-
-            # encode_plus is a prebuilt function that will make input_ids, 
-            # add padding/truncate, add special tokens, + make attention masks 
-            encoded_dict = tok.encode_plus(
-                            sent[0],                      
-                            add_special_tokens = True, # Add '[CLS]' and '[SEP]'
-                            max_length = 128,      # Pad & truncate all sentences.
-                            padding = 'max_length',
-                            truncation = True,
-                            return_attention_mask = True, # Construct attn. masks.
-                            # return_tensors = 'pt',     # Return pytorch tensors.
-                       )
-
-            # Add the encoded sentence to the list.
-            input_ids.append(encoded_dict['input_ids'])
-
-            # Add segment ids, add 1 for verb idx
-            segment_id = [0] * 128
-            segment_id[sent[2]] = 1
-            segment_ids.append(segment_id)
-
-            # This attention mask simply differentiates padding from non-padding.
-            attention_masks.append(encoded_dict['attention_mask'])
-
-        # ======== CamemBERT ======== 
     elif 'camembert' in args.transformer_model:
         tok = CamembertTokenizer.from_pretrained(args.transformer_model)
         
-        for sent in sentences:
-            encoded_dict = tok.encode_plus(
+    for sent in sentences:
+        encoded_dict = tok.encode_plus(
                             sent[0],                      
                             add_special_tokens = True, # Add '[CLS]' and '[SEP]'
                             max_length = 128,      # Pad & truncate all sentences.
@@ -197,12 +70,40 @@ def tokenize_and_pad(sentences):
                             return_attention_mask = True, # Construct attn. masks.
                             # return_tensors = 'pt',     # Return pytorch tensors.
                        )
-            input_ids.append(encoded_dict['input_ids'])
-            attention_masks.append(encoded_dict['attention_mask'])
+        input_ids.append(encoded_dict['input_ids'])
+        attention_masks.append(encoded_dict['attention_mask'])
+        # Add segment ids, add 1 for verb idx
+        segment_id = [0] * 128
+        
+        verb_idx = find_real_verb_idx(sent, encoded_dict['input_ids'], tok)
+        if verb_idx: # if False, the verb is not in the first 128 tokens
+            segment_id[verb_idx] = 1
             
-        segment_ids = None
+        segment_ids.append(segment_id)     
 
     return input_ids, attention_masks, segment_ids
+
+
+def find_real_verb_idx(sentence_list, encoded_sentence, tokenizer):
+    
+    encoded_verb = tokenizer.encode(sentence_list[1])
+
+    try:
+        if len(encoded_verb) == 3: # verb as is + [CLS] + [SEP]
+            verb_idx = encoded_sentence.index(encoded_verb[1])
+        else:
+            decoded_verb = tokenizer.convert_ids_to_tokens(encoded_verb)
+            decoded_sent = tokenizer.convert_ids_to_tokens(encoded_sentence)
+            verb_segment = [seg for seg in decoded_verb 
+                            if not any(seg.startswith(x) for x in ['[', '#', '▁', 'Ġ'])]
+            verb_idx = decoded_sent.index(verb_segment[0])
+            
+        return verb_idx
+    
+    except ValueError:
+        print(sentence_list)
+        # the sequence is way too long and the verb is chopped!
+        return False
 
 
 def flat_accuracy(labels, preds):
@@ -270,3 +171,53 @@ def split_train_val_test(X, y,
     assert len(X) == len(X_train) + len(X_val) + len(X_test)
 
     return X_train, y_train, X_val, y_val, X_test, y_test
+
+
+def plot_attn(words, attentions, layer, heads):
+    """Plots attention maps for the given example and attention heads."""
+    width = 3
+    example_sep = 3
+    word_height = 1
+    pad = 0.1
+
+    for ei, head in enumerate(heads):
+        yoffset = 1
+        xoffset = ei * width * example_sep
+
+        attn = attentions[layer][head]
+        attn = np.array(attn)
+        print(attn.shape)
+        attn /= attn.sum(axis=-1, keepdims=True)
+        n_words = len(words)
+
+        for position, word in enumerate(words):
+            plt.text(xoffset + 0, yoffset - position * word_height, word,
+                   ha="right", va="center")
+            plt.text(xoffset + width, yoffset - position * word_height, word,
+                   ha="left", va="center")
+        for i in range(1, n_words):
+            for j in range(1, n_words):
+                print(attn[i, j])
+                print(attn[i, j].shape)
+                print(type(attn[i, j]))
+                alpha_size = float(attn[i, j].item())
+
+                plt.plot([xoffset + pad, xoffset + width - pad],
+                 [yoffset - word_height * i, yoffset - word_height * j],
+                 color="blue", linewidth=1, alpha=alpha_size)
+
+
+def get_features_per_layer(features, layer_idx): 
+
+    features_per_layer = {x:[] for x in range(len(features['all_hidden_states']))}
+    for sent_idx in features_per_layer:
+        temp = extract_features(features, sent_idx)
+        temp_layer = []
+        for token_idx in temp:
+            layer_features = [x[layer_idx] for x in temp.values()] 
+            layer_features = np.concatenate(layer_features)
+            temp_layer.append(layer_features)
+
+        features_per_layer[sent_idx] = np.concatenate(temp_layer)
+        
+    return features_per_layer

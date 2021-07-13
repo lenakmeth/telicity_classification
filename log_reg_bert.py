@@ -1,351 +1,271 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import torch
-from transformers import BertForSequenceClassification, RobertaForSequenceClassification, AlbertForSequenceClassification, XLNetForSequenceClassification, CamembertForSequenceClassification, FlaubertForSequenceClassification, AdamW, get_linear_schedule_with_warmup, BertTokenizer, RobertaTokenizer, AlbertTokenizer, XLNetTokenizer, CamembertTokenizer, FlaubertTokenizer
+from transformers import BertForSequenceClassification, RobertaForSequenceClassification, \
+AlbertForSequenceClassification, XLNetForSequenceClassification, CamembertForSequenceClassification, \
+FlaubertForSequenceClassification, AdamW, get_linear_schedule_with_warmup
 from sklearn.metrics import classification_report
 from torch.utils.data import TensorDataset, DataLoader, RandomSampler, SequentialSampler
+import random
+from utils import *
 import torch.nn.functional as F
 from torch.autograd import Variable
-import random
+from configure import parse_args
 import numpy as np
 import time
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import log_loss
+from nltk.stem import WordNetLemmatizer
+import matplotlib.pyplot as plt
+import os
+import seaborn as sns
 
+args = parse_args()
+lemmatizer = WordNetLemmatizer()
+# pick a layer
+layer_idx = -1
 
-# In[2]:
+# logger = open('log_reg/' + args.transformer_model + '_' + args.verb_segment_ids + '_' + str(layer_idx) + '.log', 'w')
 
-
-def tokenize_and_pad(transformer_model, sentences):
-    """ We are using .encode_plus. This does not make specialized attn masks 
-        like in our selectional preferences experiment. Revert to .encode if
-        necessary."""
+# argparse doesn't deal in absolutes, so we pass a str flag & convert
+if args.verb_segment_ids == 'yes':
+    use_segment_ids = True
+else:
+    use_segment_ids = False
     
-    input_ids = []
-    segment_ids = [] # token type ids
-    attention_masks = []
-    
-    if transformer_model.split("-")[0] == 'bert':
-        tok = BertTokenizer.from_pretrained(transformer_model)
-    elif transformer_model.split("-")[0] == 'roberta':
-        tok = RobertaTokenizer.from_pretrained(transformer_model)
-    elif transformer_model.split("-")[0] == 'albert':
-        tok = AlbertTokenizer.from_pretrained(transformer_model)
-    elif transformer_model.split("-")[0] == 'xlnet':
-        tok = XLNetTokenizer.from_pretrained(transformer_model)
-    elif 'camembert' in transformer_model:
-        tok = CamembertTokenizer.from_pretrained(transformer_model)
-    elif 'flaubert' in transformer_model:
-        tok = FlaubertTokenizer.from_pretrained(transformer_model)
+logger.write('\nUses verb segment ids: ' + args.verb_segment_ids)
+logger.write('\nModel: ' + args.transformer_model)
 
-    for sent in sentences:
-        sentence = sent[0]
+device = torch.device("cpu")
 
-        # encode_plus is a prebuilt function that will make input_ids, 
-        # add padding/truncate, add special tokens, + make attention masks 
-        encoded_dict = tok.encode_plus(
-                        sentence,                      
-                        add_special_tokens = True, # Add '[CLS]' and '[SEP]'
-                        max_length = 128,      # Pad & truncate all sentences.
-                        padding = 'max_length',
-                        truncation = True,
-                        return_attention_mask = True, # Construct attn. masks.
-                        # return_tensors = 'pt',     # Return pytorch tensors.
-                   )
+# PARAMETERS
+transformer_model = args.transformer_model
+epochs = args.num_epochs
 
-        # Add the encoded sentence to the list.
-        input_ids.append(encoded_dict['input_ids'])
+# read friedrich sentences, choose labels of telicity/duration
+train_sentences, train_labels, val_sentences, val_labels, \
+    test_sentences, test_labels = read_sents(args.data_path, args.label_marker)
 
-        # Add segment ids, add 1 for verb idx
-        segment_id = encoded_dict['token_type_ids']
-        segment_id[sent[2]] = 1
-        segment_ids.append(segment_id)
+# make input ids, attention masks, segment ids, depending on the model we will use
 
-        attention_masks.append(encoded_dict['attention_mask'])
+train_inputs, train_masks, train_segments = tokenize_and_pad(train_sentences)
+val_inputs, val_masks, val_segments = tokenize_and_pad(val_sentences)
+test_inputs, test_masks, test_segments = tokenize_and_pad(test_sentences)
 
-    return input_ids, attention_masks, segment_ids
+print('\n\nLoaded sentences and converted.')
 
+# logger.write('\nTrain set: ' + str(len(train_inputs)))
+# logger.write('\nValidation set: ' + str(len(val_inputs)))
+# logger.write('\nTest set: ' + str(len(test_inputs)))
 
-def decode_result(transformer_model, encoded_sequence):
-
-    if transformer_model.split("-")[0] == 'bert':
-        tok = BertTokenizer.from_pretrained(transformer_model)
-    elif transformer_model.split("-")[0] == 'roberta':
-        tok = RobertaTokenizer.from_pretrained(transformer_model)
-    elif transformer_model.split("-")[0] == 'albert':
-        tok = AlbertTokenizer.from_pretrained(transformer_model)
-    elif transformer_model.split("-")[0] == 'xlnet':
-        tok = XLNetTokenizer.from_pretrained(transformer_model)
-    elif 'camembert' in transformer_model:
-        tok = CamembertTokenizer.from_pretrained(transformer_model)
-    elif 'flaubert' in transformer_model:
-        tok = FlaubertTokenizer.from_pretrained(transformer_model)
-    
-    # decode + remove special tokens
-    tokens_to_remove = ['[PAD]', '<pad>', '<s>', '</s>']
-    decoded_sequence = [w.replace('Ġ', '').replace('▁', '').replace('</w>', '')
-                        for w in list(tok.convert_ids_to_tokens(encoded_sequence))
-                        if not w.strip() in tokens_to_remove]
-    
-    return decoded_sequence
-
-
-# In[3]:
-
-
-# load finetuned model
-
-tokenizer_model = 'bert-base-uncased'
-verb_segment_ids = 'no'
-model_save_path = 'checkpoints/friedrich_captions_data/telicity/'
-batch_size = 64
-
-
-if tokenizer_model.split("-")[0] == 'bert':
-    model = BertForSequenceClassification.from_pretrained(model_save_path + tokenizer_model + '_' + verb_segment_ids)
-elif tokenizer_model.split("-")[0] == 'roberta':
-    model = RobertaForSequenceClassification.from_pretrained(model_save_path + tokenizer_model + '_' + verb_segment_ids)
-elif tokenizer_model.split("-")[0] == 'albert':
-    model = AlbertForSequenceClassification.from_pretrained(model_save_path + tokenizer_model + '_' + verb_segment_ids)
-elif tokenizer_model.split("-")[0] == 'xlnet':
-    model = XLNetForSequenceClassification.from_pretrained(model_save_path + tokenizer_model + '_' + verb_segment_ids)
-elif 'camembert' in tokenizer_model:
-    model = CamembertForSequenceClassification.from_pretrained(model_save_path + tokenizer_model + '_' + verb_segment_ids)
-elif 'flaubert' in tokenizer_model:
-    model = FlaubertForSequenceClassification.from_pretrained(model_save_path + tokenizer_model + '_' + verb_segment_ids)
-
-
-# In[5]:
-
-
-# open train set
-
-train_sentences = []
-train_labels = []
-    
-with open('data/friedrich_captions_data/telicity_train.tsv', 'r', encoding='utf-8') as f:
-    for line in f:
-        l = line.strip().split('\t')
-        train_sentences.append([l[-4], l[-3], int(l[-2])])
-        train_labels.append(int(l[-1]))
-
-use_segment_ids = False
-train_inputs, train_masks, train_segments = tokenize_and_pad(tokenizer_model, train_sentences)
-
+# Convert all inputs and labels into torch tensors, the required datatype for our model.
 train_inputs = torch.tensor(train_inputs)
-train_labels = torch.tensor(train_labels)
-train_masks = torch.tensor(train_masks)
-train_segments = torch.tensor(train_segments)
+val_inputs = torch.tensor(val_inputs)
+test_inputs = torch.tensor(test_inputs)
 
-train_data = TensorDataset(train_inputs, train_masks, train_labels)
+train_labels = torch.tensor(train_labels)
+val_labels = torch.tensor(val_labels)
+test_labels = torch.tensor(test_labels)
+
+train_segments = torch.tensor(train_segments)
+val_segments = torch.tensor(val_segments)
+test_segments = torch.tensor(test_segments)
+
+train_masks = torch.tensor(train_masks)
+val_masks = torch.tensor(val_masks)
+test_masks = torch.tensor(test_masks)
+
+# The DataLoader needs to know our batch size for training, so we specify it here.
+# For fine-tuning BERT on a specific task, the authors recommend a batch size of 16 or 32.
+
+batch_size = args.batch_size
+
+# Create the DataLoader for our training set.
+train_data = TensorDataset(train_inputs, train_masks, train_labels, train_segments)
 train_sampler = RandomSampler(train_data)
 train_dataloader = DataLoader(train_data, sampler=train_sampler, batch_size=batch_size)
 
+# Create the DataLoader for our validation set.
+val_data = TensorDataset(val_inputs, val_masks, val_labels, val_segments)
+val_sampler = SequentialSampler(val_data)
+val_dataloader = DataLoader(val_data, sampler=val_sampler, batch_size=batch_size)
 
-# In[6]:
+# Create the DataLoader for our validation set.
+val_data = TensorDataset(val_inputs, val_masks, val_labels, val_segments)
+val_sampler = SequentialSampler(val_data)
+val_dataloader = DataLoader(val_data, sampler=val_sampler, batch_size=batch_size)
+
+test_data = TensorDataset(test_inputs, test_masks, test_labels, test_segments)
+test_sampler = SequentialSampler(test_data)
+test_dataloader = DataLoader(test_data, sampler=test_sampler, batch_size=batch_size)
+
+if (args.transformer_model).split("-")[0] == 'bert':
+    model = BertForSequenceClassification.from_pretrained(
+        transformer_model,
+        num_labels = 2, 
+        output_attentions = True,
+        output_hidden_states = True, 
+    )
+elif (args.transformer_model).split("-")[0] == 'roberta':
+    model = RobertaForSequenceClassification.from_pretrained(
+        transformer_model, 
+        num_labels = 2,   
+        output_attentions = True,
+        output_hidden_states = True,
+    )
+elif (args.transformer_model).split("-")[0] == 'albert':
+    model = AlbertForSequenceClassification.from_pretrained(
+        transformer_model, 
+        num_labels = 2,   
+        output_attentions = True,
+        output_hidden_states = True, 
+    )
+elif (args.transformer_model).split("-")[0] == 'xlnet':
+    model = XLNetForSequenceClassification.from_pretrained(
+        transformer_model, 
+        num_labels = 2,   
+        output_attentions = True,
+        output_hidden_states = True,
+    )
+elif 'flaubert' in args.transformer_model:
+    model = FlaubertForSequenceClassification.from_pretrained(
+        transformer_model, 
+        num_labels = 2,   
+        output_attentions = True,
+        output_hidden_states = True,
+    )
+elif 'camembert' in args.transformer_model:
+    model = CamembertForSequenceClassification.from_pretrained(
+        transformer_model, 
+        num_labels = 2,   
+        output_attentions = True, 
+        output_hidden_states = True, 
+    )
 
 
-# open val set
+optimizer = AdamW(model.parameters(),
+                  lr = 2e-5, # args.learning_rate - default is 5e-5, our notebook had 2e-5
+                  eps = 1e-8 # args.adam_epsilon  - default is 1e-8.
+                )
 
-val_sentences = []
-val_labels = []
+# Total number of training steps is number of batches * number of epochs.
+total_steps = len(train_dataloader) * epochs
+
+# Create the learning rate scheduler.
+scheduler = get_linear_schedule_with_warmup(optimizer, 
+                                            num_warmup_steps = 0,
+                                            num_training_steps = total_steps)
+
+# Set the seed value all over the place to make this reproducible.
+seed_val = 42
+
+random.seed(seed_val)
+np.random.seed(seed_val)
+torch.manual_seed(seed_val)
+# torch.cuda.manual_seed_all(seed_val)
+
+# Store the average loss after each epoch so we can plot them.
+loss_values = []
+
+# For each epoch...
+for epoch_i in range(0, epochs):
+
+#     logger.write('\n\t======== Epoch {:} / {:} ========'.format(epoch_i + 1, epochs))
+#     logger.write('\nTraining...')
+    print('\n\t======== Epoch {:} / {:} ========'.format(epoch_i + 1, epochs))
+    print('\nTraining...')
+
+    t0 = time.time()
+    total_loss = 0
+    model.train()
     
-with open('data/friedrich_captions_data/telicity_val.tsv', 'r', encoding='utf-8') as f:
-    for line in f:
-        l = line.strip().split('\t')
-        val_sentences.append([l[-4], l[-3], int(l[-2])])
-        val_labels.append(int(l[-1]))
+    if epoch_i == epochs-1:
+        features = {'all_inputs': [], 'all_labels': [], 'all_sents': [],
+                    'all_verb_pos': [], 'all_lengths': [], 'all_hidden_states': []}
 
-use_segment_ids = False
-val_inputs, val_masks, val_segments = tokenize_and_pad(tokenizer_model, val_sentences)
+    # For each batch of training data...
+    for step, batch in enumerate(train_dataloader):
 
-val_inputs = torch.tensor(val_inputs)
-val_labels = torch.tensor(val_labels)
-val_masks = torch.tensor(val_masks)
-val_segments = torch.tensor(val_segments)
+        # Progress update every 40 batches.
+        if step % 40 == 0 and not step == 0:
+            # Calculate elapsed time in minutes.
+            elapsed = format_time(time.time() - t0)
+            
+            # Report progress.
+            print('\n\tBatch {:>5,}\tof\t{:>5,}.\t\tElapsed: {:}.'.format(step, len(train_dataloader), elapsed))
 
-# open test set
+        b_input_ids = batch[0].to(device)
+        b_input_mask = batch[1].to(device)
+        b_labels = batch[2].to(device)
+        b_segments = batch[3].to(device)
 
-test_sentences = []
-test_labels = []
-    
-with open('data/friedrich_captions_data/telicity_test.tsv', 'r', encoding='utf-8') as f:
-    for line in f:
-        l = line.strip().split('\t')
-        test_sentences.append([l[-4], l[-3], int(l[-2])])
-        test_labels.append(int(l[-1]))
+        model.zero_grad()        
 
-use_segment_ids = False
-test_inputs, test_masks, test_segments = tokenize_and_pad(tokenizer_model, test_sentences)
-
-test_inputs = torch.tensor(test_inputs)
-test_labels = torch.tensor(test_labels)
-test_masks = torch.tensor(test_masks)
-test_segments = torch.tensor(test_segments)
-
-
-def get_outputs(data_dataloader):
-    model.eval()
-
-    all_inputs = []
-    sent_attentions = []
-    sentences = []
-    predicted_labels = []
-    prob_prediction = []
-    all_hidden_states = []
-
-    features = {'all_inputs': [],  
-                'all_labels': [],
-                # 'all_dec_sentences': [],
-                'all_lengths': [],
-                # 'all_attentions': [], 
-                # 'all_pred_labels': [], 
-                # 'all_prob_predictions': [], 
-                'all_hidden_states': []}
-
-    for n, batch in enumerate(data_dataloader):
-        print(n, len(data_dataloader))
-        # Add batch to GPU
-        batch = tuple(t for t in batch)
-        b_input_ids, b_input_mask, b_labels = batch
-
-        with torch.no_grad():        
-
+        if use_segment_ids:
             outputs = model(b_input_ids, 
-                            token_type_ids=None, 
-                            attention_mask=b_input_mask,
-                            output_hidden_states=True)
-
-            logits = outputs[0]
+                        token_type_ids=b_segments, 
+                        attention_mask=b_input_mask, 
+                        labels=b_labels)
+        else:
+            outputs = model(b_input_ids, 
+                        token_type_ids=None, 
+                        attention_mask=b_input_mask, 
+                        labels=b_labels)
+        
+        loss = outputs[0]
+        hidden_states = outputs[-2]
+        total_loss += loss.item()
+        loss.backward()
+        torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+        optimizer.step()
+        scheduler.step()
+        
+        if epoch_i == epochs-1: # On the last epoch, save hidden states of train
+            
             all_inputs = b_input_ids.to('cpu').numpy().tolist()
             features['all_inputs'] += all_inputs
-            logits = logits.detach().cpu().numpy()
             
-            label_ids = b_labels.to('cpu').numpy()
-            features['all_labels'] += label_ids.tolist()
+            all_segments = b_segments.to('cpu').numpy().tolist()
+            features['all_verb_pos'] += [vector.index(1) for vector in all_segments]
             
-            hidden_states = outputs[1]
-#             attentions = outputs[-1]
-
-             # Add predictions and probabilities
-#             log_probs = F.softmax(Variable(torch.from_numpy(logits)), dim=-1)
-            # features['all_pred_labels'] += np.argmax(logits, axis=1).flatten().tolist()
-#             features['all_prob_predictions'] += log_probs.tolist()
-
-            # Decode sentence, as model sees it 
-#             sentence = decode_result(tokenizer_model, inputs)
-#             features['all_dec_sentences'].append(sentence)
-            for sent_inputs in all_inputs:
-            	sentence = decode_result(tokenizer_model, sent_inputs)
-            	features['all_lengths'].append(len(sentence))
-
-        #Add hidden states
-
-        hidden_states_per_sentence = {sent_idx:[] for sent_idx in range(batch_size)}
-
-        for layer in hidden_states:
+            label_ids = b_labels.to('cpu').numpy().tolist()
+            features['all_labels'] += label_ids
+            
+            for n, input_sent in enumerate(all_inputs):
+                decoded_sentence = decode_result(input_sent)
+                features['all_sents'].append(decoded_sentence)
+                features['all_lengths'].append(len(decoded_sentence.split(' ')))
+            
+            hidden_states_per_sentence = {sent_idx:[] for sent_idx in range(batch_size)}
+            
+            hidden_layer = hidden_states[layer_idx]
+            
             for sent_idx in range(batch_size):
-                try:
-                    hidden_states_per_sentence[sent_idx] += layer[sent_idx, :, :]
-                except IndexError:
-                    print(layer.shape, sent_idx)
+                seq_len = features['all_lengths'][sent_idx]
+                temp = layer[sent_idx, :seq_len, :]
+                verb_idx = features['all_verb_pos'][sent_idx]
 
-        features['all_hidden_states'] += list(hidden_states_per_sentence.values())
-        
-    return features
-
-
-# In[ ]:
-
-
-train_features = get_outputs(train_dataloader)
-# val_features = get_outputs(val_inputs, val_labels)
-# test_features = get_outputs(test_inputs, test_labels)
-
-
-# In[ ]:
-
-
-def extract_features(features, sent_idx):
-
-    hidden_states = features['all_hidden_states'][sent_idx]
-    seq_length = features['all_lengths'][sent_idx]
-
-    features_per_word = {x:[] for x in range(seq_length)}
-
-    for layer_out in hidden_states:
-        # layer = torch.squeeze(layer_out) # remove batch dim = 1
-        layer = np.array(layer)[:seq_length, :] # trim out padding in seq
-        for n in range(seq_length): 
-            features_per_word[n].append(layer[n]) # features of every word per layer
+                hidden_states_per_sentence[sent_idx].append(temp[verb_idx])
+            features['all_hidden_states'] += list(hidden_states_per_sentence.values())
             
-    return features_per_word
-
-
-# In[ ]:
-
-
-# how this looks:
-# each sent_idx has a dictionary of:
-# keys = token position
-# values = list of 13 layers (pool + bert layers), each layer has embedding of (768,)
-
-# extract now embeddings for each token, per layer
-layer_idx = -1
-
-def get_features_per_layer(features, layer_idx): 
-
-    features_per_layer = {x:[] for x in range(len(features['all_hidden_states']))}
-    for sent_idx in features_per_layer:
-        temp = extract_features(features, sent_idx)
-        temp_layer = []
-        for token_idx in temp:
-    #         print(temp.keys())
-            layer_features = [x[layer_idx] for x in temp.values()] 
-            layer_features = np.concatenate(layer_features)
-            temp_layer.append(layer_features)
-
-        features_per_layer[sent_idx] = np.concatenate(temp_layer)
-        
-    return features_per_layer
-
-
-# In[ ]:
+            del hidden_states_per_sentence
+            del hidden_layer
+            
+        del hidden_states
+               
+    avg_train_loss = total_loss / len(train_dataloader)            
+    
+    loss_values.append(avg_train_loss)
+    
+#     logger.write('\n\tAverage training loss: {0:.2f}'.format(avg_train_loss))
+#     logger.write('\n\tTraining epoch took: {:}'.format(format_time(time.time() - t0)))
+    print('\n\tAverage training loss: {0:.2f}'.format(avg_train_loss))
+    print('\n\tTraining epoch took: {:}'.format(format_time(time.time() - t0)))
 
 
 # make the sets for the log regression model and pad as necessary
 
 # train
-train_features_per_layer = get_features_per_layer(train_features, layer_idx)
-max_len = max([len(x) for x in train_features_per_layer.values()])
-padded_X = [np.pad(x, (0, max_len-len(x)), 'constant') for x in train_features_per_layer.values()]
-
-X_train = np.asarray(padded_X)
+# X_train = features['all_hidden_states']
+# this is the hidden state for the verb of the sent, for each sent, on layer = layer_idx
+X_train = np.asarray(features['all_hidden_states'])
 y_train = np.asarray(train_features['all_labels'])
-
-# val
-val_features_per_layer = get_features_per_layer(val_features, layer_idx)
-max_len = max([len(x) for x in val_features_per_layer.values()])
-padded_X = [np.pad(x, (0, max_len-len(x)), 'constant') for x in val_features_per_layer.values()]
-
-X_val = np.asarray(padded_X)
-y_val = np.asarray(val_features['all_labels'])
-
-# test
-test_features_per_layer = get_features_per_layer(test_features, layer_idx)
-max_len = max([len(x) for x in test_features_per_layer.values()])
-padded_X = [np.pad(x, (0, max_len-len(x)), 'constant') for x in test_features_per_layer.values()]
-
-X_test = np.asarray(padded_X)
-y_test = np.asarray(test_features['all_labels'])
-
-
-# In[ ]:
-
 
 logit = LogisticRegression(C=1e-2, random_state=17, solver='lbfgs', 
                            multi_class='multinomial', max_iter=100,
