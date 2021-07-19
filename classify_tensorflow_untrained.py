@@ -13,8 +13,11 @@ import numpy as np
 import time
 
 args = parse_args()
+freeze_layer_count = args.freeze_layer_count
 
-logger = open('untrained/' + '_'.join([args.label_marker, args.transformer_model.split('/')[-1], args.verb_segment_ids]) + '.log', 'w')
+logger = open('untrained/' + '_'.join([args.label_marker, args.transformer_model.split('/')[-1], args.verb_segment_ids]) + '.log', 'a+')
+logger.write("\n-------------------------\n")
+logger.write("Freeze at layer: " + str(freeze_layer_count) + '\n')
 
 # argparse doesn't deal in absolutes, so we pass a str flag & convert
 if args.verb_segment_ids == 'yes':
@@ -44,7 +47,6 @@ train_sentences, train_labels, val_sentences, val_labels, \
 train_inputs, train_masks, train_segments = tokenize_and_pad(train_sentences)
 val_inputs, val_masks, val_segments = tokenize_and_pad(val_sentences)
 test_inputs, test_masks, test_segments = tokenize_and_pad(test_sentences)
-
 
 print('\n\nLoaded sentences and converted.')
 
@@ -109,6 +111,19 @@ if (args.transformer_model).split("-")[0] == 'bert':
         output_attentions = False, # Whether the model returns attentions weights.
         output_hidden_states = False, # Whether the model returns all hidden-states.
     )
+    
+    if freeze_layer_count:
+        # We freeze here the embeddings of the model
+        for param in model.bert.embeddings.parameters():
+            param.requires_grad = False
+
+    if freeze_layer_count != -1:
+        # if freeze_layer_count == -1, we only freeze the embedding layer
+        # otherwise we freeze the first `freeze_layer_count` encoder layers
+        for layer in model.bert.encoder.layer[:freeze_layer_count]:
+            for param in layer.parameters():
+                param.requires_grad = False
+    
 elif (args.transformer_model).split("-")[0] == 'roberta':
     model = RobertaForSequenceClassification.from_pretrained(
         transformer_model, 
@@ -116,6 +131,19 @@ elif (args.transformer_model).split("-")[0] == 'roberta':
         output_attentions = False, # Whether the model returns attentions weights.
         output_hidden_states = False, # Whether the model returns all hidden-states.
     )
+    
+    if freeze_layer_count:
+        # We freeze here the embeddings of the model
+        for param in model.roberta.embeddings.parameters():
+            param.requires_grad = False
+
+    if freeze_layer_count != -1:
+        # if freeze_layer_count == -1, we only freeze the embedding layer
+        # otherwise we freeze the first `freeze_layer_count` encoder layers
+        for layer in model.roberta.encoder.layer[:freeze_layer_count]:
+            for param in layer.parameters():
+                param.requires_grad = False
+                
 elif (args.transformer_model).split("-")[0] == 'albert':
     model = AlbertForSequenceClassification.from_pretrained(
         transformer_model, 
@@ -123,6 +151,19 @@ elif (args.transformer_model).split("-")[0] == 'albert':
         output_attentions = False, # Whether the model returns attentions weights.
         output_hidden_states = False, # Whether the model returns all hidden-states.
     )
+    
+    if freeze_layer_count:
+        # We freeze here the embeddings of the model
+        for param in model.albert.embeddings.parameters():
+            param.requires_grad = False
+
+    if freeze_layer_count != -1:
+        # if freeze_layer_count == -1, we only freeze the embedding layer
+        # otherwise we freeze the first `freeze_layer_count` encoder layers
+        for layer in model.albert.encoder.layer[:freeze_layer_count]:
+            for param in layer.parameters():
+                param.requires_grad = False
+                
 elif (args.transformer_model).split("-")[0] == 'xlnet':
     model = XLNetForSequenceClassification.from_pretrained(
         transformer_model, 
@@ -130,6 +171,19 @@ elif (args.transformer_model).split("-")[0] == 'xlnet':
         output_attentions = False, # Whether the model returns attentions weights.
         output_hidden_states = False, # Whether the model returns all hidden-states.
     )
+    
+    if freeze_layer_count:
+        # We freeze here the embeddings of the model
+        for param in model.xlnet.embeddings.parameters():
+            param.requires_grad = False
+
+    if freeze_layer_count != -1:
+        # if freeze_layer_count == -1, we only freeze the embedding layer
+        # otherwise we freeze the first `freeze_layer_count` encoder layers
+        for layer in model.xlnet.encoder.layer[:freeze_layer_count]:
+            for param in layer.parameters():
+                param.requires_grad = False
+                
 elif 'flaubert' in args.transformer_model:
     model = FlaubertForSequenceClassification.from_pretrained(
         transformer_model, 
@@ -137,6 +191,16 @@ elif 'flaubert' in args.transformer_model:
         output_attentions = False, # Whether the model returns attentions weights.
         output_hidden_states = False, # Whether the model returns all hidden-states.
     )
+    
+    if freeze_layer_count:
+        for param in model.flaubert.embeddings.parameters():
+            param.requires_grad = False
+
+    if freeze_layer_count != -1:
+        for layer in model.flaubert.encoder.layer[:freeze_layer_count]:
+            for param in layer.parameters():
+                param.requires_grad = False
+                
 elif 'camembert' in args.transformer_model:
     model = CamembertForSequenceClassification.from_pretrained(
         transformer_model, 
@@ -144,27 +208,28 @@ elif 'camembert' in args.transformer_model:
         output_attentions = False, # Whether the model returns attentions weights.
         output_hidden_states = False, # Whether the model returns all hidden-states.
     )
+    if freeze_layer_count:
+        for param in model.camembert.embeddings.parameters():
+            param.requires_grad = False
+
+    if freeze_layer_count != -1:
+        for layer in model.camembert.encoder.layer[:freeze_layer_count]:
+            for param in layer.parameters():
+                param.requires_grad = False
 
 # if torch.cuda.is_available():  
 #     model.cuda()
 
 # Get all of the model's parameters as a list of tuples.
 params = list(model.named_parameters())
-
 print('\nThe model has {:} different named parameters.\n'.format(len(params)))
-
 print('\n==== Embedding Layer ====\n')
-
 for p in params[0:5]:
     print("{:<55} {:>12}".format(p[0], str(tuple(p[1].size()))))
-
 print('\n\n==== First Transformer ====\n')
-
 for p in params[5:21]:
-    logger.write('\n{:<55} {:>12}'.format(p[0], str(tuple(p[1].size()))))
-
+    print('{:<55} {:>12}'.format(p[0], str(tuple(p[1].size()))))
 print('\n\n==== Output Layer ====\n')
-
 for p in params[-4:]:
     print("{:<55} {:>12}".format(p[0], str(tuple(p[1].size()))))
 
@@ -183,6 +248,27 @@ total_steps = len(train_dataloader) * epochs
 scheduler = get_linear_schedule_with_warmup(optimizer, 
                                             num_warmup_steps = 0,
                                             num_training_steps = total_steps)
+
+
+
+
+
+# epoch_steps = len(train_ds) / args_dict["per_device_train_batch_size"]
+# args_dict["warmup_steps"] = math.ceil(epoch_steps)  # 1 epoch
+# args_dict["logging_steps"] = max(1, math.ceil(epoch_steps * 0.5))  # 0.5 epoch
+# args_dict["save_steps"] = args_dict["logging_steps"]
+
+# training_args = TrainingArguments(output_dir=str(output_dir), **args_dict)
+# trainer = Trainer(
+#         model=model,
+#         args=training_args,
+#         train_dataset=train_ds,
+#         eval_dataset=val_ds,
+#         compute_metrics=compute_metrics,
+#         tokenizer=tokenizer,
+#     )
+# trainer.train()
+
 
 # ========================================
 #               TESTING
@@ -244,27 +330,27 @@ print('\nAccuracy: {0:.2f}'.format(val_accuracy/nb_val_steps))
 print('\nConfusion matrix:\n')
 print(classification_report(all_labels, all_preds))
 
-# Uncomment the following to see the decoded sentences
-# change != to == to see the right predictions
-logger.write('\n\nWrong predictions:')
-counter = 0
-for n, sent in enumerate(all_inputs):
-    if all_labels[n] != all_preds[n]:
-        counter += 1
-        sentence = decode_result(sent)
-        logger.write('\nwrong_val: ' + str(all_preds[n]) + '\tprob: ' + str(all_probs[n])+ '\t')
-        logger.write(sentence)
-logger.write(str(counter) + ' out of ' + str(len(all_inputs)))
+# # Uncomment the following to see the decoded sentences
+# # change != to == to see the right predictions
+# logger.write('\n\nWrong predictions:')
+# counter = 0
+# for n, sent in enumerate(all_inputs):
+#     if all_labels[n] != all_preds[n]:
+#         counter += 1
+#         sentence = decode_result(sent)
+#         logger.write('\nwrong_val: ' + str(all_preds[n]) + '\tprob: ' + str(all_probs[n])+ '\t')
+#         logger.write(sentence)
+# logger.write(str(counter) + ' out of ' + str(len(all_inputs)))
 
-logger.write('\n\nRight predictions:')
-counter = 0
-for n, sent in enumerate(all_inputs):
-    if all_labels[n] == all_preds[n]:
-        counter += 1
-        sentence = decode_result(sent)
-        logger.write('\nright_val: ' + str(all_preds[n]) + '\tprob: ' + str(all_probs[n])+ '\t')
-        logger.write(sentence)
-logger.write(str(counter) + ' out of ' + str(len(all_inputs)))
+# logger.write('\n\nRight predictions:')
+# counter = 0
+# for n, sent in enumerate(all_inputs):
+#     if all_labels[n] == all_preds[n]:
+#         counter += 1
+#         sentence = decode_result(sent)
+#         logger.write('\nright_val: ' + str(all_preds[n]) + '\tprob: ' + str(all_probs[n])+ '\t')
+#         logger.write(sentence)
+# logger.write(str(counter) + ' out of ' + str(len(all_inputs)))
 
 # ========================================
 #               TESTING
@@ -326,27 +412,27 @@ print('\nAccuracy: {0:.2f}'.format(test_accuracy/nb_test_steps))
 print('\nConfusion matrix:\n')
 print(classification_report(all_labels, all_preds))
 
-# Uncomment the following to see the decoded sentences
-# change != to == to see the right predictions
-logger.write('\n\nWrong predictions:')
-counter = 0
-for n, sent in enumerate(all_inputs):
-    if all_labels[n] != all_preds[n]:
-        counter += 1
-        sentence = decode_result(sent)
-        logger.write('\nwrong_seen: ' + str(all_preds[n]) + '\tprob: ' + str(all_probs[n])+ '\t')
-        logger.write(sentence)
-logger.write(str(counter) + ' out of ' + str(len(all_inputs)))
+# # Uncomment the following to see the decoded sentences
+# # change != to == to see the right predictions
+# logger.write('\n\nWrong predictions:')
+# counter = 0
+# for n, sent in enumerate(all_inputs):
+#     if all_labels[n] != all_preds[n]:
+#         counter += 1
+#         sentence = decode_result(sent)
+#         logger.write('\nwrong_seen: ' + str(all_preds[n]) + '\tprob: ' + str(all_probs[n])+ '\t')
+#         logger.write(sentence)
+# logger.write(str(counter) + ' out of ' + str(len(all_inputs)))
 
-logger.write('\n\nRight predictions:')
-counter = 0
-for n, sent in enumerate(all_inputs):
-    if all_labels[n] == all_preds[n]:
-        counter += 1
-        sentence = decode_result(sent)
-        logger.write('\nright_seen: ' + str(all_preds[n]) + '\tprob: ' + str(all_probs[n])+ '\t')
-        logger.write(sentence)
-logger.write(str(counter) + ' out of ' + str(len(all_inputs)))
+# logger.write('\n\nRight predictions:')
+# counter = 0
+# for n, sent in enumerate(all_inputs):
+#     if all_labels[n] == all_preds[n]:
+#         counter += 1
+#         sentence = decode_result(sent)
+#         logger.write('\nright_seen: ' + str(all_preds[n]) + '\tprob: ' + str(all_probs[n])+ '\t')
+#         logger.write(sentence)
+# logger.write(str(counter) + ' out of ' + str(len(all_inputs)))
 
 # ========================================
 #               TESTING
@@ -445,7 +531,7 @@ for n, sent in enumerate(all_inputs):
         sentence = decode_result(sent)
         logger.write('\nwrong_unseen: ' + str(all_preds[n]) + '\tprob: ' + str(all_probs[n])+ '\t')
         logger.write(sentence)
-logger.write(str(counter) + ' out of ' + str(len(all_inputs)))
+# logger.write(str(counter) + ' out of ' + str(len(all_inputs)))
 
 logger.write('\n\nRight predictions:')
 counter = 0
@@ -455,7 +541,7 @@ for n, sent in enumerate(all_inputs):
         sentence = decode_result(sent)
         logger.write('\nright_unseen: ' + str(all_preds[n]) + '\tprob: ' + str(all_probs[n])+ '\t')
         logger.write(sentence)
-logger.write(str(counter) + ' out of ' + str(len(all_inputs)))
+# logger.write(str(counter) + ' out of ' + str(len(all_inputs)))
 
 # ========================================
 #               TESTING
@@ -555,7 +641,7 @@ if args.label_marker == 'telicity':
             sentence = decode_result(sent)
             logger.write('\nwrong_min: ' + str(all_preds[n]) + '\tprob: ' + str(all_probs[n])+ '\t')
             logger.write(sentence)
-    logger.write(str(counter) + ' out of ' + str(len(all_inputs)))
+#     logger.write(str(counter) + ' out of ' + str(len(all_inputs)))
 
     logger.write('\n\nRight predictions:')
     counter = 0
@@ -565,4 +651,6 @@ if args.label_marker == 'telicity':
             sentence = decode_result(sent)
             logger.write('\nright_min: ' + str(all_preds[n]) + '\tprob: ' + str(all_probs[n])+ '\t')
             logger.write(sentence)
-    logger.write(str(counter) + ' out of ' + str(len(all_inputs)))
+#     logger.write(str(counter) + ' out of ' + str(len(all_inputs)))
+    
+logger.flush()

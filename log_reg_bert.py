@@ -21,7 +21,7 @@ lemmatizer = WordNetLemmatizer()
 # pick a layer
 layer_idx = -1
 
-# logger = open('log_reg/' + args.transformer_model + '_' + args.verb_segment_ids + '_' + str(layer_idx) + '.log', 'w')
+logger = open('log_reg/' + args.transformer_model + '_' + args.verb_segment_ids + '_' + str(layer_idx) + '.log', 'w')
 
 # argparse doesn't deal in absolutes, so we pass a str flag & convert
 if args.verb_segment_ids == 'yes':
@@ -238,7 +238,7 @@ for epoch_i in range(0, epochs):
             
             for sent_idx in range(batch_size):
                 seq_len = features['all_lengths'][sent_idx]
-                temp = layer[sent_idx, :seq_len, :]
+                temp = hidden_layer[sent_idx, :seq_len, :]
                 verb_idx = features['all_verb_pos'][sent_idx]
 
                 hidden_states_per_sentence[sent_idx].append(temp[verb_idx])

@@ -70,14 +70,17 @@ def tokenize_and_pad(sentences):
                             return_attention_mask = True, # Construct attn. masks.
                             # return_tensors = 'pt',     # Return pytorch tensors.
                        )
-        input_ids.append(encoded_dict['input_ids'])
+        input_ids.append(
+            encoded_dict['input_ids'])
         attention_masks.append(encoded_dict['attention_mask'])
         # Add segment ids, add 1 for verb idx
         segment_id = [0] * 128
         
         verb_idx = find_real_verb_idx(sent, encoded_dict['input_ids'], tok)
+       
         if verb_idx: # if False, the verb is not in the first 128 tokens
-            segment_id[verb_idx] = 1
+            for idx in verb_idx:
+                segment_id[idx] = 1
             
         segment_ids.append(segment_id)     
 
@@ -90,18 +93,18 @@ def find_real_verb_idx(sentence_list, encoded_sentence, tokenizer):
 
     try:
         if len(encoded_verb) == 3: # verb as is + [CLS] + [SEP]
-            verb_idx = encoded_sentence.index(encoded_verb[1])
+            verb_idx = [encoded_sentence.index(encoded_verb[1])]
         else:
             decoded_verb = tokenizer.convert_ids_to_tokens(encoded_verb)
             decoded_sent = tokenizer.convert_ids_to_tokens(encoded_sentence)
             verb_segment = [seg for seg in decoded_verb 
-                            if not any(seg.startswith(x) for x in ['[', '#', '▁', 'Ġ'])]
-            verb_idx = decoded_sent.index(verb_segment[0])
+                            if not any(seg.startswith(x) for x in ['[', '<'])]
+            verb_idx = [decoded_sent.index(seg) for seg in verb_segment]
             
         return verb_idx
     
     except ValueError:
-        print(sentence_list)
+#         print(sentence_list)
         # the sequence is way too long and the verb is chopped!
         return False
 
@@ -186,7 +189,7 @@ def plot_attn(words, attentions, layer, heads):
 
         attn = attentions[layer][head]
         attn = np.array(attn)
-        print(attn.shape)
+#         print(attn.shape)
         attn /= attn.sum(axis=-1, keepdims=True)
         n_words = len(words)
 
@@ -197,9 +200,6 @@ def plot_attn(words, attentions, layer, heads):
                    ha="left", va="center")
         for i in range(1, n_words):
             for j in range(1, n_words):
-                print(attn[i, j])
-                print(attn[i, j].shape)
-                print(type(attn[i, j]))
                 alpha_size = float(attn[i, j].item())
 
                 plt.plot([xoffset + pad, xoffset + width - pad],

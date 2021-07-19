@@ -34,6 +34,8 @@ def parse_args():
     
     parser.add_argument("--verb_segment_ids", default="no", type=str, 
                         help="Whether we use the verb marking or not (only False for RoBERTa, DistilBert).")
+    parser.add_argument("--freeze_layer_count", default=-1, type=int, 
+                        help="")
 
     args = parser.parse_args()
 
