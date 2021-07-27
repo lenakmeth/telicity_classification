@@ -60,9 +60,9 @@ def tokenize_and_pad(sentences):
     elif 'camembert' in args.transformer_model:
         tok = CamembertTokenizer.from_pretrained(args.transformer_model)
         
-    for sent in sentences:
+    for sentence_list in sentences:
         encoded_dict = tok.encode_plus(
-                            sent[0],                      
+                            sentence_list[0], # the sentence                  
                             add_special_tokens = True, # Add '[CLS]' and '[SEP]'
                             max_length = 128,      # Pad & truncate all sentences.
                             padding = 'max_length',
@@ -76,7 +76,7 @@ def tokenize_and_pad(sentences):
         # Add segment ids, add 1 for verb idx
         segment_id = [0] * 128
         
-        verb_idx = find_real_verb_idx(sent, encoded_dict['input_ids'], tok)
+        verb_idx = find_real_verb_idx(sentence_list, encoded_dict['input_ids'], tok)
        
         if verb_idx: # if False, the verb is not in the first 128 tokens
             for idx in verb_idx:
@@ -92,11 +92,12 @@ def find_real_verb_idx(sentence_list, encoded_sentence, tokenizer):
     encoded_verb = tokenizer.encode(sentence_list[1])
 
     try:
-        if len(encoded_verb) == 3: # verb as is + [CLS] + [SEP]
+        if len(encoded_verb) == 3 \
+        and not args.transformer_model.startswith('roberta'): # verb as is + [CLS] + [SEP]
             verb_idx = [encoded_sentence.index(encoded_verb[1])]
         else:
-            decoded_verb = tokenizer.convert_ids_to_tokens(encoded_verb)
-            decoded_sent = tokenizer.convert_ids_to_tokens(encoded_sentence)
+            decoded_verb = [x.replace('Ġ', '') for x in tokenizer.convert_ids_to_tokens(encoded_verb)]
+            decoded_sent = [x.replace('Ġ', '') for x in tokenizer.convert_ids_to_tokens(encoded_sentence)]
             verb_segment = [seg for seg in decoded_verb 
                             if not any(seg.startswith(x) for x in ['[', '<'])]
             verb_idx = [decoded_sent.index(seg) for seg in verb_segment]
@@ -104,9 +105,17 @@ def find_real_verb_idx(sentence_list, encoded_sentence, tokenizer):
         return verb_idx
     
     except ValueError:
-#         print(sentence_list)
-        # the sequence is way too long and the verb is chopped!
-        return False
+        try:
+            # the verb is segmented on its own, but not segmented in the sentence!
+            verb = sentence_list[1]
+            decoded_sent = [x.replace('Ġ', '') for x in tokenizer.convert_ids_to_tokens(encoded_sentence)]
+            verb_idx = [decoded_sent.index(verb)]
+            return verb_idx
+        
+        except ValueError:
+            verb_idx = [sentence_list[2] +1]
+            # the sequence is way too long and the verb is chopped!
+            return verb_idx
 
 
 def flat_accuracy(labels, preds):
