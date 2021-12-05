@@ -1,0 +1,47 @@
+Logistic regression:
+
+Validation:
+              precision    recall  f1-score   support
+
+           0       0.72      0.56      0.63       186
+           1       0.69      0.82      0.75       222
+
+    accuracy                           0.70       408
+   macro avg       0.71      0.69      0.69       408
+weighted avg       0.70      0.70      0.69       408
+
+Test:
+              precision    recall  f1-score   support
+
+           0       0.67      0.57      0.62       186
+           1       0.68      0.77      0.72       223
+
+    accuracy                           0.68       409
+   macro avg       0.68      0.67      0.67       409
+weighted avg       0.68      0.68      0.67       409
+
+-----------------------------------------------------
+
+CNN (50 epochs):
+
+
+Training complete! Best accuracy: 88.39%.
+Validation:
+              precision    recall  f1-score   support
+
+           0       0.89      0.84      0.86       186
+           1       0.87      0.91      0.89       222
+
+    accuracy                           0.88       408
+   macro avg       0.88      0.88      0.88       408
+weighted avg       0.88      0.88      0.88       408
+
+Validation:
+              precision    recall  f1-score   support
+
+           0       0.83      0.85      0.84       186
+           1       0.88      0.85      0.86       223
+
+    accuracy                           0.85       409
+   macro avg       0.85      0.85      0.85       409
+weighted avg       0.85      0.85      0.85       409
