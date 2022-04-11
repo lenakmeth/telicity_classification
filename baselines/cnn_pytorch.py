@@ -20,7 +20,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from sklearn.metrics import classification_report
 
-label_marker = 'duration'
+label_marker = 'duration_fr'
 max_len = 128
 
 # download fasttext vectors
@@ -38,11 +38,11 @@ X_train, y_train = make_sets('train', label_marker, max_len)
 X_val, y_val = make_sets('val', label_marker, max_len)
 X_test, y_test = make_sets('test', label_marker, max_len)
 
-idx2word = open_vocab('telicity')
+idx2word = open_vocab(label_marker)
 word2idx = {v: k for k, v in idx2word.items()}
 
 # Load pretrained vectors
-embeddings = load_pretrained_vectors(word2idx, "fastText/crawl-300d-2M.vec")
+embeddings = load_pretrained_vectors(word2idx, idx2word, "cc.fr.300.vec")
 embeddings = torch.tensor(embeddings)
 
 train_dataloader, val_dataloader = data_loader(X_train, X_val, y_train, y_val, batch_size=50)

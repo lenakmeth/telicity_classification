@@ -15,9 +15,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 
-# 1 = UNK
-# 0 = PAD
-
 def open_vocab(label_marker):
     vocab = []
     with open(label_marker + '/vocab', 'r', encoding='utf-8') as f:
@@ -45,10 +42,14 @@ def make_sets(type_set, label_marker, max_seq):
     X = []
     y = []
 
-    with open(label_marker + '/' + type_set, 'r') as f:
+    with open(label_marker + '/' + type_set, 'r', encoding='utf-8') as f:
         for line in f:
             encoded_seq = encode_sequence(line.split('\t')[-4], vocab)
-            encoded_seq = encoded_seq + [0]*(128-len(encoded_seq))
+            
+            if len(encoded_seq) < max_seq:
+                encoded_seq = encoded_seq + [0]*(max_seq-len(encoded_seq))
+            else:
+                encoded_seq = encoded_seq[:max_seq]
             
             assert len(encoded_seq) == max_seq
             
@@ -58,7 +59,7 @@ def make_sets(type_set, label_marker, max_seq):
     return np.asarray(X), np.asarray(y)
 
 
-def load_pretrained_vectors(word2idx, fname):
+def load_pretrained_vectors(word2idx, idx2word, fname):
     """Load pretrained vectors and create embedding layers.
     
     Args:
@@ -71,7 +72,7 @@ def load_pretrained_vectors(word2idx, fname):
     """
 
     print("Loading pretrained vectors...")
-    fin = open(fname, 'r', encoding='utf-8', newline='\n', errors='ignore')
+    fin = open(fname, 'r', encoding='utf-8', newline='\n')
     n, d = map(int, fin.readline().split())
 
     # Initilize random embeddings
@@ -82,10 +83,10 @@ def load_pretrained_vectors(word2idx, fname):
     count = 0
     for line in tqdm_notebook(fin):
         tokens = line.rstrip().split(' ')
-        word = tokens[0]
-        if word in word2idx:
+        word = tokens[0].strip()
+        if word in idx2word:
             count += 1
-            embeddings[word2idx[word]] = np.array(tokens[1:], dtype=np.float32)
+            embeddings[idx2word[word]] = np.array(tokens[1:], dtype=np.float32)
 
     print(f"There are {count} / {len(word2idx)} pretrained vectors found.")
 
@@ -101,7 +102,7 @@ def data_loader(train_inputs, val_inputs, train_labels, val_labels,
 
     # Convert data type to torch.Tensor
     train_inputs, val_inputs, train_labels, val_labels =\
-    tuple(torch.tensor(data) for data in
+    tuple(torch.LongTensor(data) for data in
           [train_inputs, val_inputs, train_labels, val_labels])
 
     # Specify batch_size

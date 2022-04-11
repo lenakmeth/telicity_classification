@@ -1,0 +1,40 @@
+La fille a marché un kilomètre hier .	marché	3	0
+La fille a marché hier .	marché	3	1
+Je recevrai de nouveaux stocks ce vendredi .	recevrai	1	0
+Je recevrai de nouveaux stocks les vendredis .	recevrai	1	1
+Le garçon mange une pomme .	mange	2	0
+Le garçon mange des pommes .	garçon	1	1
+J' ai bu toute la bouteille .	bouteille	5	0
+J' ai bu du jus de fruit .	ai	1	1
+J' ai lu le livre en une heure .	livre	4	0
+J' ai lu le livre pendant une heure .	livre	4	1
+Le Premier ministre a fait cette déclaration hier .	fait	4	0
+Le Premier ministre a fait cette déclaration depuis des mois .	fait	4	1
+Les ouvriers ont peint la maison en une heure .	peint	3	0
+Les ouvriers ont peint la maison pendant une heure .	peint	3	1
+Les chasseurs ont chassé le cerf .	chassé	3	0
+Les chasseurs chassaient le cerf .	chassé	3	1
+J' ai fini de lire le livre à 17 heures .	fini	2	0
+J' ai arrêté de lire le livre à 17 heures .	arrêté	2	1
+L' étang est gelé .	gelé	3	0
+Il gèle dehors .	gèle	1	1
+Le chasseur a atteint le refuge de montagne .	atteint	3	0
+Le chasseur a occupé la cabane de montagne .	occupé	3	1
+J' ai mis ma robe rouge .	mis	2	0
+Je portais ma robe rouge .	portais	1	1
+L' artiste dessine un tableau .	dessine	2	0
+L' artiste étudie un tableau .	étudie	2	1
+Les policiers sont entrés dans l' église .	entrés	3	0
+Les policiers ont surveillé l' église .	surveillé	3	1
+Ils ont attrapé le sanglier .	attrapé	2	0
+Ils ont chassé le sanglier .	chassé	2	1
+Elle s' est endormie à 20 heures .	endormie	3	0
+Elle s' est endormie .	endormie	3	1
+Elle l' a remarqué .	remarqué	3	0
+Elle l' a regardé .	regardé	3	1
+Les gens sont morts de faim .	morts	3	0
+Les gens ont souffert de la famine .	souffert	3	1
+Ils ont construit la maison .	construit	2	0
+Ils sont en train de construire la maison .	train	3	1
+Elle a mangé ce sandwich .	mangé	2	0
+Elle était en train de manger ce sandwich .	train	3	1
